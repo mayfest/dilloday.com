@@ -1,3 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 16px rgba(126, 87, 194, .4), 
+                 0 0 60px rgba(94, 53, 177, .5);
+  }
+}
+
+
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
