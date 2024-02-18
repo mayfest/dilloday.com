@@ -1,5 +1,4 @@
-import Hero from "@/../components/hero";
-// DILAN WHY DID YOU MAKE @ POINT TO SRC
+import Hero from "@/components/hero";
 
 export default function Home() {
   return (<Hero />)}
