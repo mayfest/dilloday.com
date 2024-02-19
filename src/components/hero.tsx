@@ -1,19 +1,10 @@
-const navigation = [
-  { name: "ABOUT", href: "#" },
-  { name: "TICKETS", href: "#" },
-  { name: "OUR TEAM", href: "#" },
-  { name: "PAST DILLOS", href: "#" },
-  { name: "TERMS", href: "#" },
-  { name: "CONTACT", href: "#" },
-];
+import navigation from "@/components/directory";
 
 export default function Hero() {
   return (
     <div className="h-screen bg-gray-900">
       <header className="absolute inset-x-0 top-0 z-50">
-        <nav
-          className="flex items-center justify-between p-6 lg:px-8"
-        >
+        <nav className="flex items-center justify-between p-6 lg:px-8">
           <div className="flex lg:flex-1">
             <a href="#" className="-m-1.5 p-1.5">
               <img
@@ -28,7 +19,7 @@ export default function Hero() {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-lg font-semibold leading-6 text-white"
+                className="text-lg font-semibold leading-6 text-gray-200 transition-all duration-100 hover:text-white"
               >
                 {item.name}
               </a>
@@ -45,9 +36,7 @@ export default function Hero() {
           alt="Justin Barbin at Dillo"
           className="absolute inset-0 -z-10 h-full w-full object-cover"
         />
-        <div
-          className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-[360px]"
-        >
+        <div className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-[360px]">
           <div
             className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-20 sm:left-[calc(40%-30rem)] sm:w-[72.1875rem]"
             style={{
@@ -68,16 +57,14 @@ export default function Hero() {
               <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-400 ring-1 ring-white/10 hover:ring-white/20">
                 Pick up Tickets Starting May 5th.{" "}
                 <a href="#" className="font-semibold text-white">
-                  <span className="absolute inset-0"/>
+                  <span className="absolute inset-0" />
                   Sign up <span>&rarr;</span>
                 </a>
               </div>
             </div>
           </div>
         </div>
-        <div
-          className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
-        >
+        <div className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]">
           <div
             className="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-20 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
             style={{
