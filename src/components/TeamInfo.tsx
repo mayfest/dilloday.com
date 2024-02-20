@@ -1,0 +1,2 @@
+// components/TeamInfo.tsx
+
