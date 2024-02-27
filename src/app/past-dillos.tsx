@@ -14,6 +14,7 @@ const Main = styled.main`
   padding: 10rem;
   width: 100%;
   height: 100%;
+  position: relative;
 `;
 
 const Header = styled.header`
@@ -92,9 +93,7 @@ export default function Past_Dillos() {
           <button className={styles.years}> 2022</button>
           <button className={styles.years}> 2023 </button>
         </div> */}
-        <div>
-          <SliderWithFadeEffect />
-        </div>
+        <SliderWithFadeEffect />
         <div>
           <SeeDillosButton> See Dillo #!</SeeDillosButton>
         </div>

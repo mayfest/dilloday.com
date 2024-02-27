@@ -1,4 +1,5 @@
 'use client';
+import PastDillos from '@/components/PastDillos';
 import Past_Dillos from './past-dillos';
 import styled from 'styled-components';
 
@@ -9,7 +10,7 @@ const Div = styled.div`
 export default function Home() {
   return (
     <Div>
-      <Past_Dillos></Past_Dillos>
+      <PastDillos />
     </Div>
   );
 }
