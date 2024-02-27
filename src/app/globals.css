@@ -1,3 +1,9 @@
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';
+@import 'swiper/css/autoplay';
+
+
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
