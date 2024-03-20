@@ -14,12 +14,13 @@ const Box = styled.div`
 export default function Home() {
   return (
     <Box>
-      <h1>Our Team 2023-2024</h1>
+      <h1>Join MayFam!</h1>
       <img
         src="/images/team_background.jpg"
         alt="Team Background"
         style={{ width: '100%' }}
       />
+      <h1>Our Team 2023-2024</h1>
       <TeamsGrid />
       <ApplyButton />
     </Box>

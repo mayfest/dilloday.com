@@ -9,4 +9,3 @@ export const Section = styled.section`
 `;
 
 export const mobile = '@media (max-width: 768px)';
-export const tablet = '@media (max-width: 1024px)';
