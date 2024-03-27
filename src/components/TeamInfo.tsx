@@ -11,11 +11,11 @@ const InfoContainer = styled.div<{ isOpen: boolean }>`
   background-color: transparent;
   padding: 0;
   margin: 0;
-  border: 2px solid red;
   max-height: 300px;
   height: 100%;
 `;
 
+// Close the info box
 const CloseButton = styled.button`
   background-color: transparent;
   color: white;
@@ -31,11 +31,13 @@ interface InfoProp {
     description: string;
 }
 
+// Close button and team name
 const InfoHeader = styled.div`
     display: flex;
     justify-content: space-between;
   `;
 
+// Team info text
 const InfoText = styled.div`
   display: flex;
   flex-direction: column;

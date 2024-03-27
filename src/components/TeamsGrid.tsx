@@ -6,6 +6,7 @@ import TeamInfo from './TeamInfo';
 import { Section, mobile } from '@/components';
 import { motion } from 'framer-motion';
 
+// Team grid
 const TG = styled(motion.div)`
   display: grid;
   width: 100%;
@@ -13,7 +14,6 @@ const TG = styled(motion.div)`
   gap: 10px;
   margin: auto;
   font-size: 14px;
-  border: 2px solid red;
 
   ${mobile} {
     width: 100%;
@@ -22,7 +22,7 @@ const TG = styled(motion.div)`
   }
 `;
 
-// framer motion
+// Framer motion
 const container = {
   hidden: { opacity: 1, scale: 0 },
   visible: {
@@ -35,6 +35,7 @@ const container = {
   },
 };
 
+
 const item = {
   hidden: { y: 20, opacity: 0 },
   visible: {
@@ -46,8 +47,10 @@ const item = {
 // https://www.framer.com/motion/ use this to display the panels
 // AOS (animate on scroll)
 const TeamsGrid: React.FC = () => {
-  const [selectedTeam, setSelectedTeam] = useState<number | null>(null);
+  const [rowOne, setRowOne] = useState<number | null>(null);
+  const [rowTwo, setRowTwo] = useState<number | null>(null);
 
+  // List of team info 
   const teamMembers = [
     {
       name: 'BOOKINGS',
@@ -111,45 +114,69 @@ const TeamsGrid: React.FC = () => {
     },
   ];
 
+  // if one row is open, close the other if other is open
+  const handleRowOneClick = (index: number) => {
+    if (rowOne === index) {
+      setRowOne(null);
+    } else {
+      setRowOne(index);
+      if (rowTwo !== null) {
+        setRowTwo(null);
+      }
+    }
+  };
+
+  const handleRowTwoClick = (index: number) => {
+    if (rowTwo === index) {
+      setRowTwo(null);
+    } else {
+      setRowTwo(index);
+      if (rowOne !== null) {
+        setRowOne(null);
+      }
+    }
+  };
+
   return (
-    // Split into two different rows
     <Section>
-
       <TG variants={container} initial="hidden" animate="visible">
-
-        {/* ROW 1: PUT EXPANDED AND TEAM ROW IN SAME CONTAINER */}
+        {/* ROW ONE */}
         {teamMembers.slice(0, 5).map((member, index) => (
           <motion.div key={index} className="item" variants={item}>
             <TeamBox
               name={member.name}
               image={member.image}
-              onClick={() => setSelectedTeam(index)} // Pass the onClick handler here
+              onClick={() => handleRowOneClick(index)}
             />
           </motion.div>
         ))}
-
-        {selectedTeam !== null && ( // Render TeamInfo conditionally
+        {rowOne !== null && (
           <TeamInfo
             isOpen={true}
-            onClose={() => setSelectedTeam(null)}
-            name={teamMembers[selectedTeam].name}
-            description={teamMembers[selectedTeam].description}
+            onClose={() => setRowOne(null)}
+            name={teamMembers[rowOne].name}
+            description={teamMembers[rowOne].description}
           />
         )}
-
-        {/* ROW 2: PUT EXPANDED AND TEAM ROW IN SAME CONTAINER */}
+        {/* ROW TWO */}
         {teamMembers.slice(5).map((member, index) => (
-          <motion.div key={index} className="item" variants={item}>
+          <motion.div key={index + 5} className="item" variants={item}>
             <TeamBox
               name={member.name}
               image={member.image}
-              onClick={() => setSelectedTeam(index)} // Pass the onClick handler here
+              onClick={() => handleRowTwoClick(index + 5)}
             />
           </motion.div>
         ))}
-
+        {rowTwo !== null && (
+          <TeamInfo
+            isOpen={true}
+            onClose={() => setRowTwo(null)}
+            name={teamMembers[rowTwo].name}
+            description={teamMembers[rowTwo].description}
+          />
+        )}
       </TG>
-
     </Section>
   );
 };
