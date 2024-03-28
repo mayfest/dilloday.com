@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Sixtyfour&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 11rem;
+    min-height: 10vh;
+    background-color: black;
+   }
+   .relive {
+    display: flex;
+    color: white;
+    font-size: 30px;
+    font-family: "Inter", sans-serif;
+    margin-right: 550px;
+    font-weight: bold;
+   }
+
+   .header {
+    display: flex;
+    color: white;
+    font-family: 'Sixtyfour', sans-serif;
+    font-style: italic;
+    font-size: 60px; 
+    white-space: nowrap;
+  }
+
+.years {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px; 
+  }
+ 
+  .years button {
+    background-color: lightgray;
+    color: black;
+    padding: 5px 5px;
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+  
+  .years button:hover {
+    color: magenta;
+    font-weight: bold;
+  }
+
+  .images {
+    height: 700px;
+    width: 800px;
+    padding: 20px;
+
+  }
+
+.see_dillo button{
+  background-color: #FDD000;
+  color: black;
+  transition: color 0.3s ease;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 5px 5px;
+}
+
+.see_dillo button:hover {
+  color: black;
+  font-weight: bold;
+}
