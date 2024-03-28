@@ -1,4 +1,7 @@
+'use client';
+
 import { navigation } from '@/lib/directory';
+import GradientDivider from './GradientDivider';
 
 export default function Hero() {
   return (
@@ -31,7 +34,7 @@ export default function Hero() {
 
       <div className="h-full relative isolate overflow-hidden pt-14">
         <img
-          src="/bg.jpeg"
+          src="/background.jpg"
           alt="Background Image"
           className="absolute inset-0 -z-10 h-full w-full object-cover"
         />
@@ -66,6 +69,7 @@ export default function Hero() {
             }}
           />
         </div>
+        <GradientDivider bottom height={64} />
       </div>
     </div>
   );

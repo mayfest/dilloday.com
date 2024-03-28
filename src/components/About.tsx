@@ -51,6 +51,11 @@ const Contents = styled.div`
 
 const Text = styled(motion.p)`
   flex: 1;
+  font-size: 20px;
+
+  ${mobile} {
+    font-size: 16px;
+  }
 `;
 
 const TextHighlight = styled.span`
@@ -58,17 +63,11 @@ const TextHighlight = styled.span`
   font-weight: 500;
 `;
 
-const Video = styled.iframe`
+const Video = styled(motion.iframe)`
   width: 480px;
   height: 270px;
   border: none;
   border-radius: 16px;
-  box-shadow:
-    rgba(192, 132, 252, 0.4) 5px 5px,
-    rgba(192, 132, 252, 0.3) 10px 10px,
-    rgba(192, 132, 252, 0.2) 15px 15px,
-    rgba(192, 132, 252, 0.1) 20px 20px,
-    rgba(192, 132, 252, 0.05) 25px 25px;
 
   ${mobile} {
     width: 320px;
@@ -91,10 +90,13 @@ const sectionVariants = {
 };
 
 const titleVariants = {
-  initial: { opacity: 0, scale: 1.2 },
+  initial: { opacity: 0, y: 20 },
   animate: {
     opacity: 1,
-    scale: 1,
+    y: 0,
+    transition: {
+      duration: 0.25,
+    },
   },
 };
 
@@ -109,13 +111,28 @@ const textVariants = {
   },
 };
 
-const videoVariants = {
+const videoContainerVariants = {
   initial: { opacity: 0, y: 20 },
   animate: {
     opacity: 1,
     y: 0,
     transition: {
       delay: 1.25,
+      delayChildren: 0.5,
+    },
+  },
+};
+
+const videoVariants = {
+  initial: { x: 25, y: 25, boxShadow: 'none' },
+  animate: {
+    x: 0,
+    y: 0,
+    boxShadow:
+      'rgba(192, 132, 252, 0.4) 5px 5px, rgba(192, 132, 252, 0.3) 10px 10px, rgba(192, 132, 252, 0.2) 15px 15px, rgba(192, 132, 252, 0.1) 20px 20px, rgba(192, 132, 252, 0.05) 25px 25px',
+    transition: {
+      delay: 2,
+      ease: [0, 0.5, 0.2, 1.0],
     },
   },
 };
@@ -146,16 +163,14 @@ export default function About() {
           organization at Northwestern University that plans and produces the
           nation's largest student-run music festival —{' '}
           <TextHighlight>Dillo Day</TextHighlight>, with over 12,000 festival
-          attendees. The organization is comprised of{' '}
-          <TextHighlight>10 committees</TextHighlight>, each with its own core
-          responsibilities and cross-committee collaborations that translate
-          directly to the success of our events. In addition to the festival,
-          Mayfest hosts and promotes a number of other programming events
-          including Battle of the Bands and Battle of the DJs.
+          attendees. In addition to the festival, Mayfest hosts and promotes a
+          number of other programming events including Battle of the Bands and
+          Battle of the DJs.
         </Text>
 
-        <motion.div variants={videoVariants}>
+        <motion.div variants={videoContainerVariants}>
           <Video
+            variants={videoVariants}
             title="We Do Dillo Day"
             src="https://player.vimeo.com/video/291397953"
             allow="autoplay; fullscreen; picture-in-picture"

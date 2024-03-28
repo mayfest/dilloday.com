@@ -1,69 +1,79 @@
 // components/TeamInfo.tsx
+import { Team } from '@/lib/teams';
 import React from 'react';
 import styled from 'styled-components';
+import { XMarkIcon } from '@heroicons/react/24/solid';
+import { motion } from 'framer-motion';
 
-const InfoContainer = styled.div<{ isOpen: boolean }>`
-  display: ${(props) => (props.isOpen ? 'flex' : 'none')};
-  align-items: center;
-  justify-content: center;
+const Container = styled.div`
   width: 100%;
   grid-column: 1 / -1;
-  background-color: transparent;
-  padding: 0;
+  background-color: #000000;
+  padding: 16px 32px;
   margin: 0;
-  max-height: 300px;
-  height: 100%;
+  border: 2px solid #ffffff;
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
 `;
 
 // Close the info box
 const CloseButton = styled.button`
-  background-color: transparent;
-  color: white;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: none;
+  border: none;
+  color: #ffffff;
   border: none;
   cursor: pointer;
-  font-size: 20px;
+  border-radius: 8px;
+
+  &:hover {
+    background-color: #202020;
+  }
+
+  &:active {
+    background-color: #323232;
+  }
+
+  svg {
+    width: 32px;
+    height: 32px;
+    stroke-width: 2px;
+  }
 `;
 
-interface InfoProp {
-    isOpen: boolean;
-    onClose: () => void;
-    name: string;
-    description: string;
-}
-
-// Close button and team name
-const InfoHeader = styled.div`
-    display: flex;
-    justify-content: space-between;
-  `;
-
 // Team info text
-const InfoText = styled.div`
+const Text = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
   margin: 20px;
-`
+`;
 
-const TeamInfo: React.FC<InfoProp> = ({ isOpen, onClose, name, description }) => {
-  const img_style = {
-    margin: 0,
-    padding: 0,
-    height: '100%',
-  };
+const Title = styled.h3`
+  font-size: 24px;
+  font-weight: 700;
+  color: #d8b4fe;
+  margin: 16px 0;
+`;
 
-  return (
-    <InfoContainer isOpen={isOpen}>
-      <img src="https://i.imgur.com/TMeCJar.png" alt="team pic" style={img_style}/>
-      <InfoText>
-        <InfoHeader>
-          <h2>{name}</h2>
-          <CloseButton onClick={onClose}> X </CloseButton>
-        </InfoHeader>
-        <p>{description}</p>
-      </InfoText>
-    </InfoContainer>
-  )
+interface TeamInfoProps {
+  team: Team;
+  onClose: () => void;
 }
 
-export default TeamInfo
+export function TeamInfo({ team, onClose }: TeamInfoProps) {
+  return (
+    <Container>
+      <Title>{team.name}</Title>
+      <Text>{team.description}</Text>
+      <CloseButton onClick={onClose}>
+        <XMarkIcon />
+      </CloseButton>
+    </Container>
+  );
+}
+
+export default TeamInfo;
