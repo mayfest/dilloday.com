@@ -9,6 +9,10 @@ import styled from 'styled-components';
 
 const Container = styled.div`
   border-top: 1px solid #eaeaea;
+
+  &:last-child {
+    border-bottom: 1px solid #eaeaea;
+  }
 `;
 
 const Title = styled.button<{ $open: boolean }>`

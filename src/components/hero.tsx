@@ -1,6 +1,6 @@
 'use client';
 
-import { navigation } from '@/lib/directory';
+import { getHrefProps, navigation } from '@/lib/directory';
 import GradientDivider from './GradientDivider';
 
 export default function Hero() {
@@ -18,11 +18,11 @@ export default function Hero() {
             </a>
           </div>
           <div className="hidden lg:flex lg:gap-x-12 justify-start">
-            {navigation.map((item) => (
+            {navigation.map((item, i) => (
               <a
-                key={item.name}
-                href={item.href}
+                key={`nav-item-${i}`}
                 className="text-lg font-semibold leading-6 text-white opacity-75 transition-all duration-150 hover:opacity-100"
+                {...getHrefProps(item.href)}
               >
                 {item.name}
               </a>
