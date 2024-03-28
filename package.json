@@ -10,6 +10,9 @@
     "lint:prettier": "prettier --list-different src"
   },
   "dependencies": {
+    "@react-spring/parallax": "^9.7.3",
+    "@react-spring/web": "^9.7.3",
+    "framer-motion": "^11.0.22",
     "next": "14.1.0",
     "react": "^18",
     "react-dom": "^18",

@@ -1,9 +1,10 @@
+import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
-export const Section = styled.section`
+export const Section = styled(motion.section)`
   width: 100%;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 32px auto;
   padding: 16px;
 `;
 
