@@ -145,12 +145,10 @@ export default function PastDillos() {
   }, [slide]);
 
   return (
-    <Section>
+    <Section id="past-dillos">
       <LayoutGroup>
         <Title className={spaceGrotesk.className}>Relive Past Dillos</Title>
-        <Text>
-          Take a trip into the past with these past Dillo Day lineups.
-        </Text>
+        <Text>Take a trip into the past with these old Dillo Day lineups.</Text>
         <SlideController className={spaceGrotesk.className}>
           <SlideChangeButton
             disabled={slide <= 0}

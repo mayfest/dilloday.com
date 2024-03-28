@@ -1,11 +1,10 @@
 import Hero from '@/components/hero';
 import Footer from '@/components/footer';
-import TAC from '@/components/tac';
 import About from '@/components/About';
 import { Metadata } from 'next';
-import TeamsGrid from '@/components/TeamsGrid';
 import Team from '@/components/Team';
 import PastDillos from '@/components/PastDillos';
+import Terms from '@/components/Terms';
 
 export const metadata: Metadata = {
   title: 'Dillo Day',
@@ -20,7 +19,7 @@ export default function Home() {
       <About />
       <Team />
       <PastDillos />
-      <TAC />
+      <Terms />
       <Footer />
     </>
   );

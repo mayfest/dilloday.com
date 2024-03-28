@@ -105,7 +105,7 @@ const grandchildVariants = {
 
 export default function Team() {
   return (
-    <Container>
+    <Container id="our-team">
       <Heading
         variants={variants}
         initial="initial"

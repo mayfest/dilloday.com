@@ -1,8 +1,7 @@
 export const navigation = [
-  { name: 'ABOUT', href: '#' },
+  { name: 'ABOUT', href: '#about' },
   { name: 'TICKETS', href: '#' },
-  { name: 'OUR TEAM', href: '#' },
-  { name: 'PAST DILLOS', href: '#' },
-  { name: 'TERMS', href: '#' },
-  { name: 'CONTACT', href: '#' },
+  { name: 'OUR TEAM', href: '#our-team' },
+  { name: 'PAST DILLOS', href: '#past-dillos' },
+  { name: 'TERMS', href: '#terms' },
 ];

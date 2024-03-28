@@ -131,7 +131,7 @@ const videoVariants = {
     boxShadow:
       'rgba(192, 132, 252, 0.4) 5px 5px, rgba(192, 132, 252, 0.3) 10px 10px, rgba(192, 132, 252, 0.2) 15px 15px, rgba(192, 132, 252, 0.1) 20px 20px, rgba(192, 132, 252, 0.05) 25px 25px',
     transition: {
-      delay: 2,
+      delay: 1.75,
       ease: [0, 0.5, 0.2, 1.0],
     },
   },
@@ -140,6 +140,7 @@ const videoVariants = {
 export default function About() {
   return (
     <Section
+      id="about"
       variants={sectionVariants}
       initial="initial"
       whileInView="animate"

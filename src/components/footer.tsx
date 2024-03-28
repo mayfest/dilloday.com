@@ -72,8 +72,20 @@ export default function Footer() {
             </a>
           ))}
         </div>
-        <p className="mt-10 text-center text-xs leading-5 text-gray-100">
+        <p className="mt-10 mb-2 text-center text-xs leading-5 text-gray-100">
           &copy; 2024 Mayfest Productions. All rights reserved.
+        </p>
+        <p className="my-2 text-center text-xs leading-5 text-gray-100">
+          All photos are courtesy of{' '}
+          <a
+            className="text-[#e9d5ff] hover:underline"
+            href="https://justin-barbin.com/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Justin Barbin Photography
+          </a>
+          .
         </p>
       </div>
     </footer>
