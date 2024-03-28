@@ -65,6 +65,13 @@ const TextHighlight = styled.span`
   font-weight: 500;
 `;
 
+const Note = styled.p`
+  text-align: center;
+  margin: 16px 0;
+  font-size: 14px;
+  opacity: 0.5;
+`;
+
 const variants = {
   initial: {},
   animate: {
@@ -121,8 +128,9 @@ export default function Team() {
           </Text>
         </TitleContainer>
       </Heading>
-      <Section>
+      <Section style={{ margin: '0 auto' }}>
         <TeamsGrid />
+        <Note>click on a team for more info</Note>
       </Section>
     </Container>
   );

@@ -5,6 +5,7 @@ import About from '@/components/About';
 import { Metadata } from 'next';
 import TeamsGrid from '@/components/TeamsGrid';
 import Team from '@/components/Team';
+import PastDillos from '@/components/PastDillos';
 
 export const metadata: Metadata = {
   title: 'Dillo Day',
@@ -18,6 +19,7 @@ export default function Home() {
       <Hero />
       <About />
       <Team />
+      <PastDillos />
       <TAC />
       <Footer />
     </>

@@ -2,7 +2,7 @@
 import { Team } from '@/lib/teams';
 import React from 'react';
 import styled from 'styled-components';
-import { XMarkIcon } from '@heroicons/react/24/solid';
+import { XMarkIcon } from '@heroicons/react/24/outline';
 import { motion } from 'framer-motion';
 
 const Container = styled.div`
@@ -69,7 +69,7 @@ export function TeamInfo({ team, onClose }: TeamInfoProps) {
     <Container>
       <Title>{team.name}</Title>
       <Text>{team.description}</Text>
-      <CloseButton onClick={onClose}>
+      <CloseButton onClick={() => onClose()}>
         <XMarkIcon />
       </CloseButton>
     </Container>
