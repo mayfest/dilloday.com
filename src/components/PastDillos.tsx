@@ -8,7 +8,7 @@ import { useEffect, useRef, useState } from 'react';
 import { history } from '@/lib/history';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
 import PastDilloInfo from './PastDilloInfo';
-import { AnimatePresence, LayoutGroup } from 'framer-motion';
+import { AnimatePresence, LayoutGroup, motion } from 'framer-motion';
 
 const spaceGrotesk = Space_Grotesk({ subsets: ['latin'] });
 
@@ -24,7 +24,7 @@ const Text = styled.p`
   text-align: center;
 `;
 
-const SlideController = styled.div`
+const SlideController = styled(motion.div)`
   display: flex;
   background: #431407;
   border-radius: 16px;
@@ -35,13 +35,13 @@ const SlideController = styled.div`
 
 const SlideChangeButton = styled.button`
   padding: 8px;
-  background-color: #431407;
+  background-color: #3b0764;
   opacity: 1;
   color: #ffffff;
 
   &:hover,
   &:active {
-    background-color: #7c2d12;
+    background-color: #581c87;
   }
 
   &:active {
@@ -56,7 +56,7 @@ const SlideChangeButton = styled.button`
 
   &:disabled {
     color: #808080;
-    background-color: #431407;
+    background-color: #3b0764;
     opacity: 1;
     cursor: not-allowed;
   }
@@ -65,7 +65,7 @@ const SlideChangeButton = styled.button`
 const SlideList = styled.div`
   flex: 1;
   display: flex;
-  background: #9a3412;
+  background: #6b21a8;
   overflow-x: auto;
   gap: 8px;
   position: relative;
@@ -85,7 +85,7 @@ const SlideListGradientLeft = styled.div`
   min-width: 16px;
   max-width: 16px;
   height: 100%;
-  background: linear-gradient(to right, #9a3412, transparent);
+  background: linear-gradient(to right, #6b21a8, transparent);
   z-index: 1;
 `;
 
@@ -96,23 +96,23 @@ const SlideListGradientRight = styled.div`
   min-width: 16px;
   max-width: 16px;
   height: 100%;
-  background: linear-gradient(to left, #9a3412, transparent);
+  background: linear-gradient(to left, #6b21a8, transparent);
   z-index: 1;
 `;
 
-const SlideButton = styled.button<{ $selected: boolean }>`
+const SlideButton = styled(motion.button)<{ $selected: boolean }>`
   font-size: 24px;
   padding: 4px;
   font-weight: 700;
 
-  color: #fb923c;
+  color: #c084fc;
 
   &:hover {
-    color: #fed7aa;
+    color: #e9d5ff;
   }
 
   &:active {
-    color: #ffedd5;
+    color: #f3e8ff;
   }
 
   ${(props) =>
@@ -125,6 +125,42 @@ const SlideButton = styled.button<{ $selected: boolean }>`
     font-size: 16px;
   }
 `;
+
+const sectionVariants = {
+  initial: { opacity: 0, y: 20 },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      delay: 0.2,
+      staggerChildren: 0.5,
+      when: 'beforeChildren',
+    },
+  },
+};
+
+const slideControllerVariants = {
+  initial: { opacity: 0, scale: 0.8 },
+  animate: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      delay: 0.2,
+      delayChildren: 0.2,
+      staggerChildren: 0.1,
+      when: 'beforeChildren',
+    },
+  },
+};
+
+const slideButtonVariants = {
+  initial: { opacity: 0, y: 20 },
+  animate: {
+    opacity: 1,
+    y: 0,
+  },
+};
 
 export default function PastDillos() {
   const [slide, setSlide] = useState(history.length - 1);
@@ -145,11 +181,20 @@ export default function PastDillos() {
   }, [slide]);
 
   return (
-    <Section id="past-dillos">
+    <Section
+      id="past-dillos"
+      variants={sectionVariants}
+      initial="initial"
+      whileInView="animate"
+      viewport={{ once: true }}
+    >
       <LayoutGroup>
         <Title className={spaceGrotesk.className}>Relive Past Dillos</Title>
         <Text>Take a trip into the past with these old Dillo Day lineups.</Text>
-        <SlideController className={spaceGrotesk.className}>
+        <SlideController
+          className={spaceGrotesk.className}
+          variants={slideControllerVariants}
+        >
           <SlideChangeButton
             disabled={slide <= 0}
             onClick={() => {
@@ -168,6 +213,7 @@ export default function PastDillos() {
                 onClick={() => {
                   setSlide(i);
                 }}
+                variants={slideButtonVariants}
               >
                 {dillo.year}
               </SlideButton>

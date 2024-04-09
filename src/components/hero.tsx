@@ -2,6 +2,7 @@
 
 import { getHrefProps, navigation } from '@/lib/directory';
 import GradientDivider from './GradientDivider';
+import { ChevronDownIcon } from '@heroicons/react/24/outline';
 
 export default function Hero() {
   return (
@@ -69,6 +70,16 @@ export default function Hero() {
             }}
           />
         </div>
+        <button
+          className="absolute bottom-16 left-1/2 -translate-x-1/2 text-center opacity-50 transition-all duration-300 hover:translate-y-2 hover:opacity-100"
+          onClick={() => {
+            document
+              .querySelector('#about')
+              ?.scrollIntoView({ behavior: 'smooth' });
+          }}
+        >
+          <ChevronDownIcon className="h-8 w-8 text-white stroke-[3px]" />
+        </button>
         <GradientDivider bottom height={64} />
       </div>
     </div>

@@ -10,6 +10,10 @@ export const navigation: NavigationItem[] = [
   { name: 'OUR TEAM', href: '#our-team' },
   { name: 'PAST DILLOS', href: '#past-dillos' },
   { name: 'TERMS', href: '#terms' },
+  {
+    name: 'CONTACT',
+    href: '#contact',
+  },
 ];
 
 export function getHrefProps(href: string) {

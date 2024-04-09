@@ -11,7 +11,7 @@ import { motion } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
 import { mobile } from '.';
 
-const Container = styled.div`
+const Container = styled(motion.div)`
   margin: 64px 0;
 `;
 
@@ -68,6 +68,11 @@ const Note = styled.p`
   opacity: 0.5;
 `;
 
+const variants = {
+  initial: { opacity: 0, y: 20 },
+  animate: { opacity: 1, y: 0 },
+};
+
 interface PastDillosCarouselProps {
   slide: number;
   setSlide: (slide: number) => void;
@@ -88,7 +93,7 @@ export default function PastDillosCarousel({
   }, [slide, swiper]);
 
   return (
-    <Container>
+    <Container variants={variants}>
       <Swiper
         modules={[EffectCards]}
         effect="cards"

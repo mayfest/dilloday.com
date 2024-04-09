@@ -1,3 +1,4 @@
+import { Fragment } from 'react';
 import { HistoricalEvent } from '@/lib/history';
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
@@ -17,11 +18,8 @@ const Backdrop = styled(motion.div)`
 
 const Container = styled(motion.div)`
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 90%;
-  max-width: 1200px;
+  inset: 64px;
+
   border-radius: 16px;
   box-sizing: border-box;
   display: flex;
@@ -30,6 +28,11 @@ const Container = styled(motion.div)`
 
   ${mobile} {
     flex-direction: column;
+    width: 90%;
+    inset: unset;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 `;
 
@@ -37,6 +40,7 @@ const Image = styled(motion.img)`
   width: 100%;
   height: 100%;
   border-radius: 16px;
+  object-fit: cover;
 
   ${mobile} {
     width: 100%;
@@ -101,11 +105,19 @@ const FeaturedTitle = styled.p`
   font-weight: 700;
   font-size: 14px;
   opacity: 0.75;
+
+  ${mobile} {
+    font-size: 12px;
+  }
 `;
 
 const FeaturedItem = styled.p`
   font-size: 18px;
   font-weight: 700;
+
+  ${mobile} {
+    font-size: 14px;
+  }
 `;
 
 const CloseButton = styled(motion.button)`
@@ -227,9 +239,13 @@ export default function PastDilloInfo({
         >
           <FeaturedTitle>EVENT DATE</FeaturedTitle>
           <FeaturedItem>{item.date}</FeaturedItem>
-          <FeaturedTitle>FEATURED ARTISTS</FeaturedTitle>
-          {item.featured.map((feature, i) => (
-            <FeaturedItem key={`featured-${i}`}>{feature}</FeaturedItem>
+          {item.artists?.map((stage, i) => (
+            <Fragment key={`stage-${i}`}>
+              <FeaturedTitle>{stage.stage}</FeaturedTitle>
+              {stage.names.map((name, j) => (
+                <FeaturedItem key={`stage-${i}-${j}`}>{name}</FeaturedItem>
+              ))}
+            </Fragment>
           ))}
         </Featured>
         <CloseButton

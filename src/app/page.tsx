@@ -1,10 +1,11 @@
-import Hero from '@/components/hero';
-import Footer from '@/components/footer';
 import About from '@/components/About';
-import { Metadata } from 'next';
-import Team from '@/components/Team';
+import Contact from '@/components/Contact';
+import Hero from '@/components/Hero';
 import PastDillos from '@/components/PastDillos';
+import Team from '@/components/Team';
 import Terms from '@/components/Terms';
+import Footer from '@/components/footer';
+import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Dillo Day',
@@ -20,6 +21,8 @@ export default function Home() {
       <Team />
       <PastDillos />
       <Terms />
+      {/* <Sponsors /> */}
+      <Contact />
       <Footer />
     </>
   );
