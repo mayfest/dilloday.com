@@ -1,6 +1,6 @@
 import About from '@/components/About';
 import Contact from '@/components/Contact';
-import Hero from '@/components/Hero';
+import Hero from '@/components/Herox';
 import PastDillos from '@/components/PastDillos';
 import Team from '@/components/Team';
 import Terms from '@/components/Terms';
