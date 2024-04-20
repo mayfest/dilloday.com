@@ -1,10 +1,10 @@
 'use client';
 
 import styled from 'styled-components';
-import GradientDivider from './GradientDivider';
+import GradientDivider from '../components/GradientDivider';
 import { Section, mobile } from '@/components';
 import { motion } from 'framer-motion';
-import TeamsGrid from './TeamsGrid';
+import TeamsGrid from '../components/TeamsGrid';
 
 const Container = styled.div`
   margin: 64px 0;

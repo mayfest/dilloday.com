@@ -3,11 +3,11 @@
 import styled from 'styled-components';
 import { Section, mobile } from '@/components';
 import { Space_Grotesk } from 'next/font/google';
-import PastDillosCarousel from './PastDillosCarousel';
+import PastDillosCarousel from '../components/PastDillosCarousel';
 import { useEffect, useRef, useState } from 'react';
 import { history } from '@/lib/history';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
-import PastDilloInfo from './PastDilloInfo';
+import PastDilloInfo from '../components/PastDilloInfo';
 import { AnimatePresence, LayoutGroup, motion } from 'framer-motion';
 
 const spaceGrotesk = Space_Grotesk({ subsets: ['latin'] });

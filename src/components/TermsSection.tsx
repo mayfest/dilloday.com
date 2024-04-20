@@ -4,8 +4,10 @@ import {
   MinusIcon,
   PlusIcon,
 } from '@heroicons/react/24/outline';
+import { AnimatePresence, motion } from 'framer-motion';
 import { useState } from 'react';
 import styled from 'styled-components';
+import { mobile } from '.';
 
 const Container = styled.div`
   border-top: 1px solid #eaeaea;
@@ -35,14 +37,20 @@ const Title = styled.button<{ $open: boolean }>`
   }
 `;
 
-const TitleText = styled.h3`
+const TitleText = styled.h4`
   font-size: 18px;
   font-weight: 500;
+
+  ${mobile} {
+    font-size: 16px;
+  }
 `;
 
-const Content = styled.div`
-  padding: 16px;
+const Content = styled(motion.div)`
+  padding: 0 16px;
   background: #121212;
+  overflow: hidden;
+  box-sizing: content-box;
 `;
 
 interface TermsSectionProps {
@@ -59,7 +67,17 @@ export default function TermsSection({ title, children }: TermsSectionProps) {
         <TitleText>{title}</TitleText>
         {open ? <MinusIcon /> : <PlusIcon />}
       </Title>
-      {open && <Content>{children}</Content>}
+      <AnimatePresence>
+        {open && (
+          <Content
+            initial={{ height: 0 }}
+            animate={{ height: '100%' }}
+            exit={{ height: 0 }}
+          >
+            {children}
+          </Content>
+        )}
+      </AnimatePresence>
     </Container>
   );
 }

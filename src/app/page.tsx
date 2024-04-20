@@ -1,9 +1,10 @@
-import About from '@/components/About';
-import Contact from '@/components/Contact';
-import Hero from '@/components/Hero';
-import PastDillos from '@/components/PastDillos';
-import Team from '@/components/Team';
-import Terms from '@/components/Terms';
+import About from '@/sections/About';
+import Contact from '@/sections/Contact';
+import Hero from '@/sections/Hero';
+import PastDillos from '@/sections/PastDillos';
+import Team from '@/sections/Team';
+import Terms from '@/sections/Terms';
+import Tickets from '@/sections/Tickets';
 import Footer from '@/components/footer';
 import { Metadata } from 'next';
 
@@ -17,6 +18,7 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <Tickets />
       <About />
       <Team />
       <PastDillos />
