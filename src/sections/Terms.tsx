@@ -402,6 +402,100 @@ export default function Terms() {
           </Text>
         </TermsSection>
       </Area>
+
+      <Area>
+        <AreaTitle>ACKNOWLEDGEMENTS</AreaTitle>
+
+        <TermsSection title="LAND ACKNOWLEDGEMENT">
+          <Text>
+            The location of today's Dillo Day, the Northwestern Lakefill, is on
+            the homelands of the people of the Council of Three Fires, the
+            Ojibwe, Potawatomi, and Odawa as well as the Menominee, Miami and
+            Ho-Chunk nations. Mayfest Productions believes providing more
+            context is essential given this year's theme, Camp Dillo. The theme
+            of summer camps often invokes racist Native American tropes and
+            mascots, while also creating a colonial dichotomy between “nature”
+            vs. “civilization” that stems from Native American genocide and
+            white supremacy. Mayfest Productions acknowledges that summer camps
+            often serve as a site of Indigenous appropriation, and commits to
+            rejecting discriminatory tropes and imagery. Since the origin of
+            summer camp, campers and camp organizations have engaged in
+            caricatured, stolen Indigenous traditions, like hosting powwows and
+            appropriating Native cultures within their programming (cabins are
+            “tribes,” camp directors are “Chiefs”) or camp names.
+          </Text>
+          <Text>
+            Northwestern is also in close proximity to an urban Indigenous
+            community in Chicago and near several tribes in the Midwest.
+            Pre-colonization, the Indigenous communities in the area had
+            established a vast network of trails and portages, or places to
+            carry and drag boats from one water system to another, and had a
+            robust trading network. By 1833, most Indigenous communities were
+            displaced from the region after they were pressured to sign a series
+            of coercive treaties. The 1833 Treaty of Chicago, which was taken as
+            a surrender to Indigenous peoples' claims to Chicagoland, was signed
+            before the creation of Northwestern's lakefill in 1962-1964. The
+            Pokagon Band of Potawatomi laid claim to this land east of Michigan
+            Avenue created by landfill in the 1980s and thereafter. For the
+            Ojibwe, Potawatomi, and Odawa—the Council of Three Fires—Lake
+            Michigan is not just a body of water but a vital cultural,
+            spiritual, and economic resource. Native peoples have historically
+            depended on the Great Lakes for transportation, sustenance, trade,
+            and ceremonial purposes, viewing them as sacred spaces with
+            significant spiritual importance. The creation of the lakefill
+            altered these traditional and sacred spaces. This act changed the
+            natural shoreline and disrupted the ecological balance of the area.
+            So, as we convene on the university's lakefill, we encourage you to
+            reflect on its history and relationship with the original stewards
+            of this land.
+          </Text>
+          <Text>
+            The ongoing and current oppression of Indigenous peoples persists
+            today globally. Generations of government policies of forced
+            removal, land seizures and violence have been inflicted on Native
+            peoples. Food insecurity and poverty are high among Native
+            communities today, at roughly double the rate of white Americans. On
+            the Northwestern campus alone, the John Evans Center is named after
+            one of Northwestern's founders John Evans, who had direct
+            involvement in the Sand Creek Massacre, the mass murder of Cheyenne
+            and Arapaho people. According to a report conducted by the
+            University of Denver, Evans's actions as the territorial governor of
+            Colorado, such as violence-inciting proclamations and neglect of
+            treaty-negotiation duties, set the conditions for a massacre to
+            occur. Northwestern continues to develop on stolen land; The Pokagon
+            Band of the Potawatomi Indians Tribal Historic Preservation Office
+            wrote to the City of Evanston and Northwestern over concerns of the
+            new Ryan Field construction and its disturbance of ancestral burials
+            and archaeologically sensitive sites, as seen on Evanston's Land Use
+            Commission's website. Northwestern has yet to acknowledge if
+            archaeological oversight will take place during construction.
+          </Text>
+          <Text>
+            We would like to use this opportunity to urge non-Native attendees
+            to educate themselves about the ongoing struggles Indigenous
+            communities face today as a result of past and contemporary colonial
+            projects, including those perpetrated by the Northwestern University
+            Board of Trustees. We have included a list of resources and links to
+            pages to learn more about the current issues Native communities are
+            suffering from. We urge you to learn about and support
+            Indigenous-led movements meant to combat colonial oppression, such
+            as the Land Back Movement.
+          </Text>
+          <Text>
+            Finally, to expand our action beyond statements, Mayfest Productions
+            is encouraging Mayfest members and all Northwestern community
+            members to attend the NAISA Spring Pow Wow on April 27th, an effort
+            that aligns with our commitment to supporting meaningful community
+            initiatives. We also encourage students to attend the Center for
+            Native American and Indigenous Research and Office of Institutional
+            Diversity and Inclusion's Lunch & Learn and accompanying Q&A hosted
+            by Dave Spencer (Mississippi Chata/Diné) from Oka Homma Singers on
+            April 25th to prepare for attending the Pow Wow. Your participation
+            will help contribute directly to the knowledge of the history of
+            this land.
+          </Text>
+        </TermsSection>
+      </Area>
     </Section>
   );
 }

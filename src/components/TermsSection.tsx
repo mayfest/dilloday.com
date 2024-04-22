@@ -5,7 +5,7 @@ import {
   PlusIcon,
 } from '@heroicons/react/24/outline';
 import { AnimatePresence, motion } from 'framer-motion';
-import { useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import styled from 'styled-components';
 import { mobile } from '.';
 
@@ -60,9 +60,17 @@ interface TermsSectionProps {
 
 export default function TermsSection({ title, children }: TermsSectionProps) {
   const [open, setOpen] = useState(false);
+  const id = useMemo(() => title.toLowerCase().replace(/ /g, '-'), [title]);
+
+  useEffect(() => {
+    if (window.location.hash === `#terms/${id}`) {
+      setOpen(true);
+      document.getElementById(id)?.scrollIntoView();
+    }
+  }, [id]);
 
   return (
-    <Container>
+    <Container id={id}>
       <Title $open={open} onClick={() => setOpen(!open)}>
         <TitleText>{title}</TitleText>
         {open ? <MinusIcon /> : <PlusIcon />}

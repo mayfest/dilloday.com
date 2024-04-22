@@ -7,6 +7,7 @@ import Terms from '@/sections/Terms';
 import Tickets from '@/sections/Tickets';
 import Footer from '@/components/footer';
 import { Metadata } from 'next';
+import Sponsors from '@/sections/Sponsors';
 
 export const metadata: Metadata = {
   title: 'Dillo Day',
@@ -23,7 +24,7 @@ export default function Home() {
       <Team />
       <PastDillos />
       <Terms />
-      {/* <Sponsors /> */}
+      <Sponsors />
       <Contact />
       <Footer />
     </>
