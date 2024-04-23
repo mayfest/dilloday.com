@@ -24,7 +24,7 @@ export default function Home() {
       <Team />
       <PastDillos />
       <Terms />
-      <Sponsors />
+      {/* <Sponsors /> */}
       <Contact />
       <Footer />
     </>
