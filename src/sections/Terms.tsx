@@ -133,10 +133,23 @@ export default function Terms() {
 
         <TermsSection title="METAL DETECTION POLICY">
           <Text>
-            When entering the festival, all attendees will pass through metal
-            detecting wands upon entrance. Guests who are unable to pass through
-            metal detectors for medical reasons may request to be screened
-            separately in a private setting.
+            Attendees will enter through the main entrance of the Dillo Village,
+            located on the East Lawn of Norris. All attendees will pass through
+            metal detecting wands upon entrance, and guests who are unable to
+            pass through metal detectors for medical reasons may request to be
+            screened separately in a private setting. All bags will be searched.
+            Permitted items include empty plastic water bottles, sunscreen
+            (non-aerosol), and compact blankets, sheets, and towels. Please
+            allow more time for entry due to these security measures.
+          </Text>
+          <Text>
+            Attendees who would like to request a separate screening, to request
+            other accommodations for the screening process, or to ask questions
+            about the screening process generally, can contact{' '}
+            <Link href="mailto:dilloopsforce@gmail.com">
+              dilloopsforce@gmail.com
+            </Link>{' '}
+            or call <Link href="tel:8474673719">847-467-3719</Link>.
           </Text>
         </TermsSection>
 
