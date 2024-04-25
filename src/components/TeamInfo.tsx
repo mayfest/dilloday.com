@@ -1,20 +1,39 @@
 // components/TeamInfo.tsx
 import { Team } from '@/lib/teams';
-import React from 'react';
-import styled from 'styled-components';
 import { XMarkIcon } from '@heroicons/react/24/outline';
-import { motion } from 'framer-motion';
+import styled from 'styled-components';
+import { mobile } from '.';
 
 const Container = styled.div`
   width: 100%;
   grid-column: 1 / -1;
-  background-color: #000000;
-  padding: 16px 32px;
+  background-color: #1a1a1a;
   margin: 0;
-  border: 2px solid #ffffff;
   border-radius: 16px;
   position: relative;
   overflow: hidden;
+  display: flex;
+  position: relative;
+  gap: 8px;
+
+  ${mobile} {
+    flex-direction: column;
+  }
+`;
+
+const Image = styled.img`
+  width: 320px;
+  object-fit: cover;
+  object-position: center;
+
+  ${mobile} {
+    width: 100%;
+    height: 240px;
+  }
+`;
+
+const Contents = styled.div`
+  padding: 16px;
 `;
 
 // Close the info box
@@ -30,11 +49,11 @@ const CloseButton = styled.button`
   border-radius: 8px;
 
   &:hover {
-    background-color: #202020;
+    background-color: #323232;
   }
 
   &:active {
-    background-color: #323232;
+    background-color: #484848;
   }
 
   svg {
@@ -49,14 +68,14 @@ const Text = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
-  margin: 20px;
+  margin: 20px 0;
 `;
 
 const Title = styled.h3`
   font-size: 24px;
   font-weight: 700;
   color: #d8b4fe;
-  margin: 16px 0;
+  margin: 20px 0;
 `;
 
 interface TeamInfoProps {
@@ -67,8 +86,11 @@ interface TeamInfoProps {
 export function TeamInfo({ team, onClose }: TeamInfoProps) {
   return (
     <Container>
-      <Title>{team.name}</Title>
-      <Text>{team.description}</Text>
+      <Image src={team.teamImage || ''} alt={`${team.name} team image`} />
+      <Contents>
+        <Title>{team.name}</Title>
+        <Text>{team.description}</Text>
+      </Contents>
       <CloseButton onClick={() => onClose()}>
         <XMarkIcon />
       </CloseButton>
