@@ -2,6 +2,8 @@
 
 redirects:
   - from: /info
-    to: https://dilloday.com/#tickets
+    to: https://www.dilloday.com/#tickets
   - from: /terms
-    to: https://dilloday.com/#terms
+    to: https://www.dilloday.com/#terms
+  - from: /tickets
+    to: https://www.dilloday.com/#tickets
