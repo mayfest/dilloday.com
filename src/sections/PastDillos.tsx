@@ -9,6 +9,7 @@ import { history } from '@/lib/history';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
 import PastDilloInfo from '../components/PastDilloInfo';
 import { AnimatePresence, LayoutGroup, motion } from 'framer-motion';
+import SlideList from '@/components/SlideList';
 
 const spaceGrotesk = Space_Grotesk({ subsets: ['latin'] });
 
@@ -51,7 +52,7 @@ const SlideChangeButton = styled.button`
   svg {
     width: 24px;
     height: 24px;
-    stroke-width: 2px;
+    stroke-width: 3px;
   }
 
   &:disabled {
@@ -59,70 +60,6 @@ const SlideChangeButton = styled.button`
     background-color: #3b0764;
     opacity: 1;
     cursor: not-allowed;
-  }
-`;
-
-const SlideList = styled.div`
-  flex: 1;
-  display: flex;
-  background: #6b21a8;
-  overflow-x: auto;
-  gap: 8px;
-  position: relative;
-
-  &::-webkit-scrollbar {
-    display: none;
-  }
-
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-`;
-
-const SlideListGradientLeft = styled.div`
-  position: sticky;
-  top: 0;
-  left: 0;
-  min-width: 16px;
-  max-width: 16px;
-  height: 100%;
-  background: linear-gradient(to right, #6b21a8, transparent);
-  z-index: 1;
-`;
-
-const SlideListGradientRight = styled.div`
-  position: sticky;
-  top: 0;
-  right: 0;
-  min-width: 16px;
-  max-width: 16px;
-  height: 100%;
-  background: linear-gradient(to left, #6b21a8, transparent);
-  z-index: 1;
-`;
-
-const SlideButton = styled(motion.button)<{ $selected: boolean }>`
-  font-size: 24px;
-  padding: 4px;
-  font-weight: 700;
-
-  color: #c084fc;
-
-  &:hover {
-    color: #e9d5ff;
-  }
-
-  &:active {
-    color: #f3e8ff;
-  }
-
-  ${(props) =>
-    props.$selected &&
-    `
-    color: #ffffff;
-  `}
-
-  ${mobile} {
-    font-size: 16px;
   }
 `;
 
@@ -154,31 +91,11 @@ const slideControllerVariants = {
   },
 };
 
-const slideButtonVariants = {
-  initial: { opacity: 0, y: 20 },
-  animate: {
-    opacity: 1,
-    y: 0,
-  },
-};
-
 export default function PastDillos() {
   const [slide, setSlide] = useState(history.length - 1);
   const [view, setView] = useState<number | null>(null);
   const listRef = useRef<HTMLDivElement>(null);
   const selectedRef = useRef<HTMLButtonElement>(null);
-
-  useEffect(() => {
-    if (listRef.current && selectedRef.current) {
-      const list = listRef.current;
-      const selected = selectedRef.current;
-      list.scrollTo({
-        behavior: 'smooth',
-        left:
-          selected.offsetLeft + selected.offsetWidth / 2 - list.offsetWidth / 2,
-      });
-    }
-  }, [slide]);
 
   return (
     <Section
@@ -203,23 +120,7 @@ export default function PastDillos() {
           >
             <ChevronLeftIcon />
           </SlideChangeButton>
-          <SlideList ref={listRef}>
-            <SlideListGradientLeft />
-            {history.map((dillo, i) => (
-              <SlideButton
-                key={`slide-list-${i}`}
-                $selected={slide === i}
-                ref={slide === i ? selectedRef : null}
-                onClick={() => {
-                  setSlide(i);
-                }}
-                variants={slideButtonVariants}
-              >
-                {dillo.year}
-              </SlideButton>
-            ))}
-            <SlideListGradientRight />
-          </SlideList>
+          <SlideList slide={slide} setSlide={setSlide} />
           <SlideChangeButton
             disabled={slide >= history.length - 1}
             onClick={() => {

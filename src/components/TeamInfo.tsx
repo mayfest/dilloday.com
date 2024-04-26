@@ -8,6 +8,7 @@ const Container = styled.div`
   width: 100%;
   grid-column: 1 / -1;
   background-color: #1a1a1a;
+  border: 2px solid #ffffff;
   margin: 0;
   border-radius: 16px;
   position: relative;
