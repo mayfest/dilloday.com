@@ -8,6 +8,7 @@ import Tickets from '@/sections/Tickets';
 import Footer from '@/components/footer';
 import { Metadata } from 'next';
 import Sponsors from '@/sections/Sponsors';
+import MailingList from '@/components/MaillingList';
 
 export const metadata: Metadata = {
   title: 'Dillo Day',
@@ -26,6 +27,7 @@ export default function Home() {
       <Terms />
       {/* <Sponsors /> */}
       <Contact />
+      <MailingList />
       <Footer />
     </>
   );
