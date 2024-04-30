@@ -61,7 +61,6 @@ export default function SlideButton({
         left:
           selected.offsetLeft + selected.offsetWidth / 2 - list.offsetWidth / 2,
       });
-      console.log('scroll');
     }
   }, [selected, ref, listRef]);
 

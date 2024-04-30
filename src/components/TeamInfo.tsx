@@ -3,6 +3,7 @@ import { Team } from '@/lib/teams';
 import { XMarkIcon } from '@heroicons/react/24/outline';
 import styled from 'styled-components';
 import { mobile } from '.';
+import TeamMembers from './TeamMembers';
 
 const Container = styled.div`
   width: 100%;
@@ -64,7 +65,6 @@ const CloseButton = styled.button`
   }
 `;
 
-// Team info text
 const Text = styled.div`
   display: flex;
   flex-direction: column;
@@ -91,6 +91,7 @@ export function TeamInfo({ team, onClose }: TeamInfoProps) {
       <Contents>
         <Title>{team.name}</Title>
         <Text>{team.description}</Text>
+        <TeamMembers team={team} />
       </Contents>
       <CloseButton onClick={() => onClose()}>
         <XMarkIcon />

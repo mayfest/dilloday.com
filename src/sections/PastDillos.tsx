@@ -86,6 +86,7 @@ const slideControllerVariants = {
       delay: 0.2,
       delayChildren: 0.2,
       staggerChildren: 0.1,
+      staggerDirection: -1,
       when: 'beforeChildren',
     },
   },
