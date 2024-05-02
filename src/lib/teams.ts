@@ -136,6 +136,7 @@ export const teams: Team[] = [
         {
           name: 'Caroline Labow',
           position: '2024 Operations Co-Director',
+          image: '/img/caroline.jpg',
         },
         {
           name: 'Lahari Ramini',
