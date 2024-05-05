@@ -5,10 +5,10 @@ import styled from 'styled-components';
 import { mobile } from '.';
 
 const Container = styled.div`
-  border-top: 1px solid #eaeaea;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
 
   &:last-child {
-    border-bottom: 1px solid #eaeaea;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   }
 `;
 
@@ -18,22 +18,22 @@ const Title = styled.button<{ $open: boolean }>`
   align-items: center;
   width: 100%;
   text-align: left;
-  padding: 16px;
+  padding: 4px 16px;
 
   &:hover {
-    background: #121212;
+    background: rgba(0, 0, 0, 0.05);
   }
 
-  ${({ $open }) => $open && `background: #121212;`}
+  ${({ $open }) => $open && `background: rgba(0, 0, 0, 0.05);`}
 
   svg {
-    width: 24px;
-    height: 24px;
+    width: 16px;
+    height: 16px;
   }
 `;
 
 const TitleText = styled.h4`
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 500;
 
   ${mobile} {
@@ -43,7 +43,7 @@ const TitleText = styled.h4`
 
 const Content = styled(motion.div)`
   padding: 0 16px;
-  background: #121212;
+  background: rgba(0, 0, 0, 0.05);
   overflow: hidden;
   box-sizing: content-box;
 `;
@@ -53,7 +53,7 @@ interface TermsSectionProps {
   children: React.ReactNode;
 }
 
-export default function TermsSection({ title, children }: TermsSectionProps) {
+export default function FAQSection({ title, children }: TermsSectionProps) {
   const [open, setOpen] = useState(false);
   const id = useMemo(() => title.toLowerCase().replace(/ /g, '-'), [title]);
 
