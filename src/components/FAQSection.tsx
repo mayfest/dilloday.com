@@ -58,7 +58,7 @@ export default function FAQSection({ title, children }: TermsSectionProps) {
   const id = useMemo(() => title.toLowerCase().replace(/ /g, '-'), [title]);
 
   useEffect(() => {
-    if (window.location.hash === `#terms/${id}`) {
+    if (window.location.hash === `#tickets/faq/${id}`) {
       setOpen(true);
       document.getElementById(id)?.scrollIntoView();
     }

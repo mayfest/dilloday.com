@@ -277,7 +277,7 @@ export default function Tickets() {
             </Text>
           </Step>
         </Contents>
-        <FAQ>
+        <FAQ id="tickets/faq">
           <FAQTitle>Wristband FAQ</FAQTitle>
           <FAQSection title="What do students need to pick up their own wristband?">
             <FAQText>
