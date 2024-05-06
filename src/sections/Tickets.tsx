@@ -148,6 +148,8 @@ const FAQ = styled.div`
   margin: 0 auto;
 `;
 
+const FAQContents = styled.div``;
+
 const FAQTitle = styled.h3`
   font-size: 16px;
   font-weight: 500;
@@ -162,6 +164,13 @@ const FAQText = styled.p`
 
 const FAQBold = styled.span`
   font-weight: 600;
+`;
+
+const FAQEmail = styled.p`
+  margin: 8px 0;
+  text-align: right;
+  font-size: 14px;
+  opacity: 0.75;
 `;
 
 export default function Tickets() {
@@ -279,73 +288,82 @@ export default function Tickets() {
         </Contents>
         <FAQ id="tickets/faq">
           <FAQTitle>Wristband FAQ</FAQTitle>
-          <FAQSection title="What do students need to pick up their own wristband?">
-            <FAQText>
-              A student needs to have made a reservation, which should be pulled
-              up, and their Wildcard.
-            </FAQText>
-          </FAQSection>
-          <FAQSection title="What does a student need to pick up for their non-Northwestern guest?">
-            <FAQText>
-              To pick up for their non-Northwestern guest, they need the
-              reservation, their own Wildcard, and their guest's ID (or a
-              picture of their ID).
-            </FAQText>
-          </FAQSection>
-          <FAQSection title="I didn't get a confirmation email. What should I do?">
-            <FAQText>
-              First, check your spam folder. If it is not there, please go to
-              the help desk.
-            </FAQText>
-          </FAQSection>
-          <FAQSection title="Can a student pick up for another student?">
-            <FAQText>
-              Absolutely not, every student needs to come in person.
-            </FAQText>
-          </FAQSection>
-          <FAQSection title="My guest cannot make it. Can they get a refund?">
-            <FAQText>Please email NBO to request a refund.</FAQText>
-          </FAQSection>
-          <FAQSection title="My original guest cannot make it. Can I transfer the wristband?">
-            <FAQText>
-              No, guest wristbands can only be released for the registered
-              guest.
-            </FAQText>
-          </FAQSection>
-          <FAQSection title="Can a student pick up a wristband on the day of Dillo instead?">
-            <FAQText>
-              Only Alumni can pick up the day of. Otherwise, to receive a
-              wristband, you MUST come during the distribution hours{' '}
-              <FAQBold>BEFORE</FAQBold> the day of. In addition, replacement
-              wristbands will not be available after the 17th.
-            </FAQText>
-          </FAQSection>
-          <FAQSection title="I just lost my wristband. Can I get another one?">
-            <FAQText>
-              Yes, but you must order a replacement one on NBO first. The option
-              to purchase a replacement will close on May 18th.
-            </FAQText>
-          </FAQSection>
-          <FAQSection title="I work full time. When can I pick up my wristband?">
-            <FAQText>
-              In order to accommodate those working full time, we have added
-              distribution hours to both Saturday May 11th and Sunday May 12th.
-              Additionally, on Tuesday May 14th and Thursday May 16th
-              distribution will be open after working hours.
-            </FAQText>
-          </FAQSection>
-          <FAQSection title="Can I be granted an exception to the rules?">
-            <FAQText>
-              <FAQBold>
-                Requests for exception must be sent to{' '}
-                <Link href="mailto:dilloopsforce@gmail.com">
-                  dilloopsforce@gmail.com
-                </Link>{' '}
-                and will only be approved with significant evidence and
-                circumstances.
-              </FAQBold>
-            </FAQText>
-          </FAQSection>
+          <FAQContents>
+            <FAQSection title="What do students need to pick up their own wristband?">
+              <FAQText>
+                A student needs to have made a reservation, which should be
+                pulled up, and their Wildcard.
+              </FAQText>
+            </FAQSection>
+            <FAQSection title="What does a student need to pick up for their non-Northwestern guest?">
+              <FAQText>
+                To pick up for their non-Northwestern guest, they need the
+                reservation, their own Wildcard, and their guest's ID (or a
+                picture of their ID).
+              </FAQText>
+            </FAQSection>
+            <FAQSection title="I didn't get a confirmation email. What should I do?">
+              <FAQText>
+                First, check your spam folder. If it is not there, please go to
+                the help desk.
+              </FAQText>
+            </FAQSection>
+            <FAQSection title="Can a student pick up for another student?">
+              <FAQText>
+                Absolutely not, every student needs to come in person.
+              </FAQText>
+            </FAQSection>
+            <FAQSection title="My guest cannot make it. Can they get a refund?">
+              <FAQText>Please email NBO to request a refund.</FAQText>
+            </FAQSection>
+            <FAQSection title="My original guest cannot make it. Can I transfer the wristband?">
+              <FAQText>
+                No, guest wristbands can only be released for the registered
+                guest.
+              </FAQText>
+            </FAQSection>
+            <FAQSection title="Can a student pick up a wristband on the day of Dillo instead?">
+              <FAQText>
+                Only Alumni can pick up the day of. Otherwise, to receive a
+                wristband, you MUST come during the distribution hours{' '}
+                <FAQBold>BEFORE</FAQBold> the day of. In addition, replacement
+                wristbands will not be available after the 17th.
+              </FAQText>
+            </FAQSection>
+            <FAQSection title="I just lost my wristband. Can I get another one?">
+              <FAQText>
+                Yes, but you must order a replacement one on NBO first. The
+                option to purchase a replacement will close on May 18th.
+              </FAQText>
+            </FAQSection>
+            <FAQSection title="I work full time. When can I pick up my wristband?">
+              <FAQText>
+                In order to accommodate those working full time, we have added
+                distribution hours to both Saturday May 11th and Sunday May
+                12th. Additionally, on Tuesday May 14th and Thursday May 16th
+                distribution will be open after working hours.
+              </FAQText>
+            </FAQSection>
+            <FAQSection title="Can I be granted an exception to the rules?">
+              <FAQText>
+                <FAQBold>
+                  Requests for exception must be sent to{' '}
+                  <Link href="mailto:dilloopsforce@gmail.com">
+                    dilloopsforce@gmail.com
+                  </Link>{' '}
+                  and will only be approved with significant evidence and
+                  circumstances.
+                </FAQBold>
+              </FAQText>
+            </FAQSection>
+          </FAQContents>
+          <FAQEmail>
+            Have a question that isn't answered here? Reach out to{' '}
+            <Link href="mailto:dilloopsforce@gmail.com">
+              dilloopsforce@gmail.com
+            </Link>
+            .
+          </FAQEmail>
         </FAQ>
         <CampDilloBanner />
       </Container>
