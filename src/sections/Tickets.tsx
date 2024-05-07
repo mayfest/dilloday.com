@@ -333,7 +333,7 @@ export default function Tickets() {
             <FAQSection title="I just lost my wristband. Can I get another one?">
               <FAQText>
                 Yes, but you must order a replacement one on NBO first. The
-                option to purchase a replacement will close on May 18th.
+                option to purchase a replacement will close on May 16th.
               </FAQText>
             </FAQSection>
             <FAQSection title="I work full time. When can I pick up my wristband?">
