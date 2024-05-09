@@ -162,6 +162,12 @@ const FAQText = styled.p`
   font-size: 12px;
 `;
 
+const FAQList = styled.ol`
+  font-size: 12px;
+  margin: 8px 0;
+  text-align: left;
+`;
+
 const FAQBold = styled.span`
   font-weight: 600;
 `;
@@ -300,6 +306,24 @@ export default function Tickets() {
                 To pick up for their non-Northwestern guest, they need the
                 reservation, their own Wildcard, and their guest's ID (or a
                 picture of their ID).
+              </FAQText>
+            </FAQSection>
+            <FAQSection title="What should I do if I'm struggling to log into NBO, the website is glitching, or I am having some other kind of software difficulty?">
+              <FAQText>
+                We have heard of a situation in which individuals are having
+                trouble logging into the NBO site. We recommend trying the
+                following:
+              </FAQText>
+              <FAQText>1. Use another browser to sign in</FAQText>
+              <FAQText>2. Log in, refresh, log in again</FAQText>
+              <FAQText>3. Try signing in on a different device</FAQText>
+              <FAQText>4. Use incognito mode on your browser</FAQText>
+              <FAQText>
+                If none of these solutions work, we ask that you email{' '}
+                <Link href="mailto:norrisboxoffice@northwestern.edu">
+                  norrisboxoffice@northwestern.edu
+                </Link>{' '}
+                with your dilemma.
               </FAQText>
             </FAQSection>
             <FAQSection title="I didn't get a confirmation email. What should I do?">
