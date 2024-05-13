@@ -179,11 +179,14 @@ export default function Terms() {
               <Text>Sunscreen</Text>
             </Item>
             <Item>
-              <Text>Blankets, Sheets, Towels</Text>
+              <Text>Towels</Text>
             </Item>
           </List>
           <Text>Prohibited Items</Text>
           <List>
+            <Item>
+              <Text>Blankets and Sheets (unless for medical reasons)</Text>
+            </Item>
             <Item>
               <Text>
                 Skateboards, scooters, bikes, and other personal vehicles
