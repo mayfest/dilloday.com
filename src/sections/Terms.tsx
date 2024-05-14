@@ -129,7 +129,7 @@ export default function Terms() {
       </Text>
 
       <Area>
-        <AreaTitle>SECURITY</AreaTitle>
+        <AreaTitle id="know-before-you-go">SECURITY</AreaTitle>
 
         <TermsSection title="METAL DETECTION POLICY">
           <Text>
