@@ -35,7 +35,7 @@ const Link = styled.a`
 `;
 
 const Area = styled.div`
-  margin: 32px 0;
+  margin: 64px 0;
 `;
 
 const AreaTitle = styled.h3`
@@ -263,7 +263,7 @@ export default function Terms() {
       </Area>
 
       <Area>
-        <AreaTitle>TICKETING</AreaTitle>
+        <AreaTitle id="terms/ticketing">TICKETING</AreaTitle>
 
         <TermsSection title="NU UNDERGRADUATE WRISTBAND POLICY">
           <Text>
@@ -384,7 +384,7 @@ export default function Terms() {
       </Area>
 
       <Area>
-        <AreaTitle>ACCESSIBILITY</AreaTitle>
+        <AreaTitle id="terms/accessibility">ACCESSIBILITY</AreaTitle>
 
         <TermsSection title="ACCESSIBILITY POLICY">
           <Text>
@@ -420,7 +420,82 @@ export default function Terms() {
       </Area>
 
       <Area>
-        <AreaTitle>ACKNOWLEDGEMENTS</AreaTitle>
+        <AreaTitle id="terms/dillo-day-mobile-app">
+          DILLO DAY MOBILE APP
+        </AreaTitle>
+
+        <TermsSection title="DILLO CABIN MATES">
+          <Text>
+            Dillo Cabin Mates is a feature that connects members to other
+            members based on music taste. Only Northwestern-affiliated members
+            are eligible to participate, including undergraduate students,
+            graduate students, alumni, faculty, and staff. You will only be
+            matched with another Northwestern-affiliated member of the same
+            type, where types are as follows: Undergraduate, Graduate and
+            Alumni, and Faculty and Staff. A Google account with a Northwestern
+            domain primary email address is required to participate.
+          </Text>
+          <Text>
+            Registration can be done up until Friday, May 17, 2024 at 8:00 PM.
+            Matches will be made and shared on the morning of Dillo Day,
+            Saturday, May 18, 2024. Enable push notifications within the app for
+            updates.
+          </Text>
+          <Text>Both Spotify and Apple Music are supported.</Text>
+        </TermsSection>
+
+        <TermsSection title="STORE GIVEAWAY TERMS">
+          <Text>
+            The first 100 people to register for Dillo Cabin Mates will receive
+            15% off their next purchase at the{' '}
+            <Link
+              href="https://store.dilloday.com"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Dillo Day Store
+            </Link>
+            .
+          </Text>
+          <Text>
+            Discount codes will be distributed via email sometime during the
+            week after Dillo Day. Each discount code is unique and is
+            single-use.
+          </Text>
+          <Text>Some products may not be eligible for the discount.</Text>
+        </TermsSection>
+
+        <TermsSection title="APP DATA PRIVACY">
+          <Text>All features that require user data are optional.</Text>
+          <Text>
+            When using features that require user data, at least some of the
+            following data may be associated with you: Google account name,
+            Google email address, Spotify username, limited Spotify listening
+            trends, limited Apple Music listening trends.
+          </Text>
+          <Text>
+            By connecting your Google account to the app, in addition to app
+            features, your name and email address may be automatically
+            subscribed to the Dillo Day mailing list for important safety
+            information and exclusive offers. You can unsubscribe at any time.
+          </Text>
+          <Text>
+            We do not use your data for any purpose other than those outlined in
+            terms and conditions. Your data is never shared with any other
+            organization or individuals outside of only the necessary Mayfest
+            Productions individuals.
+          </Text>
+
+          <Text>
+            You may request deletion of your data at any time by reaching out to{' '}
+            <Link href="mailto:support@dilloday.com">support@dilloday.com</Link>
+            .
+          </Text>
+        </TermsSection>
+      </Area>
+
+      <Area>
+        <AreaTitle id="terms/acknowledgements">ACKNOWLEDGEMENTS</AreaTitle>
 
         <TermsSection title="LAND ACKNOWLEDGEMENT">
           <Text>

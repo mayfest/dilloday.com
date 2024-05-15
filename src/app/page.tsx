@@ -9,6 +9,7 @@ import Footer from '@/components/footer';
 import { Metadata } from 'next';
 import Sponsors from '@/sections/Sponsors';
 import MailingList from '@/components/MaillingList';
+import MobileApp from '@/sections/MobileApp';
 
 export const metadata: Metadata = {
   title: 'Dillo Day',
@@ -22,6 +23,7 @@ export default function Home() {
       <Hero />
       <Tickets />
       <About />
+      <MobileApp />
       <Team />
       <PastDillos />
       <Terms />
