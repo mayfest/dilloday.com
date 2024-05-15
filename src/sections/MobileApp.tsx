@@ -195,9 +195,6 @@ const imageVariants = {
   animate: {
     opacity: 1,
     scale: 1,
-    transition: {
-      delay: 0.5,
-    },
   },
 };
 
@@ -208,7 +205,7 @@ const imageContainerVariants = {
   animate: {
     width: '256px',
     transition: {
-      delay: 1,
+      delay: 0.5,
       duration: 0.5,
       ease: 'easeOut',
     },
