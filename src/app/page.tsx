@@ -5,7 +5,7 @@ import PastDillos from '@/sections/PastDillos';
 import Team from '@/sections/Team';
 import Terms from '@/sections/Terms';
 import Tickets from '@/sections/Tickets';
-import Footer from '@/components/footer';
+import Footer from '@/components/footerx';
 import { Metadata } from 'next';
 import Sponsors from '@/sections/Sponsors';
 import MailingList from '@/components/MaillingList';
