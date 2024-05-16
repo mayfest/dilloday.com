@@ -111,8 +111,13 @@ const Highlight = styled.span<{ color: string }>`
 
 const DownloadContainer = styled.div`
   display: flex;
+  align-items: center;
   margin: 8px 0;
   gap: 8px;
+
+  ${mobile} {
+    flex-direction: column;
+  }
 `;
 
 const DownloadButton = styled.a`
