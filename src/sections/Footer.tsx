@@ -71,8 +71,19 @@ export default function Footer() {
   return (
     <footer className="bg-black">
       <div className="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
+        <p className="my-8 text-center text-sm leading-5 text-gray-100">
+          Have any issues or suggestions for this website?{' '}
+          <a
+            className="text-[#e9d5ff] hover:underline"
+            href="https://www.dilloday.com/feedback"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Let Mayfest Tech know.
+          </a>
+        </p>
         <nav
-          className="-mb-6 columns-2 sm:flex sm:justify-center sm:gap-12"
+          className="my-4 columns-2 sm:flex sm:justify-center sm:gap-12"
           aria-label="Footer"
         >
           {navigation.map((item) => (
@@ -86,7 +97,7 @@ export default function Footer() {
             </div>
           ))}
         </nav>
-        <div className="mt-10 flex justify-center gap-10">
+        <div className="mt-2 flex justify-center gap-10">
           {socials.map((item) => (
             <a
               key={item.name}
@@ -99,7 +110,7 @@ export default function Footer() {
           ))}
         </div>
         <p className="mt-10 mb-2 text-center text-xs leading-5 text-gray-100">
-          &copy; 2024 Mayfest Productions. All rights reserved.
+          Copyright &copy; 2024 Mayfest Productions. All rights reserved.
         </p>
         <p className="my-2 text-center text-xs leading-5 text-gray-100">
           All photos are courtesy of{' '}
@@ -112,6 +123,12 @@ export default function Footer() {
             Justin Barbin Photography
           </a>
           .
+        </p>
+        <p className="my-2 text-center text-xs leading-5 text-gray-100">
+          Apple and the Apple Logo are registered trademarks of Apple Inc.
+        </p>
+        <p className="my-2 text-center text-xs leading-5 text-gray-100">
+          Google Play and the Google Play logo are trademarks of Google LLC.
         </p>
       </div>
     </footer>

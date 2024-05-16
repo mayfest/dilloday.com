@@ -1,6 +1,6 @@
 'use client';
 import styled from 'styled-components';
-import { mobile } from '.';
+import { mobile } from '@/components';
 import { useState } from 'react';
 import { doc, setDoc } from 'firebase/firestore';
 import { db } from '@/lib/app';

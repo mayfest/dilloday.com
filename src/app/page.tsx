@@ -1,15 +1,14 @@
 import About from '@/sections/About';
 import Contact from '@/sections/Contact';
+import Footer from '@/sections/Footer';
 import Hero from '@/sections/Hero';
+import MailingList from '@/sections/MailingList';
+import MobileApp from '@/sections/MobileApp';
 import PastDillos from '@/sections/PastDillos';
 import Team from '@/sections/Team';
 import Terms from '@/sections/Terms';
 import Tickets from '@/sections/Tickets';
-import Footer from '@/components/footerx';
 import { Metadata } from 'next';
-import Sponsors from '@/sections/Sponsors';
-import MailingList from '@/components/MaillingList';
-import MobileApp from '@/sections/MobileApp';
 
 export const metadata: Metadata = {
   title: 'Dillo Day',
