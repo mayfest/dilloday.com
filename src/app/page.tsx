@@ -9,6 +9,7 @@ import Footer from '@/components/footer';
 import { Metadata } from 'next';
 import Sponsors from '@/sections/Sponsors';
 import MailingList from '@/components/MaillingList';
+import Announcement from '@/sections/Announcement';
 
 export const metadata: Metadata = {
   title: 'Dillo Day',

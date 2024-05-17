@@ -3,6 +3,7 @@
 import { getHrefProps, navigation } from '@/lib/directory';
 import GradientDivider from '../components/GradientDivider';
 import { ArrowRightIcon, ChevronDownIcon } from '@heroicons/react/24/outline';
+import Announcement from '@/sections/Announcement';
 
 export default function Hero() {
   return (
@@ -48,6 +49,7 @@ export default function Hero() {
             }}
           />
         </div>
+
         <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
           <div className="text-center">
             <p className="mb-4 text-3xl font-bold leading-8 text-gray-200">
