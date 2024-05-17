@@ -65,7 +65,7 @@ export default function FAQSection({ title, children }: TermsSectionProps) {
   }, [id]);
 
   return (
-    <Container id={id}>
+    <Container id={`id-${id}`}>
       <Title $open={open} onClick={() => setOpen(!open)}>
         <TitleText>{title}</TitleText>
         {open ? <MinusIcon /> : <PlusIcon />}

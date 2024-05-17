@@ -1,3 +1,4 @@
+import PageContainer from '@/components/PageContainer';
 import About from '@/sections/About';
 import Contact from '@/sections/Contact';
 import Footer from '@/sections/Footer';
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <>
+    <PageContainer>
       <Hero />
       <Tickets />
       <About />
@@ -30,6 +31,6 @@ export default function Home() {
       <Contact />
       <MailingList />
       <Footer />
-    </>
+    </PageContainer>
   );
 }

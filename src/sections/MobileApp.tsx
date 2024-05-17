@@ -219,7 +219,7 @@ const imageContainerVariants = {
 
 export default function MobileApp() {
   return (
-    <Section id="app" style={{ maxWidth: '1000px' }}>
+    <Section id="id-app" style={{ maxWidth: '1000px' }}>
       <Container>
         <ImageContainer
           variants={imageContainerVariants}
