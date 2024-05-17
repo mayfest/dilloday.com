@@ -144,7 +144,6 @@ const DownloadImageApple = styled.img`
 
 const DownloadImageGoogle = styled.img`
   height: 64px;
-  opacity: 0.5;
 `;
 
 const DownloadPending = styled.div`
@@ -256,31 +255,26 @@ export default function MobileApp() {
             shared.
           </Text>
           <DownloadContainer>
-            <DownloadButton href="https://apps.apple.com/us/app/dillo-day-2024/id6502626702">
+            <DownloadButton
+              href="https://apps.apple.com/us/app/dillo-day-2024/id6502626702"
+              target="_blank"
+              rel="noreferrer"
+            >
               <DownloadImageApple
                 src="/img/app-store.svg"
                 alt="Apple App Store"
               />
             </DownloadButton>
-            <DownloadButton>
+            <DownloadButton
+              href="https://play.google.com/store/apps/details?id=com.dilloday.app2024"
+              target="_blank"
+              rel="noreferrer"
+            >
               <DownloadImageGoogle
                 src="/img/google-play.png"
                 alt="Google Play"
               />
             </DownloadButton>
-            <DownloadPending>
-              <DownloadPendingText>
-                Google Play Store download is currently pending.
-              </DownloadPendingText>
-              <DownloadPendingSubtext>
-                In the meantime, you can download the app officially from our
-                servers.
-              </DownloadPendingSubtext>
-              <DownloadButton href="https://cdn.dilanxd.net/dillo-day-app-2024-android.apk">
-                <DownloadPendingText>Download for Android</DownloadPendingText>
-                <ChevronRightIcon />
-              </DownloadButton>
-            </DownloadPending>
           </DownloadContainer>
           <SocialAboveTitle>
             Don't miss out on this year's social feature
