@@ -65,9 +65,7 @@ export default function Hero() {
               href="#tickets"
               className="flex border border-purple-400 px-4 py-1 items-center gap-2 text-purple-300 rounded-xl border-opacity-50 hover:border-opacity-100 hover:text-purple-200 transition-all duration-150 active:scale-95"
             >
-              <span>
-                Get your tickets by <span className="font-bold">May 17</span>
-              </span>
+              <span>Know Before You Go</span>
               <ArrowRightIcon className="h-4 w-4 stroke-[3px]" />
             </a>
           </div>
