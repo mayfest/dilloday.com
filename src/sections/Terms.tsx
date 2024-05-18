@@ -129,7 +129,7 @@ export default function Terms() {
       </Text>
 
       <Area>
-        <AreaTitle id="id-know-before-you-go">SECURITY</AreaTitle>
+        <AreaTitle id="id-security">SECURITY</AreaTitle>
 
         <TermsSection title="METAL DETECTION POLICY">
           <Text>
@@ -186,6 +186,9 @@ export default function Terms() {
           <List>
             <Item>
               <Text>Blankets and Sheets (unless for medical reasons)</Text>
+            </Item>
+            <Item>
+              <Text>Metal water bottles</Text>
             </Item>
             <Item>
               <Text>

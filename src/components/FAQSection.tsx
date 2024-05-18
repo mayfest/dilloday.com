@@ -5,10 +5,10 @@ import styled from 'styled-components';
 import { mobile } from '.';
 
 const Container = styled.div`
-  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
 
   &:last-child {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   }
 `;
 
@@ -18,13 +18,13 @@ const Title = styled.button<{ $open: boolean }>`
   align-items: center;
   width: 100%;
   text-align: left;
-  padding: 4px 16px;
+  padding: 8px 16px;
 
   &:hover {
-    background: rgba(0, 0, 0, 0.05);
+    background: rgba(255, 255, 255, 0.05);
   }
 
-  ${({ $open }) => $open && `background: rgba(0, 0, 0, 0.05);`}
+  ${({ $open }) => $open && `background: rgba(255, 255, 255, 0.05);`}
 
   svg {
     width: 16px;
@@ -33,7 +33,7 @@ const Title = styled.button<{ $open: boolean }>`
 `;
 
 const TitleText = styled.h4`
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 500;
 
   ${mobile} {
@@ -43,7 +43,7 @@ const TitleText = styled.h4`
 
 const Content = styled(motion.div)`
   padding: 0 16px;
-  background: rgba(0, 0, 0, 0.05);
+  background: rgba(255, 255, 255, 0.05);
   overflow: hidden;
   box-sizing: content-box;
 `;

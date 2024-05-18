@@ -11,8 +11,8 @@ const StepBubble = styled.div`
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background: #d1555a;
-  color: white;
+  background: #f8b547;
+  color: #13381f;
   font-size: 18px;
   font-weight: 600;
   display: flex;
@@ -24,7 +24,7 @@ const Line = styled.div`
   margin: 0 auto;
   width: 2px;
   height: 100%;
-  background: #d1555a;
+  background: #f8b547;
 `;
 
 const Contents = styled.div<{ $margin?: boolean }>`
@@ -35,7 +35,7 @@ const Contents = styled.div<{ $margin?: boolean }>`
 const Title = styled.p`
   font-size: 20px;
   font-weight: 600;
-  color: #d1555a;
+  color: #f8b547;
 `;
 
 interface StepProps {

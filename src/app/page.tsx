@@ -1,6 +1,7 @@
 import PageContainer from '@/components/PageContainer';
 import About from '@/sections/About';
 import Contact from '@/sections/Contact';
+import EventInformation from '@/sections/EventInformation';
 import Footer from '@/sections/Footer';
 import Hero from '@/sections/Hero';
 import MailingList from '@/sections/MailingList';
@@ -21,7 +22,8 @@ export default function Home() {
   return (
     <PageContainer>
       <Hero />
-      <Tickets />
+      <EventInformation />
+      {/* <Tickets /> */}
       <About />
       <MobileApp />
       <Team />
