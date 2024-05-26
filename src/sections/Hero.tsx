@@ -74,7 +74,7 @@ export default function Hero() {
           className="absolute bottom-16 left-1/2 -translate-x-1/2 text-center opacity-50 transition-all duration-300 hover:translate-y-2 hover:opacity-100"
           onClick={() => {
             document
-              .querySelector('#about')
+              .querySelector('#id-about')
               ?.scrollIntoView({ behavior: 'smooth' });
           }}
         >
