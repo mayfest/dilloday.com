@@ -60,15 +60,6 @@ export default function Hero() {
               presented by Mayfest Productions, est. 1971
             </p>
           </div>
-          <div className="flex justify-center my-8">
-            <a
-              href="#tickets"
-              className="flex border border-purple-400 px-4 py-1 items-center gap-2 text-purple-300 rounded-xl border-opacity-50 hover:border-opacity-100 hover:text-purple-200 transition-all duration-150 active:scale-95"
-            >
-              <span>Know Before You Go</span>
-              <ArrowRightIcon className="h-4 w-4 stroke-[3px]" />
-            </a>
-          </div>
         </div>
         <div className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]">
           <div

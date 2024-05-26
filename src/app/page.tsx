@@ -22,7 +22,7 @@ export default function Home() {
   return (
     <PageContainer>
       <Hero />
-      <EventInformation />
+      {/* <EventInformation /> */}
       {/* <Tickets /> */}
       <About />
       <MobileApp />
