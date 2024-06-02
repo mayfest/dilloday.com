@@ -46,7 +46,7 @@ const TitleTextRight = styled(motion.p)`
       width: calc(100% + 8px);
       height: calc(100% + 16px);
       z-index: -1;
-      background-color: #323232;
+      background-color: #ffffff;
       transition:
         transform 300ms ease,
         opacity 300ms ease;
