@@ -79,7 +79,7 @@ export default function Footer() {
             target="_blank"
             rel="noreferrer"
           >
-            Let Mayfest Tech know.
+            Let us know.
           </a>
         </p>
         <nav

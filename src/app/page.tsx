@@ -1,6 +1,6 @@
 import PageContainer from '@/components/PageContainer';
 import About from '@/sections/About';
-import Contact from '@/sections/Contact';
+import Support from '@/sections/Support';
 import EventInformation from '@/sections/EventInformation';
 import Footer from '@/sections/Footer';
 import Hero from '@/sections/Hero';
@@ -30,7 +30,7 @@ export default function Home() {
       <PastDillos />
       <Terms />
       {/* <Sponsors /> */}
-      <Contact />
+      <Support />
       <MailingList />
       <Footer />
     </PageContainer>

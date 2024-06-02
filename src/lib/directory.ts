@@ -10,7 +10,7 @@ export const navigation: NavigationItem[] = [
   { name: 'OUR TEAM', href: '#our-team' },
   { name: 'PAST DILLOS', href: '#past-dillos' },
   { name: 'TERMS', href: '#terms' },
-  { name: 'CONTACT', href: '#contact' },
+  { name: 'SUPPORT', href: 'https://support.dilloday.com' },
 ];
 
 export function getHrefProps(href: string) {

@@ -22,7 +22,7 @@ const Title = styled(motion.div)`
 const TitleTextLeft = styled(motion.p)`
   font-size: 48px;
   text-align: left;
-  color: #d8b4fe;
+  color: #ffffff;
 
   ${mobile} {
     font-size: 28px;
@@ -32,10 +32,9 @@ const TitleTextLeft = styled(motion.p)`
 const TitleTextRight = styled(motion.p)`
   font-size: 44px;
   text-align: left;
-  color: #ffffff;
 
   a {
-    color: #ffffff;
+    color: #c084fc;
     position: relative;
 
     &::after {
@@ -47,7 +46,7 @@ const TitleTextRight = styled(motion.p)`
       width: calc(100% + 8px);
       height: calc(100% + 16px);
       z-index: -1;
-      background-color: #3b0764;
+      background-color: #323232;
       transition:
         transform 300ms ease,
         opacity 300ms ease;
@@ -107,7 +106,13 @@ export default function Contact() {
       <Title>
         <TitleTextLeft variants={titleVariants}>Questions?</TitleTextLeft>
         <TitleTextRight variants={titleVariants}>
-          <Link href="mailto:support@dilloday.com">support@dilloday.com</Link>
+          <Link
+            href="https://support.dilloday.com"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Contact Us.
+          </Link>
         </TitleTextRight>
       </Title>
     </Section>

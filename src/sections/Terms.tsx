@@ -103,9 +103,13 @@ export default function Terms() {
         before admittance onto the festival grounds. There will be metal
         detection. For more information on our bag policy and what items are
         allowed and prohibited, check the corresponding section. If specific
-        accommodations are needed, please reach out to{' '}
-        <Link href="mailto:dilloopsforce@gmail.com">
-          dilloopsforce@gmail.com
+        accommodations are needed, please submit an{' '}
+        <Link
+          href="https://support.dilloday.com/?t=Accessibility+and+Wellness&s=Medical+Equipment"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Medical Equipment Accommodation Request
         </Link>{' '}
         and we will try to accommodate your needs.
       </Text>
@@ -121,9 +125,13 @@ export default function Terms() {
         Lakefill. SIS is focused on mitigating any problems revolving around
         security and the attendees. By providing a student buffer, we strive to
         cut down on tensions and make the festival the best it can be. For more
-        information surrounding SIS, please visit our website or reach out to{' '}
-        <Link href="mailto:dilloopsforce@gmail.com">
-          dilloopsforce@gmail.com
+        information surrounding SIS, feel free to submit a{' '}
+        <Link
+          href="https://support.dilloday.com/?t=Security+Policies+and+Venue+Access&s=Student+Intervention+Services"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Student Intervention Services Information Request
         </Link>
         .
       </Text>
@@ -145,9 +153,13 @@ export default function Terms() {
           <Text>
             Attendees who would like to request a separate screening, to request
             other accommodations for the screening process, or to ask questions
-            about the screening process generally, can contact{' '}
-            <Link href="mailto:dilloopsforce@gmail.com">
-              dilloopsforce@gmail.com
+            about the screening process generally, can submit a{' '}
+            <Link
+              href="https://support.dilloday.com/?t=Security+Policies+and+Venue+Access"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Security Policies and Venue Access Information Request
             </Link>{' '}
             or call <Link href="tel:8474673719">847-467-3719</Link>.
           </Text>
@@ -161,9 +173,13 @@ export default function Terms() {
             a typical backpack. Examples include purses, drawstring bags, or
             camelbacks. Bigger bags will not be allowed into the festival. All
             bags will be searched by security prior to entering the festival.
-            For questions, send an email to{' '}
-            <Link href="mailto:dilloopsforce@gmail.com">
-              dilloopsforce@gmail.com
+            For questions, submit a{' '}
+            <Link
+              href="https://support.dilloday.com/?t=Security+Policies+and+Venue+Access"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Security Policies and Venue Access Information Request
             </Link>
             .
           </Text>
@@ -273,9 +289,13 @@ export default function Terms() {
             Every enrolled Northwestern University undergraduate student may
             receive a free festival wristband when they register for one as
             instructed. If you are unable to register for an NU Undergraduate
-            wristband, contact{' '}
-            <Link href="mailto:dilloopsforce@gmail.com">
-              dilloopsforce@gmail.com
+            wristband, submit a{' '}
+            <Link
+              href="https://support.dilloday.com/?t=Ticketing+and+Wristbands&s=Wristband+Registration"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Wristband Registration Concern
             </Link>{' '}
             immediately.
           </Text>
@@ -330,9 +350,13 @@ export default function Terms() {
             each. Residents and extended guests must be at least 18 years of
             age. Wristbands for the Evanston community and guests must be picked
             up prior to the day of the festival. If you foresee this to be an
-            issue, you must email{' '}
-            <Link href="mailto:dilloopsforce@gmail.com">
-              dilloopsforce@gmail.com
+            issue, you must submit a{' '}
+            <Link
+              href="https://support.dilloday.com/?t=Ticketing+and+Wristbands&s=Wristband+Pickup"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Wristband Pickup Concern
             </Link>{' '}
             before May 18, 2024. Otherwise, all wristbands must be picked up
             during normal distribution hours from May 9, 2024 through May 17,
@@ -377,9 +401,13 @@ export default function Terms() {
             emergency, there are no refunds given. Mayfest Productions has the
             sole discretion as to any exceptions to this and appeals will be
             heard on a case-by-case basis. To submit formal requests for
-            exceptions, please send a brief description to{' '}
-            <Link href="mailto:dilloopsforce@gmail.com">
-              dilloopsforce@gmail.com
+            exceptions, please submit a{' '}
+            <Link
+              href="https://support.dilloday.com/?t=Ticketing+and+Wristbands&s=Cancellation+Policy+Exemption"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Cancellation Policy Exemption Request
             </Link>
             .
           </Text>
@@ -396,10 +424,15 @@ export default function Terms() {
             reach out to Mayfest in order to arrange appropriate festival
             accommodations. Mayfest cannot guarantee accommodations, and our
             Accessibility Team will review requests on a case-by-case basis.
-            When ordering a wristband, fill out the accessibility requests Any
-            questions or concerns related to accessibility can be sent to{' '}
-            <Link href="mailto:dillocommunity@gmail.com">
-              dillocommunity@gmail.com
+            When ordering a wristband, fill out the accessibility requests with
+            your needs. Any questions or concerns related to accessibility can
+            be relayed to Mayfest with an{' '}
+            <Link
+              href="https://support.dilloday.com/?t=Accessibility+and+Wellness&s=Accessibility+Request"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Accessibility Request
             </Link>
             .
           </Text>
@@ -490,8 +523,14 @@ export default function Terms() {
           </Text>
 
           <Text>
-            You may request deletion of your data at any time by reaching out to{' '}
-            <Link href="mailto:support@dilloday.com">support@dilloday.com</Link>
+            You may request deletion of your data at any time by submitting a{' '}
+            <Link
+              href="https://support.dilloday.com/?t=Technical+Support+and+Feedback&s=Security+and+Privacy"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Security and Privacy Request
+            </Link>
             .
           </Text>
         </TermsSection>
