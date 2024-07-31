@@ -1,6 +1,8 @@
 import { getHrefProps, navigation } from '@/lib/directory';
 import { SVGProps } from 'react';
 
+// TODO move away from Tailwind CSS for consistency
+
 interface SocialItem {
   name: string;
   href: string;

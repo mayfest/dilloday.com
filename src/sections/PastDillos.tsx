@@ -100,7 +100,7 @@ export default function PastDillos() {
 
   return (
     <Section
-      id="id-past-dillos"
+      id="past-dillos"
       variants={sectionVariants}
       initial="initial"
       whileInView="animate"

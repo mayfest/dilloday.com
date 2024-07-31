@@ -97,7 +97,7 @@ const titleVariants = {
 export default function Contact() {
   return (
     <Section
-      id="id-contact"
+      id="contact"
       variants={sectionVariants}
       initial="initial"
       whileInView="animate"

@@ -35,7 +35,6 @@ export const teams: Team[] = [
         { name: 'Nathan Dent' },
         { name: 'Timia Quincy McCoade' },
         { name: 'Skylar Deeter' },
-        { name: 'Sami Contractor' },
         { name: 'Jack Ding' },
         { name: 'Elena Hubert' },
         { name: 'Maya Shadid' },

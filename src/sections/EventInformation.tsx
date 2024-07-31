@@ -189,7 +189,7 @@ const FAQEmail = styled.p`
 
 export default function EventInformation() {
   return (
-    <Section id="id-know-before-you-go">
+    <Section id="know-before-you-go">
       <Container>
         <Title>☀️ Dillo Day 52: Know Before You Go ☀️</Title>
         <Contents>

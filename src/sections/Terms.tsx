@@ -46,7 +46,7 @@ const AreaTitle = styled.h3`
 
 export default function Terms() {
   return (
-    <Section id="id-terms" style={{ maxWidth: '800px' }}>
+    <Section id="terms" style={{ maxWidth: '800px' }}>
       <Title>Terms and Conditions</Title>
       <Text>
         Dillo Day strives to create the safest and most comfortable environment
@@ -137,7 +137,7 @@ export default function Terms() {
       </Text>
 
       <Area>
-        <AreaTitle id="id-security">SECURITY</AreaTitle>
+        <AreaTitle id="security">SECURITY</AreaTitle>
 
         <TermsSection title="METAL DETECTION POLICY">
           <Text>
@@ -282,7 +282,7 @@ export default function Terms() {
       </Area>
 
       <Area>
-        <AreaTitle id="id-terms/ticketing">TICKETING</AreaTitle>
+        <AreaTitle id="terms/ticketing">TICKETING</AreaTitle>
 
         <TermsSection title="NU UNDERGRADUATE WRISTBAND POLICY">
           <Text>
@@ -415,7 +415,7 @@ export default function Terms() {
       </Area>
 
       <Area>
-        <AreaTitle id="id-terms/accessibility">ACCESSIBILITY</AreaTitle>
+        <AreaTitle id="terms/accessibility">ACCESSIBILITY</AreaTitle>
 
         <TermsSection title="ACCESSIBILITY POLICY">
           <Text>
@@ -456,7 +456,7 @@ export default function Terms() {
       </Area>
 
       <Area>
-        <AreaTitle id="id-terms/dillo-day-mobile-app">
+        <AreaTitle id="terms/dillo-day-mobile-app">
           DILLO DAY MOBILE APP
         </AreaTitle>
 
@@ -537,7 +537,7 @@ export default function Terms() {
       </Area>
 
       <Area>
-        <AreaTitle id="id-terms/acknowledgements">ACKNOWLEDGEMENTS</AreaTitle>
+        <AreaTitle id="terms/acknowledgements">ACKNOWLEDGEMENTS</AreaTitle>
 
         <TermsSection title="LAND ACKNOWLEDGEMENT">
           <Text>

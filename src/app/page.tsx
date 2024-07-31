@@ -1,4 +1,3 @@
-import PageContainer from '@/components/PageContainer';
 import About from '@/sections/About';
 import Support from '@/sections/Support';
 import EventInformation from '@/sections/EventInformation';
@@ -18,9 +17,9 @@ export const metadata: Metadata = {
     "Mayfest Productions presents Dillo Day, the nation's largest student-run music festival.",
 };
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <PageContainer>
+    <>
       <Hero />
       {/* <EventInformation /> */}
       {/* <Tickets /> */}
@@ -33,6 +32,6 @@ export default function Home() {
       <Support />
       <MailingList />
       <Footer />
-    </PageContainer>
+    </>
   );
 }

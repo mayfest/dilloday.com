@@ -35,7 +35,7 @@ const ImageContainer = styled(motion.div)`
 `;
 
 const Image = styled(motion.img)`
-  width: 256px;
+  width: 196px;
 `;
 
 const ImagePadding = styled.div`
@@ -74,27 +74,6 @@ const Title = styled.h2`
 
   ${mobile} {
     font-size: 32px;
-  }
-`;
-
-const SocialAboveTitle = styled.p`
-  font-size: 14px;
-  color: #ffffff;
-  text-transform: uppercase;
-  opacity: 0.75;
-  margin-top: 16px;
-
-  ${mobile} {
-    font-size: 12px;
-  }
-`;
-
-const SocialTitle = styled.p`
-  font-size: 28px;
-  color: #ffffff;
-
-  ${mobile} {
-    font-size: 20px;
   }
 `;
 
@@ -146,51 +125,6 @@ const DownloadImageGoogle = styled.img`
   height: 64px;
 `;
 
-const DownloadPending = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-`;
-
-const DownloadPendingText = styled.p`
-  opacity: 0.75;
-  font-size: 12px;
-`;
-
-const DownloadPendingSubtext = styled.p`
-  opacity: 0.5;
-  font-size: 10px;
-`;
-
-const Link = styled.a`
-  color: #e9d5ff;
-  text-decoration: none;
-
-  &:hover {
-    text-decoration: underline;
-  }
-`;
-
-const TermsLink = styled.a`
-  color: #ffffff;
-  opacity: 0.5;
-  text-decoration: none;
-  font-size: 12px;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-
-  &:hover {
-    text-decoration: underline;
-  }
-
-  svg {
-    width: 12px;
-    height: 12px;
-    stroke-width: 4px;
-  }
-`;
-
 const imageVariants = {
   initial: {
     opacity: 0,
@@ -218,7 +152,7 @@ const imageContainerVariants = {
 
 export default function MobileApp() {
   return (
-    <Section id="id-app" style={{ maxWidth: '1000px' }}>
+    <Section id="app" style={{ maxWidth: '1000px' }}>
       <Container>
         <ImageContainer
           variants={imageContainerVariants}
@@ -276,33 +210,6 @@ export default function MobileApp() {
               />
             </DownloadButton>
           </DownloadContainer>
-          <SocialAboveTitle>
-            Don't miss out on this year's social feature
-          </SocialAboveTitle>
-          <SocialTitle>Dillo Cabin Mates!</SocialTitle>
-          <Text>
-            Let us analyze your music taste by connecting your Spotify or Apple
-            Music account before Dillo Day. In the morning of Dillo Day, we'll
-            use your music vibes to match you with another compatible attendee!
-          </Text>
-          <Text>
-            The first 100 people to register will get 15% off their next{' '}
-            <Link
-              href="https://store.dilloday.com"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Dillo Day Store
-            </Link>{' '}
-            order!{' '}
-          </Text>
-          <TermsLink href="#terms/dillo-day-mobile-app">
-            <span>
-              View all details and terms for the Dillo Cabin Mates feature and
-              the store giveaway
-            </span>
-            <ChevronRightIcon />
-          </TermsLink>
         </TextContainer>
       </Container>
     </Section>

@@ -181,7 +181,7 @@ const FAQEmail = styled.p`
 
 export default function Tickets() {
   return (
-    <Section id="id-tickets">
+    <Section id="tickets">
       <Container>
         <Title>🏕️ Dillo Day 52 tickets now available! 🏕️</Title>
         <Contents>
@@ -292,7 +292,7 @@ export default function Tickets() {
             </Text>
           </Step>
         </Contents>
-        <FAQ id="id-tickets/faq">
+        <FAQ id="tickets/faq">
           <FAQTitle>Wristband FAQ</FAQTitle>
           <FAQContents>
             <FAQSection title="What do students need to pick up their own wristband?">

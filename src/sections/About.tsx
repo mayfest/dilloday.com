@@ -140,7 +140,7 @@ const videoVariants = {
 export default function About() {
   return (
     <Section
-      id="id-about"
+      id="about"
       variants={sectionVariants}
       initial="initial"
       whileInView="animate"
