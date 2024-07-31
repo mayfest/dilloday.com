@@ -5,6 +5,7 @@ import GradientDivider from '../components/GradientDivider';
 import { Section, mobile } from '@/components';
 import { motion } from 'framer-motion';
 import TeamsGrid from '../components/TeamsGrid';
+import { ChevronRightIcon } from '@heroicons/react/24/outline';
 
 const Container = styled.div`
   margin: 64px 0;
@@ -72,6 +73,36 @@ const Note = styled.p`
   opacity: 0.5;
 `;
 
+const ButtonContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const Button = styled.a`
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #e9d5ff;
+  padding: 4px 8px;
+  border-radius: 8px;
+  transition: background-color 150ms;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  &:active {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+`;
+
+const ArrowIcon = styled(ChevronRightIcon)`
+  width: 16px;
+  height: 16px;
+  stroke-width: 2px;
+`;
+
 const variants = {
   initial: {},
   animate: {
@@ -131,6 +162,12 @@ export default function Team() {
       <Section style={{ margin: '0 auto' }}>
         <TeamsGrid />
         <Note>click on a team for more info</Note>
+        <ButtonContainer>
+          <Button href="/roster/">
+            <span>View Full Historical Roster</span>
+            <ArrowIcon />
+          </Button>
+        </ButtonContainer>
       </Section>
     </Container>
   );
