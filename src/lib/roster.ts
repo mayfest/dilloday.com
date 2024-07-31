@@ -112,12 +112,7 @@ export const roster: Roster = sorted([
       },
       {
         name: 'Technology',
-        executive: [
-          {
-            name: 'Dilan Nair',
-            url: 'https://www.dilanxd.com?ref=mayfest-roster',
-          },
-        ],
+        executive: ['Dilan Nair'],
         general: [
           'Cheryl Lin',
           'Mahmood Sadeghi',
