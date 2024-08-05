@@ -297,4 +297,21 @@ export const history: HistoricalEvent[] = [
       },
     ],
   },
+  {
+    year: '2024',
+    date: 'May 18, 2024',
+    description:
+      'On May 18, 2024, concertgoers put on their bandanas, boots, and backpacks and hiked out to Camp Dillo for Dillo Day 2024. Singing around the campfire were performers including Main Stage artists Swae Lee, Bakar, Amaarae, Lupe Fiasco, LF System, and Maude Latour, FMO Stage artists YungManny, Maiya the Don, Adanna Duru, and Nada!, winners of Battle of the Artists and Battle of the DJs, The Mee-Ow Band and Vitamin K, and FMO student artists Ciel McDaniels, TiggyBouf, and KenDu!',
+    image: '/img/dillo-2024.jpg',
+    artists: [
+      {
+        stage: 'Main Stage',
+        names: ['Swae Lee', 'Bakar', 'Amaarae', 'Lupe Fiasco', 'LF System', 'Maude Latour'],
+      },
+      {
+        stage: 'FMO Stage',
+        names: ['YungManny', 'Maiya the Don', 'Adanna Duru', 'Nada!'],
+      },
+    ],
+  },
 ];
