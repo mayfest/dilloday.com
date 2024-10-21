@@ -50,10 +50,10 @@ export default function Hero() {
             }}
           />
         </div>
-        <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
+        <div className="mx-auto w-[70%] py-32 sm:py-48 lg:py-56">
           <div className="text-center">
-            {/* <p className="mb-4 text-3xl font-bold leading-8 text-gray-200">
-              5.18.24
+            {/* <p className="font-bold text-white opacity-75 text-glow">
+              Welcome to
             </p> */}
             <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-9xl text-glow">
               DILLO DAY
