@@ -159,8 +159,9 @@ export default function Team() {
           </Text>
         </TitleContainer>
       </Heading>
+      {/* MARKER ADDED */}
       <Section style={{ margin: '0 auto' }}>
-        <TeamsGrid />
+        <TeamsGrid/>
         <Note>click on a team for more info</Note>
         <ButtonContainer>
           <Button href="/roster/">

@@ -7,16 +7,18 @@ import TeamMembers from './TeamMembers';
 
 const Container = styled.div`
   width: 100%;
-  grid-column: 1 / -1;
+  height: 100%;
+  /* grid-column: 1 / -1; */
   background-color: #1a1a1a;
-  border: 2px solid #ffffff;
+  /* border: 2px solid #ffffff; */
   margin: 0;
-  border-radius: 16px;
+  /* border-radius: 16px; */
   position: relative;
   overflow: hidden;
   display: flex;
   position: relative;
   gap: 8px;
+  overflow: scroll;
 
   ${mobile} {
     flex-direction: column;

@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import styled from 'styled-components';
 import TeamBox from './TeamBox';
 import TeamInfo from './TeamInfo';
@@ -16,6 +16,7 @@ const TG = styled(motion.div)`
   margin: 0 auto;
   font-size: 14px;
   grid-template-rows: auto;
+  /* border: 2px solid blue; // ** MARKER */
 
   ${mobile} {
     width: 100%;
@@ -23,6 +24,10 @@ const TG = styled(motion.div)`
     font-size: 14px;
   }
 `;
+
+const Return = styled(motion.div)`
+  width: 100%;
+`
 
 // Framer motion
 const container = {
@@ -41,67 +46,52 @@ const container = {
 // AOS (animate on scroll)
 export default function TeamsGrid() {
   const [open, setOpen] = useState<number | null>(null);
+  // track width and height of grid
+  const [gridDim, setGridDim] = useState({ width: 0, height: 0 });
+  //  ref to get access to the grid DOM element
+  const gridRef = useRef<HTMLDivElement | null>(null);
   const [mobile, setMobile] = useState<boolean>(false);
 
+  // useEffect when open changes and recalculates grid dimensions
   useEffect(() => {
-    const updateSize = () => {
-      if (window.innerWidth < 768) {
-        setMobile(true);
-      } else {
-        setMobile(false);
-      }
-    };
-
-    updateSize();
-
-    window.addEventListener('resize', updateSize);
-
-    return () => {
-      window.removeEventListener('resize', updateSize);
-    };
-  }, []);
-
-  const teamBoxes = [];
-  for (let i = 0; i < teams.length; i++) {
-    teamBoxes.push(
-      <TeamBox
-        name={teams[i].name}
-        image={teams[i].image}
-        onClick={() => setOpen(open !== i ? i : null)}
-        key={`team-${i}`}
-        selected={open === i}
-      />
-    );
-
-    if (open !== null) {
-      if (mobile && i % 2 === 1 && open >= i - 1 && open <= i) {
-        teamBoxes.push(
-          <TeamInfo
-            team={teams[open]}
-            onClose={() => setOpen(null)}
-            key="team-info"
-          />
-        );
-      } else if (!mobile && i % 5 === 4 && open >= i - 4 && open <= i) {
-        teamBoxes.push(
-          <TeamInfo
-            team={teams[open]}
-            onClose={() => setOpen(null)}
-            key="team-info"
-          />
-        );
-      }
+    if (gridRef.current) {
+      const { offsetWidth: width, offsetHeight: height } = gridRef.current;
+      setGridDim({ width, height });
     }
-  }
+  }, [open]);
+
+  const teamBoxes = teams.map((team, i) => (
+    <TeamBox
+      name={team.name}
+      image={team.image}
+      onClick={() => setOpen(open !== i ? i : null)} // set open to the index clicked on else set to closed (null)
+      key={`team-${i}`} // key for rendering
+      selected={open === i}
+    />
+  ));
 
   return (
-    <TG
-      variants={container}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-    >
-      <AnimatePresence>{teamBoxes}</AnimatePresence>
-    </TG>
+    <Return>
+      {open === null ? ( // If no team is selected, render the grid
+        <TG ref={gridRef}> {/* Reference to the grid for measuring its dimensions */}
+          {teamBoxes} {/* Render the array of TeamBox components */}
+        </TG>
+      ) : ( // If a team is selected, render the info box
+        <div
+          style={{
+            width: gridDim.width, // Set the width to match the grid's width
+            height: gridDim.height, // Set the height to match the grid's height
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        >
+          <TeamInfo 
+            team={teams[open]} // Pass the selected team data to the TeamInfo component
+            onClose={() => setOpen(null)} // Function to close the info box
+          />
+        </div>
+      )}
+    </Return>
   );
 }
