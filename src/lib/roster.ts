@@ -17,6 +17,111 @@ export type RosterMember = string | { name: string; url: string };
 
 export const roster: Roster = sorted([
   {
+    year: '2025',
+    chairs: ['Defne Deda', 'Alex Kahn'],
+    teams: [
+      {
+        name: 'Booking',
+        executive: ['Nathan Dent'],
+        general: [
+          'Payton Marino',
+          'Timia Quincy McCoade',
+          'Rachana Aluri',
+          'Sebastian Huerta',
+          'Avalon Bookstaver',
+          'Mariam Fofana',
+        ],
+      },
+      {
+        name: 'Community',
+        executive: ['Eleanor Dempsey', 'Emma Kogan'],
+        general: [
+          'Payton DiSario',
+          'Anya Bardach',
+          'Danielle Nevett',
+          'Risha Hussain',
+          'Sakina Husein',
+          'Rukevwe Alade',
+        ],
+      },
+      {
+        name: 'Corporate',
+        executive: ['Ali Lee', 'Tyler Keim'],
+        general: [
+          'Olivia (Liv) Clark',
+          'Adam Valiji',
+          'Grace Shao',
+          'Morrie Schonfield',
+          'Gio Cacciato',
+          'Jonathan Lee',
+        ],
+      },
+      {
+        name: 'Finance',
+        executive: ['Aimee Chooi', 'Zander Sy'],
+        general: ['Quinn Shumway', 'Luke Fosdick'],
+      },
+      {
+        name: 'Production',
+        executive: ['Keyanna Adams', 'Ethan Sterling'],
+        general: [
+          'Irem Ozsavasci',
+          'Connor Capoot',
+          'Emma Brown',
+          'Asha Buerk',
+          'Jack Ryzenman',
+          'Keya Umesh',
+          'Rishi Shah',
+          'Yaewon Woo',
+          'Grace Herzog',
+        ],
+      },
+      {
+        name: 'Programming',
+        executive: ['Cat Johnston'],
+        general: [
+          'Luke Incardona',
+          'Joel Reyes',
+          'Caryl Shepard',
+          'Autumn Grieb',
+          'Anais Duewel',
+        ],
+      },
+      {
+        name: 'Promotions',
+        executive: ['Seeley McGills', 'Felipe Reis Maccari'],
+        general: [
+          'Annabel Goldman',
+          'Lauren Lin',
+          'Glorietta Arthoro',
+          'Lee Ekong',
+          'Anoushka Dasgupta',
+          'Joss Broward',
+          'Alicia Gu',
+        ],
+      },
+      {
+        name: 'Technology',
+        executive: ['Ethan Pineda'],
+        general: ['Eduardo Ramos', 'Vivian Chen', 'David Fu', 'Cate Rose'],
+      },
+      {
+        name: 'Operations',
+        executive: ['Natalie Gurganus', 'Chloe Coenraets'],
+        general: [
+          'Sam Albright',
+          'Emiliano Ghislieri',
+          'Gabby Garcia',
+          'Marina Shirky',
+          'Jing Xi Yap',
+          'Shae Lake',
+          'Adam Durr',
+          'Brendan Howard',
+        ],
+      },
+    ],
+  },
+  {
     year: '2024',
     chairs: ['Darya Daneshmand', 'Alex Kahn'],
     teams: [

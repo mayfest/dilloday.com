@@ -25,20 +25,17 @@ export const teams: Team[] = [
     members: {
       executive: [
         {
-          name: 'Armaan Ajani',
+          name: 'Nathan Dent',
           position: '2024 Booking Director',
-          image: '/img/armaan.jpg',
         },
       ],
       general: [
         { name: 'Payton Marino' },
-        { name: 'Nathan Dent' },
         { name: 'Timia Quincy McCoade' },
-        { name: 'Skylar Deeter' },
-        { name: 'Jack Ding' },
-        { name: 'Elena Hubert' },
-        { name: 'Maya Shadid' },
+        { name: 'Rachana Aluri' },
         { name: 'Sebastian Huerta' },
+        { name: 'Avalon Bookstaver' },
+        { name: 'Mariam Fofana' },
       ],
     },
   },
@@ -48,17 +45,17 @@ export const teams: Team[] = [
       "The Community committee's primary responsibility remains integrating diversity, inclusion, and wellness best practices throughout the organization. Pointedly, the committee facilitates quarterly cultural awareness trainings and internal wellness forums to cultivate a welcoming environment in the organization and ensure the wellbeing of the organization's members. Additionally, the committee aids the Promotions committee in developing recruitment initiatives to reach untapped segments of Northwestern's campus.",
     image: '/img/community.jpg',
     teamImage: '/img/community-team.jpg',
+
     members: {
       executive: [
         {
-          name: 'Anabel Marre',
+          name: 'Eleanor Dempsey',
           position: '2024 Community Co-Director',
-          image: '/img/anabel.jpg',
         },
         {
           name: 'Emma Kogan',
           position: '2024 Community Co-Director',
-          image: '/img/emma.jpg',
+          image: '/img/emmak.jpg'
         },
       ],
       general: [
@@ -66,7 +63,6 @@ export const teams: Team[] = [
         { name: 'Anya Bardach' },
         { name: 'Danielle Nevett' },
         { name: 'Risha Hussain' },
-        { name: 'Eleanor Dempsey' },
         { name: 'Sakina Husein' },
         { name: 'Rukevwe Alade' },
       ],
@@ -84,15 +80,17 @@ export const teams: Team[] = [
           name: 'Ali Lee',
           position: '2024 Corporate Director',
         },
+        {
+          name: 'Tyler Keim',
+          position: '2024 Corporate Director',
+        },
       ],
       general: [
-        { name: 'Quinn Shumway' },
-        { name: 'Olivia Clark' },
+        { name: 'Olivia (Liv) Clark' },
         { name: 'Adam Valiji' },
-        { name: 'Matt Lee' },
-        { name: 'Stephanie Shields' },
-        { name: 'Jason Huang' },
         { name: 'Grace Shao' },
+        { name: 'Morrie Schonfield' },
+        { name: 'Gio Cacciato' },
         { name: 'Jonathan Lee' },
       ],
     },
@@ -106,22 +104,16 @@ export const teams: Team[] = [
     members: {
       executive: [
         {
-          name: 'Priya Dave',
-          position: '2024 Finance Co-Director',
-          image: '/img/priya.jpg',
-        },
-        {
           name: 'Aimee Chooi',
           position: '2024 Finance Co-Director',
           image: '/img/aimee.jpg',
         },
+        {
+          name: 'Zander Sy',
+          position: '2024 Finance Co-Director',
+        },
       ],
-      general: [
-        { name: 'Donny Tou' },
-        { name: 'Zander Sy' },
-        { name: 'Ashley Zhang' },
-        { name: 'Rudy Danda' },
-      ],
+      general: [{ name: 'Quinn Shumway' }, { name: 'Luke Fosdick' }],
     },
   },
   {
@@ -133,26 +125,23 @@ export const teams: Team[] = [
     members: {
       executive: [
         {
-          name: 'Caroline Labow',
+          name: 'Natalie Gurganus',
           position: '2024 Operations Co-Director',
-          image: '/img/caroline.jpg',
         },
         {
-          name: 'Lahari Ramini',
+          name: 'Chloe Coenraets',
           position: '2024 Operations Co-Director',
-          image: '/img/lahari.jpg',
         },
       ],
       general: [
         { name: 'Sam Albright' },
-        { name: 'Natalie Gurganus' },
-        { name: 'Chloe Coenraets' },
-        { name: 'Noah Seth' },
         { name: 'Emiliano Ghislieri' },
         { name: 'Gabby Garcia' },
+        { name: 'Marina Shirky' },
         { name: 'Jing Xi Yap' },
         { name: 'Shae Lake' },
         { name: 'Adam Durr' },
+        { name: 'Brendan Howard' },
       ],
     },
   },
@@ -165,25 +154,26 @@ export const teams: Team[] = [
     members: {
       executive: [
         {
-          name: 'Ada Zhong',
+          name: 'Keyanna Adams',
           position: '2024 Executive Producer',
-          image: '/img/ada.jpg',
+          image: '/img/keyanna.jpg',
         },
         {
-          name: 'Irem Ozsavasci',
+          name: 'Ethan Sterling',
           position: '2024 Executive Producer',
+          image: '/img/ethans.jpg',
         },
       ],
       general: [
-        { name: 'Jack Burkhardt' },
-        { name: 'Thomas Silberberg' },
+        { name: 'Irem Ozsavasci' },
         { name: 'Connor Capoot' },
-        { name: 'Keyanna Adams' },
-        { name: 'Caitlin Riley' },
-        { name: 'Marina Shirky' },
-        { name: 'Ethan Sterling ' },
         { name: 'Emma Brown' },
         { name: 'Asha Buerk' },
+        { name: 'Jack Ryzenman' },
+        { name: 'Keya Umesh' },
+        { name: 'Rishi Shah' },
+        { name: 'Yaewon Woo' },
+        { name: 'Grace Herzog' },
       ],
     },
   },
@@ -193,21 +183,21 @@ export const teams: Team[] = [
       'The Programming committee plans and executes various music-related events throughout the year bringing together the efforts of all Mayfest committees. In previous years, events have included Battle of the Bands, Battle of the DJs, a week of programming preceding Dillo Day, and many more. Additionally, the committee is in charge of the Lakefill Programming during the festival including local vendors, carnival games, and student art. Programming elevates Dillo Day from beyond a music festival to an immersive experience. The aim of the committee is to creatively engage and excite both the campus and Mayfest leading up to and throughout Dillo Day.',
     image: '/img/programming.jpg',
     teamImage: '/img/programming-team.jpg',
+
     members: {
       executive: [
         {
-          name: 'Catherine Johnston',
+          name: 'Catherine (Cat) Johnston',
           position: '2024 Programming Director',
-          image: '/img/catherine.jpg',
+          image: '/img/catherine.jpg'
         },
       ],
       general: [
         { name: 'Luke Incardona' },
-        { name: 'Ashley Weitz' },
+        { name: 'Joel Reyes' },
         { name: 'Caryl Shepard' },
-        { name: 'Joel Angelito' },
-        { name: 'Eduardo Ramos' },
         { name: 'Autumn Grieb' },
+        { name: 'Anais Duewel' },
       ],
     },
   },
@@ -220,28 +210,21 @@ export const teams: Team[] = [
     members: {
       executive: [
         {
-          name: 'Defne Deda',
+          name: 'Seeley McGillis',
           position: '2024 Promotions Co-Director',
-          image: '/img/defne.jpg',
         },
         {
-          name: 'Tyler Keim',
+          name: 'Felipe Reis Maccari',
           position: '2024 Promotions Co-Director',
         },
       ],
       general: [
-        { name: 'Catherine Duncan' },
         { name: 'Annabel Goldman' },
-        { name: 'Seeley McGillis' },
-        { name: 'Felipe Reis Maccari' },
-        { name: 'Victoria Tran' },
-        { name: 'Jessica Vallan' },
-        { name: 'Rachana Aluri' },
         { name: 'Glorietta Arthoro' },
         { name: 'Lee Ekong' },
-        { name: 'Joss Broward' },
         { name: 'Anoushka Dasgupta' },
-        { name: 'Lauren Lin' },
+        { name: 'Joss Broward' },
+        { name: 'Alicia Gu' },
       ],
     },
   },
@@ -254,15 +237,12 @@ export const teams: Team[] = [
     members: {
       executive: [
         {
-          name: 'Dilan Nair',
+          name: 'Ethan Pineda',
           position: '2024 Tech Director',
-          image: '/img/dilan.jpg',
         },
       ],
       general: [
-        { name: 'Cheryl Lin' },
-        { name: 'Mahmood Sadeghi' },
-        { name: 'Andy Vu' },
+        { name: 'Eduardo Ramos' },
         { name: 'Vivian Chen' },
         { name: 'David Fu' },
         { name: 'Cate Rose' },
@@ -278,9 +258,9 @@ export const teams: Team[] = [
     members: {
       executive: [
         {
-          name: 'Darya Daneshmand',
+          name: 'Defne Deda',
           position: 'Mayfest Co-Chair',
-          image: '/img/darya.jpg',
+          image: '/img/defne.jpg',
         },
         {
           name: 'Alexandra Kahn',
@@ -288,22 +268,7 @@ export const teams: Team[] = [
           image: '/img/alexandra.jpg',
         },
       ],
-      general: [
-        { name: 'Gio Cacciato' },
-        { name: 'Rishi Shah' },
-        { name: 'Grace Herzog' },
-        { name: 'Alicia Gu' },
-        { name: 'Isabella Pongracz' },
-        { name: 'Yaewon Woo' },
-        { name: 'Mariam Fofana' },
-        { name: 'Morrie Schonfield' },
-        { name: 'Brendan Howard' },
-        { name: 'Jack Ryzenman' },
-        { name: 'Anais Duewel' },
-        { name: 'Keya Umesh' },
-        { name: 'Avalon Bookstaver' },
-        { name: 'Luke Fosdick' },
-      ],
+      general: [{ name: 'Coming Soon!' }],
     },
   },
 ];
