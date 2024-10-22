@@ -60,6 +60,36 @@ export default function TeamsGrid() {
     }
   }, [open]);
 
+  // try and get it to only arrow key and esc when the grid appears on the screen
+  // https://stackoverflow.com/questions/1462138/event-listener-for-when-element-becomes-visible
+
+  // key down for esc and arrow keys
+  useEffect(() => {
+    const keyDown = (event: KeyboardEvent) => {
+      switch (event.key) {
+        case 'Escape':
+          if (open !== null) {
+            setOpen(null);
+          }
+          break;
+        case 'ArrowLeft':
+          if (open !== null && open < teams.length && open > 0) setOpen((prev) => (prev !== null ? prev - 1 : 0));
+          break;
+        case 'ArrowRight':
+          if (open !== null && open >= 0 && open < teams.length - 1) setOpen((prev) => (prev !== null ? prev + 1 : 0));
+        default:
+          break;
+      }
+    };
+
+    window.addEventListener('keydown', keyDown);
+
+    return () => {
+      window.removeEventListener('keydown', keyDown);
+    }
+
+  }, [open]); 
+
   const teamBoxes = teams.map((team, i) => (
     <TeamBox
       name={team.name}
