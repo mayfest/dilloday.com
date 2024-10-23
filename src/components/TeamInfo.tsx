@@ -40,32 +40,32 @@ const Contents = styled.div`
   padding: 16px;
 `;
 
-// Close the info box
-const CloseButton = styled.button`
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  background: none;
-  border: none;
-  color: #ffffff;
-  border: none;
-  cursor: pointer;
-  border-radius: 8px;
+// // Close the info box
+// const CloseButton = styled.button`
+//   position: absolute;
+//   top: 8px;
+//   right: 8px;
+//   background: none;
+//   border: none;
+//   color: #ffffff;
+//   border: none;
+//   cursor: pointer;
+//   border-radius: 8px;
 
-  &:hover {
-    background-color: #323232;
-  }
+//   &:hover {
+//     background-color: #323232;
+//   }
 
-  &:active {
-    background-color: #484848;
-  }
+//   &:active {
+//     background-color: #484848;
+//   }
 
-  svg {
-    width: 32px;
-    height: 32px;
-    stroke-width: 2px;
-  }
-`;
+//   svg {
+//     width: 32px;
+//     height: 32px;
+//     stroke-width: 2px;
+//   }
+// `;
 
 const Text = styled.div`
   display: flex;
@@ -95,9 +95,7 @@ export function TeamInfo({ team, onClose }: TeamInfoProps) {
         <Text>{team.description}</Text>
         <TeamMembers team={team} />
       </Contents>
-      <CloseButton onClick={() => onClose()}>
-        <XMarkIcon />
-      </CloseButton>
+
     </Container>
   );
 }

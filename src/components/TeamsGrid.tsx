@@ -3,6 +3,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import styled from 'styled-components';
 import TeamBox from './TeamBox';
 import TeamInfo from './TeamInfo';
+import TeamsCarousel from './TeamsCarousel';
 import { Section, mobile } from '@/components';
 import { AnimatePresence, motion } from 'framer-motion';
 import { teams } from '@/lib/teams';
@@ -116,10 +117,14 @@ export default function TeamsGrid() {
             alignItems: 'center',
           }}
         >
-          <TeamInfo 
+          <TeamsCarousel
+            onClose={() => setOpen(null)}
+          />
+          {/* <TeamInfo 
             team={teams[open]} // Pass the selected team data to the TeamInfo component
             onClose={() => setOpen(null)} // Function to close the info box
-          />
+          /> */}
+
         </div>
       )}
     </Return>
