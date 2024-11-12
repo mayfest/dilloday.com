@@ -24,7 +24,7 @@ export default function HomePage() {
       {/* <EventInformation /> */}
       {/* <Tickets /> */}
       <About />
-      <MobileApp />
+      {/* <MobileApp /> */}
       <Team />
       <PastDillos />
       <Terms />

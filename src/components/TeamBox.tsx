@@ -25,7 +25,7 @@ const TB = styled(motion.button)<{
   background-image: url(${(props) => props.backgroundImage});
   background-size: cover;
   background-position: center;
-  border-radius: 16px;
+  border-radius: 0%;
   cursor: pointer;
   outline: 2px solid transparent;
   position: relative;
@@ -46,14 +46,14 @@ const TB = styled(motion.button)<{
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  padding: 8px;
 `;
 
 const TextContainer = styled.div`
   background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(12px);
   padding: 4px 8px;
-  border-radius: 8px;
+  border-radius: 0px;
+  width: 100%;
 `;
 
 // Text
