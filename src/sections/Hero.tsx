@@ -38,32 +38,6 @@ export default function Hero() {
 
   return (
     <div className="h-screen bg-gray-900">
-      <header className="absolute inset-x-0 top-0 z-50">
-        <nav className="flex items-center justify-between p-6 lg:px-8">
-          <div className="flex lg:flex-1">
-            <a href="#" className="-m-1.5 p-1.5">
-              <img
-                className="h-16 w-auto"
-                src="/dillo.png"
-                alt="Dillo Day Logo"
-              />
-            </a>
-          </div>
-          <div className="hidden lg:flex lg:gap-x-12 justify-start">
-            {navigation.map((item, i) => (
-              <a
-                key={`nav-item-${i}`}
-                className="text-lg font-semibold leading-6 text-white opacity-75 transition-all duration-150 hover:opacity-100"
-                {...getHrefProps(item.href)}
-              >
-                {item.name}
-              </a>
-            ))}
-          </div>
-          <div className="hidden lg:flex lg:flex-1 lg:justify-end"></div>
-        </nav>
-      </header>
-
       <div className="h-full relative isolate overflow-hidden pt-14">
         <img
           src="/background.jpg"
@@ -88,7 +62,7 @@ export default function Hero() {
               DILLO DAY
             </h1>
             <div className="font-bold text-white opacity-75 text-glow space-x-2">
-              <span className="inline-block min-w-[2ch]">
+              <span className="inline-block min-w-[ch]">
                 {String(timeLeft.days).padStart(3, '0')}
               </span>
               <span>days</span>

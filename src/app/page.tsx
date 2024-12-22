@@ -1,7 +1,6 @@
 import About from '@/sections/About';
 import Support from '@/sections/Support';
 import EventInformation from '@/sections/EventInformation';
-import Footer from '@/sections/Footer';
 import Hero from '@/sections/Hero';
 import MailingList from '@/sections/MailingList';
 import MobileApp from '@/sections/MobileApp';
@@ -29,7 +28,6 @@ export default function HomePage() {
       {/* <Sponsors /> */}
       <Support />
       <MailingList />
-      <Footer />
     </>
   );
 }
