@@ -6,9 +6,8 @@ import Hero from '@/sections/Hero';
 import MailingList from '@/sections/MailingList';
 import MobileApp from '@/sections/MobileApp';
 import PastDillos from '@/sections/PastDillos';
-import Team from '@/sections/Team';
-import Terms from '@/sections/Terms';
 import Tickets from '@/sections/Tickets';
+import Sponsors from '@/sections/Sponsors';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -25,9 +24,8 @@ export default function HomePage() {
       {/* <Tickets /> */}
       <About />
       {/* <MobileApp /> */}
-      <Team />
+      {/* <Team /> */}
       <PastDillos />
-      <Terms />
       {/* <Sponsors /> */}
       <Support />
       <MailingList />
