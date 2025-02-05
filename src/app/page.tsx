@@ -2,6 +2,7 @@ import About from '@/sections/About';
 import Support from '@/sections/Support';
 import EventInformation from '@/sections/EventInformation';
 import Hero from '@/sections/Hero';
+import FestivalSchedule from '@/sections/lineup';
 import MailingList from '@/sections/MailingList';
 import MobileApp from '@/sections/MobileApp';
 import PastDillos from '@/sections/PastDillos';
@@ -20,9 +21,10 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <EventInformation />
-      <Tickets />
       <About />
+      <FestivalSchedule />
+      {/* <EventInformation /> */}
+      {/* <Tickets /> */}
       <FestivalCarousel />
       <MobileApp />
       {/* <Team /> */}
