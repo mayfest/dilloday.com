@@ -1,9 +1,10 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { getHrefProps, navigation } from '@/lib/directory';
+// import { getHrefProps, navigation } from '@/lib/directory';
 import { ChevronDownIcon } from '@heroicons/react/24/outline';
 import GradientDivider from '../components/GradientDivider';
+import Image from 'next/image';
 
 function calculateTimeLeft() {
   const difference = new Date('2025-05-17').getTime() - new Date().getTime();
@@ -39,10 +40,19 @@ export default function Hero() {
   return (
     <div className="h-screen bg-gray-900">
       <div className="h-full relative isolate overflow-hidden pt-14">
-        <img
+        {/* <img
           src="/background.jpg"
           alt="Background Image"
           className="absolute inset-0 -z-10 h-full w-full object-cover"
+        /> */}
+        <Image
+          src="/background.jpg"
+          alt="Background Image"
+          layout="fill"
+          objectFit="cover"
+          objectPosition="center"
+          className="absolute inset-0 -z-10"
+          priority
         />
         <div className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-[360px]">
           <div
