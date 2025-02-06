@@ -44,6 +44,13 @@ const TabList = styled.div<TabListProps>`
   }
 `;
 
+const Note = styled.p`
+  text-align: center;
+  margin: 16px 0;
+  font-size: 14px;
+  opacity: 0.5;
+`;
+
 const TabTrigger = styled.button<{ isActive: boolean }>`
   display: flex;
   align-items: center;
@@ -178,6 +185,7 @@ const TimeText = styled.p`
 
 const HeadlinerSection = motion(styled.div`
   margin-top: 10rem;
+  padding-bottom: 10rem;
   > h2 {
     font-size: 4rem;
     font-weight: 700;
@@ -365,6 +373,7 @@ export default function FestivalSchedule() {
                   </TabContent>
                 ))}
               </TabsContainer>
+              <Note>click on an artist to learn more</Note>
             </ScheduleContainer>
           </motion.div>
 

@@ -4,62 +4,302 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import ChevronLeft from '@/components/icons/ChevronLeft';
 import ChevronRight from '@/components/icons/ChevronRight';
+import styled from 'styled-components';
+import { features } from '@/constants/features';
 
-interface Feature {
-  title: string;
-  description: string;
-  image: string;
-}
+const Section = styled.section`
+  padding: 2rem 1rem;
+  @media (min-width: 768px) {
+    padding: 3rem 1rem;
+  }
+  @media (min-width: 1024px) {
+    padding: 6rem 1rem;
+  }
+`;
 
-const features: Feature[] = [
-  {
-    title: 'Food Truck Vendors',
-    description:
-      'Explore a diverse culinary experience with our carefully curated selection of food trucks offering everything from local favorites to international cuisine.',
-    image: '/img/tech-team.jpg',
-  },
-  {
-    title: 'Gen Board Project',
-    description:
-      'Experience the innovative Gen Board project, showcasing the latest in festival technology and interactive experiences for all attendees.',
-    image: '/img/tech-team.jpg',
-  },
-  {
-    title: 'Main Stage/FMO Stage',
-    description:
-      'Two incredible stages featuring world-class performances, state-of-the-art sound systems, and unforgettable moments throughout the festival.',
-    image: '/img/tech-team.jpg',
-  },
-  {
-    title: 'Sponsor Venues/Events',
-    description:
-      'Visit our sponsor venues for exclusive events, special performances, and unique brand experiences throughout the festival grounds.',
-    image: '/img/tech-team.jpg',
-  },
-  {
-    title: 'Beer Garden',
-    description:
-      'Relax in our expansive beer garden featuring craft brews, comfortable seating, and a perfect view of the festival atmosphere.',
-    image: '/img/tech-team.jpg',
-  },
-  {
-    title: 'Student Art Showcase',
-    description:
-      'Discover amazing artwork created by talented students, featuring installations, performances, and interactive exhibits.',
-    image: '/img/tech-team.jpg',
-  },
-];
+const Container = styled.div`
+  max-width: 80%;
+  margin: 0 auto;
+`;
+
+const HeaderWrapper = styled.div`
+  text-align: center;
+  margin-bottom: 2rem;
+  @media (min-width: 768px) {
+    margin-bottom: 3rem;
+  }
+`;
+
+const Title = styled.h2`
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: white;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  @media (min-width: 768px) {
+    font-size: 2.25rem;
+    margin-bottom: 1rem;
+  }
+  @media (min-width: 1024px) {
+    font-size: 3.75rem;
+  }
+`;
+
+const Subtitle = styled.p`
+  font-size: 0.875rem;
+  color: rgb(216, 180, 254);
+  @media (min-width: 768px) {
+    font-size: 1.125rem;
+  }
+`;
+
+const CarouselWrapper = styled.div`
+  position: relative;
+  overflow: hidden;
+`;
+
+const CarouselContent = styled.div`
+  position: relative;
+  height: 32rem;
+  @media (min-width: 768px) {
+    height: 40rem;
+  }
+  @media (min-width: 1024px) {
+    height: 48rem;
+  }
+`;
+
+const FeatureGroupWrapper = styled.div`
+  display: grid;
+  gap: 1rem;
+  width: 100%;
+  position: absolute;
+  inset: 0;
+  padding: 0 1rem;
+  transition: transform 500ms ease-in-out;
+
+  @media (min-width: 768px) {
+    gap: 1rem;
+    padding: 0 3rem;
+  }
+  @media (min-width: 1024px) {
+    gap: 2rem;
+    padding: 0 5rem;
+  }
+
+  ${({ $columns }) => {
+    switch ($columns) {
+      case 1:
+        return 'grid-template-columns: 1fr;';
+      case 2:
+        return 'grid-template-columns: 1fr 1fr;';
+      case 3:
+        return 'grid-template-columns: 1fr 1fr 1fr;';
+      default:
+        return 'grid-template-columns: 1fr;';
+    }
+  }}
+
+  ${({ $animationClass }) => {
+    if ($animationClass === 'translate-x-0 animate-slide-out-left') {
+      return `
+        transform: translateX(0);
+        animation: slideOutLeft 500ms ease-in-out forwards;
+        @keyframes slideOutLeft {
+          to {
+            transform: translateX(-100%);
+          }
+        }
+      `;
+    }
+    if ($animationClass === 'translate-x-0 animate-slide-out-right') {
+      return `
+        transform: translateX(0);
+        animation: slideOutRight 500ms ease-in-out forwards;
+        @keyframes slideOutRight {
+          to {
+            transform: translateX(100%);
+          }
+        }
+      `;
+    }
+    if ($animationClass === 'translate-x-full animate-slide-in-right') {
+      return `
+        transform: translateX(100%);
+        animation: slideInRight 500ms ease-in-out forwards;
+        @keyframes slideInRight {
+          to {
+            transform: translateX(0);
+          }
+        }
+      `;
+    }
+    if ($animationClass === '-translate-x-full animate-slide-in-left') {
+      return `
+        transform: translateX(-100%);
+        animation: slideInLeft 500ms ease-in-out forwards;
+        @keyframes slideInLeft {
+          to {
+            transform: translateX(0);
+          }
+        }
+      `;
+    }
+    return 'transform: translateX(0);';
+  }}
+`;
+
+const FeatureCard = styled.div`
+  display: flex;
+  flex-direction: column;
+  background-color: #1a1a1a;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(139, 92, 246, 0.2);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+`;
+
+const ImageWrapper = styled.div`
+  position: relative;
+  height: 20rem;
+  @media (min-width: 768px) {
+    height: 23.5rem;
+  }
+  @media (min-width: 1024px) {
+    height: 50rem;
+  }
+`;
+
+const ContentWrapper = styled.div`
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  @media (min-width: 768px) {
+    padding: 1.5rem;
+  }
+  @media (min-width: 1024px) {
+    padding: 2rem;
+  }
+`;
+
+const FeatureTitle = styled.h3`
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: rgb(216, 180, 254);
+  @media (min-width: 768px) {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+`;
+
+const FeatureDescription = styled.p`
+  font-size: 1rem;
+  color: rgb(209, 213, 219);
+  margin-bottom: 1rem;
+  flex: 1;
+  @media (min-width: 768px) {
+    font-size: 1.125rem;
+    margin-bottom: 1.5rem;
+  }
+`;
+
+const ShowMoreButton = styled.button`
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  border-radius: 0.375rem;
+  color: rgb(216, 180, 254);
+  width: fit-content;
+  transition: background-color 150ms;
+
+  &:hover {
+    background-color: rgba(139, 92, 246, 0.2);
+  }
+
+  @media (min-width: 768px) {
+    padding: 0.625rem 1.25rem;
+    font-size: 1rem;
+  }
+`;
+
+const ControlsWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  @media (min-width: 768px) {
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+`;
+
+const NavButton = styled.button`
+  padding: 0.5rem;
+  border-radius: 9999px;
+  color: rgb(216, 180, 254);
+  transition: background-color 150ms;
+
+  &:hover:not(:disabled) {
+    background-color: rgba(139, 92, 246, 0.2);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+  }
+
+  @media (min-width: 768px) {
+    padding: 0.75rem;
+  }
+`;
+
+const DotsWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  @media (min-width: 768px) {
+    gap: 0.75rem;
+  }
+`;
+
+const DotButton = styled.button`
+  height: 0.375rem;
+  width: 0.375rem;
+  border-radius: 9999px;
+  transition: background-color 150ms;
+  background-color: ${({ $active }) =>
+    $active ? 'rgb(139, 92, 246)' : 'rgba(139, 92, 246, 0.2)'};
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+
+  @media (min-width: 768px) {
+    height: 0.5rem;
+    width: 0.5rem;
+  }
+`;
+
+const ChevronIcon = styled.div`
+  width: 0.75rem;
+  height: 0.75rem;
+  @media (min-width: 768px) {
+    width: 1rem;
+    height: 1rem;
+  }
+`;
 
 export default function FestivalCarousel() {
   const [currentGroup, setCurrentGroup] = useState(0);
-  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+  const [expandedIndex, setExpandedIndex] = useState(null);
   const [isAnimating, setIsAnimating] = useState(false);
-  const [direction, setDirection] = useState<'left' | 'right'>('right');
+  const [direction, setDirection] = useState('right');
   const [previousGroup, setPreviousGroup] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
   const [isTablet, setIsTablet] = useState(false);
 
-  // Handle responsive breakpoints
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768);
@@ -71,7 +311,6 @@ export default function FestivalCarousel() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // Calculate items per group based on screen size
   const getItemsPerGroup = () => {
     if (isMobile) return 1;
     if (isTablet) return 2;
@@ -80,7 +319,7 @@ export default function FestivalCarousel() {
 
   const totalGroups = Math.ceil(features.length / getItemsPerGroup());
 
-  const getFeatureGroup = (groupIndex: number) => {
+  const getFeatureGroup = (groupIndex) => {
     const startIndex = groupIndex * getItemsPerGroup();
     return features.slice(startIndex, startIndex + getItemsPerGroup());
   };
@@ -110,77 +349,55 @@ export default function FestivalCarousel() {
     }
   }, [isAnimating]);
 
-  const getGridColumns = () => {
-    if (isMobile) return 'grid-cols-1';
-    if (isTablet) return 'grid-cols-2';
-    return 'grid-cols-3';
-  };
-
-  const FeatureGroup = ({
-    features,
-    isActive,
-    animationClass,
-  }: {
-    features: Feature[];
-    isActive: boolean;
-    animationClass: string;
-  }) => (
-    <div
-      className={`grid ${getGridColumns()} gap-4 md:gap-8 lg:gap-12 w-full absolute inset-0 px-4 md:px-12 lg:px-20 transition-transform duration-500 ease-in-out ${animationClass}`}
+  const FeatureGroup = ({ features, isActive, animationClass }) => (
+    <FeatureGroupWrapper
+      $columns={getItemsPerGroup()}
+      $animationClass={animationClass}
     >
       {features.map((feature, index) => (
-        <div
-          key={`${index}`}
-          className="flex flex-col bg-[#1a1a1a] rounded-xl overflow-hidden shadow-lg shadow-purple-900/20 border border-purple-900/20"
-        >
-          <div className="relative h-80 md:h-94 lg:h-[50rem]">
+        <FeatureCard key={index}>
+          <ImageWrapper>
             <Image
               src={feature.image}
               alt={feature.title}
               fill
               className="object-cover"
             />
-          </div>
-          <div className="p-4 md:p-6 lg:p-8 flex-1 flex flex-col">
-            <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-4 text-purple-300">
-              {feature.title}
-            </h3>
-            <p className="text-base md:text-lg text-gray-300 mb-4 md:mb-6 flex-1">
+          </ImageWrapper>
+          <ContentWrapper>
+            <FeatureTitle>{feature.title}</FeatureTitle>
+            <FeatureDescription>
               {expandedIndex === index
                 ? feature.description
                 : `${feature.description.slice(0, 100)}...`}
-            </p>
-            <button
-              className="px-4 py-2 md:px-5 md:py-2.5 text-sm md:text-base border border-purple-500/30 rounded-md text-purple-300 hover:bg-purple-900/20 w-fit transition-colors"
+            </FeatureDescription>
+            <ShowMoreButton
               onClick={() =>
                 setExpandedIndex(expandedIndex === index ? null : index)
               }
             >
               {expandedIndex === index ? 'SHOW LESS -' : 'SHOW MORE +'}
-            </button>
-          </div>
-        </div>
+            </ShowMoreButton>
+          </ContentWrapper>
+        </FeatureCard>
       ))}
-    </div>
+    </FeatureGroupWrapper>
   );
 
   return (
-    <section className="py-8 md:py-12 lg:py-24 px-4">
-      <div className="container mx-auto">
-        <div className="text-center mb-8 md:mb-12">
-          <h2 className="text-3xl md:text-4xl lg:text-6xl font-bold mb-3 md:mb-4 text-white text-glow">
-            Dillo Day At A Glance
-          </h2>
-          <p className="text-lg md:text-xl text-purple-300">
+    <Section>
+      <Container>
+        <HeaderWrapper>
+          <Title>Dillo Day At A Glance</Title>
+          <Subtitle>
             We&apos;re dedicated to making the Dillo Day experience
             unforgettable for all attendees with a variety of features and
             attractions.
-          </p>
-        </div>
+          </Subtitle>
+        </HeaderWrapper>
 
-        <div className="relative overflow-hidden">
-          <div className="relative h-[32rem] md:h-[40rem] lg:h-[48rem]">
-            {/* Previous group */}
+        <CarouselWrapper>
+          <CarouselContent>
             {isAnimating && (
               <FeatureGroup
                 features={getFeatureGroup(previousGroup)}
@@ -193,7 +410,6 @@ export default function FestivalCarousel() {
               />
             )}
 
-            {/* Current group */}
             <FeatureGroup
               features={getFeatureGroup(currentGroup)}
               isActive={true}
@@ -205,26 +421,19 @@ export default function FestivalCarousel() {
                   : 'translate-x-0'
               }
             />
-          </div>
-        </div>
+          </CarouselContent>
+        </CarouselWrapper>
 
-        {/* Navigation Controls */}
-        <div className="flex justify-center items-center gap-4 md:gap-6 mt-8 md:mt-12">
-          <button
-            className="p-2 md:p-3 rounded-full text-purple-300 hover:bg-purple-900/20 transition-colors disabled:opacity-50"
-            onClick={prevGroup}
-            disabled={isAnimating}
-          >
-            <ChevronLeft className="w-3 h-3 md:w-4 md:h-4" />
-          </button>
+        <ControlsWrapper>
+          <NavButton onClick={prevGroup} disabled={isAnimating}>
+            <ChevronIcon as={ChevronLeft} />
+          </NavButton>
 
-          <div className="flex justify-center gap-2 md:gap-3">
+          <DotsWrapper>
             {Array.from({ length: totalGroups }).map((_, index) => (
-              <button
+              <DotButton
                 key={index}
-                className={`h-1.5 md:h-2 w-1.5 md:w-2 rounded-full transition-colors ${
-                  index === currentGroup ? 'bg-purple-500' : 'bg-purple-900/20'
-                }`}
+                $active={index === currentGroup}
                 onClick={() => {
                   if (!isAnimating) {
                     setDirection(index > currentGroup ? 'right' : 'left');
@@ -236,17 +445,13 @@ export default function FestivalCarousel() {
                 disabled={isAnimating}
               />
             ))}
-          </div>
+          </DotsWrapper>
 
-          <button
-            className="p-2 md:p-3 rounded-full text-purple-300 hover:bg-purple-900/20 transition-colors disabled:opacity-50"
-            onClick={nextGroup}
-            disabled={isAnimating}
-          >
-            <ChevronRight className="w-3 h-3 md:w-4 md:h-4" />
-          </button>
-        </div>
-      </div>
-    </section>
+          <NavButton onClick={nextGroup} disabled={isAnimating}>
+            <ChevronIcon as={ChevronRight} />
+          </NavButton>
+        </ControlsWrapper>
+      </Container>
+    </Section>
   );
 }

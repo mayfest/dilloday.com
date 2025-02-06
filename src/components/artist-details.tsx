@@ -5,6 +5,7 @@ import TwitterIcon from '@/components/icons/twitter';
 import InstagramIcon from '@/components/icons/instagram';
 import SpotifyIcon from '@/components/icons/spotify';
 import ExitIcon from '@/components/icons/exit';
+import { useState, useEffect, useCallback } from 'react';
 
 interface ArtistDetailsProps {
   artist: Artist;
@@ -12,7 +13,7 @@ interface ArtistDetailsProps {
   onClose: () => void;
 }
 
-const DialogOverlay = styled.div`
+const DialogOverlay = styled.div<{ $isLeaving: boolean }>`
   position: fixed;
   inset: 0;
   background-color: rgba(0, 0, 0, 0.5);
@@ -20,17 +21,43 @@ const DialogOverlay = styled.div`
   justify-content: center;
   align-items: center;
   z-index: 50;
+  opacity: ${(props) => (props.$isLeaving ? 0 : 1)};
+  transition: opacity 0.3s ease-out;
 `;
 
-const DialogContent = styled.div`
+const DialogContent = styled.div<{ $isLeaving: boolean }>`
   background-color: black;
   color: white;
-  max-width: 42rem;
-  width: 90vw;
-  border-radius: 0.5rem;
-  padding: 1.5rem;
+  max-width: 56rem;
+  width: 110vw;
+  border-radius: 1rem;
+  padding: 2rem;
   position: relative;
   margin: 1.5rem;
+  animation: ${(props) => (props.$isLeaving ? 'modalExit' : 'modalEnter')} 0.4s
+    cubic-bezier(0.16, 1, 0.3, 1) forwards;
+
+  @keyframes modalEnter {
+    0% {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes modalExit {
+    0% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+  }
 `;
 
 const DialogHeader = styled.div`
@@ -123,17 +150,41 @@ export default function ArtistDetails({
   isOpen,
   onClose,
 }: ArtistDetailsProps) {
+  const [isLeaving, setIsLeaving] = useState(false);
+
+  const handleClose = useCallback(() => {
+    setIsLeaving(true);
+    setTimeout(() => {
+      setIsLeaving(false);
+      onClose();
+    }, 400);
+  }, [onClose]);
+
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        handleClose();
+      }
+    };
+
+    if (isOpen) {
+      window.addEventListener('keydown', handleEscape);
+      return () => window.removeEventListener('keydown', handleEscape);
+    }
+  }, [isOpen, handleClose]);
+
   if (!isOpen) return null;
 
   return (
     <DialogOverlay
+      $isLeaving={isLeaving}
       onClick={(e) => {
-        if (e.target === e.currentTarget) onClose();
+        if (e.target === e.currentTarget) handleClose();
       }}
     >
-      <DialogContent>
-        <CloseButton onClick={onClose}>
-          <ExitIcon className="h-4 w-4" />
+      <DialogContent $isLeaving={isLeaving}>
+        <CloseButton onClick={handleClose}>
+          <ExitIcon className="h-6 w-6" />
         </CloseButton>
         <DialogHeader>
           <DialogTitle>{artist.artist}</DialogTitle>
