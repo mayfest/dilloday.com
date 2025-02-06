@@ -6,6 +6,22 @@ import ChevronLeft from '@/components/icons/ChevronLeft';
 import ChevronRight from '@/components/icons/ChevronRight';
 import styled from 'styled-components';
 import { features } from '@/constants/features';
+import type { Feature } from '@/types/festival-features';
+
+interface FeatureGroupProps {
+  features: Feature[];
+  isActive: boolean;
+  animationClass?: string;
+}
+
+interface StyledFeatureGroupWrapperProps {
+  $columns: number;
+  $animationClass?: string;
+}
+
+interface StyledDotButtonProps {
+  $active: boolean;
+}
 
 const Section = styled.section`
   padding: 2rem 1rem;
@@ -69,7 +85,7 @@ const CarouselContent = styled.div`
   }
 `;
 
-const FeatureGroupWrapper = styled.div`
+const FeatureGroupWrapper = styled.div<StyledFeatureGroupWrapperProps>`
   display: grid;
   gap: 1rem;
   width: 100%;
@@ -264,7 +280,7 @@ const DotsWrapper = styled.div`
   }
 `;
 
-const DotButton = styled.button`
+const DotButton = styled.button<StyledDotButtonProps>`
   height: 0.375rem;
   width: 0.375rem;
   border-radius: 9999px;
@@ -293,7 +309,7 @@ const ChevronIcon = styled.div`
 
 export default function FestivalCarousel() {
   const [currentGroup, setCurrentGroup] = useState(0);
-  const [expandedIndex, setExpandedIndex] = useState(null);
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
   const [isAnimating, setIsAnimating] = useState(false);
   const [direction, setDirection] = useState('right');
   const [previousGroup, setPreviousGroup] = useState(0);
@@ -319,7 +335,7 @@ export default function FestivalCarousel() {
 
   const totalGroups = Math.ceil(features.length / getItemsPerGroup());
 
-  const getFeatureGroup = (groupIndex) => {
+  const getFeatureGroup = (groupIndex: number): Feature[] => {
     const startIndex = groupIndex * getItemsPerGroup();
     return features.slice(startIndex, startIndex + getItemsPerGroup());
   };
@@ -349,7 +365,11 @@ export default function FestivalCarousel() {
     }
   }, [isAnimating]);
 
-  const FeatureGroup = ({ features, isActive, animationClass }) => (
+  const FeatureGroup: React.FC<FeatureGroupProps> = ({
+    features,
+    isActive,
+    animationClass,
+  }) => (
     <FeatureGroupWrapper
       $columns={getItemsPerGroup()}
       $animationClass={animationClass}
