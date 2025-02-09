@@ -22,7 +22,7 @@ const DialogOverlay = styled.div<{ $isLeaving: boolean }>`
   align-items: center;
   z-index: 50;
   opacity: ${(props) => (props.$isLeaving ? 0 : 1)};
-  transition: opacity 0.3s ease-out;
+  transition: opacity 0.8s ease-out;
 `;
 
 const DialogContent = styled.div<{ $isLeaving: boolean }>`

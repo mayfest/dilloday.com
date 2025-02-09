@@ -40,11 +40,6 @@ export default function Hero() {
   return (
     <div className="h-screen bg-gray-900">
       <div className="h-full relative isolate overflow-hidden pt-14">
-        {/* <img
-          src="/background.jpg"
-          alt="Background Image"
-          className="absolute inset-0 -z-10 h-full w-full object-cover"
-        /> */}
         <Image
           src="/background.jpg"
           alt="Background Image"

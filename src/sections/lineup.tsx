@@ -37,7 +37,7 @@ const TabList = styled.div<TabListProps>`
     height: calc(100% - 8px);
     background: white;
     border-radius: 4px;
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     transform: translateX(
       ${(props) => (props.$activeStage === 'Main Stage' ? '0' : '100%')}
     );
@@ -45,6 +45,7 @@ const TabList = styled.div<TabListProps>`
 `;
 
 const Note = styled.p`
+  padding-top: 1.5rem;
   text-align: center;
   margin: 16px 0;
   font-size: 14px;
@@ -71,7 +72,7 @@ const TabTrigger = styled.button<{ isActive: boolean }>`
 
 const TabContent = styled.div<{ isActive: boolean }>`
   display: ${(props) => (props.isActive ? 'block' : 'none')};
-  animation: ${(props) => (props.isActive ? 'fadeIn 0.3s ease' : 'none')};
+  animation: ${(props) => (props.isActive ? 'fadeIn 1s ease' : 'none')};
 
   @keyframes fadeIn {
     from {
@@ -293,6 +294,36 @@ const headlinerVariants = {
     transition: {
       duration: 0.6,
       ease: 'easeOut',
+    },
+  },
+};
+
+const cardVariants = {
+  initial: {
+    opacity: 0,
+    y: 20,
+    scale: 0.95,
+  },
+  animate: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.6,
+      ease: [0.32, 0.72, 0, 1], // Apple's default easing
+    },
+  },
+};
+
+const groupVariants = {
+  initial: {
+    opacity: 0,
+  },
+  animate: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+      delayChildren: 0.2,
     },
   },
 };
