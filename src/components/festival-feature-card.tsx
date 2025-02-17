@@ -12,6 +12,13 @@ const FeatureCard = styled.div`
   box-shadow: 0 4px 6px -1px rgba(139, 92, 246, 0.2);
   border: 1px solid rgba(139, 92, 246, 0.2);
   height: 100%;
+
+  @media (min-width: 768px) {
+    grid-template-rows: 20rem 1fr;
+  }
+  @media (min-width: 1024px) {
+    grid-template-rows: 24rem 1fr;
+  }
 `;
 
 const ImageContainer = styled.div`
@@ -23,6 +30,12 @@ const ContentContainer = styled.div`
   padding: 1rem;
   display: flex;
   flex-direction: column;
+  @media (min-width: 768px) {
+    padding: 1.25rem;
+  }
+  @media (min-width: 1024px) {
+    padding: 1.5rem;
+  }
 `;
 
 const FeatureTitle = styled.h3`
@@ -36,6 +49,10 @@ const FeatureDescription = styled(motion.p)`
   font-size: 1rem;
   color: #d1d5db;
   margin-bottom: 1rem;
+  @media (min-width: 768px) {
+    font-size: 1.125rem;
+    margin-bottom: 1.5rem;
+  }
 `;
 
 const ShowMoreButton = styled.button`
