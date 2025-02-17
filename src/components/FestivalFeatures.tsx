@@ -2,8 +2,11 @@
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import styled from 'styled-components';
+import { motion, AnimatePresence } from 'framer-motion';
 import ChevronLeft from '@/components/icons/ChevronLeft';
 import ChevronRight from '@/components/icons/ChevronRight';
+import { features } from '@/constants/features';
 
 interface Feature {
   title: string;
@@ -11,56 +14,340 @@ interface Feature {
   image: string;
 }
 
-const features: Feature[] = [
-  {
-    title: 'Food Truck Vendors',
-    description:
-      'Explore a diverse culinary experience with our carefully curated selection of food trucks offering everything from local favorites to international cuisine.',
-    image: '/img/tech-team.jpg',
+interface FeatureContentProps {
+  feature: Feature;
+  index: number;
+  isExpanded: boolean;
+  onToggle: () => void;
+}
+
+interface FeatureGroupComponentProps {
+  features: Feature[];
+}
+
+interface CarouselGroupProps {
+  groupIndex: number;
+  features: Feature[];
+  getItemsPerGroup: () => number;
+  direction: number;
+  expandedIndex: number | null;
+  setExpandedIndex: (index: number | null) => void;
+}
+
+const Section = styled.section`
+  padding: 2rem 1rem;
+  @media (min-width: 768px) {
+    padding: 3rem 1rem;
+  }
+  @media (min-width: 1024px) {
+    padding: 6rem 1rem;
+  }
+`;
+
+const Container = styled.div`
+  max-width: 90rem;
+  margin: 0 auto;
+`;
+
+const Header = styled.div`
+  text-align: center;
+  margin-bottom: 2rem;
+  @media (min-width: 768px) {
+    margin-bottom: 3rem;
+  }
+`;
+
+const Title = motion(styled.h2`
+  font-size: 1.875rem;
+  font-weight: bold;
+  margin-bottom: 0.75rem;
+  color: white;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  @media (min-width: 768px) {
+    font-size: 2.25rem;
+    margin-bottom: 1rem;
+  }
+  @media (min-width: 1024px) {
+    font-size: 3.75rem;
+  }
+`);
+
+const Subtitle = motion(styled.p`
+  font-size: 1.125rem;
+  color: #d8b4fe;
+  @media (min-width: 768px) {
+    font-size: 1.25rem;
+  }
+`);
+
+const CarouselContainer = motion(styled.div`
+  position: relative;
+  overflow: hidden;
+`);
+
+const CarouselTrack = styled.div`
+  position: relative;
+  height: 40rem; // Increased height
+  @media (min-width: 768px) {
+    height: 42rem;
+  }
+  @media (min-width: 1024px) {
+    height: 44rem;
+  }
+`;
+
+const FeatureGrid = styled(motion.div)<{ $columns: number }>`
+  display: grid;
+  grid-template-columns: repeat(${(props) => props.$columns}, 1fr);
+  gap: 1rem;
+  width: 100%;
+  position: absolute;
+  inset: 0;
+  padding: 0 1rem;
+
+  @media (min-width: 768px) {
+    gap: 2rem;
+    padding: 0 3rem;
+  }
+  @media (min-width: 1024px) {
+    gap: 3rem;
+    padding: 0 5rem;
+  }
+`;
+
+const FeatureCard = styled.div`
+  display: grid;
+  grid-template-rows: 20rem 1fr; // Fixed height for image container
+  background-color: #1a1a1a;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(139, 92, 246, 0.2);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  height: 100%;
+
+  @media (min-width: 768px) {
+    grid-template-rows: 20rem 1fr;
+  }
+  @media (min-width: 1024px) {
+    grid-template-rows: 24rem 1fr;
+  }
+`;
+
+const ImageContainer = styled.div`
+  position: relative;
+  width: 100%;
+`;
+
+const ContentContainer = styled.div`
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  @media (min-width: 768px) {
+    padding: 1.25rem;
+  }
+  @media (min-width: 1024px) {
+    padding: 1.5rem;
+  }
+`;
+
+const FeatureDescription = styled(motion.p)`
+  font-size: 1rem;
+  color: #d1d5db;
+  margin-bottom: 1rem;
+  @media (min-width: 768px) {
+    font-size: 1.125rem;
+    margin-bottom: 1.5rem;
+  }
+`;
+
+const FeatureTitle = styled.h3`
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #d8b4fe;
+  @media (min-width: 768px) {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+`;
+
+const ShowMoreButton = styled.button`
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  border-radius: 0.375rem;
+  color: #d8b4fe;
+  width: fit-content;
+  transition: background-color 0.2s;
+  &:hover {
+    background-color: rgba(139, 92, 246, 0.2);
+  }
+  @media (min-width: 768px) {
+    padding: 0.625rem 1.25rem;
+    font-size: 1rem;
+  }
+`;
+
+const NavigationContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  @media (min-width: 768px) {
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+`;
+
+const NavButton = styled.button<{ $disabled?: boolean }>`
+  padding: 0.5rem;
+  border-radius: 9999px;
+  color: #d8b4fe;
+  transition: background-color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    width: 0.75rem;
+    height: 0.75rem;
+  }
+
+  @media (min-width: 768px) {
+    padding: 0.75rem;
+
+    svg {
+      width: 1rem;
+      height: 1rem;
+    }
+  }
+
+  &:hover:not(:disabled) {
+    background-color: rgba(139, 92, 246, 0.2);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+  }
+`;
+
+const DotContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  @media (min-width: 768px) {
+    gap: 0.75rem;
+  }
+`;
+
+const DotButton = styled.button<{ $active: boolean }>`
+  height: 0.375rem;
+  width: 0.375rem;
+  border-radius: 9999px;
+  transition: background-color 0.2s;
+  background-color: ${(props) =>
+    props.$active ? '#8b5cf6' : 'rgba(139, 92, 246, 0.2)'};
+  @media (min-width: 768px) {
+    height: 0.5rem;
+    width: 0.5rem;
+  }
+`;
+
+const gridVariants = {
+  enter: (direction: number) => ({
+    x: direction > 0 ? 1000 : -1000,
+    opacity: 0,
+  }),
+  center: {
+    x: 0,
+    opacity: 1,
   },
-  {
-    title: 'Gen Board Project',
-    description:
-      'Experience the innovative Gen Board project, showcasing the latest in festival technology and interactive experiences for all attendees.',
-    image: '/img/tech-team.jpg',
+  exit: (direction: number) => ({
+    x: direction < 0 ? 1000 : -1000,
+    opacity: 0,
+  }),
+};
+
+const cardVariants = {
+  initial: {
+    opacity: 0,
+    y: 20,
+    scale: 0.95,
   },
-  {
-    title: 'Main Stage/FMO Stage',
-    description:
-      'Two incredible stages featuring world-class performances, state-of-the-art sound systems, and unforgettable moments throughout the festival.',
-    image: '/img/tech-team.jpg',
+  animate: (index: number) => ({
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.6,
+      ease: [0.32, 0.72, 0, 1],
+      delay: index * 0.15,
+    },
+  }),
+};
+
+const sectionVariants = {
+  initial: { opacity: 0 },
+  animate: {
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+      staggerChildren: 0.2,
+    },
   },
-  {
-    title: 'Sponsor Venues/Events',
-    description:
-      'Visit our sponsor venues for exclusive events, special performances, and unique brand experiences throughout the festival grounds.',
-    image: '/img/tech-team.jpg',
+};
+
+const titleVariants = {
+  initial: { opacity: 0, y: -50 },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: 'easeOut',
+    },
   },
-  {
-    title: 'Beer Garden',
-    description:
-      'Relax in our expansive beer garden featuring craft brews, comfortable seating, and a perfect view of the festival atmosphere.',
-    image: '/img/tech-team.jpg',
+};
+
+const carouselVariants = {
+  initial: { opacity: 0, y: 30 },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      delay: 0.3,
+    },
   },
-  {
-    title: 'Student Art Showcase',
-    description:
-      'Discover amazing artwork created by talented students, featuring installations, performances, and interactive exhibits.',
-    image: '/img/tech-team.jpg',
-  },
-];
+};
+
+const StaticGrid = styled.div<{ $columns: number }>`
+  display: grid;
+  grid-template-columns: repeat(${(props) => props.$columns}, 1fr);
+  gap: 1rem;
+  width: 100%;
+  position: absolute;
+  inset: 0;
+  padding: 0 1rem;
+
+  @media (min-width: 768px) {
+    gap: 2rem;
+    padding: 0 3rem;
+  }
+  @media (min-width: 1024px) {
+    gap: 3rem;
+    padding: 0 5rem;
+  }
+`;
 
 export default function FestivalCarousel() {
   const [currentGroup, setCurrentGroup] = useState(0);
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
-  const [isAnimating, setIsAnimating] = useState(false);
-  const [direction, setDirection] = useState<'left' | 'right'>('right');
-  const [previousGroup, setPreviousGroup] = useState(0);
+  const [direction, setDirection] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
   const [isTablet, setIsTablet] = useState(false);
-  const [hasInitiallyLoaded, setHasInitiallyLoaded] = useState(false);
 
-  // Handle responsive breakpoints
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768);
@@ -72,15 +359,6 @@ export default function FestivalCarousel() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  useEffect(() => {
-    // Set initial load state after a brief delay to ensure DOM is ready
-    const timer = setTimeout(() => {
-      setHasInitiallyLoaded(true);
-    }, 100);
-    return () => clearTimeout(timer);
-  }, []);
-
-  // Calculate items per group based on screen size
   const getItemsPerGroup = () => {
     if (isMobile) return 1;
     if (isTablet) return 2;
@@ -95,190 +373,265 @@ export default function FestivalCarousel() {
   };
 
   const nextGroup = () => {
-    if (isAnimating) return;
-    setPreviousGroup(currentGroup);
-    setDirection('right');
-    setIsAnimating(true);
+    setDirection(1);
     setCurrentGroup((prev) => (prev + 1) % totalGroups);
   };
 
   const prevGroup = () => {
-    if (isAnimating) return;
-    setPreviousGroup(currentGroup);
-    setDirection('left');
-    setIsAnimating(true);
+    setDirection(-1);
     setCurrentGroup((prev) => (prev - 1 + totalGroups) % totalGroups);
   };
 
-  useEffect(() => {
-    if (isAnimating) {
-      const timer = setTimeout(() => {
-        setIsAnimating(false);
-      }, 500);
-      return () => clearTimeout(timer);
-    }
-  }, [isAnimating]);
-
-  const getGridColumns = () => {
-    if (isMobile) return 'grid-cols-1';
-    if (isTablet) return 'grid-cols-2';
-    return 'grid-cols-3';
-  };
-
-  const FeatureGroup = ({
-    features,
-    isActive,
-    animationClass,
-  }: {
-    features: Feature[];
-    isActive: boolean;
-    animationClass: string;
+  const FeatureContent: React.FC<FeatureContentProps> = ({
+    feature,
+    index,
+    isExpanded,
+    onToggle,
   }) => (
-    <div
-      className={`grid ${getGridColumns()} gap-4 md:gap-8 lg:gap-12 w-full absolute inset-0 px-4 md:px-12 lg:px-20 transition-transform duration-500 ease-in-out ${animationClass}`}
-    >
-      {features.map((feature, index) => (
-        <div
-          key={`${index}`}
-          className={`flex flex-col bg-[#1a1a1a] rounded-xl overflow-hidden shadow-lg shadow-purple-900/20 border border-purple-900/20 opacity-0 translate-y-8 
-            ${hasInitiallyLoaded ? `animate-feature-card animate-delay-${index}` : ''}`}
-          style={{
-            animationDelay: hasInitiallyLoaded ? `${index * 150}ms` : '0ms',
-            animationFillMode: 'forwards',
-          }}
-        >
-          <div className="relative h-80 md:h-94 lg:h-[50rem]">
-            <Image
-              src={feature.image}
-              alt={feature.title}
-              fill
-              className="object-cover"
-            />
-          </div>
-          <div className="p-4 md:p-6 lg:p-8 flex-1 flex flex-col">
-            <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-4 text-purple-300">
-              {feature.title}
-            </h3>
-            <p className="text-base md:text-lg text-gray-300 mb-4 md:mb-6 flex-1">
-              {expandedIndex === index
-                ? feature.description
-                : `${feature.description.slice(0, 100)}...`}
-            </p>
-            <button
-              className="px-4 py-2 md:px-5 md:py-2.5 text-sm md:text-base border border-purple-500/30 rounded-md text-purple-300 hover:bg-purple-900/20 w-fit transition-colors"
-              onClick={() =>
-                setExpandedIndex(expandedIndex === index ? null : index)
-              }
-            >
-              {expandedIndex === index ? 'SHOW LESS -' : 'SHOW MORE +'}
-            </button>
-          </div>
-        </div>
-      ))}
-    </div>
+    <ContentContainer>
+      <FeatureTitle>{feature.title}</FeatureTitle>
+      <FeatureDescription>
+        {isExpanded
+          ? feature.description
+          : `${feature.description.slice(0, 100)}...`}
+      </FeatureDescription>
+      <ShowMoreButton onClick={onToggle}>
+        {isExpanded ? 'SHOW LESS -' : 'SHOW MORE +'}
+      </ShowMoreButton>
+    </ContentContainer>
   );
 
-  return (
-    <section className="py-8 md:py-12 lg:py-24 px-4">
-      <div className="container mx-auto">
-        <div className="text-center mb-8 md:mb-12">
-          <h2 className="text-3xl md:text-4xl lg:text-6xl font-bold mb-3 md:mb-4 text-white text-glow">
-            Dillo Day At A Glance
-          </h2>
-          <p className="text-lg md:text-xl text-purple-300">
-            We&apos;re dedicated to making the Dillo Day experience
-            unforgettable for all attendees with a variety of features and
-            attractions.
-          </p>
-        </div>
+  const FeatureGroupComponent: React.FC<FeatureGroupComponentProps> = ({
+    features,
+  }) => {
+    const itemsPerGroup = getItemsPerGroup();
 
-        <div className="relative overflow-hidden">
-          <div className="relative h-[32rem] md:h-[40rem] lg:h-[48rem]">
-            {/* Previous group */}
-            {isAnimating && (
-              <FeatureGroup
-                features={getFeatureGroup(previousGroup)}
-                isActive={false}
-                animationClass={
-                  direction === 'right'
-                    ? 'translate-x-0 animate-slide-out-left'
-                    : 'translate-x-0 animate-slide-out-right'
-                }
+    return (
+      <motion.div
+        initial={{ x: direction > 0 ? 1000 : -1000 }}
+        animate={{ x: 0 }}
+        exit={{ x: direction < 0 ? 1000 : -1000 }}
+        transition={{
+          duration: 0.5,
+          ease: [0.32, 0.72, 0, 1],
+        }}
+        style={{ position: 'absolute', width: '100%', height: '100%' }}
+      >
+        <StaticGrid $columns={itemsPerGroup}>
+          {features.map((feature, index) => (
+            <FeatureCard key={`${feature.title}-${index}`}>
+              <ImageContainer>
+                <Image
+                  src={feature.image}
+                  alt={feature.title}
+                  fill
+                  style={{ objectFit: 'cover' }}
+                />
+              </ImageContainer>
+              <ContentContainer>
+                <FeatureTitle>{feature.title}</FeatureTitle>
+                <FeatureDescription>
+                  {expandedIndex === index
+                    ? feature.description
+                    : `${feature.description.slice(0, 100)}...`}
+                </FeatureDescription>
+                <ShowMoreButton
+                  onClick={(e: React.MouseEvent) => {
+                    e.stopPropagation();
+                    setExpandedIndex(expandedIndex === index ? null : index);
+                  }}
+                >
+                  {expandedIndex === index ? 'SHOW LESS -' : 'SHOW MORE +'}
+                </ShowMoreButton>
+              </ContentContainer>
+            </FeatureCard>
+          ))}
+        </StaticGrid>
+      </motion.div>
+    );
+  };
+
+  const CarouselGroup: React.FC<CarouselGroupProps> = ({
+    groupIndex,
+    features,
+    getItemsPerGroup,
+    direction,
+    expandedIndex,
+    setExpandedIndex,
+  }) => {
+    return (
+      <FeatureGrid
+        $columns={getItemsPerGroup()}
+        key={groupIndex}
+        variants={gridVariants}
+        initial="enter"
+        animate="center"
+        exit="exit"
+        custom={direction}
+        transition={{
+          duration: 0.5,
+          ease: [0.32, 0.72, 0, 1],
+        }}
+      >
+        {features.map((feature, index) => (
+          <FeatureCard key={`${feature.title}-${index}`}>
+            <ImageContainer>
+              <Image
+                src={feature.image}
+                alt={feature.title}
+                fill
+                style={{ objectFit: 'cover' }}
               />
-            )}
-
-            {/* Current group */}
-            <FeatureGroup
-              features={getFeatureGroup(currentGroup)}
-              isActive={true}
-              animationClass={
-                isAnimating
-                  ? direction === 'right'
-                    ? 'translate-x-full animate-slide-in-right'
-                    : '-translate-x-full animate-slide-in-left'
-                  : 'translate-x-0'
-              }
-            />
-          </div>
-        </div>
-
-        {/* Navigation Controls */}
-        <div className="flex justify-center items-center gap-4 md:gap-6 mt-8 md:mt-12">
-          <button
-            className="p-2 md:p-3 rounded-full text-purple-300 hover:bg-purple-900/20 transition-colors disabled:opacity-50"
-            onClick={prevGroup}
-            disabled={isAnimating}
-          >
-            <ChevronLeft className="w-3 h-3 md:w-4 md:h-4" />
-          </button>
-
-          <div className="flex justify-center gap-2 md:gap-3">
-            {Array.from({ length: totalGroups }).map((_, index) => (
-              <button
-                key={index}
-                className={`h-1.5 md:h-2 w-1.5 md:w-2 rounded-full transition-colors ${
-                  index === currentGroup ? 'bg-purple-500' : 'bg-purple-900/20'
-                }`}
-                onClick={() => {
-                  if (!isAnimating) {
-                    setDirection(index > currentGroup ? 'right' : 'left');
-                    setPreviousGroup(currentGroup);
-                    setIsAnimating(true);
-                    setCurrentGroup(index);
-                  }
+            </ImageContainer>
+            <ContentContainer>
+              <FeatureTitle>{feature.title}</FeatureTitle>
+              <FeatureDescription>
+                {expandedIndex === index
+                  ? feature.description
+                  : `${feature.description.slice(0, 100)}...`}
+              </FeatureDescription>
+              <ShowMoreButton
+                onClick={(e: React.MouseEvent) => {
+                  e.stopPropagation();
+                  setExpandedIndex(expandedIndex === index ? null : index);
                 }}
-                disabled={isAnimating}
-              />
-            ))}
-          </div>
+              >
+                {expandedIndex === index ? 'SHOW LESS -' : 'SHOW MORE +'}
+              </ShowMoreButton>
+            </ContentContainer>
+          </FeatureCard>
+        ))}
+      </FeatureGrid>
+    );
+  };
 
-          <button
-            className="p-2 md:p-3 rounded-full text-purple-300 hover:bg-purple-900/20 transition-colors disabled:opacity-50"
-            onClick={nextGroup}
-            disabled={isAnimating}
-          >
-            <ChevronRight className="w-3 h-3 md:w-4 md:h-4" />
-          </button>
-        </div>
-      </div>
+  return (
+    <Section>
+      <Container>
+        <motion.div
+          variants={sectionVariants}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true, margin: '-100px' }}
+        >
+          <Header>
+            <motion.div variants={titleVariants}>
+              <Title>Dillo Day At A Glance</Title>
+            </motion.div>
+            <motion.div variants={titleVariants}>
+              <Subtitle>
+                We&apos;re dedicated to making the Dillo Day experience
+                unforgettable for all attendees with a variety of features and
+                attractions.
+              </Subtitle>
+            </motion.div>
+          </Header>
 
-      <style jsx global>{`
-        @keyframes featureCardAnimation {
-          0% {
-            opacity: 0;
-            transform: translateY(2rem);
-          }
-          100% {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
+          <CarouselContainer variants={carouselVariants}>
+            <CarouselTrack>
+              <AnimatePresence mode="popLayout" initial={false}>
+                <motion.div
+                  key={currentGroup}
+                  initial={{ x: direction > 0 ? '100%' : '-100%', opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  exit={{ x: direction < 0 ? '100%' : '-100%', opacity: 0 }}
+                  transition={{
+                    x: {
+                      type: 'tween',
+                      duration: 0.85,
+                      ease: [0.32, 0.72, 0, 1],
+                    },
+                    opacity: { duration: 0.5 },
+                  }}
+                  style={{
+                    position: 'absolute',
+                    width: '100%',
+                    height: '100%',
+                  }}
+                >
+                  <StaticGrid $columns={getItemsPerGroup()}>
+                    {getFeatureGroup(currentGroup).map((feature, index) => (
+                      <FeatureCard key={`${feature.title}-${index}`}>
+                        <ImageContainer>
+                          <Image
+                            src={feature.image}
+                            alt={feature.title}
+                            fill
+                            style={{ objectFit: 'cover' }}
+                            priority={true}
+                          />
+                        </ImageContainer>
+                        <ContentContainer>
+                          <FeatureTitle>{feature.title}</FeatureTitle>
+                          <AnimatePresence mode="wait">
+                            <FeatureDescription
+                              key={
+                                expandedIndex === index
+                                  ? 'expanded'
+                                  : 'collapsed'
+                              }
+                              initial={{ opacity: 0, height: 0 }}
+                              animate={{ opacity: 1, height: 'auto' }}
+                              exit={{ opacity: 0, height: 0 }}
+                              transition={{
+                                height: {
+                                  type: 'spring',
+                                  stiffness: 500,
+                                  damping: 30,
+                                  duration: 0.3,
+                                },
+                                opacity: { duration: 0.2 },
+                              }}
+                            >
+                              {expandedIndex === index
+                                ? feature.description
+                                : `${feature.description.slice(0, 100)}...`}
+                            </FeatureDescription>
+                          </AnimatePresence>
+                          <ShowMoreButton
+                            onClick={() => {
+                              setExpandedIndex(
+                                expandedIndex === index ? null : index
+                              );
+                            }}
+                          >
+                            {expandedIndex === index
+                              ? 'SHOW LESS -'
+                              : 'SHOW MORE +'}
+                          </ShowMoreButton>
+                        </ContentContainer>
+                      </FeatureCard>
+                    ))}
+                  </StaticGrid>
+                </motion.div>
+              </AnimatePresence>
+            </CarouselTrack>
+          </CarouselContainer>
 
-        .animate-feature-card {
-          animation: featureCardAnimation 0.8s cubic-bezier(0.16, 1, 0.3, 1)
-            forwards;
-        }
-      `}</style>
-    </section>
+          <motion.div variants={carouselVariants}>
+            <NavigationContainer>
+              <NavButton onClick={prevGroup}>
+                <ChevronLeft />
+              </NavButton>
+              <DotContainer>
+                {Array.from({ length: totalGroups }).map((_, index) => (
+                  <DotButton
+                    key={index}
+                    $active={index === currentGroup}
+                    onClick={() => {
+                      setDirection(index > currentGroup ? 1 : -1);
+                      setCurrentGroup(index);
+                    }}
+                  />
+                ))}
+              </DotContainer>
+              <NavButton onClick={nextGroup}>
+                <ChevronRight />
+              </NavButton>
+            </NavigationContainer>
+          </motion.div>
+        </motion.div>
+      </Container>
+    </Section>
   );
 }

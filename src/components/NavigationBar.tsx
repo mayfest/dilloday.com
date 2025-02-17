@@ -11,19 +11,17 @@ export default function NavigationBar() {
     const handleScroll = () => {
       const heroHeight = window.innerHeight;
       const currentScroll = window.scrollY;
-
-      setScrolled(currentScroll > heroHeight * 0.8);
+      setScrolled(currentScroll >= heroHeight);
     };
 
     window.addEventListener('scroll', handleScroll);
     handleScroll();
-
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-150 ${
         scrolled ? 'bg-black shadow-lg' : 'bg-transparent'
       }`}
     >
@@ -31,7 +29,7 @@ export default function NavigationBar() {
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5">
             <div
-              className={`relative transition-all duration-300 ${
+              className={`relative transition-all duration-150 ${
                 scrolled ? 'h-8 w-8' : 'h-16 w-16'
               }`}
             >

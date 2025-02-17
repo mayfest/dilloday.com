@@ -310,7 +310,7 @@ const cardVariants = {
     scale: 1,
     transition: {
       duration: 0.6,
-      ease: [0.32, 0.72, 0, 1], // Apple's default easing
+      ease: [0.32, 0.72, 0, 1],
     },
   },
 };

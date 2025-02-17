@@ -1,30 +1,10 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-// import { getHrefProps, navigation } from '@/lib/directory';
 import { ChevronDownIcon } from '@heroicons/react/24/outline';
 import GradientDivider from '../components/GradientDivider';
 import Image from 'next/image';
-
-function calculateTimeLeft() {
-  const difference = new Date('2025-05-17').getTime() - new Date().getTime();
-
-  if (difference <= 0) {
-    return {
-      days: 0,
-      hours: 0,
-      minutes: 0,
-      seconds: 0,
-    };
-  }
-
-  return {
-    days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-    hours: Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
-    minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
-    seconds: Math.floor((difference % (1000 * 60)) / 1000),
-  };
-}
+import { calculateTimeLeft } from '@/lib/hero';
 
 export default function Hero() {
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
@@ -40,15 +20,26 @@ export default function Hero() {
   return (
     <div className="h-screen bg-gray-900">
       <div className="h-full relative isolate overflow-hidden pt-14">
-        <Image
-          src="/background.jpg"
-          alt="Background Image"
-          layout="fill"
-          objectFit="cover"
-          objectPosition="center"
-          className="absolute inset-0 -z-10"
-          priority
-        />
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster="/background.jpg"
+          className="absolute inset-0 w-full h-full object-cover -z-10"
+          preload="auto"
+        >
+          <source
+            src="/videos/drone_footage_optimized.mp4#t=0.1"
+            type="video/mp4"
+          />
+          <Image
+            src="/background.jpg"
+            layout="fill"
+            objectFit="cover"
+            alt="Dillo Day Hero Image"
+          />
+        </video>
         <div className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-[360px]">
           <div
             className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-20 sm:left-[calc(40%-30rem)] sm:w-[72.1875rem]"
