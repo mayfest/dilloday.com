@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import ChevronLeft from '@/components/icons/ChevronLeft';
 import ChevronRight from '@/components/icons/ChevronRight';
 import { features } from '@/constants/features';
+import { FeatureCardItem } from '@/components/festival-feature-card';
 
 interface Feature {
   title: string;
@@ -87,7 +88,7 @@ const CarouselContainer = motion(styled.div`
 
 const CarouselTrack = styled.div`
   position: relative;
-  height: 40rem; // Increased height
+  height: 40rem;
   @media (min-width: 768px) {
     height: 42rem;
   }
@@ -117,7 +118,7 @@ const FeatureGrid = styled(motion.div)<{ $columns: number }>`
 
 const FeatureCard = styled.div`
   display: grid;
-  grid-template-rows: 20rem 1fr; // Fixed height for image container
+  grid-template-rows: 20rem 1fr;
   background-color: #1a1a1a;
   border-radius: 0.75rem;
   overflow: hidden;
@@ -343,7 +344,10 @@ const StaticGrid = styled.div<{ $columns: number }>`
 
 export default function FestivalCarousel() {
   const [currentGroup, setCurrentGroup] = useState(0);
-  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+  const [expandedIndices, setExpandedIndices] = useState<
+    Record<number, number>
+  >({});
+
   const [direction, setDirection] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
   const [isTablet, setIsTablet] = useState(false);
@@ -431,17 +435,22 @@ export default function FestivalCarousel() {
               <ContentContainer>
                 <FeatureTitle>{feature.title}</FeatureTitle>
                 <FeatureDescription>
-                  {expandedIndex === index
+                  {expandedIndices[index] === index
                     ? feature.description
                     : `${feature.description.slice(0, 100)}...`}
                 </FeatureDescription>
                 <ShowMoreButton
                   onClick={(e: React.MouseEvent) => {
                     e.stopPropagation();
-                    setExpandedIndex(expandedIndex === index ? null : index);
+                    setExpandedIndices((prev) => ({
+                      ...prev,
+                      [index]: prev[index] === index ? -1 : index,
+                    }));
                   }}
                 >
-                  {expandedIndex === index ? 'SHOW LESS -' : 'SHOW MORE +'}
+                  {expandedIndices[index] === index
+                    ? 'SHOW LESS -'
+                    : 'SHOW MORE +'}
                 </ShowMoreButton>
               </ContentContainer>
             </FeatureCard>
@@ -551,56 +560,10 @@ export default function FestivalCarousel() {
                 >
                   <StaticGrid $columns={getItemsPerGroup()}>
                     {getFeatureGroup(currentGroup).map((feature, index) => (
-                      <FeatureCard key={`${feature.title}-${index}`}>
-                        <ImageContainer>
-                          <Image
-                            src={feature.image}
-                            alt={feature.title}
-                            fill
-                            style={{ objectFit: 'cover' }}
-                            priority={true}
-                          />
-                        </ImageContainer>
-                        <ContentContainer>
-                          <FeatureTitle>{feature.title}</FeatureTitle>
-                          <AnimatePresence mode="wait">
-                            <FeatureDescription
-                              key={
-                                expandedIndex === index
-                                  ? 'expanded'
-                                  : 'collapsed'
-                              }
-                              initial={{ opacity: 0, height: 0 }}
-                              animate={{ opacity: 1, height: 'auto' }}
-                              exit={{ opacity: 0, height: 0 }}
-                              transition={{
-                                height: {
-                                  type: 'spring',
-                                  stiffness: 500,
-                                  damping: 30,
-                                  duration: 0.3,
-                                },
-                                opacity: { duration: 0.2 },
-                              }}
-                            >
-                              {expandedIndex === index
-                                ? feature.description
-                                : `${feature.description.slice(0, 100)}...`}
-                            </FeatureDescription>
-                          </AnimatePresence>
-                          <ShowMoreButton
-                            onClick={() => {
-                              setExpandedIndex(
-                                expandedIndex === index ? null : index
-                              );
-                            }}
-                          >
-                            {expandedIndex === index
-                              ? 'SHOW LESS -'
-                              : 'SHOW MORE +'}
-                          </ShowMoreButton>
-                        </ContentContainer>
-                      </FeatureCard>
+                      <FeatureCardItem
+                        key={`${feature.title}-${index}`}
+                        feature={feature}
+                      />
                     ))}
                   </StaticGrid>
                 </motion.div>
