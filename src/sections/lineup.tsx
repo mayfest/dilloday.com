@@ -96,11 +96,6 @@ const StyledButton = styled.button`
   font-weight: 500;
   border-radius: 4px;
   transition: all 0.2s ease;
-
-  &:hover {
-    background: white;
-    color: black;
-  }
 `;
 
 const Container = styled.div`
@@ -153,9 +148,6 @@ const ArtistButton = styled.button`
   width: 100%;
   cursor: pointer;
   transition: background-color 0.2s;
-  &:hover {
-    background-color: rgba(255, 255, 255, 0.05);
-  }
 `;
 
 const ArtistRow = motion(styled.div`
@@ -163,7 +155,7 @@ const ArtistRow = motion(styled.div`
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid rgb(255, 255, 255);
-  padding: 1rem 0;
+  padding: 1.5rem 0;
 `);
 
 const ArtistInfo = styled.div`
@@ -185,16 +177,31 @@ const TimeText = styled.p`
 `;
 
 const HeadlinerSection = motion(styled.div`
-  margin-top: 10rem;
-  padding-bottom: 10rem;
+  margin-top: 6rem;
+  padding-bottom: 6rem;
+
+  @media (min-width: 768px) {
+    margin-top: 10rem;
+    padding-bottom: 10rem;
+  }
+
   > h2 {
-    font-size: 4rem;
+    font-size: 2rem;
     font-weight: 700;
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     text-shadow:
       0 0 16px rgba(126, 87, 194, 0.4),
       0 0 60px rgba(94, 53, 177, 0.5);
+
+    @media (min-width: 640px) {
+      font-size: 3rem;
+      margin-bottom: 2rem;
+    }
+
+    @media (min-width: 1024px) {
+      font-size: 4rem;
+    }
   }
 `);
 
@@ -203,6 +210,12 @@ const HeadlinerImageContainer = styled.div`
   aspect-ratio: 16 / 9;
   overflow: hidden;
   border-radius: 0.5rem;
+  margin: 0 auto;
+  max-width: 95%;
+
+  @media (min-width: 640px) {
+    max-width: 90%;
+  }
 `;
 
 const HeadlinerImage = styled.img`
@@ -222,14 +235,39 @@ const HeadlinerOverlay = styled.div`
 
 const HeadlinerContent = styled.div`
   text-align: center;
+  width: 90%;
+  max-width: 100%;
+  padding: 1rem;
+
   > h3 {
-    font-size: 2.25rem;
+    font-size: 1.5rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    @media (min-width: 640px) {
+      font-size: 1.75rem;
+    }
+
+    @media (min-width: 1024px) {
+      font-size: 2.25rem;
+      white-space: normal;
+    }
   }
+
   > p {
-    font-size: 1.25rem;
+    font-size: 1rem;
     margin-bottom: 1rem;
+
+    @media (min-width: 640px) {
+      font-size: 1.125rem;
+    }
+
+    @media (min-width: 1024px) {
+      font-size: 1.25rem;
+    }
   }
 `;
 
@@ -278,8 +316,7 @@ const artistRowVariants = {
     },
   },
   hover: {
-    scale: 1.02,
-    backgroundColor: 'rgba(255, 255, 255, 0.05)',
+    scale: 1.03,
     transition: {
       duration: 0.2,
     },

@@ -29,13 +29,25 @@ const DialogContent = styled.div<{ $isLeaving: boolean }>`
   background-color: black;
   color: white;
   max-width: 56rem;
-  width: 110vw;
+  width: 90%;
+  max-height: 85vh;
+  overflow-y: auto;
   border-radius: 1rem;
-  padding: 2rem;
+  padding: 1.5rem;
   position: relative;
   margin: 1.5rem;
   animation: ${(props) => (props.$isLeaving ? 'modalExit' : 'modalEnter')} 0.4s
     cubic-bezier(0.16, 1, 0.3, 1) forwards;
+
+  @media (min-width: 640px) {
+    padding: 2rem;
+    max-height: 90vh;
+  }
+
+  @media (min-width: 1024px) {
+    width: 85%;
+    max-height: 85vh;
+  }
 
   @keyframes modalEnter {
     0% {
@@ -61,7 +73,11 @@ const DialogContent = styled.div<{ $isLeaving: boolean }>`
 `;
 
 const DialogHeader = styled.div`
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
+
+  @media (min-width: 640px) {
+    margin-bottom: 1.5rem;
+  }
 `;
 
 const DialogTitle = styled.h2`
@@ -72,17 +88,23 @@ const DialogTitle = styled.h2`
 
 const Grid = styled.div`
   display: grid;
-  gap: 1.5rem;
+  gap: 1.25rem;
+
   @media (min-width: 640px) {
     grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
   }
 `;
 
 const ImageContainer = styled.div`
   position: relative;
-  aspect-ratio: 1;
+  aspect-ratio: 16/9;
   overflow: hidden;
   border-radius: 0.5rem;
+
+  @media (min-width: 640px) {
+    aspect-ratio: 1;
+  }
 `;
 
 const ContentSection = styled.div`
@@ -100,12 +122,24 @@ const SectionTitle = styled.h4`
 `;
 
 const SectionContent = styled.p`
-  font-size: 1.125rem;
-  line-height: 1.75rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+
+  @media (min-width: 640px) {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
 `;
 
 const Description = styled.p`
   color: #d1d5db;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+
+  @media (min-width: 640px) {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
 `;
 
 const SocialLinksContainer = styled.div`
@@ -117,12 +151,17 @@ const SocialButton = styled.a`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 2rem;
+  height: 2rem;
   border: 1px solid white;
   border-radius: 0.375rem;
   color: white;
   transition: all 0.2s;
+
+  @media (min-width: 640px) {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
 
   &:hover {
     background-color: white;

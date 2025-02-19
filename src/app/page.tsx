@@ -10,6 +10,7 @@ import Tickets from '@/sections/Tickets';
 import Sponsors from '@/sections/Sponsors';
 import { Metadata } from 'next';
 import FestivalCarousel from '@/components/FestivalFeatures';
+import HorizontalStoreComponent from '@/components/store';
 
 export const metadata: Metadata = {
   title: 'Dillo Day',
@@ -23,11 +24,12 @@ export default function HomePage() {
       <Hero />
       <About />
       <FestivalSchedule />
-      <EventInformation />
-      <Tickets />
+      {/* <EventInformation /> */}
+      {/* <Tickets /> */}
       <FestivalCarousel />
       <MobileApp />
       {/* <Team /> */}
+      <HorizontalStoreComponent />
       <PastDillos />
       <Sponsors />
       <Support />
