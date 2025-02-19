@@ -23,8 +23,8 @@ export default function HomePage() {
       <Hero />
       <About />
       <FestivalSchedule />
-      {/* <EventInformation /> */}
-      {/* <Tickets /> */}
+      <EventInformation />
+      <Tickets />
       <FestivalCarousel />
       <MobileApp />
       {/* <Team /> */}

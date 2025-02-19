@@ -8,8 +8,8 @@ import { ArrowRightIcon } from '@heroicons/react/24/outline';
 import styled from 'styled-components';
 
 const Container = styled.div`
-  background: #13381f;
-  box-shadow: 0 4px 20px #13381f;
+  background: #173885;
+  box-shadow: 0 4px 20px #173885;
   border-radius: 16px;
   padding: 16px;
   color: #f0e9d3;
@@ -22,7 +22,7 @@ const Title = styled.h2`
   letter-spacing: 1px;
   text-transform: uppercase;
   text-align: center;
-  color: #f8b547;
+  color: #f6f2a3;
 `;
 
 const Contents = styled.div`
@@ -59,7 +59,7 @@ const Times = styled.div`
 const TimesTitle = styled.p`
   font-size: 18px;
   font-weight: 600;
-  color: #f8b547;
+  color: #f6f2a3;
 `;
 
 const TimesLocation = styled(Link)`
@@ -153,7 +153,7 @@ const FAQContents = styled.div``;
 const FAQTitle = styled.h3`
   font-size: 16px;
   font-weight: 500;
-  color: #f8b547;
+  color: #f6f2a3;
 `;
 
 const FAQText = styled.p`
@@ -191,7 +191,7 @@ export default function EventInformation() {
   return (
     <Section id="know-before-you-go">
       <Container>
-        <Title>☀️ Dillo Day 52: Know Before You Go ☀️</Title>
+        <Title>🎡 Dillo Day 53: Know Before You Go 🎡</Title>
         <Contents>
           <Step
             step="1"
