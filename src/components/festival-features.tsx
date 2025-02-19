@@ -161,10 +161,6 @@ const DescriptionText = styled.span`
   display: inline;
 `;
 
-const ExpandedContent = styled(motion.span)`
-  display: inline;
-`;
-
 const Button = styled.button<ButtonProps>`
   display: inline-flex;
   align-items: center;
@@ -205,8 +201,8 @@ const NavigationContainer = styled.div`
 `;
 
 const IconWrapper = styled.div`
-  width: 24px;
-  height: 24px;
+  width: 8px;
+  height: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -217,8 +213,8 @@ const NavButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 3rem;
-  height: 3rem;
+  width: 1.5rem;
+  height: 1.5rem;
   border-radius: 9999px;
   background-color: rgba(139, 92, 246, 0.3);
   border: 2px solid #8b5cf6;

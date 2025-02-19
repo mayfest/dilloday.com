@@ -9,7 +9,7 @@ import PastDillos from '@/sections/PastDillos';
 import Tickets from '@/sections/Tickets';
 import Sponsors from '@/sections/Sponsors';
 import { Metadata } from 'next';
-import FestivalCarousel from '@/components/FestivalFeatures';
+import FestivalCarousel from '@/components/festival-features';
 import HorizontalStoreComponent from '@/components/store';
 
 export const metadata: Metadata = {
