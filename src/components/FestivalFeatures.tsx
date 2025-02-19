@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import Image from 'next/image';
 import styled from 'styled-components';
 import { motion, AnimatePresence } from 'framer-motion';
 import ChevronLeft from '@/components/icons/ChevronLeft';
@@ -60,9 +59,12 @@ const CarouselContainer = motion(styled.div`
   overflow: hidden;
 `);
 
-const CarouselTrack = styled.div`
+const CarouselTrack = styled(motion.div)`
   position: relative;
+  width: 100%;
   height: 40rem;
+  overflow: hidden;
+
   @media (min-width: 768px) {
     height: 42rem;
   }
@@ -271,7 +273,7 @@ export default function FestivalCarousel() {
                     opacity: { duration: 0.5 },
                   }}
                   style={{
-                    position: 'absolute',
+                    position: 'absolute', // Ensures groups don't stack
                     width: '100%',
                     height: '100%',
                   }}
