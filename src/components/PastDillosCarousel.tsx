@@ -1,6 +1,5 @@
-import { Swiper, SwiperClass, SwiperRef, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperClass, SwiperSlide } from 'swiper/react';
 import { EffectCards, Navigation } from 'swiper/modules';
-import styles from './PastDillosCarousel.module.css';
 
 import 'swiper/css';
 import 'swiper/css/effect-cards';

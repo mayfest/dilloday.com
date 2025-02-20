@@ -114,7 +114,7 @@ export default function Footer() {
         <p className="mt-10 mb-2 text-center text-xs leading-5 text-gray-100">
           Copyright &copy; 2024 Mayfest Productions. All rights reserved.
         </p>
-        <p className="my-2 text-center text-xs leading-5 text-gray-100">
+        {/* <p className="my-2 text-center text-xs leading-5 text-gray-100">
           All photos are courtesy of{' '}
           <a
             className="text-[#e9d5ff] hover:underline"
@@ -131,7 +131,7 @@ export default function Footer() {
         </p>
         <p className="my-2 text-center text-xs leading-5 text-gray-100">
           Google Play and the Google Play logo are trademarks of Google LLC.
-        </p>
+        </p> */}
       </div>
     </footer>
   );

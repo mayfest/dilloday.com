@@ -1,46 +1,44 @@
 'use client';
 
-import { getHrefProps, navigation } from '@/lib/directory';
+import { useState, useEffect } from 'react';
 import { ChevronDownIcon } from '@heroicons/react/24/outline';
 import GradientDivider from '../components/GradientDivider';
-
-// TODO move away from Tailwind CSS for consistency
+import Image from 'next/image';
+import { calculateTimeLeft } from '@/lib/hero';
 
 export default function Hero() {
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeLeft(calculateTimeLeft());
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <div className="h-screen bg-gray-900">
-      <header className="absolute inset-x-0 top-0 z-50">
-        <nav className="flex items-center justify-between p-6 lg:px-8">
-          <div className="flex lg:flex-1">
-            <a href="#" className="-m-1.5 p-1.5">
-              <img
-                className="h-16 w-auto"
-                src="/dillo.png"
-                alt="Dillo Day Logo"
-              />
-            </a>
-          </div>
-          <div className="hidden lg:flex lg:gap-x-12 justify-start">
-            {navigation.map((item, i) => (
-              <a
-                key={`nav-item-${i}`}
-                className="text-lg font-semibold leading-6 text-white opacity-75 transition-all duration-150 hover:opacity-100"
-                {...getHrefProps(item.href)}
-              >
-                {item.name}
-              </a>
-            ))}
-          </div>
-          <div className="hidden lg:flex lg:flex-1 lg:justify-end"></div>
-        </nav>
-      </header>
-
       <div className="h-full relative isolate overflow-hidden pt-14">
-        <img
-          src="/background.jpg"
-          alt="Background Image"
-          className="absolute inset-0 -z-10 h-full w-full object-cover"
-        />
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster="/background.jpg"
+          className="absolute inset-0 w-full h-full object-cover -z-10"
+          preload="auto"
+        >
+          <source
+            src="/videos/drone_footage_optimized.mp4#t=0.1"
+            type="video/mp4"
+          />
+          <Image
+            src="/background.jpg"
+            layout="fill"
+            alt="Dillo Day Hero Image"
+          />
+        </video>
         <div className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-[360px]">
           <div
             className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-20 sm:left-[calc(40%-30rem)] sm:w-[72.1875rem]"
@@ -52,15 +50,30 @@ export default function Hero() {
         </div>
         <div className="mx-auto w-[70%] py-32 sm:py-48 lg:py-56">
           <div className="text-center">
-            {/* <p className="font-bold text-white opacity-75 text-glow">
-              Welcome to
-            </p> */}
+            <p className="font-bold text-white opacity-75 text-glow text-2xl">
+              05.17.25
+            </p>
             <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-9xl text-glow">
               DILLO DAY
             </h1>
-            <p className="font-bold text-white opacity-75 text-glow">
-              presented by Mayfest Productions, est. 1971
-            </p>
+            <div className="font-bold text-white opacity-75 text-glow space-x-2">
+              <span className="inline-block min-w-[ch]">
+                {String(timeLeft.days).padStart(3, '0')}
+              </span>
+              <span>days</span>
+              <span className="inline-block min-w-[2ch]">
+                {String(timeLeft.hours).padStart(2, '0')}
+              </span>
+              <span>hours</span>
+              <span className="inline-block min-w-[2ch]">
+                {String(timeLeft.minutes).padStart(2, '0')}
+              </span>
+              <span>minutes</span>
+              <span className="inline-block min-w-[2ch]">
+                {String(timeLeft.seconds).padStart(2, '0')}
+              </span>
+              <span>seconds</span>
+            </div>
           </div>
         </div>
         <div className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]">

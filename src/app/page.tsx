@@ -1,15 +1,18 @@
+import { Metadata } from 'next';
 import About from '@/sections/About';
 import Support from '@/sections/Support';
 import EventInformation from '@/sections/EventInformation';
-import Footer from '@/sections/Footer';
 import Hero from '@/sections/Hero';
+import FestivalSchedule from '@/sections/lineup';
 import MailingList from '@/sections/MailingList';
 import MobileApp from '@/sections/MobileApp';
 import PastDillos from '@/sections/PastDillos';
-import Team from '@/sections/Team';
-import Terms from '@/sections/Terms';
 import Tickets from '@/sections/Tickets';
-import { Metadata } from 'next';
+import Sponsors from '@/sections/Sponsors';
+import FestivalCarousel from '@/components/festival-features';
+import FestivalLayout from '@/components/festival-layout';
+import Team from '@/sections/Team';
+import HorizontalStoreComponent from '@/components/store';
 
 export const metadata: Metadata = {
   title: 'Dillo Day',
@@ -21,17 +24,19 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+      <About />
+      {/* <FestivalSchedule /> */}
+      {/* <FestivalLayout /> */}
       {/* <EventInformation /> */}
       {/* <Tickets /> */}
-      <About />
-      {/* <MobileApp /> */}
+      {/* <FestivalCarousel /> */}
+      <MobileApp />
       <Team />
+      <HorizontalStoreComponent />
       <PastDillos />
-      <Terms />
-      {/* <Sponsors /> */}
+      <Sponsors />
       <Support />
       <MailingList />
-      <Footer />
     </>
   );
 }

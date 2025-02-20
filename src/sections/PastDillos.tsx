@@ -1,10 +1,10 @@
 'use client';
 
 import styled from 'styled-components';
-import { Section, mobile } from '@/components';
+import { Section } from '@/components';
 import { Space_Grotesk } from 'next/font/google';
 import PastDillosCarousel from '../components/PastDillosCarousel';
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { history } from '@/lib/history';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
 import PastDilloInfo from '../components/PastDilloInfo';
@@ -95,8 +95,8 @@ const slideControllerVariants = {
 export default function PastDillos() {
   const [slide, setSlide] = useState(history.length - 1);
   const [view, setView] = useState<number | null>(null);
-  const listRef = useRef<HTMLDivElement>(null);
-  const selectedRef = useRef<HTMLButtonElement>(null);
+  // const listRef = useRef<HTMLDivElement>(null);
+  // const selectedRef = useRef<HTMLButtonElement>(null);
 
   return (
     <Section

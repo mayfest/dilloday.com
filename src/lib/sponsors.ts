@@ -85,6 +85,12 @@ export const sponsors: SponsorInformation[] = [
     color: 'white',
   },
   {
+    name: 'Coca-Cola',
+    logo: 'https://i.imgur.com/ukZsruf.png',
+    href: 'https://www.coca-cola.com/us/en',
+    color: 'white',
+  },
+  {
     name: '5411 Empanadas',
     logo: 'https://i.imgur.com/AHWjwxU.jpeg',
     href: 'https://5411empanadas.com',
@@ -112,6 +118,30 @@ export const sponsors: SponsorInformation[] = [
     name: 'C&W Ice Cream',
     logo: 'https://i.imgur.com/jO958p0.png',
     href: 'https://cwmarketandicecreamparlor.com',
+    color: 'white',
+  },
+  {
+    name: 'Zipcar',
+    logo: 'https://i.imgur.com/gYs948c.jpeg',
+    href: 'https://www.zipcar.com/?gad_source=1&gclid=CjwKCAiAn9a9BhBtEiwAbKg6fkG1P_f0vBzyIKtDsFqc5KguqEQn0PV6hZ9f5BL_ev4r_OR5xKaweRoCvUwQAvD_BwE&gclsrc=aw.ds',
+    color: 'white',
+  },
+  {
+    name: 'Postmates',
+    logo: 'https://i.imgur.com/blmB8Uw.jpeg',
+    href: 'https://postmates.com/',
+    color: 'white',
+  },
+  {
+    name: 'Lyft',
+    logo: 'https://i.imgur.com/Z6u6ADh.png',
+    href: 'https://www.lyft.com/',
+    color: 'white',
+  },
+  {
+    name: 'Disney',
+    logo: 'https://i.imgur.com/skWHEQO.png',
+    href: 'https://www.disney.com/',
     color: 'white',
   },
 ];

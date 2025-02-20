@@ -297,4 +297,28 @@ export const history: HistoricalEvent[] = [
       },
     ],
   },
+  {
+    year: '2024',
+    date: 'May 18th, 2024',
+    description:
+      'Dillo Day 2024 landed on May 18, 2024, bringing the "Camp" theme to life in a dazzling display of extravagance, theatricality, and pure spectacle. From the moment festival-goers stepped onto the Lakefill, they were immersed in a world of over-the-top fashion, bold colors, and playful self-expression. The Main Stage delivered electrifying performances from Swae Lee, Bakar, Amaarae, Lupe Fiasco, LF System, and Maude Latour, while the FMO Stage showcased rising stars YungManny, Maiya the Don, Adanna Duru, and Nada!. With larger-than-life visuals, outrageous outfits, and performances that blurred the line between concert and performance art, Dillo 2024 fully embraced the spirit of Camp, turning the festival into a dreamscape of excess, creativity, and unforgettable moments.',
+    image: '/img/dillo-2024.jpg',
+    artists: [
+      {
+        stage: 'Main Stage',
+        names: [
+          'Swae Lee',
+          'Bakar',
+          'Amaarae',
+          'Lupe Fiasco',
+          'LF System',
+          'Maude Latour',
+        ],
+      },
+      {
+        stage: 'FMO Stage',
+        names: ['YungManny', 'Maiya the Don', 'Adanna Duru', 'Nada!'],
+      },
+    ],
+  },
 ];
