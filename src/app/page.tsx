@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import About from '@/sections/About';
 import Support from '@/sections/Support';
 import EventInformation from '@/sections/EventInformation';
@@ -8,9 +9,9 @@ import MobileApp from '@/sections/MobileApp';
 import PastDillos from '@/sections/PastDillos';
 import Tickets from '@/sections/Tickets';
 import Sponsors from '@/sections/Sponsors';
-import { Metadata } from 'next';
 import FestivalCarousel from '@/components/festival-features';
 import FestivalLayout from '@/components/festival-layout';
+import Team from '@/sections/Team';
 import HorizontalStoreComponent from '@/components/store';
 
 export const metadata: Metadata = {
@@ -24,13 +25,13 @@ export default function HomePage() {
     <>
       <Hero />
       <About />
-      <FestivalSchedule />
-      <FestivalLayout />
+      {/* <FestivalSchedule /> */}
+      {/* <FestivalLayout /> */}
       {/* <EventInformation /> */}
       {/* <Tickets /> */}
-      <FestivalCarousel />
+      {/* <FestivalCarousel /> */}
       <MobileApp />
-      {/* <Team /> */}
+      <Team />
       <HorizontalStoreComponent />
       <PastDillos />
       <Sponsors />

@@ -1,7 +1,7 @@
 'use client';
 
 import styled from 'styled-components';
-import { Section, mobile } from '@/components';
+import { Section } from '@/components';
 import { Space_Grotesk } from 'next/font/google';
 import PastDillosCarousel from '../components/PastDillosCarousel';
 import { useRef, useState } from 'react';
@@ -95,8 +95,8 @@ const slideControllerVariants = {
 export default function PastDillos() {
   const [slide, setSlide] = useState(history.length - 1);
   const [view, setView] = useState<number | null>(null);
-  const listRef = useRef<HTMLDivElement>(null);
-  const selectedRef = useRef<HTMLButtonElement>(null);
+  // const listRef = useRef<HTMLDivElement>(null);
+  // const selectedRef = useRef<HTMLButtonElement>(null);
 
   return (
     <Section
