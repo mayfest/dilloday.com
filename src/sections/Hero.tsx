@@ -36,7 +36,6 @@ export default function Hero() {
           <Image
             src="/background.jpg"
             layout="fill"
-            objectFit="cover"
             alt="Dillo Day Hero Image"
           />
         </video>

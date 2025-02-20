@@ -10,6 +10,7 @@ import Tickets from '@/sections/Tickets';
 import Sponsors from '@/sections/Sponsors';
 import { Metadata } from 'next';
 import FestivalCarousel from '@/components/festival-features';
+import FestivalLayout from '@/components/festival-layout';
 import HorizontalStoreComponent from '@/components/store';
 
 export const metadata: Metadata = {
@@ -24,6 +25,7 @@ export default function HomePage() {
       <Hero />
       <About />
       <FestivalSchedule />
+      <FestivalLayout />
       {/* <EventInformation /> */}
       {/* <Tickets /> */}
       <FestivalCarousel />

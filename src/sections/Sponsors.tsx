@@ -23,7 +23,7 @@ const SponsorBox = styled.div<{ color: string }>`
 const Image = styled.img`
   height: 100px;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 20px;
   margin: 5px;
 `;
 
