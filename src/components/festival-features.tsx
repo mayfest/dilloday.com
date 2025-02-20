@@ -317,7 +317,7 @@ export default function FestivalCarousel() {
         >
           <Header>
             <motion.div variants={titleVariants}>
-              <Title>What to Expect: Carnival Dillo</Title>
+              <Title>What to Expect: Dillo Day</Title>
             </motion.div>
             <motion.div variants={titleVariants}>
               <Subtitle>

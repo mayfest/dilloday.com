@@ -177,7 +177,7 @@ const TimeText = styled.p`
 `;
 
 const HeadlinerSection = motion(styled.div`
-  margin-top: 6rem;
+  margin-top: 10rem;
   padding-bottom: 6rem;
 
   @media (min-width: 768px) {
@@ -466,7 +466,7 @@ export default function FestivalSchedule() {
               >
                 <HeadlinerImageContainer>
                   <HeadlinerImage
-                    src="/img/dillo-2022.jpg"
+                    src="/img/artist/swae-lee-main.jpeg"
                     alt={headliner.artist}
                   />
                   <HeadlinerOverlay>

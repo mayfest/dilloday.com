@@ -248,12 +248,12 @@ export default function FestivalLayout() {
         >
           <Header>
             <motion.div variants={titleVariants}>
-              <Title>Dillo 53 Layout</Title>
+              <Title>Camp Dillo Festival Map</Title>
             </motion.div>
             <motion.div variants={titleVariants}>
               <Subtitle>
-                Checkout Carnival Dillo's Festival Layout to plan ahead and get
-                an idea of where and what you want to do!
+                Checkout Camp Dillo's Festival Layout to plan ahead and get an
+                idea of where and what you want to do!
               </Subtitle>
             </motion.div>
           </Header>
@@ -306,14 +306,14 @@ export default function FestivalLayout() {
             )}
           </AnimatePresence>
 
-          <Legend>
+          {/* <Legend>
             {legendItems.map((item, index) => (
               <LegendItem key={index}>
                 <LegendColor $color={item.color} />
                 <LegendText>{item.label}</LegendText>
               </LegendItem>
             ))}
-          </Legend>
+          </Legend> */}
 
           <FooterNote>
             *This festival map is not final and subject to change.
