@@ -95,8 +95,6 @@ const slideControllerVariants = {
 export default function PastDillos() {
   const [slide, setSlide] = useState(history.length - 1);
   const [view, setView] = useState<number | null>(null);
-  // const listRef = useRef<HTMLDivElement>(null);
-  // const selectedRef = useRef<HTMLButtonElement>(null);
 
   return (
     <Section
