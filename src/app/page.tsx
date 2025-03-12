@@ -32,7 +32,7 @@ export default function HomePage() {
       <MobileApp />
       <HorizontalStoreComponent />
       <PastDillos />
-      <Team />n
+      <Team />
       <Sponsors />
       <Support />
       <MailingList />
