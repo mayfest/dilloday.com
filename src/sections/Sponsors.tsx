@@ -13,6 +13,7 @@ const Title = styled.h2`
 const TextContainer = styled.div`
   max-width: 800px;
   margin: 0 auto;
+  margin-bottom: 32px;
 `;
 
 const Text = styled.p`
@@ -43,22 +44,24 @@ export default function Sponsors() {
       <TextContainer>
         <Text>
           Dillo Day is the largest student-run music festival in the country,
-          bringing together over 12,000 college students for a day of live music,
-          food, and immersive experiences on the shore of Lake Michigan. Beyond
-          our main stage—where past artists like Kendrick Lamar, Steve Aoki, and
-          Chance the Rapper have performed—the festival features Dillo Village.
+          bringing together over 12,000 college students for a day of live
+          music, food, and immersive experiences on the shore of Lake Michigan.
+          Beyond our main stage—where past artists like Kendrick Lamar, Steve
+          Aoki, and Chance the Rapper have performed—the festival features Dillo
+          Village.
           <br />
           <br />
           Dillo Village is a dynamic space with a second stage showcasing local
           Chicago artists, interactive art installations, and a variety of food
-          vendors. It offers sponsors and corporate partners a unique opportunity
-          to engage directly with a vibrant, college-aged audience (18-22 years old)
-          through activations, giveaways, and brand experiences.
+          vendors. It offers sponsors and corporate partners a unique
+          opportunity to engage directly with a vibrant, college-aged audience
+          (18-22 years old) through activations, giveaways, and brand
+          experiences.
           <br />
           <br />
-          We'd love to collaborate with you to create an engaging, standout presence
-          at Dillo Day 2024. To explore sponsorship opportunities, please reach out
-          to us at <strong>corporate@dilloday.com</strong>.
+          We'd love to collaborate with you to create an engaging, standout
+          presence at Dillo Day 2024. To explore sponsorship opportunities,
+          please reach out to us at <strong>corporate@dilloday.com</strong>.
         </Text>
       </TextContainer>
       <ImagesContainer>
