@@ -1,7 +1,6 @@
 import { Metadata } from 'next';
 import About from '@/sections/About';
 import Support from '@/sections/Support';
-import EventInformation from '@/sections/EventInformation';
 import Hero from '@/sections/Hero';
 import FestivalSchedule from '@/sections/lineup';
 import MailingList from '@/sections/MailingList';

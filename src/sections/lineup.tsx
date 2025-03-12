@@ -335,42 +335,12 @@ const headlinerVariants = {
   },
 };
 
-const cardVariants = {
-  initial: {
-    opacity: 0,
-    y: 20,
-    scale: 0.95,
-  },
-  animate: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: {
-      duration: 0.6,
-      ease: [0.32, 0.72, 0, 1],
-    },
-  },
-};
-
-const groupVariants = {
-  initial: {
-    opacity: 0,
-  },
-  animate: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.15,
-      delayChildren: 0.2,
-    },
-  },
-};
-
 export default function FestivalSchedule() {
   const [selectedArtist, setSelectedArtist] = useState<Artist | null>(null);
   const [activeTab, setActiveTab] = useState('Main Stage');
 
   return (
-    <Container>
+    <Container id="lineup">
       <InnerContainer>
         <motion.div
           variants={sectionVariants}

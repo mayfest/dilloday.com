@@ -381,7 +381,7 @@ export default function DilloDayStore(): React.ReactElement {
   }
 
   return (
-    <StoreSection>
+    <StoreSection id="store">
       <ContentContainer>
         <motion.div
           variants={sectionVariants}

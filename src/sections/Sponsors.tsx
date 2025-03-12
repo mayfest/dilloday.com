@@ -1,5 +1,4 @@
 'use client';
-
 import { Section } from '@/components';
 import { sponsors } from '@/lib/sponsors';
 import styled from 'styled-components';
@@ -11,8 +10,12 @@ const Title = styled.h2`
   margin: 16px 0;
 `;
 
+const TextContainer = styled.div`
+  max-width: 800px;
+  margin: 0 auto;
+`;
+
 const Text = styled.p`
-  text-align: center;
   font-size: 14px;
 `;
 
@@ -36,24 +39,28 @@ const ImagesContainer = styled.div`
 export default function Sponsors() {
   return (
     <Section>
-      <Title>Our Supporters</Title>
-      <Text>
-        The Dillo Day festival experience not only consists of the main stage,
-        where major acts such as Kendrick Lamar, Steve Aoki, and Chance the
-        Rapper have performed in the past, but also features the Dillo Village.
-        The Dillo Village is an immersive section of the festival grounds on the
-        shore of Lake Michigan consisting of a second stage featuring local
-        Chicago artists as well as food trucks, interactive art exhibits, and
-        additional programming. This space allows our corporate partners and
-        sponsors to meaningfully and directly engage with our 12,000 largely
-        millennial festival attendees. The Dillo Village is the heartbeat of our
-        festival, a thriving space full of energy and excitement where
-        festivalgoers truly come together as a community and celebrate the start
-        of summer in Chicago. We'd love to work with you in creating a standout,
-        custom experience. Please reach out to us at
-        corporatedilloday@northwestern.edu to have your company be a part of
-        Dillo Day 2024.
-      </Text>
+      <Title>Our Sponsors</Title>
+      <TextContainer>
+        <Text>
+          Dillo Day is the largest student-run music festival in the country,
+          bringing together over 12,000 college students for a day of live music,
+          food, and immersive experiences on the shore of Lake Michigan. Beyond
+          our main stage—where past artists like Kendrick Lamar, Steve Aoki, and
+          Chance the Rapper have performed—the festival features Dillo Village.
+          <br />
+          <br />
+          Dillo Village is a dynamic space with a second stage showcasing local
+          Chicago artists, interactive art installations, and a variety of food
+          vendors. It offers sponsors and corporate partners a unique opportunity
+          to engage directly with a vibrant, college-aged audience (18-22 years old)
+          through activations, giveaways, and brand experiences.
+          <br />
+          <br />
+          We'd love to collaborate with you to create an engaging, standout presence
+          at Dillo Day 2024. To explore sponsorship opportunities, please reach out
+          to us at <strong>corporate@dilloday.com</strong>.
+        </Text>
+      </TextContainer>
       <ImagesContainer>
         {sponsors.map((sponsor, index) => (
           <SponsorBox key={index} color={sponsor.color}>
