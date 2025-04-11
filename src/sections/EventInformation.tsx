@@ -5,6 +5,7 @@ import FAQSection from '@/components/FAQSection';
 import Step from '@/components/Step';
 import { wristbandDistribution } from '@/lib/wristband';
 import { ArrowRightIcon } from '@heroicons/react/24/outline';
+import RedTicket from '@/components/icons/red-ticket';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -43,6 +44,16 @@ const Link = styled.a`
   &:hover {
     text-decoration: underline;
   }
+`;
+
+const IconWrapper = styled.div`
+  width: 128px;
+  height: 128px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // color: #d8b4fe;
+  // background: red;
 `;
 
 const Times = styled.div`
@@ -190,8 +201,11 @@ const FAQEmail = styled.p`
 export default function EventInformation() {
   return (
     <Section id="know-before-you-go">
+      <IconWrapper>
+        <RedTicket />
+      </IconWrapper>
       <Container>
-        <Title>🎡 Dillo Day 53: Know Before You Go 🎡</Title>
+        <Title> Dillo Day 53: Know Before You Go 🎡</Title>
         <Contents>
           <Step
             step="1"
@@ -397,7 +411,7 @@ export default function EventInformation() {
             </Text>
           </Step>
         </Contents>
-        {/* <CampDilloBanner /> */}
+        <CampDilloBanner />
       </Container>
     </Section>
   );
