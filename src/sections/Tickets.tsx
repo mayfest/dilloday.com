@@ -51,8 +51,8 @@ const Title = styled.h2`
 `;
 
 const IconWrapper = styled.div`
-  width: 64px;
-  height: 64px;
+  width: 96px;
+  height: 96px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
