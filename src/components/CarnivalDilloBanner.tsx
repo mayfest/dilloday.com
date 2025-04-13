@@ -52,60 +52,60 @@ const Text = styled.p`
   text-align: center;
 `;
 
-export default function CampDilloBanner() {
+export default function CarnivalDilloBanner() {
   return (
     <Container>
       <Contents>
         <Trees>
           <TreeImage
-            src="/carnival-icons/popcorn.png"
+            src="/carnival-icons/blueticket.png"
             alt="Tree"
             $size={90}
-            $flip={true}
+            $flip={false}
             $hideOnMobile={false}
           />
           <TreeImage
-            src="/carnival-icons/cottoncandy.png"
+            src="/carnival-icons/blueticket.png"
             alt="Tree"
             $size={80}
-            $flip={true}
+            $flip={false}
             $hideOnMobile={false}
           />
           <TreeImage
-            src="/carnival-icons/apples.png"
+            src="/carnival-icons/blueticket.png"
             alt="Tree"
             $size={70}
-            $flip={true}
+            $flip={false}
             $hideOnMobile={true}
           />
         </Trees>
         <Campfire>
           <CampfireImage
-            src="/carnival-icons/ferriswheel.png"
+            src="/carnival-icons/lottery.png"
             alt="Ferris Wheel Icon"
           />
         </Campfire>
         <Trees>
           <TreeImage
-            src="/carnival-icons/apples.png"
+            src="/carnival-icons/blueticket.png"
             alt="Tree"
-            $size={70}
+            $size={90}
             $flip={false}
-            $hideOnMobile={true}
+            $hideOnMobile={false}
           />
           <TreeImage
-            src="/carnival-icons/cottoncandy.png"
+            src="/carnival-icons/blueticket.png"
             alt="Tree"
             $size={80}
             $flip={false}
             $hideOnMobile={false}
           />
           <TreeImage
-            src="/carnival-icons/popcorn.png"
+            src="/carnival-icons/blueticket.png"
             alt="Tree"
-            $size={90}
+            $size={70}
             $flip={false}
-            $hideOnMobile={false}
+            $hideOnMobile={true}
           />
         </Trees>
       </Contents>

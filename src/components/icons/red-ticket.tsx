@@ -1,17 +1,14 @@
-import * as React from 'react';
 import { SVGProps } from 'react';
+
 const RedTicket = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     id="Layer_1"
     data-name="Layer 1"
-    width={128}
-    height={128}
-    viewBox="0 0 552.41 540.73" // Add proper viewBox
+    viewBox="0 0 500 440.73"
     style={{
       width: '100%',
       height: '100%',
-      // position: 'absolute',
       top: 0,
       left: 0,
       fontFamily: 'arial, sans-serif',

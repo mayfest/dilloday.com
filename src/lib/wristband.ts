@@ -20,39 +20,39 @@ export const wristbandDistribution: WristbandDistribution = {
 
   times: [
     {
-      date: 'Thursday, May 9',
+      date: 'Thursday, May 8',
       time: '1:00 PM - 5:00 PM',
     },
     {
-      date: 'Friday, May 10',
+      date: 'Friday, May 9',
       time: '11:00 AM - 5:00 PM',
     },
     {
-      date: 'Saturday, May 11',
+      date: 'Saturday, May 10',
       time: '11:00 AM - 5:00 PM',
     },
     {
-      date: 'Sunday, May 12',
+      date: 'Sunday, May 11',
       time: '3:00 PM - 7:00 PM',
     },
     {
-      date: 'Monday, May 13',
+      date: 'Monday, May 12',
       time: '11:00 AM - 5:00 PM',
     },
     {
-      date: 'Tuesday, May 14',
+      date: 'Tuesday, May 13',
       time: '11:00 AM - 7:00 PM',
     },
     {
-      date: 'Wednesday, May 15',
+      date: 'Wednesday, May 14',
       time: '11:00 AM - 5:00 PM',
     },
     {
-      date: 'Thursday, May 16',
+      date: 'Thursday, May 15',
       time: '11:00 AM - 9:00 PM',
     },
     {
-      date: 'Friday, May 17',
+      date: 'Friday, May 16',
       time: '10:00 AM - 2:00 PM',
     },
   ],
