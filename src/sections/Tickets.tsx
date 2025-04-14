@@ -23,6 +23,7 @@ const blueTheme: StepTheme = {
 };
 
 const Container = styled.div`
+  position: relative;
   background-image: linear-gradient(
       rgba(255, 255, 255, 0.8),
       rgba(255, 255, 255, 0.8)
@@ -34,6 +35,27 @@ const Container = styled.div`
   padding: 16px;
   color: #13381f;
   font-size: 14px;
+`;
+
+const StarsWrapper = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1; /* Below the content layer */
+  pointer-events: none; /* Allows clicks to pass through */
+
+  ${mobile} {
+    display: none;
+  }
+`;
+
+const Star = styled.img`
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  opacity: 0.6;
 `;
 
 const Title = styled.h2`
@@ -59,8 +81,11 @@ const IconWrapper = styled.div`
   justify-content: center;
   transform: rotate(-5deg);
 `;
+
 const Contents = styled.div`
   padding: 16px;
+  position: relative;
+  z-index: 2;
 `;
 
 const Text = styled.p`
@@ -228,6 +253,41 @@ export default function Tickets() {
   return (
     <Section id="tickets">
       <Container>
+        <StarsWrapper>
+          <Star
+            src="/carnival-icons/star_outline.png"
+            alt="Star"
+            style={{ top: '5%', left: '20%' }}
+          />
+          <Star
+            src="/carnival-icons/star_outline.png"
+            alt="Star"
+            style={{ top: '40%', left: '4%' }}
+          />
+          <Star
+            src="/carnival-icons/star_outline.png"
+            alt="Star"
+            style={{ top: '50%', right: '15%' }}
+          />
+          <Star
+            src="/carnival-icons/star_outline.png"
+            alt="Star"
+            style={{
+              bottom: '10%',
+              left: '20%',
+              transform: 'translateX(-50%)',
+            }}
+          />
+          <Star
+            src="/carnival-icons/star_outline.png"
+            alt="Star"
+            style={{
+              bottom: '13%',
+              right: '2%',
+              transform: 'translateX(-50%)',
+            }}
+          />
+        </StarsWrapper>
         <Title>
           <IconWrapper>
             <SVGComponent />
@@ -269,7 +329,7 @@ export default function Tickets() {
                 target="_blank"
                 rel="noreferrer"
               >
-                Dillo Day 2024 event on NBO
+                Dillo Day 2025 event on NBO
               </Link>{' '}
               to register for your wristband by <Bold>May 13, 2024</Bold>.
               Northwestern undergraduate students may register for free.
@@ -312,7 +372,10 @@ export default function Tickets() {
               responsible for picking up their registered guest's wristband
               during distribution and must have a photo of the guest's
               government-issued ID available. See wristband distribution terms
-              in the <Link href="#terms">Dillo Day Terms and Conditions</Link>{' '}
+              in the{' '}
+              <Link href="/terms-of-service">
+                Dillo Day Terms and Conditions
+              </Link>{' '}
               for more information.
             </Text>
             <Times>
