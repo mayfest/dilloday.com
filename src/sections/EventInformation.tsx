@@ -416,7 +416,7 @@ export default function EventInformation() {
               </Button>
             </ButtonContainer>
           </Step>
-          <Step step="4" title="See you at Camp Dillo!">
+          <Step step="4" title="See you at Carnival Dillo!">
             <Text>
               <Bold>See you at the Northwestern Lakefill today!</Bold> Until
               then, grab some of our official merchandise for you and your

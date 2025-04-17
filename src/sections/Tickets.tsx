@@ -413,7 +413,7 @@ export default function Tickets() {
               </Button>
             </ButtonContainer>
           </Step>
-          <Step step="4" title="See you at Camp Dillo!" theme={blueTheme}>
+          <Step step="4" title="See you at Carnival Dillo!" theme={blueTheme}>
             <Text>
               See you at the Northwestern Lakefill on <Bold>May 17, 2025</Bold>!
               Until then, grab some of our official merchandise for you and your
