@@ -305,12 +305,15 @@ export default function Tickets() {
             theme={blueTheme}
           >
             <Text>
-              Read the <Link href="#terms">Dillo Day Terms and Conditions</Link>{' '}
+              Read the{' '}
+              <Link href="/terms-of-service">
+                Dillo Day Terms and Conditions
+              </Link>{' '}
               before purchasing your tickets. Failure to abide by the terms may
               result in ticket revocation or removal from the event.
             </Text>
             <ButtonContainer>
-              <Button href="#terms">
+              <Button href="/terms-of-service">
                 <span>Read Terms and Conditions</span>
                 <ArrowRightIcon />
               </Button>
@@ -331,7 +334,7 @@ export default function Tickets() {
               >
                 Dillo Day 2025 event on NBO
               </Link>{' '}
-              to register for your wristband by <Bold>May 13, 2024</Bold>.
+              to register for your wristband by <Bold>May 13, 2025</Bold>.
               Northwestern undergraduate students may register for free.
               Northwestern undergraduate students can also choose to purchase 1
               guest wristband. Northwestern graduate students, Evanston
@@ -362,7 +365,7 @@ export default function Tickets() {
             <Text>
               Northwestern undergraduate students, graduate students, faculty,
               staff, and Evanston residents must pick up their wristbands in
-              person by <Bold>May 17, 2024</Bold>.{' '}
+              person by <Bold>May 16, 2025</Bold>.{' '}
               <Bold>
                 A valid Wildcard or government-issued ID matching the name on
                 the order must be presented along with your 6-character
@@ -412,7 +415,7 @@ export default function Tickets() {
           </Step>
           <Step step="4" title="See you at Camp Dillo!" theme={blueTheme}>
             <Text>
-              See you at the Northwestern Lakefill on <Bold>May 18, 2024</Bold>!
+              See you at the Northwestern Lakefill on <Bold>May 17, 2025</Bold>!
               Until then, grab some of our official merchandise for you and your
               friends at{' '}
               <Link href="https://store.dilloday.com">store.dilloday.com</Link>!

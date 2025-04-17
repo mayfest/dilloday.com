@@ -29,9 +29,9 @@ export default function HomePage() {
       <Tickets />
       {/* <FestivalSchedule /> */}
       {/* <FestivalLayout /> */}
-      <FestivalCarousel />
       {/* <MobileApp /> */}
       <HorizontalStoreComponent />
+      <FestivalCarousel />
       <PastDillos />
       <Team />
       <Sponsors />
