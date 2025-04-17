@@ -150,6 +150,7 @@ const ImageContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 0.5rem;
 `;
 
 const ProductImage = styled(Image)`
