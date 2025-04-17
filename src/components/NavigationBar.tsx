@@ -2,22 +2,30 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { navigation, getHrefProps } from '@/lib/directory';
 
 export default function NavigationBar() {
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+  const isTermsPage = pathname === '/terms-of-service/';
 
   useEffect(() => {
     const handleScroll = () => {
-      const heroHeight = window.innerHeight;
-      const currentScroll = window.scrollY;
-      setScrolled(currentScroll >= heroHeight);
+      if (isTermsPage) {
+        setScrolled(scrollY > 5);
+      } else {
+        const heroHeight = window.innerHeight;
+        const currentScroll = window.scrollY;
+        setScrolled(currentScroll >= heroHeight);
+      }
     };
 
     window.addEventListener('scroll', handleScroll);
     handleScroll();
+
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [isTermsPage]);
 
   return (
     <header

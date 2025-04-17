@@ -1,14 +1,35 @@
 'use client';
 import { Section, mobile } from '@/components';
-import CampDilloBanner from '@/components/CampDilloBanner';
-import FAQSection from '@/components/FAQSection';
+import CarnivalDilloBanner from '@/components/CarnivalDilloBanner';
+import FAQSection, { blueTheme as faqBlueTheme } from '@/components/FAQSection';
 import Step from '@/components/Step';
 import { wristbandDistribution } from '@/lib/wristband';
 import { ArrowRightIcon } from '@heroicons/react/24/outline';
 import styled from 'styled-components';
+import SVGComponent from '@/components/icons/sparkle';
+
+interface StepTheme {
+  bubbleBackground: string;
+  bubbleColor: string;
+  lineColor: string;
+  titleColor: string;
+}
+
+const blueTheme: StepTheme = {
+  bubbleBackground: '#173885',
+  bubbleColor: '#FFFFFF',
+  lineColor: '#173885',
+  titleColor: '#173885',
+};
 
 const Container = styled.div`
-  background: #f0e9d3;
+  position: relative;
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0.8)
+    ),
+    url('/carnival-icons/textured-background.png');
+  background-color: #ffffff;
   box-shadow: 0 4px 20px #f0e9d3;
   border-radius: 16px;
   padding: 16px;
@@ -16,20 +37,60 @@ const Container = styled.div`
   font-size: 14px;
 `;
 
+const StarsWrapper = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1; /* Below the content layer */
+  pointer-events: none; /* Allows clicks to pass through */
+
+  ${mobile} {
+    display: none;
+  }
+`;
+
+const Star = styled.img`
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  opacity: 0.6;
+`;
+
 const Title = styled.h2`
-  font-size: 22px;
+  font-size: 28px;
   font-weight: 800;
   letter-spacing: 1px;
   text-transform: uppercase;
   text-align: center;
-  color: #d1555a;
+  color: #173885;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+`;
+
+const IconWrapper = styled.div`
+  width: 96px;
+  height: 96px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(-5deg);
 `;
 
 const Contents = styled.div`
   padding: 16px;
+  position: relative;
+  z-index: 2;
 `;
 
-const Text = styled.p``;
+const Text = styled.p`
+  color: #173885;
+`;
 
 const Bold = styled.span`
   font-weight: 600;
@@ -57,14 +118,17 @@ const Times = styled.div`
 `;
 
 const TimesTitle = styled.p`
-  font-size: 18px;
-  font-weight: 600;
-  color: #d1555a;
+  font-size: 26px;
+  font-weight: 700;
+  color: #aabccd;
 `;
 
 const TimesLocation = styled(Link)`
   text-align: center;
   display: block;
+  color: #173885;
+  font-weight: 700;
+  padding: 8px 4px;
 `;
 
 const TimesLocationName = styled.p`
@@ -91,10 +155,12 @@ const Time = styled.div`
 const TimeDate = styled.p`
   text-align: left;
   font-weight: 600;
+  color: #173885;
 `;
 
 const TimeTime = styled.p`
   text-align: right;
+  color: #173885;
 `;
 
 const ButtonContainer = styled.div`
@@ -113,10 +179,10 @@ const ButtonContainer = styled.div`
 const Button = styled.a`
   display: flex;
   align-items: center;
-  background-color: #13381f;
-  border: 2px solid #13381f;
+  background-color: #173885;
+  border: 2px solid #aabccd;
   border-radius: 8px;
-  color: #f0e9d3;
+  color: #ffffff;
   padding: 4px 16px;
   font-size: 14px;
   text-transform: uppercase;
@@ -132,8 +198,9 @@ const Button = styled.a`
   }
 
   &:hover {
-    background-color: #f0e9d3;
-    color: #13381f;
+    background-color: #ffffff;
+    color: #173885;
+    border-color: #173885;
 
     svg {
       transform: translateX(4px);
@@ -151,15 +218,16 @@ const FAQ = styled.div`
 const FAQContents = styled.div``;
 
 const FAQTitle = styled.h3`
-  font-size: 16px;
-  font-weight: 500;
-  color: #d1555a;
+  font-size: 20px;
+  font-weight: 800;
+  color: #aabccd;
 `;
 
 const FAQText = styled.p`
   margin: 8px 0;
   text-align: left;
   font-size: 12px;
+  color: #173885;
 `;
 
 const FAQList = styled.ol`
@@ -177,18 +245,64 @@ const FAQEmail = styled.p`
   text-align: right;
   font-size: 14px;
   opacity: 0.75;
+  color: #173885;
+  padding: 8px 0;
 `;
 
 export default function Tickets() {
   return (
     <Section id="tickets">
       <Container>
-        <Title>🏕️ Dillo Day 52 tickets now available! 🏕️</Title>
+        <StarsWrapper>
+          <Star
+            src="/carnival-icons/star_outline.png"
+            alt="Star"
+            style={{ top: '5%', left: '20%' }}
+          />
+          <Star
+            src="/carnival-icons/star_outline.png"
+            alt="Star"
+            style={{ top: '40%', left: '4%' }}
+          />
+          <Star
+            src="/carnival-icons/star_outline.png"
+            alt="Star"
+            style={{ top: '50%', right: '15%' }}
+          />
+          <Star
+            src="/carnival-icons/star_outline.png"
+            alt="Star"
+            style={{
+              bottom: '10%',
+              left: '20%',
+              transform: 'translateX(-50%)',
+            }}
+          />
+          <Star
+            src="/carnival-icons/star_outline.png"
+            alt="Star"
+            style={{
+              bottom: '13%',
+              right: '2%',
+              transform: 'translateX(-50%)',
+            }}
+          />
+        </StarsWrapper>
+        <Title>
+          <IconWrapper>
+            <SVGComponent />
+          </IconWrapper>
+          Dillo Day 53 tickets now available!{' '}
+          <IconWrapper>
+            <SVGComponent />
+          </IconWrapper>
+        </Title>
         <Contents>
           <Step
             step="1"
             title="Acknowledge the Dillo Day event terms and conditions."
             line
+            theme={blueTheme}
           >
             <Text>
               Read the <Link href="#terms">Dillo Day Terms and Conditions</Link>{' '}
@@ -202,7 +316,12 @@ export default function Tickets() {
               </Button>
             </ButtonContainer>
           </Step>
-          <Step step="2" title="Register for your wristbands." line>
+          <Step
+            step="2"
+            title="Register for your wristbands."
+            line
+            theme={blueTheme}
+          >
             <Text>
               Visit the{' '}
               <Link
@@ -210,7 +329,7 @@ export default function Tickets() {
                 target="_blank"
                 rel="noreferrer"
               >
-                Dillo Day 2024 event on NBO
+                Dillo Day 2025 event on NBO
               </Link>{' '}
               to register for your wristband by <Bold>May 13, 2024</Bold>.
               Northwestern undergraduate students may register for free.
@@ -234,7 +353,12 @@ export default function Tickets() {
               </Button>
             </ButtonContainer>
           </Step>
-          <Step step="3" title="Pick up your wristbands before Dillo Day." line>
+          <Step
+            step="3"
+            title="Pick up your wristbands before Dillo Day."
+            line
+            theme={blueTheme}
+          >
             <Text>
               Northwestern undergraduate students, graduate students, faculty,
               staff, and Evanston residents must pick up their wristbands in
@@ -248,7 +372,10 @@ export default function Tickets() {
               responsible for picking up their registered guest's wristband
               during distribution and must have a photo of the guest's
               government-issued ID available. See wristband distribution terms
-              in the <Link href="#terms">Dillo Day Terms and Conditions</Link>{' '}
+              in the{' '}
+              <Link href="/terms-of-service">
+                Dillo Day Terms and Conditions
+              </Link>{' '}
               for more information.
             </Text>
             <Times>
@@ -283,7 +410,7 @@ export default function Tickets() {
               </Button>
             </ButtonContainer>
           </Step>
-          <Step step="4" title="See you at Camp Dillo!">
+          <Step step="4" title="See you at Camp Dillo!" theme={blueTheme}>
             <Text>
               See you at the Northwestern Lakefill on <Bold>May 18, 2024</Bold>!
               Until then, grab some of our official merchandise for you and your
@@ -295,20 +422,29 @@ export default function Tickets() {
         <FAQ id="tickets/faq">
           <FAQTitle>Wristband FAQ</FAQTitle>
           <FAQContents>
-            <FAQSection title="What do students need to pick up their own wristband?">
+            <FAQSection
+              title="What do students need to pick up their own wristband?"
+              theme={faqBlueTheme}
+            >
               <FAQText>
                 A student needs to have made a reservation, which should be
                 pulled up, and their Wildcard.
               </FAQText>
             </FAQSection>
-            <FAQSection title="What does a student need to pick up for their non-Northwestern guest?">
+            <FAQSection
+              title="What does a student need to pick up for their non-Northwestern guest?"
+              theme={faqBlueTheme}
+            >
               <FAQText>
                 To pick up for their non-Northwestern guest, they need the
                 reservation, their own Wildcard, and their guest's ID (or a
                 picture of their ID).
               </FAQText>
             </FAQSection>
-            <FAQSection title="What should I do if I'm struggling to log into NBO, the website is glitching, or I am having some other kind of software difficulty?">
+            <FAQSection
+              title="What should I do if I'm struggling to log into NBO, the website is glitching, or I am having some other kind of software difficulty?"
+              theme={faqBlueTheme}
+            >
               <FAQText>
                 We have heard of a situation in which individuals are having
                 trouble logging into the NBO site. We recommend trying the
@@ -326,27 +462,42 @@ export default function Tickets() {
                 with your dilemma.
               </FAQText>
             </FAQSection>
-            <FAQSection title="I didn't get a confirmation email. What should I do?">
+            <FAQSection
+              title="I didn't get a confirmation email. What should I do?"
+              theme={faqBlueTheme}
+            >
               <FAQText>
                 First, check your spam folder. If it is not there, please go to
                 the help desk.
               </FAQText>
             </FAQSection>
-            <FAQSection title="Can a student pick up for another student?">
+            <FAQSection
+              title="Can a student pick up for another student?"
+              theme={faqBlueTheme}
+            >
               <FAQText>
                 Absolutely not, every student needs to come in person.
               </FAQText>
             </FAQSection>
-            <FAQSection title="My guest cannot make it. Can they get a refund?">
+            <FAQSection
+              title="My guest cannot make it. Can they get a refund?"
+              theme={faqBlueTheme}
+            >
               <FAQText>Please email NBO to request a refund.</FAQText>
             </FAQSection>
-            <FAQSection title="My original guest cannot make it. Can I transfer the wristband?">
+            <FAQSection
+              title="My original guest cannot make it. Can I transfer the wristband?"
+              theme={faqBlueTheme}
+            >
               <FAQText>
                 No, guest wristbands can only be released for the registered
                 guest.
               </FAQText>
             </FAQSection>
-            <FAQSection title="Can a student pick up a wristband on the day of Dillo instead?">
+            <FAQSection
+              title="Can a student pick up a wristband on the day of Dillo instead?"
+              theme={faqBlueTheme}
+            >
               <FAQText>
                 Only Alumni can pick up the day of. Otherwise, to receive a
                 wristband, you MUST come during the distribution hours{' '}
@@ -354,13 +505,19 @@ export default function Tickets() {
                 wristbands will not be available after the 17th.
               </FAQText>
             </FAQSection>
-            <FAQSection title="I just lost my wristband. Can I get another one?">
+            <FAQSection
+              title="I just lost my wristband. Can I get another one?"
+              theme={faqBlueTheme}
+            >
               <FAQText>
                 Yes, but you must order a replacement one on NBO first. The
                 option to purchase a replacement will close on May 16th.
               </FAQText>
             </FAQSection>
-            <FAQSection title="I work full time. When can I pick up my wristband?">
+            <FAQSection
+              title="I work full time. When can I pick up my wristband?"
+              theme={faqBlueTheme}
+            >
               <FAQText>
                 In order to accommodate those working full time, we have added
                 distribution hours to both Saturday May 11th and Sunday May
@@ -368,12 +525,15 @@ export default function Tickets() {
                 distribution will be open after working hours.
               </FAQText>
             </FAQSection>
-            <FAQSection title="Can I be granted an exception to the rules?">
+            <FAQSection
+              title="Can I be granted an exception to the rules?"
+              theme={faqBlueTheme}
+            >
               <FAQText>
                 <FAQBold>
                   Requests for exception must be sent to{' '}
-                  <Link href="mailto:dilloopsforce@gmail.com">
-                    dilloopsforce@gmail.com
+                  <Link href="mailto:operations@dilloday.com">
+                    operations@dilloday.com
                   </Link>{' '}
                   and will only be approved with significant evidence and
                   circumstances.
@@ -383,13 +543,13 @@ export default function Tickets() {
           </FAQContents>
           <FAQEmail>
             Have a question that isn't answered here? Reach out to{' '}
-            <Link href="mailto:dilloopsforce@gmail.com">
-              dilloopsforce@gmail.com
+            <Link href="mailto:operations@dilloday.com">
+              operations@dilloday.com
             </Link>
             .
           </FAQEmail>
         </FAQ>
-        <CampDilloBanner />
+        <CarnivalDilloBanner />
       </Container>
     </Section>
   );

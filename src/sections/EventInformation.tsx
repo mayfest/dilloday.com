@@ -1,13 +1,15 @@
 'use client';
+
 import { Section, mobile } from '@/components';
 import CampDilloBanner from '@/components/CampDilloBanner';
 import FAQSection from '@/components/FAQSection';
 import Step from '@/components/Step';
-import { wristbandDistribution } from '@/lib/wristband';
 import { ArrowRightIcon } from '@heroicons/react/24/outline';
+import RedTicket from '@/components/icons/red-ticket';
 import styled from 'styled-components';
 
 const Container = styled.div`
+  background-image: url('/carnival-icons/textured-background.png');
   background: #173885;
   box-shadow: 0 4px 20px #173885;
   border-radius: 16px;
@@ -17,12 +19,17 @@ const Container = styled.div`
 `;
 
 const Title = styled.h2`
-  font-size: 22px;
+  font-size: 28px;
   font-weight: 800;
   letter-spacing: 1px;
   text-transform: uppercase;
   text-align: center;
   color: #f6f2a3;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
 `;
 
 const Contents = styled.div`
@@ -36,13 +43,23 @@ const Bold = styled.span`
 `;
 
 const Link = styled.a`
-  color: #459eca;
+  color: #4fb5e8;
   font-weight: 500;
   text-decoration: none;
 
   &:hover {
     text-decoration: underline;
   }
+`;
+
+const IconWrapper = styled.div`
+  width: 84px;
+  height: 84px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-7px) rotate(-2deg);
 `;
 
 const Times = styled.div`
@@ -113,10 +130,11 @@ const ButtonContainer = styled.div`
 const Button = styled.a`
   display: flex;
   align-items: center;
-  background-color: #f0e9d3;
-  border: 2px solid #f0e9d3;
+  background: #d61919;
+  border: 2px solid #f6f2a3;
   border-radius: 8px;
-  color: #13381f;
+  // color: #13381f;
+  color: #f6f2a3;
   padding: 4px 16px;
   font-size: 14px;
   text-transform: uppercase;
@@ -132,8 +150,9 @@ const Button = styled.a`
   }
 
   &:hover {
-    background-color: #13381f;
-    color: #f0e9d3;
+    background-color: #173885;
+    color: #ffffff;
+    border: 2px solid #ffffff;
 
     svg {
       transform: translateX(4px);
@@ -160,6 +179,7 @@ const FAQText = styled.p`
   margin: 8px 0;
   text-align: left;
   font-size: 14px;
+  color: #ffffff;
 `;
 
 const FAQList = styled.ol`
@@ -191,7 +211,16 @@ export default function EventInformation() {
   return (
     <Section id="know-before-you-go">
       <Container>
-        <Title>🎡 Dillo Day 53: Know Before You Go 🎡</Title>
+        <Title>
+          {' '}
+          <IconWrapper>
+            <RedTicket />
+          </IconWrapper>
+          Dillo Day 53: Know Before You Go
+          <IconWrapper>
+            <RedTicket />
+          </IconWrapper>
+        </Title>
         <Contents>
           <Step
             step="1"
@@ -206,23 +235,22 @@ export default function EventInformation() {
                 <FAQSection title="Metal Detection">
                   <FAQText>
                     Attendees will enter through the main entrance of the Dillo
-                    Village, located on the East Lawn of Norris. All attendees
-                    will pass through metal detecting wands upon entrance, and
-                    guests who are unable to pass through metal detectors for
-                    medical reasons may request to be screened separately in a
-                    private setting. All bags will be searched. Permitted items
-                    include empty plastic water bottles, sunscreen
-                    (non-aerosol), and compact blankets, sheets, and towels.
-                    Please allow more time for entry due to these security
-                    measures.
+                    Village, located in the Arts Circle. All attendees will pass
+                    through metal detecting wands upon entrance, and guests who
+                    are unable to pass through metal detectors for medical
+                    reasons may request to be screened separately in a private
+                    setting. All bags will be searched. Permitted items include
+                    empty plastic water bottles, sunscreen (non-aerosol), and
+                    compact blankets, sheets, and towels. Please allow more time
+                    for entry due to these security measures.
                   </FAQText>
                   <FAQText>
                     Attendees who would like to request a separate screening, to
                     request other accommodations for the screening process, or
                     to ask questions about the screening process generally, can
                     contact{' '}
-                    <Link href="mailto:dilloopsforce@gmail.com">
-                      dilloopsforce@gmail.com
+                    <Link href="mailto:operations@dilloday.com">
+                      operations@dilloday.com
                     </Link>{' '}
                     or call <Link href="tel:8474673719">847-467-3719</Link>.
                   </FAQText>
@@ -237,8 +265,8 @@ export default function EventInformation() {
                     be allowed into the festival. All bags will be searched by
                     security prior to entering the festival. For questions, send
                     an email to{' '}
-                    <Link href="mailto:dilloopsforce@gmail.com">
-                      dilloopsforce@gmail.com
+                    <Link href="mailto:operations@dilloday.com">
+                      operations@dilloday.com
                     </Link>
                     .
                   </FAQText>
@@ -355,8 +383,8 @@ export default function EventInformation() {
           </Step>
           <Step step="2" title="Know where to go." line>
             <Text>
-              Enter on the <Bold>East Lawn of Norris</Bold>, and exit up north.
-              Follow posted signs. Find a map on the app.
+              Enter in the <Bold>Arts Circle</Bold>, and exit up north. Follow
+              posted signs. Find a map on the app.
             </Text>
           </Step>
           <Step step="3" title="Have the information on hand." line>
@@ -397,7 +425,7 @@ export default function EventInformation() {
             </Text>
           </Step>
         </Contents>
-        {/* <CampDilloBanner /> */}
+        <CampDilloBanner />
       </Container>
     </Section>
   );

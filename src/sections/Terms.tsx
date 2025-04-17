@@ -142,9 +142,9 @@ export default function Terms() {
         <TermsSection title="METAL DETECTION POLICY">
           <Text>
             Attendees will enter through the main entrance of the Dillo Village,
-            located on the East Lawn of Norris. All attendees will pass through
-            metal detecting wands upon entrance, and guests who are unable to
-            pass through metal detectors for medical reasons may request to be
+            located in the Arts Circle. All attendees will pass through metal
+            detecting wands upon entrance, and guests who are unable to pass
+            through metal detectors for medical reasons may request to be
             screened separately in a private setting. All bags will be searched.
             Permitted items include empty plastic water bottles, sunscreen
             (non-aerosol), and compact blankets, sheets, and towels. Please

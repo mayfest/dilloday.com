@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 export const Section = styled(motion.section)`
   width: 100%;
-  max-width: 1200px;
+  max-width: 1150px;
   margin: 128px auto;
   padding: 16px;
 `;

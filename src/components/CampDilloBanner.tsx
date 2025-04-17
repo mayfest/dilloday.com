@@ -41,7 +41,7 @@ const TreeImage = styled.img<{
 `;
 
 const CampfireImage = styled.img`
-  height: 80px;
+  height: 170px;
 `;
 
 const Text = styled.p`
@@ -58,50 +58,53 @@ export default function CampDilloBanner() {
       <Contents>
         <Trees>
           <TreeImage
-            src="/img/tree-1.png"
+            src="/carnival-icons/popcorn.png"
             alt="Tree"
-            $size={120}
-            $flip={false}
+            $size={90}
+            $flip={true}
             $hideOnMobile={false}
           />
           <TreeImage
-            src="/img/tree-2.png"
-            alt="Tree"
-            $size={100}
-            $flip={false}
-            $hideOnMobile={false}
-          />
-          <TreeImage
-            src="/img/tree-1.png"
+            src="/carnival-icons/cottoncandy.png"
             alt="Tree"
             $size={80}
-            $flip={false}
+            $flip={true}
+            $hideOnMobile={false}
+          />
+          <TreeImage
+            src="/carnival-icons/apples.png"
+            alt="Tree"
+            $size={70}
+            $flip={true}
             $hideOnMobile={true}
           />
         </Trees>
         <Campfire>
-          <CampfireImage src="/img/campfire.png" alt="Campfire" />
+          <CampfireImage
+            src="/carnival-icons/ferriswheel.png"
+            alt="Ferris Wheel Icon"
+          />
         </Campfire>
         <Trees>
           <TreeImage
-            src="/img/tree-1.png"
+            src="/carnival-icons/apples.png"
             alt="Tree"
-            $size={80}
-            $flip={true}
+            $size={70}
+            $flip={false}
             $hideOnMobile={true}
           />
           <TreeImage
-            src="/img/tree-2.png"
+            src="/carnival-icons/cottoncandy.png"
             alt="Tree"
-            $size={100}
-            $flip={true}
+            $size={80}
+            $flip={false}
             $hideOnMobile={false}
           />
           <TreeImage
-            src="/img/tree-1.png"
+            src="/carnival-icons/popcorn.png"
             alt="Tree"
-            $size={120}
-            $flip={true}
+            $size={90}
+            $flip={false}
             $hideOnMobile={false}
           />
         </Trees>

@@ -1,4 +1,19 @@
+import React from 'react';
 import styled from 'styled-components';
+
+interface StepTheme {
+  bubbleBackground: string;
+  bubbleColor: string;
+  lineColor: string;
+  titleColor: string;
+}
+
+const defaultTheme: StepTheme = {
+  bubbleBackground: '#d61919',
+  bubbleColor: '#f6f2a3',
+  lineColor: '#d61919',
+  titleColor: '#f6f2a3',
+};
 
 const Container = styled.div`
   display: flex;
@@ -7,12 +22,13 @@ const Container = styled.div`
 
 const StepContainer = styled.div``;
 
-const StepBubble = styled.div`
+const StepBubble = styled.div<{ theme?: StepTheme }>`
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background: #f8b547;
-  color: #13381f;
+  background: ${(props) =>
+    props.theme?.bubbleBackground || defaultTheme.bubbleBackground};
+  color: ${(props) => props.theme?.bubbleColor || defaultTheme.bubbleColor};
   font-size: 18px;
   font-weight: 600;
   display: flex;
@@ -20,11 +36,11 @@ const StepBubble = styled.div`
   justify-content: center;
 `;
 
-const Line = styled.div`
+const Line = styled.div<{ theme?: StepTheme }>`
   margin: 0 auto;
   width: 2px;
   height: 100%;
-  background: #f8b547;
+  background: ${(props) => props.theme?.lineColor || defaultTheme.lineColor};
 `;
 
 const Contents = styled.div<{ $margin?: boolean }>`
@@ -32,10 +48,10 @@ const Contents = styled.div<{ $margin?: boolean }>`
   ${(props) => props.$margin && 'margin-bottom: 32px;'}
 `;
 
-const Title = styled.p`
+const Title = styled.p<{ theme?: StepTheme }>`
   font-size: 20px;
   font-weight: 600;
-  color: #f8b547;
+  color: ${(props) => props.theme?.titleColor || defaultTheme.titleColor};
 `;
 
 interface StepProps {
@@ -43,17 +59,24 @@ interface StepProps {
   title: React.ReactNode;
   children: React.ReactNode;
   line?: boolean;
+  theme?: StepTheme;
 }
 
-export default function Step({ step, title, children, line }: StepProps) {
+export default function Step({
+  step,
+  title,
+  children,
+  line,
+  theme,
+}: StepProps) {
   return (
     <Container>
       <StepContainer>
-        <StepBubble>{step}</StepBubble>
-        {line && <Line />}
+        <StepBubble theme={theme}>{step}</StepBubble>
+        {line && <Line theme={theme} />}
       </StepContainer>
       <Contents $margin={line}>
-        <Title>{title}</Title>
+        <Title theme={theme}>{title}</Title>
         {children}
       </Contents>
     </Container>

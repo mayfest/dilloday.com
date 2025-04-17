@@ -11,6 +11,7 @@ import Sponsors from '@/sections/Sponsors';
 import FestivalCarousel from '@/components/festival-features';
 import FestivalLayout from '@/components/festival-layout';
 import Team from '@/sections/Team';
+import EventInformation from '@/sections/EventInformation';
 import HorizontalStoreComponent from '@/components/store';
 
 export const metadata: Metadata = {
@@ -24,12 +25,12 @@ export default function HomePage() {
     <>
       <Hero />
       <About />
-      <FestivalSchedule />
-      <FestivalLayout />
       {/* <EventInformation /> */}
-      {/* <Tickets /> */}
+      <Tickets />
+      {/* <FestivalSchedule /> */}
+      {/* <FestivalLayout /> */}
       <FestivalCarousel />
-      <MobileApp />
+      {/* <MobileApp /> */}
       <HorizontalStoreComponent />
       <PastDillos />
       <Team />
