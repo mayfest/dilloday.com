@@ -112,11 +112,16 @@ const SectionTitle = styled(motion.h2)`
 `;
 
 const ProductGrid = styled(motion.div)`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 350px));
+  display: flex;
+  flex-wrap: wrap;
   gap: 3rem;
   width: 100%;
   justify-content: center;
+`;
+
+const ProductCardWrapper = styled.div`
+  width: 350px;
+  flex: 0 0 auto;
 `;
 
 const ProductCard = styled.div`
@@ -317,6 +322,7 @@ export default function DilloDayStore(): React.ReactElement {
 
   const STOREFRONT_TOKEN = process.env.NEXT_PUBLIC_STOREFRONT_TOKEN || '';
   const COLLECTION_ID = process.env.NEXT_PUBLIC_COLLECTION_ID || '';
+
   const fetchProducts = useCallback(async () => {
     try {
       if (!STOREFRONT_TOKEN) {
@@ -325,21 +331,41 @@ export default function DilloDayStore(): React.ReactElement {
         );
       }
 
-      const response = await fetch(
-        `https://storefront-api.fourthwall.com/v1/collections/${COLLECTION_ID}/products?storefront_token=${STOREFRONT_TOKEN}`,
-        {
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        }
-      );
+      const [firstPageResponse, secondPageResponse] = await Promise.all([
+        fetch(
+          `https://storefront-api.fourthwall.com/v1/collections/${COLLECTION_ID}/products?storefront_token=${STOREFRONT_TOKEN}`,
+          {
+            headers: {
+              'Content-Type': 'application/json',
+            },
+          }
+        ),
+        fetch(
+          `https://storefront-api.fourthwall.com/v1/collections/${COLLECTION_ID}/products?storefront_token=${STOREFRONT_TOKEN}&page=1`,
+          {
+            headers: {
+              'Content-Type': 'application/json',
+            },
+          }
+        ),
+      ]);
 
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+      if (!firstPageResponse.ok || !secondPageResponse.ok) {
+        throw new Error(
+          `HTTP error! status: ${firstPageResponse.status || secondPageResponse.status}`
+        );
       }
 
-      const data = await response.json();
-      setProducts(data.results || []);
+      const firstPageData = await firstPageResponse.json();
+      const secondPageData = await secondPageResponse.json();
+
+      const combinedData = [
+        ...(firstPageData.results || []),
+        ...(secondPageData.results || []),
+      ];
+
+      console.log('Fetched products:', combinedData);
+      setProducts(combinedData);
       setError(null);
     } catch (error) {
       console.error('Error fetching products:', error);
@@ -412,47 +438,49 @@ export default function DilloDayStore(): React.ReactElement {
               const secondaryImage = product.images?.[1] || primaryImage;
 
               return (
-                <ProductCard key={product.id}>
-                  <Link
-                    href={`https://store.dilloday.com/collections/carnival-dillo`}
-                    passHref
-                    target="_blank"
-                  >
-                    <ProductLink>
-                      <ImageContainer>
-                        {primaryImage && (
-                          <>
-                            <PrimaryImage
-                              src={primaryImage.url}
-                              alt={product.name}
-                              width={500}
-                              height={500}
-                              priority
-                              fill={false}
-                            />
-                            <SecondaryImage
-                              src={secondaryImage.url}
-                              alt={`${product.name} - alternate view`}
-                              width={500}
-                              height={500}
-                              priority={false}
-                              fill={false}
-                            />
-                          </>
-                        )}
-                        {hasDiscount && <SaleBadge>SALE</SaleBadge>}
-                      </ImageContainer>
+                <ProductCardWrapper key={product.id}>
+                  <ProductCard>
+                    <Link
+                      href={`https://store.dilloday.com/products/${product.slug}`}
+                      passHref
+                      target="_blank"
+                    >
+                      <ProductLink>
+                        <ImageContainer>
+                          {primaryImage && (
+                            <>
+                              <PrimaryImage
+                                src={primaryImage.url}
+                                alt={product.name}
+                                width={500}
+                                height={500}
+                                priority
+                                fill={false}
+                              />
+                              <SecondaryImage
+                                src={secondaryImage.url}
+                                alt={`${product.name} - alternate view`}
+                                width={500}
+                                height={500}
+                                priority={false}
+                                fill={false}
+                              />
+                            </>
+                          )}
+                          {hasDiscount && <SaleBadge>SALE</SaleBadge>}
+                        </ImageContainer>
 
-                      <ProductDetails>
-                        <ProductName>{productName}</ProductName>
-                        <ProductType>{shortDescription}</ProductType>
-                        {product.variants?.[0]?.price && (
-                          <ShopNowButton>SHOP NOW</ShopNowButton>
-                        )}
-                      </ProductDetails>
-                    </ProductLink>
-                  </Link>
-                </ProductCard>
+                        <ProductDetails>
+                          <ProductName>{productName}</ProductName>
+                          <ProductType>{shortDescription}</ProductType>
+                          {product.variants?.[0]?.price && (
+                            <ShopNowButton>SHOP NOW</ShopNowButton>
+                          )}
+                        </ProductDetails>
+                      </ProductLink>
+                    </Link>
+                  </ProductCard>
+                </ProductCardWrapper>
               );
             })}
           </ProductGrid>
