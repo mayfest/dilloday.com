@@ -514,7 +514,7 @@ export default function Tickets() {
             >
               <FAQText>
                 Yes, but you must order a replacement one on NBO first. The
-                option to purchase a replacement will close on May 16th.
+                option to purchase a replacement will close on May 15th.
               </FAQText>
             </FAQSection>
             <FAQSection
@@ -523,8 +523,8 @@ export default function Tickets() {
             >
               <FAQText>
                 In order to accommodate those working full time, we have added
-                distribution hours to both Saturday May 11th and Sunday May
-                12th. Additionally, on Tuesday May 14th and Thursday May 16th
+                distribution hours to both Saturday May 10th and Sunday May
+                12th. Additionally, on Tuesday May 13th and Thursday May 15th
                 distribution will be open after working hours.
               </FAQText>
             </FAQSection>
