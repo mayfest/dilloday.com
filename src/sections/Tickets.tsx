@@ -328,7 +328,7 @@ export default function Tickets() {
             <Text>
               Visit the{' '}
               <Link
-                href="https://nbo.universitytickets.com/w/event.aspx?id=2240"
+                href="https://nbo.universitytickets.com/w/event.aspx?id=2482"
                 target="_blank"
                 rel="noreferrer"
               >
