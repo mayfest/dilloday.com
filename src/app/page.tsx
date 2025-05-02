@@ -13,6 +13,7 @@ import FestivalLayout from '@/components/festival-layout';
 import Team from '@/sections/Team';
 import EventInformation from '@/sections/EventInformation';
 import HorizontalStoreComponent from '@/components/store';
+import SmartDilloBanner from '@/sections/smart-dillo';
 
 export const metadata: Metadata = {
   title: 'Dillo Day',
@@ -25,8 +26,9 @@ export default function HomePage() {
     <>
       <Hero />
       <About />
-      {/* <EventInformation /> */}
+      <EventInformation />
       <Tickets />
+      <SmartDilloBanner />
       {/* <FestivalSchedule /> */}
       {/* <FestivalLayout /> */}
       {/* <MobileApp /> */}
