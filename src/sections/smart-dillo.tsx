@@ -145,7 +145,6 @@ const DotsContainer = styled.div`
   gap: 0.5rem;
 `;
 
-// Use the interface for props
 const Dot = styled.button<DotProps>`
   width: 10px;
   height: 10px;
@@ -161,6 +160,24 @@ const Dot = styled.button<DotProps>`
 
   &:focus {
     outline: none;
+  }
+`;
+
+const Link = styled.a`
+  color: inherit;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+
+const LinkText = styled.span`
+  color: #d8b4fe;
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
+  &:hover {
+    text-decoration: none;
   }
 `;
 
@@ -180,7 +197,7 @@ export default function SmartDilloBanner(): React.ReactElement {
     return () => {
       if (interval) clearInterval(interval);
     };
-  }, [autoplay]); // Remove smartDilloImages.length from dependencies
+  }, [autoplay]);
 
   const handlePrev = (): void => {
     setAutoplay(false);
@@ -236,7 +253,14 @@ export default function SmartDilloBanner(): React.ReactElement {
           In conjunction with Northwestern's student-run end of year music
           festival, Dillo Day, the Smart Dillo campaign provides guidance on
           creating a safe community and enjoyable experience for everyone
-          throughout the day.
+          throughout the day. If you would like to learn more about the Smart
+          Dillo campaign, please visit the{' '}
+          <Link
+            href="https://www.northwestern.edu/wellness/hpaw/campaigns/smart-dillo/index.html"
+            target="_blank"
+          >
+            <LinkText>Smart Dillo website</LinkText>
+          </Link>
         </Description>
       </ContentWrapper>
     </BannerContainer>
