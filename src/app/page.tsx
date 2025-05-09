@@ -26,7 +26,7 @@ export default function HomePage() {
     <>
       <Hero />
       <About />
-      <EventInformation />
+      {/* <EventInformation /> */}
       <Tickets />
       <SmartDilloBanner />
       {/* <FestivalSchedule /> */}
