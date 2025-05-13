@@ -392,22 +392,22 @@ export default function EventInformation() {
               Download the <Link href="#app">Dillo Day mobile app</Link>{' '}
               (available on{' '}
               <Link
-                href="https://apps.apple.com/us/app/dillo-day-2024/id6502626702"
+                href="https://apps.apple.com/us/app/dillo-day-2025/id6745717280"
                 target="_blank"
                 rel="noreferrer"
               >
                 iOS
               </Link>{' '}
               and{' '}
-              <Link
+              {/* <Link
                 href="https://play.google.com/store/apps/details?id=com.dilloday.app2024"
                 target="_blank"
                 rel="noreferrer"
-              >
-                Android
-              </Link>
-              ) and enable notifications to stay updated on the latest security
-              procedures, view an event schedule and map, and more!
+              > */}
+              Android [CURRENTLY AWAITING APPROVAL]
+              {/* </Link> */}) and enable notifications to stay updated on the
+              latest security procedures, view an event schedule and map, and
+              more!
             </Text>
             <ButtonContainer>
               <Button href="#app">
