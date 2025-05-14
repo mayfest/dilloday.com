@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint:next": "next lint",
+    "format": "prettier --write src",
     "lint:prettier": "prettier --list-different src"
   },
   "dependencies": {

@@ -26,17 +26,17 @@ export default function HomePage() {
     <>
       <Hero />
       <About />
-      {/* <EventInformation /> */}
+      <EventInformation />
       <Tickets />
+      <MobileApp />
+      <FestivalSchedule />
+      <FestivalLayout />
       <SmartDilloBanner />
-      {/* <FestivalSchedule /> */}
-      {/* <FestivalLayout /> */}
-      {/* <MobileApp /> */}
       <HorizontalStoreComponent />
       <FestivalCarousel />
+      <Sponsors />
       <PastDillos />
       <Team />
-      <Sponsors />
       <Support />
       <MailingList />
     </>

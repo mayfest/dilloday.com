@@ -264,7 +264,7 @@ export default function FestivalLayout() {
             whileTap={{ scale: 0.98 }}
           >
             <Image
-              src="/img/map.png"
+              src="/img/map-2025.png"
               alt="Festival Map Layout"
               width={900}
               height={900}
@@ -290,7 +290,7 @@ export default function FestivalLayout() {
                     ×
                   </CloseButton>
                   <ModalImage
-                    src="/img/map.png"
+                    src="/img/map-2025.png"
                     alt="Festival Map Layout Expanded"
                     width={1800}
                     height={1800}

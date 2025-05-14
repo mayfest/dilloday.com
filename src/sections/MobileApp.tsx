@@ -169,18 +169,18 @@ export default function MobileApp() {
         <ImagePadding />
         <TextContainer>
           <AboveTitle>Download the official</AboveTitle>
-          <Title>Dillo Day 2024 App</Title>
+          <Title>Dillo Day 2025 App</Title>
           <Text>
             Get{' '}
-            <Highlight color="#fca5a5">
+            <Highlight color="#F6F2A3">
               important security notifications
             </Highlight>
             ,{' '}
-            <Highlight color="#86efac">
+            <Highlight color="#FFB1CD">
               view the full lineup and schedule with upcoming artist
               notifications
             </Highlight>
-            , <Highlight color="#fde047">explore the event map</Highlight>, and{' '}
+            , <Highlight color="#FFFFFF">explore the event map</Highlight>, and{' '}
             <Highlight color="#93c5fd">
               easily access Dillo Day resources
             </Highlight>{' '}
@@ -190,7 +190,7 @@ export default function MobileApp() {
           </Text>
           <DownloadContainer>
             <DownloadButton
-              href="https://apps.apple.com/us/app/dillo-day-2024/id6502626702"
+              href="https://apps.apple.com/us/app/dillo-day-2025/id6745717280"
               target="_blank"
               rel="noreferrer"
             >

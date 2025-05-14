@@ -1,5 +1,8 @@
 export function calculateTimeLeft() {
-  const difference = new Date('2025-05-17').getTime() - new Date().getTime();
+  const targetDate = new Date(2025, 4, 17);
+  const now = new Date();
+
+  const difference = targetDate.getTime() - now.getTime();
 
   if (difference <= 0) {
     return {

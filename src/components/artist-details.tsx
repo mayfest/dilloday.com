@@ -28,9 +28,9 @@ const DialogOverlay = styled.div<{ $isLeaving: boolean }>`
 const DialogContent = styled.div<{ $isLeaving: boolean }>`
   background-color: black;
   color: white;
-  max-width: 56rem;
+  max-width: 65rem;
   width: 90%;
-  max-height: 85vh;
+  max-height: 110vh;
   overflow-y: auto;
   border-radius: 1rem;
   padding: 1.5rem;
@@ -81,9 +81,13 @@ const DialogHeader = styled.div`
 `;
 
 const DialogTitle = styled.h2`
-  font-size: 1.5rem;
+  font-size: 3rem;
   font-weight: 700;
   line-height: 2rem;
+  text-align: center;
+  margin-bottom: 3.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.09rem;
 `;
 
 const Grid = styled.div`
@@ -98,9 +102,8 @@ const Grid = styled.div`
 
 const ImageContainer = styled.div`
   position: relative;
-  aspect-ratio: 16/9;
   overflow: hidden;
-  border-radius: 0.5rem;
+  border-radius: 2.5rem;
 
   @media (min-width: 640px) {
     aspect-ratio: 1;
@@ -234,7 +237,11 @@ export default function ArtistDetails({
               src={artist.image}
               alt={artist.artist}
               fill
-              style={{ objectFit: 'cover' }}
+              style={{
+                objectFit: 'contain',
+                height: '100%',
+                borderRadius: '2rem',
+              }}
             />
           </ImageContainer>
           <ContentSection>

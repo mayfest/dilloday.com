@@ -436,7 +436,7 @@ export default function FestivalSchedule() {
               >
                 <HeadlinerImageContainer>
                   <HeadlinerImage
-                    src="/img/artist/swae-lee-main.jpeg"
+                    src="https://ichef.bbci.co.uk/news/1536/cpsprodpb/c9f7/live/84762960-556c-11ef-83e3-9df5ffa02a25.jpg.webp" // need an image for natasha, filled with generic for now
                     alt={headliner.artist}
                   />
                   <HeadlinerOverlay>

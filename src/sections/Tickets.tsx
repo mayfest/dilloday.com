@@ -24,10 +24,8 @@ const blueTheme: StepTheme = {
 
 const Container = styled.div`
   position: relative;
-  background-image: linear-gradient(
-      rgba(255, 255, 255, 0.8),
-      rgba(255, 255, 255, 0.8)
-    ),
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)),
     url('/carnival-icons/textured-background.png');
   background-color: #ffffff;
   box-shadow: 0 4px 20px #f0e9d3;
