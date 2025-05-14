@@ -25,7 +25,7 @@ const Title = styled.p`
   text-align: left;
   font-size: 16px;
   font-weight: bold;
-  color: ${({ theme }) => theme.formTitle};
+  color: #000000;
   text-transform: uppercase;
 
   ${mobile} {
@@ -37,7 +37,7 @@ const Description = styled.p`
   text-align: left;
   margin: 0;
   font-size: 14px;
-  color: ${({ theme }) => theme.formText};
+  color: #666666;
 
   ${mobile} {
     text-align: center;
@@ -62,8 +62,8 @@ const Row = styled.div`
 `;
 
 const Input = styled.input`
-  background: ${({ theme }) => theme.inputBackground};
-  color: ${({ theme }) => theme.inputForeground};
+  background: #ffffff;
+  color: #000000;
   border: none;
   outline: none;
   padding: 12px 16px;
@@ -76,7 +76,7 @@ const Input = styled.input`
   box-sizing: border-box;
 
   &::placeholder {
-    color: ${({ theme }) => theme.inputPlaceholder};
+    color: #999999;
   }
 
   &:hover {
@@ -111,7 +111,6 @@ const Submit = styled.button`
   text-transform: uppercase;
   letter-spacing: 1px;
   color: #000000;
-  // mi piace il tuo stile
 
   &:hover {
     background: #000000;
@@ -130,6 +129,7 @@ export default function MailingList() {
   const [state, setState] = useState<
     'idle' | 'submitting' | 'success' | 'error'
   >('idle');
+
   const handleSubmit = () => {
     setState('submitting');
     setDoc(doc(db, 'members', email), {
