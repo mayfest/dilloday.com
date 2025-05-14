@@ -99,7 +99,7 @@ export const stages: Stage[] = [
     name: 'FMO Stage',
     schedule: [
       {
-        time: '12:15 PM',
+        time: '1:15 PM',
         artist: 'Murichu',
         duration: '15 min',
         genre: '',
@@ -112,41 +112,27 @@ export const stages: Stage[] = [
           twitter: '',
         },
       },
-      {
-        time: '1:15 PM',
-        artist: 'Megat0ne',
-        duration: '15 min',
-        genre: 'EDM',
-        description:
-          'Megat0ne is an emerging DJ act from Northwestern’s vibrant student scene. Known for high-energy sets and infectious beats, Megat0ne blends house, techno, and experimental electronic sounds that keep crowds on their feet. Perfectly setting the stage for the afternoon lineup.',
-        image: '',
-        socialLinks: {
-          spotify: '',
-          instagram: '',
-          twitter: '',
-        },
-      },
-      {
-        time: '2:15 PM',
-        artist: 'Amarji King',
-        duration: '30 min',
-        genre: 'Rap',
-        description:
-          "Amarji King brings lyrical flair and sharp stage energy. A fresh voice in the rap game, Amarji's style fuses storytelling and hard-hitting beats. This rising star is ready to turn up the FMO stage with a performance that’s both personal and electrifying.",
-        image: '',
-        socialLinks: {
-          spotify: '',
-          instagram: '',
-          twitter: '',
-        },
-      },
+      // {
+      //   time: '2:15 PM',
+      //   artist: 'Amarji King',
+      //   duration: '30 min',
+      //   genre: 'Rap',
+      //   description:
+      //     "Amarji King brings lyrical flair and sharp stage energy. A fresh voice in the rap game, Amarji's style fuses storytelling and hard-hitting beats. This rising star is ready to turn up the FMO stage with a performance that’s both personal and electrifying.",
+      //   image: '',
+      //   socialLinks: {
+      //     spotify: '',
+      //     instagram: '',
+      //     twitter: '',
+      //   },
+      // },
       {
         time: '3:45 PM',
         artist: 'Giift',
         duration: '30 min',
         genre: 'R&B',
         description:
-          'Born in South Africa and raised in Denmark, Giift is redefining modern R&B with soulful vocals and self-produced, emotion-rich tracks. With international acclaim and festival appearances under her belt, Giift brings smooth melodies and warm vibes to every show.',
+          'Born in South Africa and raised in Denmark, Giift is a rising star in the world of neo-soul and R&B. She is known for her smooth vocals, introspective lyrics, and self-produced, soul-soaked soundscapes. A self-taught producer with a gift for raw emotion and subtle detail, Giift brings a refreshing intimacy to every track she touches. She dropped her debut EP, Archives, in 2022, a warm, genre-blurring introduction that caught the attention of tastemakers across Europe. In early 2025, she followed it up with Desires, a deeply personal and sonically rich project that cemented her as one to watch. Giift’s talent has taken her from bedroom production sessions to some of the biggest stages in Europe, including a standout performance at Roskilde Festival. In 2024, she earned the prestigious Music Moves Europe Award, a major nod to her growing influence on the international scene. With roots that span continents and a sound that feels both classic and future-forward, Giift is carving out her own lane in R&B. Get ready for a set full of smooth melodies and feel-good vibes, it’s sure to be a good time!',
         image: 'https://i.imgur.com/cPUoqUc.jpeg',
         socialLinks: {
           spotify: 'https://open.spotify.com/artist/2uRyCr2a4iM7uEaz4oQE3p',
@@ -160,7 +146,7 @@ export const stages: Stage[] = [
         duration: '45 min',
         genre: 'Rap',
         description:
-          'Skaiwater blends hip-hop, rap-rock, and electronic club vibes in a genre-defying style. Hailing from the UK and known for viral tracks and collaborations with Lil Nas X, they bring unmatched energy and creativity to the FMO stage.',
+          'Tyler Ryan Lee Jordan Brooks, known professionally as Skaiwater, is a British rapper and producer whose genre-defying sound blends elements of hip hop, Jersey club, and rap-rock electronica. Raised in Nottingham, U.K., Skaiwater began producing music at the age of eight, influenced by their father, a hip-hop producer. They started releasing music on SoundCloud in 2018, quickly gaining attention for their experimental style. Skaiwater’s breakout came with the viral success of their single “#miles,” which led to collaborations with artists like Lil Uzi Vert and Lil Nas X. Their debut mixtape, “Happy Hour,” featured Lil Keed, and they continued to push boundaries with their album “Rave,” a fusion of emo rap, ambient, and Jersey club sounds. In 2024, they released “Light!” featuring Lil Nas X, marking Nas’s first-ever feature. Their subsequent albums, “#gigi” and “#mia” (short for Manic in America), showcases Skaiwater’s evolving sound and introspective lyricism. Now based in Los Angeles, Skaiwater continues to explore new musical territories and break boundaries in music. We are excited to welcome them to Dillo Day 2025!',
         image: 'https://i.imgur.com/wsj7Dqq.jpeg',
         socialLinks: {
           spotify:
@@ -169,36 +155,21 @@ export const stages: Stage[] = [
           twitter: '',
         },
       },
-      {
-        time: '7:00 PM',
-        artist: '41',
-        duration: '45 min',
-        genre: 'Hip-Hop',
-        description:
-          "The rap collective 41 has been heating up New York’s drill scene with aggressive flows and streetwise lyrics. Their raw energy and bold sound make for an intense, can't-miss performance. Get ready for an explosive FMO set.",
-        image: '',
-        socialLinks: {
-          spotify:
-            'https://open.spotify.com/artist/0yknvLWQZxwsMjhUhwWZQ8?si=zgj-NJZ6QDSxNXsWLAvl_Q',
-          instagram: 'https://www.instagram.com/41world__/?hl=en',
-          twitter: '',
-        },
-      },
-      {
-        time: '11:45 PM',
-        artist: 'Ciel',
-        duration: '',
-        genre: '',
-        description:
-          'Ciel is an artist exploring dreamy electronic and indie tones. With a knack for building ethereal soundscapes, Ciel’s music is perfect for the late-night crowd. Expect an immersive, chill finale to the FMO stage experience.',
-        image: '',
-        socialLinks: {
-          spotify:
-            'https://open.spotify.com/artist/6iWDlrJbJuLswLFDpc9Uda?si=nSYDkaoRQiqCzpMW0gRMcQ',
-          instagram: 'https://www.instagram.com/cielmcd/?hl=en',
-          twitter: '',
-        },
-      },
+      // {
+      //   time: '7:00 PM',
+      //   artist: '41',
+      //   duration: '45 min',
+      //   genre: 'Hip-Hop',
+      //   description:
+      //     "The rap collective 41 has been heating up New York’s drill scene with aggressive flows and streetwise lyrics. Their raw energy and bold sound make for an intense, can't-miss performance. Get ready for an explosive FMO set.",
+      //   image: '',
+      //   socialLinks: {
+      //     spotify:
+      //       'https://open.spotify.com/artist/0yknvLWQZxwsMjhUhwWZQ8?si=zgj-NJZ6QDSxNXsWLAvl_Q',
+      //     instagram: 'https://www.instagram.com/41world__/?hl=en',
+      //     twitter: '',
+      //   },
+      // },
     ],
   },
 ];

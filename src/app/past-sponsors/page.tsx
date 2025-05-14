@@ -2,8 +2,7 @@
 
 import styled from 'styled-components';
 import { Section } from '@/components';
-import { sponsors2025 } from '@/lib/sponsors';
-import { ChevronRightIcon } from '@heroicons/react/24/outline';
+import { sponsors } from '@/lib/sponsors';
 
 const Title = styled.h2`
   font-size: 48px;
@@ -65,47 +64,17 @@ const Link = styled.a`
   letter-spacing: 0.5px;
 `;
 
-const ButtonContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-const Button = styled.a`
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  color: #e9d5ff;
-  padding: 4px 8px;
-  border-radius: 8px;
-  transition: background-color 150ms;
-
-  &:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-  }
-
-  &:active {
-    background-color: rgba(255, 255, 255, 0.2);
-  }
-`;
-
-const ArrowIcon = styled(ChevronRightIcon)`
-  width: 16px;
-  height: 16px;
-  stroke-width: 2px;
-`;
-
-export default function Sponsors() {
+export default function PastSponsorsPage() {
   return (
-    <Section id="sponsors">
-      <Title>Dillo Day 2025 Sponsors</Title>
+    <Section id="past-sponsors">
+      <Title>Past Dillo Day Sponsors</Title>
       <TextContainer>
-        Dillo Day is the largest student-run music festival in the country. This
-        year’s Carnival Dillo wouldn’t be possible without our incredible
-        sponsors. Check them out below!
+        We are incredibly grateful for the brands who have supported Dillo Day
+        in past years. These sponsors have helped us build the nation's largest
+        student-run music festival — thank you!
       </TextContainer>
       <Grid>
-        {sponsors2025.map((sponsor) => (
+        {sponsors.map((sponsor) => (
           <CardWrapper key={sponsor.name}>
             <Card>
               <Link
@@ -127,12 +96,6 @@ export default function Sponsors() {
           </CardWrapper>
         ))}
       </Grid>
-      <ButtonContainer>
-        <Button href="/past-sponsors/">
-          <span>View Full Historical Sponsor List</span>
-          <ArrowIcon />
-        </Button>
-      </ButtonContainer>
     </Section>
   );
 }

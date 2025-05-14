@@ -389,8 +389,11 @@ export default function EventInformation() {
           </Step>
           <Step step="3" title="Have the information on hand." line>
             <Text>
-              Download the <Link href="#app">Dillo Day mobile app</Link>{' '}
-              (available on{' '}
+              Download the{' '}
+              <Link href="https://mobile.dilloday.com/" target="_blank">
+                Dillo Day mobile app
+              </Link>{' '}
+              available on{' '}
               <Link
                 href="https://apps.apple.com/us/app/dillo-day-2025/id6745717280"
                 target="_blank"
@@ -405,12 +408,20 @@ export default function EventInformation() {
                 rel="noreferrer"
               > */}
               Android [CURRENTLY AWAITING APPROVAL]
-              {/* </Link> */}) and enable notifications to stay updated on the
-              latest security procedures, view an event schedule and map, and
-              more!
+              {/* </Link> */}. Please make sure to enable notifications to stay
+              updated on the latest security procedures, view an event schedule
+              and map, and more!
+            </Text>
+            <br />
+            <Text>
+              Also make sure to check out the Dillo Day safety resources by
+              checking out the{' '}
+              <Link href="/dillo-day-safety-announcement.pdf">
+                Dillo Day Safety Press Release
+              </Link>
             </Text>
             <ButtonContainer>
-              <Button href="#app">
+              <Button href="https://mobile.dilloday.com/" target="_blank">
                 <span>Download the App</span>
                 <ArrowRightIcon />
               </Button>

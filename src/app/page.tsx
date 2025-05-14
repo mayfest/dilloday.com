@@ -28,17 +28,15 @@ export default function HomePage() {
       <About />
       <EventInformation />
       <Tickets />
-      <SmartDilloBanner />
+      <MobileApp />
       <FestivalSchedule />
       <FestivalLayout />
-      {/* <MobileApp /> */}
-      {/* map */}
-      {/* lineup */}
-      {/* <HorizontalStoreComponent /> */}
+      <SmartDilloBanner />
+      <HorizontalStoreComponent />
       <FestivalCarousel />
+      <Sponsors />
       <PastDillos />
       <Team />
-      <Sponsors />
       <Support />
       <MailingList />
     </>
