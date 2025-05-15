@@ -28,8 +28,8 @@ export const sponsors2025: SponsorInformation2025[] = [
     href: 'https://armadilloworld.com/',
   },
   {
-    name: "L'Oréal",
-    logo: '/corporate-sponsors/2025/loreal-logo.png',
+    name: "Stand Up by L'Oreal Paris",
+    logo: '/corporate-sponsors/2025/stand-up.png',
     href: 'https://www.loreal.com',
   },
   {
