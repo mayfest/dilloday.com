@@ -384,7 +384,11 @@ export default function EventInformation() {
           <Step step="2" title="Know where to go." line>
             <Text>
               Enter in the <Bold>Arts Circle</Bold>, and exit up north. Follow
-              posted signs. Find a map on the app.
+              posted signs. Find a map on the app.{' '}
+              <strong>
+                Atteendess must exit from the exit next to Kellog. Please
+                reference the map down below
+              </strong>
             </Text>
           </Step>
           <Step step="3" title="Have the information on hand." line>

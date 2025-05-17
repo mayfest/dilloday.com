@@ -98,34 +98,35 @@ export const stages: Stage[] = [
   {
     name: 'FMO Stage',
     schedule: [
-      {
-        time: '1:15 PM',
-        artist: 'Murichu',
-        duration: '15 min',
-        genre: '',
-        description:
-          'Murichu was born and raised in Nairobi, Kenya, a city that has profoundly shaped his artistic sensibilities. He blends Afrohouse and Amapiano to create a genre-bending, deeply melodic experience. Founder of Murichu+ Friends, his sets are both vibrant and healing, guiding listeners through rhythm and emotion. Expect a set full of groove, warmth, and soul-touching beats.',
-        image: 'https://i.imgur.com/HCbJpI9.jpeg',
-        socialLinks: {
-          spotify: '',
-          instagram: 'https://www.instagram.com/murichu.andfriends/?hl=en',
-          twitter: '',
-        },
-      },
       // {
-      //   time: '2:15 PM',
-      //   artist: 'Amarji King',
-      //   duration: '30 min',
-      //   genre: 'Rap',
+      //   time: '1:15 PM',
+      //   artist: 'Murichu',
+      //   duration: '15 min',
+      //   genre: '',
       //   description:
-      //     "Amarji King brings lyrical flair and sharp stage energy. A fresh voice in the rap game, Amarji's style fuses storytelling and hard-hitting beats. This rising star is ready to turn up the FMO stage with a performance that’s both personal and electrifying.",
-      //   image: '',
+      //     'Murichu was born and raised in Nairobi, Kenya, a city that has profoundly shaped his artistic sensibilities. He blends Afrohouse and Amapiano to create a genre-bending, deeply melodic experience. Founder of Murichu+ Friends, his sets are both vibrant and healing, guiding listeners through rhythm and emotion. Expect a set full of groove, warmth, and soul-touching beats.',
+      //   image: 'https://i.imgur.com/HCbJpI9.jpeg',
       //   socialLinks: {
       //     spotify: '',
-      //     instagram: '',
+      //     instagram: 'https://www.instagram.com/murichu.andfriends/?hl=en',
       //     twitter: '',
       //   },
       // },
+      {
+        time: '2:15 PM',
+        artist: 'Amarji King',
+        duration: '30 min',
+        genre: 'Rap',
+        description:
+          'DJ Amarji King is a Houston-based DJ and producer whose electrifying sets blend ballroom, Jersey club, techno, and house. You might also know her as the “Thee Houston Club Princess!” Amarji has carved out a unique space in the Southern underground scene, using music as a medium for both joy and activism. She started DJing in her bedroom during the pandemic, hosting weekly live streams that quickly gained popularity and led to virtual performances for art collectives across North America. Amarji’s dynamic presence has led her to perform at iconic venues such as Boiler Room and Gas Station FM, and she has held residencies in all three major Texas cities. Her mixes, including the ‘TS Club Titan Megamix’ and ‘RIIVERDANCE HA,’ are guaranteed to get your body moving, your energy surging, and the rhythm pulsing deep into your soul. As a proud Black trans woman, Amarji is more than just a DJ; she’s an artist and advocate who creates safe spaces for people to celebrate love and self-expression.',
+        image: 'https://i.imgur.com/mAI5syd.jpeg',
+        socialLinks: {
+          spotify:
+            'https://open.spotify.com/artist/7KkucmhlOec7tWNdVHnXgd?si=udf3Br2YT5esXu5taIEvqQ',
+          instagram: 'https://www.instagram.com/amarji_king/?hl=en',
+          twitter: '',
+        },
+      },
       {
         time: '3:45 PM',
         artist: 'Giift',
@@ -155,21 +156,21 @@ export const stages: Stage[] = [
           twitter: '',
         },
       },
-      // {
-      //   time: '7:00 PM',
-      //   artist: '41',
-      //   duration: '45 min',
-      //   genre: 'Hip-Hop',
-      //   description:
-      //     "The rap collective 41 has been heating up New York’s drill scene with aggressive flows and streetwise lyrics. Their raw energy and bold sound make for an intense, can't-miss performance. Get ready for an explosive FMO set.",
-      //   image: '',
-      //   socialLinks: {
-      //     spotify:
-      //       'https://open.spotify.com/artist/0yknvLWQZxwsMjhUhwWZQ8?si=zgj-NJZ6QDSxNXsWLAvl_Q',
-      //     instagram: 'https://www.instagram.com/41world__/?hl=en',
-      //     twitter: '',
-      //   },
-      // },
+      {
+        time: '7:00 PM',
+        artist: '41',
+        duration: '45 min',
+        genre: 'Hip-Hop',
+        description:
+          'Emerging from the heart of Brooklyn, 41 is a dynamic hip-hop trio composed of Kyle Richh, Jenn Carter, and TaTa. The group quickly gained attention with their debut single, “41 Cypher,” in January 2022, followed by their breakout song and viral hit “Notti Bop.” In 2023, 41 released “Bent,” a track that masterfully blends Brooklyn drill with Jersey club rhythms. The song became their most successful to date, amassing over 100 million streams on Spotify and peaking at number 18 on Billboard’s “Bubbling Under Hot 100” chart. Their debut EP, 41 World: Not the Album, further solidified their place in the hip-hop scene, featuring a collaboration with Sexyy Red. They’ve also collaborated with popular names in rap, Fivio Foreign and French Montana. Each member brings a distinct flavor to the group: Kyle Richh’s lyrical finesse, Jenn Carter’s razor-sharp wordplay, and TaTa’s infectious energy. Together, they create the synergy and energy that define the success of 41',
+        image: 'https://i.imgur.com/LJmdOdl.jpeg',
+        socialLinks: {
+          spotify:
+            'https://open.spotify.com/artist/0yknvLWQZxwsMjhUhwWZQ8?si=zgj-NJZ6QDSxNXsWLAvl_Q',
+          instagram: 'https://www.instagram.com/41world__/?hl=en',
+          twitter: '',
+        },
+      },
     ],
   },
 ];
