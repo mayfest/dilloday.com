@@ -65,17 +65,16 @@ export const stages: Stage[] = [
       },
       {
         time: '6:00 PM',
-        artist: 'BigXthaPlug',
+        artist: 'iann Dior',
         duration: '60 min',
         genre: 'Rap',
         description:
-          'BigXthaPlug has quickly emerged as one of the most electrifying voices in rap. Combining soulful samples and a raw and unmistakable delivery, BigXthaPlug’s mix of swagger and authenticity has reinvigorated the Southern trap scene. BigX meteoric rise took a next step with the release of “Mhmm” and “Back on My BS”, with the former being his first song to chart on the Billboard Hot 100. Known for his relentless work ethic and no-days-off mentality, BigXthaPlug proved that his success was no fluke, releasing back-to-back successful EP’s in THE BIGGEST and MEET THE 6IXERS. 2024 was a triumphant year for BigX, named as Amazon Music’s Next Breakthrough Artist and doubling his Spotify monthly listeners to over 16 million. Take Care, his second studio album, debuted in the Top 10 of the US Billboard 200. 2025 seems poised to launch BigX to a new level, with him scoring his first Billboard Top 10 song with “All the Way (feat. Bailey Zimmerman).” His trajectory, charisma, stage presence, and consistent hit-making ability make him a must-see act at Dillo Day 53.',
-        image: 'https://i.imgur.com/wTQOGsS.jpeg',
+          'iann dior, born in Puerto Rico and raised in Texas, is an American rapper, singer, and songwriter who rose to fame in 2019 with a run of viral SoundCloud hits and his chart-topping #1 hit “Mood” with 24kGoldn in 2020. Known for blending hip-hop, pop-punk, and alternative rock elements, dior has established himself as a versatile artist and hitmaker through albums like “Industry Plant” (2019) and “On to Better Things” (2022), and collaborations with artists like Machine Gun Kelly, Travis Barker, and Trippie Redd.',
+        image: 'https://i.imgur.com/6HESfDv.jpeg',
         socialLinks: {
-          spotify:
-            'https://open.spotify.com/artist/6qxpnaukVayrQn6ViNvu9I?si=X6xRNf2tR5ylew0mmEkiWA',
-          instagram: 'https://www.instagram.com/bigxthaplug/',
-          twitter: 'https://x.com/BigXthaPlugg',
+          spotify: 'https://open.spotify.com/artist/6ASri4ePR7RlsvIQgWPJpS',
+          instagram: 'https://open.spotify.com/artist/6ASri4ePR7RlsvIQgWPJpS',
+          twitter: 'https://x.com/ianndior?lang=en',
         },
       },
       {

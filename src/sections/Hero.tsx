@@ -50,13 +50,13 @@ export default function Hero() {
         </div>
         <div className="mx-auto w-[70%] py-32 sm:py-48 lg:py-56">
           <div className="text-center">
-            <p className="font-bold text-white opacity-75 text-glow text-2xl">
+            {/* <p className="font-bold text-white opacity-75 text-glow text-2xl">
               05.17.25
-            </p>
+            </p> */}
             <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-9xl text-glow">
               DILLO DAY
             </h1>
-            <div className="font-bold text-white opacity-75 text-glow space-x-2">
+            {/* <div className="font-bold text-white opacity-75 text-glow space-x-2">
               <span className="inline-block min-w-[ch]">
                 {String(timeLeft.days).padStart(3, '0')}
               </span>
@@ -73,7 +73,7 @@ export default function Hero() {
                 {String(timeLeft.seconds).padStart(2, '0')}
               </span>
               <span>seconds</span>
-            </div>
+            </div> */}
           </div>
         </div>
         <div className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]">
