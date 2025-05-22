@@ -50,10 +50,9 @@ export const roster: Roster = sorted([
       },
       {
         name: 'Corporate',
-        executive: ['Ali Lee', 'Tyler Keim'],
+        executive: ['Adam Valiji', 'Tyler Keim'],
         general: [
           'Olivia (Liv) Clark',
-          'Adam Valiji',
           'Grace Shao',
           'Gio Cacciato',
           'Jonathan Lee',
@@ -129,7 +128,6 @@ export const roster: Roster = sorted([
           'David Fu',
           'Eduardo Ramos',
           'Vivian Chen',
-          'Jenna Kazim',
           'Leo Garcia',
           'Natalie Volanto',
         ],
@@ -156,7 +154,6 @@ export const roster: Roster = sorted([
         executive: ['Defne Deda', 'Alex Kahn'],
         general: [
           'Jessica Chen',
-          'Naol Worku',
           'Bruce Bei',
           'Celeste Eckstein',
           'Daniel Kim',
@@ -169,7 +166,6 @@ export const roster: Roster = sorted([
           'Joseph Wang',
           'Kate Cassidy',
           'Kendall Hampton',
-          'Lupita Ramos Barrios',
           'Maddie Vartanian',
           'Sebastian Prusky',
           'Trois Ono',
@@ -411,7 +407,6 @@ export const roster: Roster = sorted([
           'Tyler Keim',
           'Catherine Zhao',
           'Seeley McGillis',
-          'Haris Bukaric',
           'Felipe Reis Maccari',
           'Eddie Ko',
           "Lucas Sant'Anna",
