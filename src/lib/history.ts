@@ -321,4 +321,27 @@ export const history: HistoricalEvent[] = [
       },
     ],
   },
+  {
+    year: '2025',
+    date: 'May 17th, 2025',
+    description:
+      'Dillo Day 2025 arrived on May 17th, 2025, lighting up the Lakefill with an electrifying carnival extravaganza. Festival-goers were transported into a vibrant world filled with vivid colors, whimsical rides, and an atmosphere buzzing with joyful energy. The Main Stage captivated crowds with unforgettable performances from Natasha Bedingfield, Ravyn Lenae, iann dior, Slow Pulp, and nimino, while the FMO Stage amplified the excitement with dynamic acts from 41, Skaiwater, Giift, and Amarji King. From dazzling carnival-themed visuals and interactive game booths to spectacular costumes and spirited performances, Dillo 2025 embodied the thrill and wonder of a grand carnival celebration.',
+    image: '/img/dillo-2025.jpg',
+    artists: [
+      {
+        stage: 'Main Stage',
+        names: [
+          'Natasha Bedingfield',
+          'Ravyn Lenae',
+          'iann dior',
+          'Slow Pulp',
+          'nimino',
+        ],
+      },
+      {
+        stage: 'FMO Stage',
+        names: ['41', 'Skaiwater', 'Giift', 'Amarji King'],
+      },
+    ],
+  },
 ];
