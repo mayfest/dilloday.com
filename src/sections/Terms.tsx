@@ -282,7 +282,7 @@ export default function Terms() {
       </Area>
 
       <Area>
-        <AreaTitle id="terms/ticketing">TICKETING</AreaTitle>
+        <AreaTitle id="terms-ticketing">TICKETING</AreaTitle>
 
         <TermsSection title="NU UNDERGRADUATE WRISTBAND POLICY">
           <Text>
@@ -415,7 +415,7 @@ export default function Terms() {
       </Area>
 
       <Area>
-        <AreaTitle id="terms/accessibility">ACCESSIBILITY</AreaTitle>
+        <AreaTitle id="terms-accessibility">ACCESSIBILITY</AreaTitle>
 
         <TermsSection title="ACCESSIBILITY POLICY">
           <Text>
@@ -456,7 +456,7 @@ export default function Terms() {
       </Area>
 
       <Area>
-        <AreaTitle id="terms/dillo-day-mobile-app">
+        <AreaTitle id="terms-dillo-day-mobile-app">
           DILLO DAY MOBILE APP
         </AreaTitle>
 
@@ -537,7 +537,7 @@ export default function Terms() {
       </Area>
 
       <Area>
-        <AreaTitle id="terms/acknowledgements">ACKNOWLEDGEMENTS</AreaTitle>
+        <AreaTitle id="terms-acknowledgements">ACKNOWLEDGEMENTS</AreaTitle>
 
         <TermsSection title="LAND ACKNOWLEDGEMENT">
           <Text>

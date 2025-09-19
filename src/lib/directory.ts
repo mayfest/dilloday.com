@@ -4,10 +4,10 @@ interface NavigationItem {
 }
 
 export const navigation: NavigationItem[] = [
-  { name: 'ABOUT', href: '#about' },
-  { name: 'LINEUP', href: '#lineup' },
-  { name: 'PAST DILLOS', href: '#past-dillos' },
-  { name: 'STORE', href: '#store' },
+  { name: 'ABOUT', href: '/#about' },
+  { name: 'LINEUP', href: '/#lineup' },
+  { name: 'PAST DILLOS', href: '/#past-dillos' },
+  { name: 'STORE', href: '/#store' },
   { name: 'TERMS', href: '/terms-of-service' },
   { name: 'SUPPORT', href: 'https://support.dilloday.com' },
 ];
