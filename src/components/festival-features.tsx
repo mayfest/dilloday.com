@@ -343,7 +343,7 @@ export default function FestivalCarousel() {
                   return (
                     <StyledCard key={item.id}>
                       <CardImage
-                        src={item.image || '/img/tech-team.jpg'}
+                        src={item.image || '/img/committee-team/tech-team.jpg'}
                         alt={item.title}
                         width={600}
                         height={400}

@@ -112,7 +112,7 @@ export default function Footer() {
           ))}
         </div>
         <p className="mt-10 mb-2 text-center text-xs leading-5 text-gray-100">
-          Copyright &copy; 2024 Mayfest Productions. All rights reserved.
+          Copyright &copy; 2026 Mayfest Productions. All rights reserved.
         </p>
         {/* <p className="my-2 text-center text-xs leading-5 text-gray-100">
           All photos are courtesy of{' '}
