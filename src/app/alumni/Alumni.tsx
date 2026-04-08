@@ -817,54 +817,54 @@ const ArchivesFooter = styled.div`
 const entertainmentCompanies = [
   {
     name: 'CAA',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Creative_Artists_Agency_logo_%28no_text%29.svg/1280px-Creative_Artists_Agency_logo_%28no_text%29.svg.png',
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/4/4c/Creative_Artists_Agency_logo_%28no_text%29.svg',
   },
   {
     name: 'UTA',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/United_Talent_Agency_logo.svg/1920px-United_Talent_Agency_logo.svg.png',
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/3/3d/United_Talent_Agency_logo.svg',
   },
   {
-    name: 'Wasserman',
-    logo: 'https://thelicensingletter.com/wp-content/uploads/2023/06/WassermanMusic_Logo_Icon_Red_3000px.png',
+    name: 'The Team',
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/3/3f/The_team_logo_v2.svg',
   },
   {
     name: 'Live Nation',
-    logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/e/ed/Live_Nation_Entertainment_logo.svg/3840px-Live_Nation_Entertainment_logo.svg.png',
+    logo: 'https://upload.wikimedia.org/wikipedia/en/e/ed/Live_Nation_Entertainment_logo.svg',
   },
 ];
 
 const otherCompanies = [
   {
+    name: 'Apple',
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg',
+  },
+  {
     name: 'Google',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/960px-Google_2015_logo.svg.png',
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg',
   },
   {
-    name: 'Meta',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Meta_Platforms_Inc._logo.svg/960px-Meta_Platforms_Inc._logo.svg.png',
+    name: 'JPMorgan Chase',
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/c/c9/Logo_of_JPMorganChase_2024.svg',
   },
   {
-    name: 'Goldman Sachs',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Goldman_Sachs_logo.svg/500px-Goldman_Sachs_logo.svg.png',
+    name: 'Bain & Company',
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/b/bc/Bain_%26_Company_logo.svg',
   },
   {
     name: 'McKinsey',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/McKinsey_Script_Mark_2019.svg/500px-McKinsey_Script_Mark_2019.svg.png',
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/1/16/McKinsey_Script_Mark_2019.svg',
   },
   {
-    name: 'Amazon',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Amazon_2024.svg/500px-Amazon_2024.svg.png',
+    name: 'NBCUniversal',
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/b/bd/NBCUniversal_2026_Logo.svg',
   },
   {
-    name: 'Apple',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/250px-Apple_logo_black.svg.png',
+    name: 'Wall Street Journal',
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/4/4a/WSJ_Logo.svg',
   },
   {
-    name: 'Netflix',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/960px-Netflix_2015_logo.svg.png',
-  },
-  {
-    name: 'Disney',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/The_Walt_Disney_company_logo.svg/500px-The_Walt_Disney_company_logo.svg.png',
+    name: 'Tesla',
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/6/62/Tesla_Motors_Logo.svg',
   },
 ];
 
@@ -974,7 +974,7 @@ export default function Alumni() {
           <AlumniCTA>
             <AlumniCTAText>Are you a Mayfest alum? Tell us where you&apos;re working.</AlumniCTAText>
             <AlumniCTALink
-              href="https://forms.google.com"
+              href="https://forms.gle/KYrKVSTS8mp5SDfC7"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -1077,14 +1077,14 @@ export default function Alumni() {
 
           <SocialRow>
             <SocialLink
-              href="https://www.linkedin.com/company/mayfest-productions"
+              href="https://www.linkedin.com/company/3538800"
               target="_blank"
               rel="noopener noreferrer"
             >
               LinkedIn
             </SocialLink>
             <SocialLink
-              href="https://www.instagram.com/dilloday"
+              href="https://www.instagram.com/dillo_day"
               target="_blank"
               rel="noopener noreferrer"
             >
