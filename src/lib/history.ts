@@ -20,11 +20,11 @@ export const history: HistoricalEvent[] = [
       {
         stage: 'Main Stage',
         names: [
-          'Cold War Kids',
-          'Kendrick Lamar',
-          'Reel Big Fish',
-          'Big Boi',
           'Steve Aoki',
+          'Big Boi',
+          'Reel Big Fish',
+          'Kendrick Lamar',
+          'Cold War Kids',
         ],
       },
     ],
@@ -39,11 +39,11 @@ export const history: HistoricalEvent[] = [
       {
         stage: 'Main Stage',
         names: [
-          'Walk the Moon',
-          'Danny Brown',
-          'Smash Mouth',
-          'Lunice',
           'Wiz Khalifa',
+          'Lunice',
+          'Smash Mouth',
+          'Danny Brown',
+          'Walk the Moon',
         ],
       },
     ],

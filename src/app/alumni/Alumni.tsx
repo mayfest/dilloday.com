@@ -1145,26 +1145,25 @@ export default function Alumni() {
               <VIPPerk>
                 <PerkCheck>✓</PerkCheck>
                 <span>
-                  <strong>VIP Viewing Experience</strong> in the after-hours beer garden
+                  <strong>VIP viewing experience</strong> in the after-hours beer garden
                 </span>
               </VIPPerk>
               <VIPPerk>
                 <PerkCheck>✓</PerkCheck>
                 <span>
-                  Complimentary <strong>Drink Tickets</strong>
+                  Complimentary <strong>drink tickets</strong>
                 </span>
               </VIPPerk>
               <VIPPerk>
                 <PerkCheck>✓</PerkCheck>
                 <span>
-                  Limited Edition <strong>Alumni Poster</strong>
+                  Limited edition <strong>Dillo 54 alumni poster</strong>
                 </span>
               </VIPPerk>
               <VIPPerk>
                 <PerkCheck>✓</PerkCheck>
                 <span>
-                  Name featured on the <strong>&ldquo;Alumni Wall of Fame&rdquo;</strong> Banner at
-                  Main Stage
+                  Name featured on the <strong>&ldquo;Alumni Wall of Fame&rdquo;</strong> banner
                 </span>
               </VIPPerk>
             </VIPPerks>
@@ -1252,7 +1251,7 @@ export default function Alumni() {
                   <ArchiveYear>{event.year}</ArchiveYear>
                   {event.artists?.[0]?.names?.length ? (
                     <ArchiveHeadliner>
-                      {event.artists[0].names[event.artists[0].names.length - 1]}
+                      {event.artists[0].names[0]}
                     </ArchiveHeadliner>
                   ) : null}
                 </ArchiveInfo>
