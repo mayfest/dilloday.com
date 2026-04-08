@@ -821,7 +821,7 @@ const entertainmentCompanies = [
   },
   {
     name: 'UTA',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/United_Talent_Agency_logo.svg/2560px-United_Talent_Agency_logo.svg.png',
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/United_Talent_Agency_logo.svg/1920px-United_Talent_Agency_logo.svg.png',
   },
   {
     name: 'Wasserman',
@@ -829,7 +829,7 @@ const entertainmentCompanies = [
   },
   {
     name: 'Live Nation',
-    logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/e/ed/Live_Nation_Entertainment_logo.svg/2560px-Live_Nation_Entertainment_logo.svg.png',
+    logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/e/ed/Live_Nation_Entertainment_logo.svg/3840px-Live_Nation_Entertainment_logo.svg.png',
   },
 ];
 
@@ -869,12 +869,8 @@ const otherCompanies = [
 ];
 
 const pastNewsletters = [
-  { date: 'March 2026', title: 'Spring Update: Lineup Announcement Coming Soon', href: '#' },
-  { date: 'January 2026', title: 'Alumni Spotlight: From Mayfest to Hollywood', href: '#' },
-  { date: 'November 2025', title: 'Fall Recap & 2026 Planning Kickoff', href: '#' },
-  { date: 'August 2025', title: 'Summer Alumni Mixer Recap', href: '#' },
-  { date: 'May 2025', title: 'Dillo Day 2025: A Record-Breaking Year', href: '#' },
-  { date: 'March 2025', title: 'Meet the 2025 Headliners', href: '#' },
+  { date: 'March 2026', title: 'Mayfest Alumni Newsletter: Winter 2026 Edition', href: '/./newsletters/alumni-newsletter-w26.pdf' },
+  { date: 'May 2025', title: 'Mayfest Alumni Newsletter - First Edition', href: '/./newsletters/alumni-newsletter-fe.pdf' },
 ];
 
 const GIVING_URL = 'https://giving.nu/Mayfest';
@@ -998,7 +994,6 @@ export default function Alumni() {
               whileInView="animate"
               viewport={{ once: true }}
             >
-              <SectionLabel>Stay in Touch</SectionLabel>
               <SectionTitle>Stay Connected</SectionTitle>
               <SectionSubtitle>
                 Join our alumni network and never miss an update.
@@ -1070,7 +1065,7 @@ export default function Alumni() {
               {showNewsletters && (
                 <NewsletterList>
                   {pastNewsletters.map((n, i) => (
-                    <NewsletterItem key={i} href={n.href}>
+                    <NewsletterItem key={i} href={n.href} rel="noreferrer" target="_blank">
                       <NewsletterItemDate>{n.date}</NewsletterItemDate>
                       <NewsletterItemTitle>{n.title}</NewsletterItemTitle>
                     </NewsletterItem>
@@ -1121,7 +1116,6 @@ export default function Alumni() {
             whileInView="animate"
             viewport={{ once: true }}
           >
-            <SectionLabel>Give Back</SectionLabel>
             <SectionTitle>Fuel the Festival</SectionTitle>
             <SectionSubtitle>
               Your gift keeps Dillo Day free for students and secure for everyone. All contributions
@@ -1228,7 +1222,6 @@ export default function Alumni() {
             whileInView="animate"
             viewport={{ once: true }}
           >
-            <SectionLabel>Down Memory Lane</SectionLabel>
             <SectionTitle>The Mayfest Archives</SectionTitle>
             <SectionSubtitle>
               Take a trip down memory lane. Which year was yours?
