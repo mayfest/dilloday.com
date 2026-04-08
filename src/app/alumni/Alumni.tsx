@@ -6,6 +6,11 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 import styled from 'styled-components';
 
+// ─── TODO ─────────────────────────────────────────────────────────────────────
+// * Upload corp pitch deck
+// * Connect newsletter form to Firebase/Google Sheets
+// * Create alumni@dilloday.com email (forward to dilloday@u.northwestern.edu for now)
+// * Revise Dillo Archives section (Marina + Joss)
 // ─── Shared ───────────────────────────────────────────────────────────────────
 
 const SectionLabel = styled.span`
@@ -1043,8 +1048,11 @@ export default function Alumni() {
                       onChange={(e) => setMentorInterest(e.target.checked)}
                     />
                     <CheckboxLabel htmlFor="alumni-mentor">
-                      I&apos;m interested in mentoring current Mayfest members — help the next
-                      generation navigate entertainment, production, and beyond.
+                      I&apos;m interested in mentoring current Mayfest members
+                      <br />
+                      <span style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.875em' }}>
+                        Help the next generation navigate entertainment, production, and beyond.
+                      </span>
                     </CheckboxLabel>
                   </CheckboxRow>
                   <SubmitButton type="submit" disabled={formState === 'submitting'}>
