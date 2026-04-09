@@ -9,7 +9,7 @@ import { useState } from 'react';
 import styled from 'styled-components';
 
 // ─── TODO ─────────────────────────────────────────────────────────────────────
-// * Upload corp pitch deck
+// * Run `firebase deploy --only firestore:rules`
 // * Encorperate normal alumni tickets
 // * Create alumni@dilloday.com email (forward to dilloday@u.northwestern.edu for now)
 // * Revise Dillo Archives section (Marina + Joss)
@@ -1222,7 +1222,7 @@ export default function Alumni() {
               we build custom packages for our alumni partners.
             </SectionSubtitle>
             <CorpButtons>
-              <PrimaryButton href="/sponsorship-deck.pdf" target="_blank" rel="noopener noreferrer">
+              <PrimaryButton href="/Mayfest_Pitch_Deck_2026.pdf" target="_blank" rel="noopener noreferrer">
                 Download Sponsorship Deck
               </PrimaryButton>
               <SecondaryButton href="mailto:corporate@dilloday.com">
