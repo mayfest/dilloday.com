@@ -1151,6 +1151,12 @@ export default function Alumni() {
               <VIPPerk>
                 <PerkCheck>✓</PerkCheck>
                 <span>
+                  <strong>Private bathrooms</strong>
+                </span>
+              </VIPPerk>
+              <VIPPerk>
+                <PerkCheck>✓</PerkCheck>
+                <span>
                   Limited edition <strong>Dillo 54 alumni poster</strong>
                 </span>
               </VIPPerk>
@@ -1161,8 +1167,11 @@ export default function Alumni() {
                 </span>
               </VIPPerk>
             </VIPPerks>
-            <DonateButton href={GIVING_URL} target="_blank" rel="noopener noreferrer">
+            {/* <DonateButton href={GIVING_URL} target="_blank" rel="noopener noreferrer">
               Claim Your VIP Package
+            </DonateButton> */}
+            <DonateButton as="div" style={{ opacity: 0.45, cursor: "not-allowed", pointerEvents: "none" }}>
+              Coming to Dillo 55
             </DonateButton>
             <DonateNote>Redirects to the secure Northwestern giving portal</DonateNote>
           </VIPCard>
