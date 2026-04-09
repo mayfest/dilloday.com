@@ -10,7 +10,7 @@ import styled from 'styled-components';
 
 // ─── TODO ─────────────────────────────────────────────────────────────────────
 // * Upload corp pitch deck
-// * Configure `alumni_subscribers` collection in Firebase console (Firestore rules, indexes)
+// * Encorperate normal alumni tickets
 // * Create alumni@dilloday.com email (forward to dilloday@u.northwestern.edu for now)
 // * Revise Dillo Archives section (Marina + Joss)
 // ─── Shared ───────────────────────────────────────────────────────────────────
