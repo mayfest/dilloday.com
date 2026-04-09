@@ -1,14 +1,16 @@
 'use client';
 
 import { mobile } from '@/components';
+import { db } from '@/lib/app';
 import { history } from '@/lib/history';
+import { doc, setDoc } from 'firebase/firestore';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import styled from 'styled-components';
 
 // ─── TODO ─────────────────────────────────────────────────────────────────────
 // * Upload corp pitch deck
-// * Connect newsletter form to Firebase/Google Sheets
+// * Configure `alumni_subscribers` collection in Firebase console (Firestore rules, indexes)
 // * Create alumni@dilloday.com email (forward to dilloday@u.northwestern.edu for now)
 // * Revise Dillo Archives section (Marina + Joss)
 // ─── Shared ───────────────────────────────────────────────────────────────────
@@ -892,8 +894,17 @@ export default function Alumni() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setFormState('submitting');
-    // TODO: connect to newsletter/Firebase
-    setTimeout(() => setFormState('success'), 800);
+    setDoc(doc(db, 'alumni_subscribers', email), {
+      email,
+      graduationYear: gradYear,
+      mentorInterest,
+      createdAt: new Date(),
+    })
+      .then(() => setFormState('success'))
+      .catch((error) => {
+        console.error(error);
+        setFormState('error');
+      });
   };
 
   const scrollToNewsletter = () => {
