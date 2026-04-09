@@ -1145,13 +1145,7 @@ export default function Alumni() {
               <VIPPerk>
                 <PerkCheck>✓</PerkCheck>
                 <span>
-                  <strong>VIP viewing experience</strong> in the after-hours beer garden
-                </span>
-              </VIPPerk>
-              <VIPPerk>
-                <PerkCheck>✓</PerkCheck>
-                <span>
-                  Complimentary <strong>drink tickets</strong>
+                  <strong>VIP viewing experience</strong>
                 </span>
               </VIPPerk>
               <VIPPerk>
