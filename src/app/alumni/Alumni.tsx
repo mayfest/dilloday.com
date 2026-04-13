@@ -1168,7 +1168,7 @@ export default function Alumni() {
               <VIPPerk>
                 <PerkCheck>✓</PerkCheck>
                 <span>
-                  Limited edition <strong>Dillo 54 alumni poster</strong>
+                  Limited edition <strong>Dillo alumni poster</strong>
                 </span>
               </VIPPerk>
               <VIPPerk>
