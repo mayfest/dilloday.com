@@ -876,8 +876,16 @@ const otherCompanies = [
 ];
 
 const pastNewsletters = [
-  { date: 'March 2026', title: 'Mayfest Alumni Newsletter: Winter 2026 Edition', href: '/./newsletters/alumni-newsletter-w26.pdf' },
-  { date: 'May 2025', title: 'Mayfest Alumni Newsletter - First Edition', href: '/./newsletters/alumni-newsletter-fe.pdf' },
+  {
+    date: 'March 2026',
+    title: 'Mayfest Alumni Newsletter: Winter 2026 Edition',
+    href: '/./newsletters/alumni-newsletter-w26.pdf',
+  },
+  {
+    date: 'May 2025',
+    title: 'Mayfest Alumni Newsletter - First Edition',
+    href: '/./newsletters/alumni-newsletter-fe.pdf',
+  },
 ];
 
 const GIVING_URL = 'https://giving.nu/Mayfest';
@@ -888,7 +896,9 @@ export default function Alumni() {
   const [email, setEmail] = useState('');
   const [gradYear, setGradYear] = useState('');
   const [mentorInterest, setMentorInterest] = useState(false);
-  const [formState, setFormState] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+  const [formState, setFormState] = useState<
+    'idle' | 'submitting' | 'success' | 'error'
+  >('idle');
   const [showNewsletters, setShowNewsletters] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -908,7 +918,9 @@ export default function Alumni() {
   };
 
   const scrollToNewsletter = () => {
-    document.getElementById('alumni-newsletter')?.scrollIntoView({ behavior: 'smooth' });
+    document
+      .getElementById('alumni-newsletter')
+      ?.scrollIntoView({ behavior: 'smooth' });
   };
 
   const archiveYears = [...history].reverse();
@@ -928,10 +940,12 @@ export default function Alumni() {
             Always Mayfest.
           </HeroTitle>
           <HeroSubtitle>
-            Connect with the network that builds the nation&apos;s largest student-run music
-            festival.
+            Connect with the network that builds the nation&apos;s largest
+            student-run music festival.
           </HeroSubtitle>
-          <HeroButton onClick={scrollToNewsletter}>Join the Alumni Newsletter</HeroButton>
+          <HeroButton onClick={scrollToNewsletter}>
+            Join the Alumni Newsletter
+          </HeroButton>
         </HeroContent>
       </HeroContainer>
 
@@ -948,7 +962,8 @@ export default function Alumni() {
               <SectionLabel>Our Network</SectionLabel>
               <SectionTitle>Where We Are Now</SectionTitle>
               <SectionSubtitle>
-                Mayfest alumni are shaping the future of entertainment, technology, and beyond.
+                Mayfest alumni are shaping the future of entertainment,
+                technology, and beyond.
               </SectionSubtitle>
             </motion.div>
           </SectionHeader>
@@ -988,7 +1003,9 @@ export default function Alumni() {
           </CompanyGrid>
 
           <AlumniCTA>
-            <AlumniCTAText>Are you a Mayfest alum? Tell us where you&apos;re working.</AlumniCTAText>
+            <AlumniCTAText>
+              Are you a Mayfest alum? Tell us where you&apos;re working.
+            </AlumniCTAText>
             <AlumniCTALink
               href="https://forms.gle/KYrKVSTS8mp5SDfC7"
               target="_blank"
@@ -1025,12 +1042,16 @@ export default function Alumni() {
           >
             <FormCard>
               {formState === 'success' ? (
-                <StatusMessage>Thanks for signing up! We&apos;ll be in touch soon.</StatusMessage>
+                <StatusMessage>
+                  Thanks for signing up! We&apos;ll be in touch soon.
+                </StatusMessage>
               ) : (
                 <form onSubmit={handleSubmit}>
                   <FormGrid>
                     <FormField>
-                      <FormLabel htmlFor="alumni-email">Email Address *</FormLabel>
+                      <FormLabel htmlFor="alumni-email">
+                        Email Address *
+                      </FormLabel>
                       <FormInput
                         id="alumni-email"
                         type="email"
@@ -1041,7 +1062,9 @@ export default function Alumni() {
                       />
                     </FormField>
                     <FormField>
-                      <FormLabel htmlFor="alumni-grad-year">Graduation Year</FormLabel>
+                      <FormLabel htmlFor="alumni-grad-year">
+                        Graduation Year
+                      </FormLabel>
                       <FormInput
                         id="alumni-grad-year"
                         type="text"
@@ -1061,30 +1084,50 @@ export default function Alumni() {
                     <CheckboxLabel htmlFor="alumni-mentor">
                       I&apos;m interested in mentoring current Mayfest members
                       <br />
-                      <span style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.875em' }}>
-                        Help the next generation navigate entertainment, production, and beyond.
+                      <span
+                        style={{
+                          color: 'rgba(255,255,255,0.5)',
+                          fontSize: '0.875em',
+                        }}
+                      >
+                        Help the next generation navigate entertainment,
+                        production, and beyond.
                       </span>
                     </CheckboxLabel>
                   </CheckboxRow>
-                  <SubmitButton type="submit" disabled={formState === 'submitting'}>
-                    {formState === 'submitting' ? '...' : 'Subscribe to Newsletter'}
+                  <SubmitButton
+                    type="submit"
+                    disabled={formState === 'submitting'}
+                  >
+                    {formState === 'submitting'
+                      ? '...'
+                      : 'Subscribe to Newsletter'}
                   </SubmitButton>
                   {formState === 'error' && (
-                    <StatusMessage>Something went wrong. Please try again.</StatusMessage>
+                    <StatusMessage>
+                      Something went wrong. Please try again.
+                    </StatusMessage>
                   )}
                 </form>
               )}
             </FormCard>
 
             <PastNewslettersCard>
-              <PastNewslettersToggle onClick={() => setShowNewsletters((v) => !v)}>
+              <PastNewslettersToggle
+                onClick={() => setShowNewsletters((v) => !v)}
+              >
                 <span>Past Newsletters</span>
                 <Chevron $open={showNewsletters}>▾</Chevron>
               </PastNewslettersToggle>
               {showNewsletters && (
                 <NewsletterList>
                   {pastNewsletters.map((n, i) => (
-                    <NewsletterItem key={i} href={n.href} rel="noreferrer" target="_blank">
+                    <NewsletterItem
+                      key={i}
+                      href={n.href}
+                      rel="noreferrer"
+                      target="_blank"
+                    >
                       <NewsletterItemDate>{n.date}</NewsletterItemDate>
                       <NewsletterItemTitle>{n.title}</NewsletterItemTitle>
                     </NewsletterItem>
@@ -1137,8 +1180,9 @@ export default function Alumni() {
           >
             <SectionTitle>Fuel the Festival</SectionTitle>
             <SectionSubtitle>
-              Your gift keeps Dillo Day free for students and secure for everyone. All contributions
-              are processed securely through Northwestern Alumni Relations &amp; Development.
+              Your gift keeps Dillo Day free for students and secure for
+              everyone. All contributions are processed securely through
+              Northwestern Alumni Relations &amp; Development.
             </SectionSubtitle>
           </motion.div>
 
@@ -1174,33 +1218,49 @@ export default function Alumni() {
               <VIPPerk>
                 <PerkCheck>✓</PerkCheck>
                 <span>
-                  Name featured on the <strong>&ldquo;Alumni Wall of Fame&rdquo;</strong> banner
+                  Name featured on the{' '}
+                  <strong>&ldquo;Alumni Wall of Fame&rdquo;</strong> banner
                 </span>
               </VIPPerk>
             </VIPPerks>
             {/* <DonateButton href={GIVING_URL} target="_blank" rel="noopener noreferrer">
               Claim Your VIP Package
             </DonateButton> */}
-            <DonateButton as="div" style={{ opacity: 0.45, cursor: "not-allowed", pointerEvents: "none" }}>
+            <DonateButton
+              as="div"
+              style={{
+                opacity: 0.45,
+                cursor: 'not-allowed',
+                pointerEvents: 'none',
+              }}
+            >
               Coming to Dillo 55
             </DonateButton>
-            <DonateNote>Redirects to the secure Northwestern giving portal</DonateNote>
+            <DonateNote>
+              Redirects to the secure Northwestern giving portal
+            </DonateNote>
           </VIPCard>
 
           <CustomGiftBox>
             <CustomGiftTitle>Make an Impact of Any Size</CustomGiftTitle>
             <CustomGiftText>
-              Not ready for VIP? Any contribution helps bring world-class artists to the lakefill.
+              Not ready for VIP? Any contribution helps bring world-class
+              artists to the lakefill.
             </CustomGiftText>
-            <OutlineButton href={GIVING_URL} target="_blank" rel="noopener noreferrer">
+            <OutlineButton
+              href={GIVING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Make a Custom Gift
             </OutlineButton>
           </CustomGiftBox>
 
           <DonationDisclaimer>
-            <strong>How to claim VIP perks:</strong> Make a donation of $100 or more through the
-            Northwestern Giving portal. Once your gift is processed, our Alumni Relations team will
-            email you a confirmation form with pickup instructions for your VIP wristband and perks.
+            <strong>How to claim VIP perks:</strong> Make a donation of $100 or
+            more through the Northwestern Giving portal. Once your gift is
+            processed, our Alumni Relations team will email you a confirmation
+            form with pickup instructions for your VIP wristband and perks.
           </DonationDisclaimer>
         </DonationInner>
       </DonationOuter>
@@ -1218,11 +1278,16 @@ export default function Alumni() {
             <SectionLabel>Corporate Partners</SectionLabel>
             <SectionTitle>Partner Your Company with Dillo</SectionTitle>
             <SectionSubtitle>
-              Bring your brand to 12,000+ attendees. From on-site activations to digital presence,
-              we build custom packages for our alumni partners.
+              Bring your brand to 12,000+ attendees. From on-site activations to
+              digital presence, we build custom packages for our alumni
+              partners.
             </SectionSubtitle>
             <CorpButtons>
-              <PrimaryButton href="/Mayfest_Pitch_Deck_2026.pdf" target="_blank" rel="noopener noreferrer">
+              <PrimaryButton
+                href="/Mayfest_Pitch_Deck_2026.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Download Sponsorship Deck
               </PrimaryButton>
               <SecondaryButton href="mailto:corporate@dilloday.com">
@@ -1276,7 +1341,9 @@ export default function Alumni() {
           <ArchivesFooter>
             <p>
               Want to share your Dillo Day memories?{' '}
-              <a href="mailto:alumni@dilloday.com">Send us your photos and stories</a>
+              <a href="mailto:alumni@dilloday.com">
+                Send us your photos and stories
+              </a>
             </p>
           </ArchivesFooter>
         </ArchivesInner>
