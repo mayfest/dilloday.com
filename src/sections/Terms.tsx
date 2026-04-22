@@ -286,112 +286,148 @@ export default function Terms() {
 
         <TermsSection title="NU UNDERGRADUATE WRISTBAND POLICY">
           <Text>
-            Every enrolled Northwestern University undergraduate student may
-            receive a free festival wristband when they register for one as
-            instructed. If you are unable to register for an NU Undergraduate
-            wristband, submit a{' '}
-            <Link
-              href="https://support.dilloday.com/?t=Ticketing+and+Wristbands&s=Wristband+Registration"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Wristband Registration Concern
+            Each enrolled Northwestern University undergraduate student may
+            register for one free festival wristband through this website. This
+            is a requirement for festival entry. Failure to acquire the
+            wristband during the specified distribution window will not result
+            in a refund. If you are unable to register for an NU Undergraduate
+            wristband below, contact{' '}
+            <Link href="mailto:dilloopsforce@gmail.com">
+              dilloopsforce@gmail.com
             </Link>{' '}
-            immediately.
+            for assistance.
           </Text>
         </TermsSection>
 
         <TermsSection title="GUEST WRISTBAND POLICY">
           <Text>
-            A limited number of guest wristbands for the festival will be
-            available to undergraduates on a first-come-first-served basis at a
-            cost of $25.00 per wristband. All students are limited to a single
-            (1) guest wristband while quantities last. To purchase a wristband,
-            you will need to enter the guest's name, date of birth, and
-            telephone number at the time of purchase. Only purchase an
-            additional wristband if you have your guest's complete information;
-            this information cannot be changed later. An incomplete submission
-            will result in the transaction being voided. Guests must be at least
-            18 years of age. No refunds, transfers, or exchanges. If any
-            purchase is deemed fraudulent, or if an a student purchases more
-            than one guest wristband, the tickets will be voided with no refund.
+            Each enrolled Northwestern University undergraduate student may
+            purchase a maximum of two guest wristbands to the festival. Each
+            guest wristband will cost $30.00. This is a requirement for festival
+            entry. Guests must be at least 18 years old by the date of the
+            festival. No refunds will be provided. To purchase a guest
+            wristband, students must provide the following information for every
+            guest: name, date of birth, telephone number, and email address.
+            This information is required for all guests, and cannot be changed
+            later. Incomplete or inaccurate information will result in the
+            transaction being voided without refund. Wristbands are
+            non-transferable, and must be worn by the registered guest.
+          </Text>
+          <Text>
+            For students living in Undergraduate housing or dormitories, be
+            aware that only one guest can be accommodated during the festival
+            weekend in accordance with the policies of Residential Services.
+            Students are expected to coordinate additional guest housing
+            accordingly.
           </Text>
         </TermsSection>
 
         <TermsSection title="NU GRADUATE WRISTBAND POLICY">
           <Text>
-            A limited number of wristbands will be available to current
-            Northwestern University graduate students (including Feinberg,
-            Pritzker, and Kellogg). The wristbands will be available on a
-            first-come-first-served basis at a cost of $30.00 per wristband.
-            Graduate students are limited to a single (1) wristband while
-            quantities last. Graduate students can purchase additional guest
-            wristbands through the extended guest option. Additionally, in order
-            to pick up your wristband, you must come in person to the designated
-            downtown Chicago pickup location (limited hours) or Northwestern's
-            Evanston campus during the allotted distribution windows. We are
-            unable to accommodate requests outside of these pickup windows and
-            locations.
+            Enrolled Northwestern University Graduate students may purchase one
+            festival wristband. Each Graduate student wristband will cost
+            $35.00. This is a requirement for festival entry. Graduate students
+            can purchase one ticket for themselves and one additional ticket for
+            their guest under this option. There are a limited number of
+            Graduate student wristbands available, and will be sold
+            sequentially. Each guest must be at least 18 years old by the date
+            of the festival. To purchase a guest wristband, Graduate students
+            must provide the following information for their guest: name, date
+            of birth, telephone number, and email address. This information is
+            required for all guests, and cannot be changed later. Incomplete or
+            inaccurate information will result in the transaction being voided
+            without refund. Wristbands are non-transferable, and must be worn by
+            the registered guest.
           </Text>
         </TermsSection>
 
-        <TermsSection title="NU ALUMNI">
+        <TermsSection title="NU ALUMNI WRISTBAND POLICY">
           <Text>
-            Northwestern alumni are welcome and encouraged to attend Dillo Day!
-            Alumni will purchase a wristband through the Evanston Community and
-            Extended Guests option at $35.00 per wristband.
+            A limited number of tickets will be reserved for purchase by
+            Northwestern Alumni and their guests. Alumni can purchase one ticket
+            for themselves and one additional ticket for their guest under this
+            option. Each Alumni wristband will cost $35.00. This is a
+            requirement for festival entry. Alumni must verify proof of alumni
+            status by providing the appropriate graduation information. No
+            refunds will be provided. Alumni may either pick up their wristband
+            order during the specified distribution window before the festival,
+            or at the alumni exclusive distribution on the morning of the
+            festival. Failure to acquire the wristband during either
+            distribution window will not result in a refund.
+          </Text>
+          <Text>
+            Mayfest Productions reserves the right to cross-reference the
+            provided Alumni information with Northwestern directories to verify
+            eligibility for Alumni tickets and exclusive benefits.
+          </Text>
+        </TermsSection>
+        <TermsSection title="NU FACULTY WRISTBAND POLICY">
+          <Text>
+            A limited number of tickets will be reserved for purchase by
+            Northwestern Faculty members and their guests. Faculty members can
+            purchase one ticket for themselves and one additional ticket for
+            their guest under this option. Each Faculty wristband will cost
+            $25.00. No refunds will be provided. This is a requirement for
+            festival entry. Faculty must pick up their wristband during the
+            specified distribution window before the festival. Failure to
+            acquire the wristband during the specified distribution window will
+            not result in a refund.
           </Text>
         </TermsSection>
 
-        <TermsSection title="EVANSTON COMMUNITY AND EXTENDED GUESTS">
+        <TermsSection title="EVANSTON COMMUNITY WRISTBAND POLICY">
           <Text>
-            A limited number of wristbands have been set aside for purchase by
-            Evanston residents and extended guests. These wristbands are $35.00
-            each. Residents and extended guests must be at least 18 years of
-            age. Wristbands for the Evanston community and guests must be picked
-            up prior to the day of the festival. If you foresee this to be an
-            issue, you must submit a{' '}
-            <Link
-              href="https://support.dilloday.com/?t=Ticketing+and+Wristbands&s=Wristband+Pickup"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Wristband Pickup Concern
-            </Link>{' '}
-            before May 18, 2024. Otherwise, all wristbands must be picked up
-            during normal distribution hours from May 9, 2024 through May 17,
-            2024. Failure to do so will not result in a refund.
+            A limited number of tickets will be reserved for purchase by
+            Evanston residents. Each Evanston community wristband will cost
+            $45.00. This is a requirement for festival entry. Evanston residents
+            must be at least 18 years old by the date of the festival. No
+            refunds will be provided. All wristbands must be acquired prior to
+            the festival during the specified distribution hours. Individuals
+            must provide proof of Evanston residence to pick up their wristband,
+            or the transaction will be voided without refund. Failure to acquire
+            the wristband during the specified distribution window will not
+            result in a refund.
           </Text>
         </TermsSection>
 
         <TermsSection title="GUEST RULES AND REGULATIONS">
           <Text>
-            IDs will be checked against information provided at checkout.
-            Wristbands are not transferable and must be worn by the
-            purchaser/registered guest. If it is determined that an individual
-            is not the same as the one registered to the wristband on the day of
-            the festival, the wristband will be rendered inactive and that
-            individual will not be admitted into the festival. No refund will be
-            given.
+            Individual and Guest IDs will be verified during wristband
+            distribution with the information provided at checkout. Wristbands
+            are non-transferable and must be worn by the individual purchaser or
+            guest. For safety reasons, the individual or guest ID must match the
+            information provided during registration, or festival admittance
+            will be revoked without refund.
           </Text>
         </TermsSection>
 
         <TermsSection title="WRISTBAND DISTRIBUTION">
           <Text>
-            Attendees must pick up their wristbands in person at the scheduled
-            locations. They must present a valid Wildcard or government-issued
-            ID that matches the name on the wristband order. Attendees with
-            guests are also responsible for picking up their registered guest's
-            wristband during distribution. Aside from guest wristbands, no
-            individual will be permitted to collect any other individual's
-            wristbands, and will be turned away without exception.
+            All attendees must collect their festival wristband during the
+            specified distribution window between May 7th and May 15th.
+            Wristband distribution will be held at the Evanston Northwestern
+            campus in Seabury Hall (2122 Sheridan Rd, Evanston, IL 60208).
+            Attendees must provide a valid Wildcard or government-issued ID that
+            matches the information connected to the ticket on the Northwestern
+            Box Office. Undergraduate students and Northwestern community
+            members must provide the valid IDs of their registered guests at
+            pick up, without exception. Aside from the registered guest of an
+            attendee, individuals cannot collect the wristbands of any other
+            individual without exception.
+          </Text>
+          <Text>
+            A festival wristband is a requirement for entry at Dillo Day.
+            Failure to collect a wristband will result in the transaction being
+            voided with no refund. No exceptions will be accommodated.
           </Text>
         </TermsSection>
 
-        <TermsSection title="LOST WRISTBANDS">
+        <TermsSection title="REPLACEMENT WRISTBAND POLICY">
           <Text>
-            Any replacement wristbands must be purchased from Mayfest
-            Productions for $40.00 per replacement.
+            In the event of a misplaced or lost wristband, a replacement
+            wristband will cost $40.00. Replacement wristbands will only be
+            administered during the specified distribution window prior to the
+            day of the festival without exceptions.
           </Text>
         </TermsSection>
 
