@@ -9,10 +9,11 @@ export default function NavigationBar() {
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
   const isTermsPage = pathname === '/terms-of-service/';
+  const isAlumniPage = pathname === '/alumni/';
 
   useEffect(() => {
     const handleScroll = () => {
-      if (isTermsPage) {
+      if (isTermsPage || isAlumniPage) {
         setScrolled(scrollY > 5);
       } else {
         const heroHeight = window.innerHeight;
@@ -25,7 +26,7 @@ export default function NavigationBar() {
     handleScroll();
 
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [isTermsPage]);
+  }, [isTermsPage, isAlumniPage]);
 
   return (
     <header

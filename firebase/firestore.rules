@@ -13,6 +13,12 @@ service cloud.firestore {
       allow delete: if false;
     }
 
+    match /alumni_subscribers/{memberId} {
+      allow read: if false;
+      allow create, update: if request.resource.data.email == memberId;
+      allow delete: if false;
+    }
+
     match /bio/admin {
       allow read: if true;
       allow write: if false;
