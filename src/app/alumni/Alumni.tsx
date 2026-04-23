@@ -1163,7 +1163,9 @@ export default function Alumni() {
 
           <ContactLine>
             <p>Questions? Reach out to our Alumni Relations team:</p>
-            <a href="mailto:alumnirelations@dilloday.com">alumnirelations@dilloday.com</a>
+            <a href="mailto:alumnirelations@dilloday.com">
+              alumnirelations@dilloday.com
+            </a>
           </ContactLine>
         </NewsletterInner>
       </NewsletterOuter>
