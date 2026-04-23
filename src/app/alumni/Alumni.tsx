@@ -11,7 +11,6 @@ import styled from 'styled-components';
 // ─── TODO ─────────────────────────────────────────────────────────────────────
 // * Run `firebase deploy --only firestore:rules`
 // * Encorperate normal alumni tickets
-// * Create alumni@dilloday.com email (forward to dilloday@u.northwestern.edu for now)
 // * Revise Dillo Archives section (Marina + Joss)
 // ─── Shared ───────────────────────────────────────────────────────────────────
 
@@ -904,8 +903,9 @@ export default function Alumni() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setFormState('submitting');
-    setDoc(doc(db, 'alumni_subscribers', email), {
-      email,
+    const cleanEmail = email.trim().toLowerCase();
+    setDoc(doc(db, 'alumni_subscribers', cleanEmail), {
+      email: cleanEmail,
       graduationYear: gradYear,
       mentorInterest,
       createdAt: new Date(),
@@ -1163,7 +1163,7 @@ export default function Alumni() {
 
           <ContactLine>
             <p>Questions? Reach out to our Alumni Relations team:</p>
-            <a href="mailto:alumni@dilloday.com">alumni@dilloday.com</a>
+            <a href="mailto:alumnirelations@dilloday.com">alumnirelations@dilloday.com</a>
           </ContactLine>
         </NewsletterInner>
       </NewsletterOuter>
@@ -1298,7 +1298,7 @@ export default function Alumni() {
         </CorpInner>
       </CorpSection>
 
-      {/* ── Archives ── */}
+      {/* ── Archives ──
       <ArchivesOuter>
         <ArchivesInner>
           <motion.div
@@ -1341,13 +1341,13 @@ export default function Alumni() {
           <ArchivesFooter>
             <p>
               Want to share your Dillo Day memories?{' '}
-              <a href="mailto:alumni@dilloday.com">
+              <a href="mailto:alumnirelations@dilloday.com">
                 Send us your photos and stories
               </a>
             </p>
           </ArchivesFooter>
         </ArchivesInner>
-      </ArchivesOuter>
+      </ArchivesOuter> */}
     </main>
   );
 }
