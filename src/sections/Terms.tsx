@@ -287,8 +287,9 @@ export default function Terms() {
         <TermsSection title="NU UNDERGRADUATE WRISTBAND POLICY">
           <Text>
             Each enrolled Northwestern University undergraduate student may
-            register for one free festival wristband through this website. This
-            is a requirement for festival entry. Failure to acquire the
+            register for one free festival wristband through{' '}
+            <Link href="https://nbo.universitytickets.com/">this website</Link>.
+            This is a requirement for festival entry. Failure to acquire the
             wristband during the specified distribution window will not result
             in a refund. If you are unable to register for an NU Undergraduate
             wristband below, contact{' '}
