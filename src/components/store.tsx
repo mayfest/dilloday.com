@@ -515,7 +515,7 @@ export default function DilloDayStore(): React.ReactElement {
 
           <ButtonRow>
             <BrowseButton
-              href="https://store.dilloday.com/collections/all"
+              href="https://store.dilloday.com/collections/dillo-speedway-collection"
               target="_blank"
             >
               Browse Collection
