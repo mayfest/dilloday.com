@@ -32,7 +32,7 @@ export default function HomePage() {
       {/* <FestivalSchedule /> */}
       {/* <FestivalLayout /> */}
       {/* <SmartDilloBanner /> */}
-      {/* <HorizontalStoreComponent /> */}
+      <HorizontalStoreComponent />
       <FestivalCarousel />
       <Sponsors />
       <PastDillos />

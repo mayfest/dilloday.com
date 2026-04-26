@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState, useCallback } from 'react';
+import { useEffect, useState, useCallback, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import styled from 'styled-components';
@@ -49,7 +49,7 @@ const titleVariants = {
   },
 };
 
-const gridVariants = {
+const carouselVariants = {
   initial: { opacity: 0, y: 30 },
   animate: {
     opacity: 1,
@@ -63,18 +63,18 @@ const gridVariants = {
 
 const StoreSection = styled.section`
   background-color: #000000;
-  padding: 4rem 1rem 6rem;
+  padding: 4rem 0 6rem;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 
   @media (min-width: 768px) {
-    padding: 6rem 2rem 8rem;
+    padding: 6rem 0 8rem;
   }
 
   @media (min-width: 1024px) {
-    padding: 8rem 2rem 10rem;
+    padding: 8rem 0 10rem;
   }
 `;
 
@@ -85,10 +85,11 @@ const ContentContainer = styled.div`
 
 const Header = styled.div`
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
+  padding: 0 1rem;
 
   @media (min-width: 768px) {
-    margin-bottom: 5rem;
+    margin-bottom: 2.5rem;
   }
 `;
 
@@ -111,34 +112,50 @@ const SectionTitle = styled(motion.h2)`
   }
 `;
 
-const ProductGrid = styled(motion.div)`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 3rem;
+const CarouselOuter = styled(motion.div)`
+  position: relative;
   width: 100%;
-  justify-content: center;
+  overflow: hidden;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100px;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  &::before {
+    left: 0;
+    background: linear-gradient(to right, #000000, transparent);
+  }
+
+  &::after {
+    right: 0;
+    background: linear-gradient(to left, #000000, transparent);
+  }
+`;
+
+const CarouselTrack = styled.div`
+  display: flex;
+  gap: 2rem;
+  width: max-content;
+  user-select: none;
+  padding: 1rem 2rem;
 `;
 
 const ProductCardWrapper = styled.div`
-  width: 350px;
+  width: 280px;
   flex: 0 0 auto;
 `;
 
 const ProductCard = styled.div`
   position: relative;
   background-color: transparent;
-  transition: transform 0.2s ease-in-out;
   width: 100%;
-
-  &:hover {
-    transform: translateY(-5px);
-  }
-`;
-
-const ProductLink = styled.a`
-  text-decoration: none;
-  color: inherit;
-  display: block;
 `;
 
 const ImageContainer = styled.div`
@@ -146,7 +163,7 @@ const ImageContainer = styled.div`
   width: 100%;
   overflow: hidden;
   margin-bottom: 1rem;
-  max-height: 500px;
+  max-height: 400px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -156,10 +173,10 @@ const ImageContainer = styled.div`
 const ProductImage = styled(Image)`
   object-fit: contain;
   width: 100% !important;
-  max-height: 500px !important;
+  max-height: 400px !important;
   height: auto !important;
   position: relative !important;
-  transition: all 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
 `;
 
 const PrimaryImage = styled(ProductImage)`
@@ -198,7 +215,7 @@ const ProductDetails = styled.div`
 `;
 
 const ProductName = styled.h3`
-  font-size: 1.125rem;
+  font-size: 1rem;
   font-weight: 600;
   color: #ffffff;
   margin-bottom: 0.25rem;
@@ -208,37 +225,43 @@ const ProductName = styled.h3`
 `;
 
 const ProductType = styled.p`
-  font-size: 0.875rem;
+  font-size: 0.8rem;
   color: #a0a0a0;
-  margin-bottom: 0.75rem;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 `;
 
-const ShopNowButton = styled.span`
-  display: inline-block;
+const ButtonRow = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+`;
+
+const Button = styled(Link)`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  background-color: transparent;
+  border: 1.5px solid #ffffff;
   color: #ffffff;
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.05em;
+  text-decoration: none;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+`;
+
+const BrowseButton = styled(Button)`
   text-transform: uppercase;
-  position: relative;
-
-  &:after {
-    content: '';
-    position: absolute;
-    bottom: -3px;
-    left: 0;
-    width: 0;
-    height: 1px;
-    background-color: #ffffff;
-    transition: width 0.2s ease;
-  }
-
-  ${ProductCard}:hover &:after {
-    width: 100%;
-  }
+  letter-spacing: 0.05em;
+  font-size: 0.875rem;
+  font-weight: 600;
 `;
 
 const LoadingContainer = styled.div`
@@ -321,6 +344,9 @@ export default function DilloDayStore(): React.ReactElement {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
+  const carouselRef = useRef<HTMLDivElement>(null);
+  const animFrameRef = useRef<number>(0);
+
   const STOREFRONT_TOKEN = process.env.NEXT_PUBLIC_STOREFRONT_TOKEN || '';
   const COLLECTION_ID = process.env.NEXT_PUBLIC_COLLECTION_ID || '';
 
@@ -335,19 +361,11 @@ export default function DilloDayStore(): React.ReactElement {
       const [firstPageResponse, secondPageResponse] = await Promise.all([
         fetch(
           `https://storefront-api.fourthwall.com/v1/collections/${COLLECTION_ID}/products?storefront_token=${STOREFRONT_TOKEN}`,
-          {
-            headers: {
-              'Content-Type': 'application/json',
-            },
-          }
+          { headers: { 'Content-Type': 'application/json' } }
         ),
         fetch(
           `https://storefront-api.fourthwall.com/v1/collections/${COLLECTION_ID}/products?storefront_token=${STOREFRONT_TOKEN}&page=1`,
-          {
-            headers: {
-              'Content-Type': 'application/json',
-            },
-          }
+          { headers: { 'Content-Type': 'application/json' } }
         ),
       ]);
 
@@ -382,6 +400,25 @@ export default function DilloDayStore(): React.ReactElement {
     fetchProducts();
   }, [fetchProducts]);
 
+  useEffect(() => {
+    const el = carouselRef.current;
+    if (!el || products.length === 0) return;
+
+    const SPEED = 0.6;
+
+    const step = () => {
+      el.scrollLeft += SPEED;
+      const half = el.scrollWidth / 2;
+      if (el.scrollLeft >= half) {
+        el.scrollLeft -= half;
+      }
+      animFrameRef.current = requestAnimationFrame(step);
+    };
+
+    animFrameRef.current = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(animFrameRef.current);
+  }, [products]);
+
   if (loading) {
     return (
       <LoadingContainer>
@@ -407,6 +444,9 @@ export default function DilloDayStore(): React.ReactElement {
     );
   }
 
+  const reversed = [...products].reverse();
+  const doubled = [...reversed, ...reversed];
+
   return (
     <StoreSection id="store">
       <ContentContainer>
@@ -418,73 +458,69 @@ export default function DilloDayStore(): React.ReactElement {
         >
           <Header>
             <motion.div variants={titleVariants}>
-              <SectionTitle>Carnival Dillo Merch</SectionTitle>
+              <SectionTitle>Dillo Speedway Merch</SectionTitle>
             </motion.div>
           </Header>
 
-          <ProductGrid
-            variants={gridVariants}
-            initial="initial"
-            animate="animate"
-          >
-            {products.map((product) => {
-              const hasDiscount =
-                product.variants?.[0]?.price?.amount &&
-                product.variants[0].price.amount < 10000;
+          <CarouselOuter variants={carouselVariants} ref={carouselRef}>
+            <CarouselTrack>
+              {doubled.map((product, index) => {
+                const hasDiscount =
+                  product.variants?.[0]?.price?.amount &&
+                  product.variants[0].price.amount < 10000;
 
-              const productName = product.name.toUpperCase();
-              const shortDescription = product.description.split('.')[0];
+                const productName = product.name.toUpperCase();
+                const shortDescription = product.description.split('.')[0];
 
-              const primaryImage = product.images?.[0];
-              const secondaryImage = product.images?.[1] || primaryImage;
+                const primaryImage = product.images?.[0];
+                const secondaryImage = product.images?.[1] || primaryImage;
 
-              return (
-                <ProductCardWrapper key={product.id}>
-                  <ProductCard>
-                    <Link
-                      href={`https://store.dilloday.com/products/${product.slug}`}
-                      passHref
-                      target="_blank"
-                    >
-                      <ProductLink>
-                        <ImageContainer>
-                          {primaryImage && (
-                            <>
-                              <PrimaryImage
-                                src={primaryImage.url}
-                                alt={product.name}
-                                width={500}
-                                height={500}
-                                priority
-                                fill={false}
-                              />
-                              <SecondaryImage
-                                src={secondaryImage.url}
-                                alt={`${product.name} - alternate view`}
-                                width={500}
-                                height={500}
-                                priority={false}
-                                fill={false}
-                              />
-                            </>
-                          )}
-                          {hasDiscount && <SaleBadge>SALE</SaleBadge>}
-                        </ImageContainer>
+                return (
+                  <ProductCardWrapper key={`${product.id}-${index}`}>
+                    <ProductCard>
+                      <ImageContainer>
+                        {primaryImage && (
+                          <>
+                            <PrimaryImage
+                              src={primaryImage.url}
+                              alt={product.name}
+                              width={500}
+                              height={500}
+                              priority={index < products.length}
+                              fill={false}
+                            />
+                            <SecondaryImage
+                              src={secondaryImage.url}
+                              alt={`${product.name} - alternate view`}
+                              width={500}
+                              height={500}
+                              priority={false}
+                              fill={false}
+                            />
+                          </>
+                        )}
+                        {hasDiscount && <SaleBadge>SALE</SaleBadge>}
+                      </ImageContainer>
 
-                        <ProductDetails>
-                          <ProductName>{productName}</ProductName>
-                          <ProductType>{shortDescription}</ProductType>
-                          {product.variants?.[0]?.price && (
-                            <ShopNowButton>SHOP NOW</ShopNowButton>
-                          )}
-                        </ProductDetails>
-                      </ProductLink>
-                    </Link>
-                  </ProductCard>
-                </ProductCardWrapper>
-              );
-            })}
-          </ProductGrid>
+                      <ProductDetails>
+                        <ProductName>{productName}</ProductName>
+                        <ProductType>{shortDescription}</ProductType>
+                      </ProductDetails>
+                    </ProductCard>
+                  </ProductCardWrapper>
+                );
+              })}
+            </CarouselTrack>
+          </CarouselOuter>
+
+          <ButtonRow>
+            <BrowseButton
+              href="https://store.dilloday.com/collections/all"
+              target="_blank"
+            >
+              Browse Collection
+            </BrowseButton>
+          </ButtonRow>
         </motion.div>
       </ContentContainer>
     </StoreSection>
