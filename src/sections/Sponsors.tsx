@@ -100,8 +100,8 @@ export default function Sponsors() {
     <Section id="sponsors">
       <Title>Dillo Day 2025 Sponsors</Title>
       <TextContainer>
-        Dillo Day is the largest student-run music festival in the country. This
-        year’s Carnival Dillo wouldn’t be possible without our incredible
+        Dillo Day is the largest student-run music festival in the country.
+        Carnival Dillo 2025 wouldn’t be possible without our incredible
         sponsors. Check them out below!
       </TextContainer>
       <Grid>
