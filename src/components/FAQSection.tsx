@@ -1,4 +1,4 @@
-import { MinusIcon, PlusIcon } from '@heroicons/react/24/outline';
+import { ChevronDownIcon } from '@heroicons/react/24/outline';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useEffect, useMemo, useState } from 'react';
 import styled from 'styled-components';
@@ -24,10 +24,10 @@ const defaultTheme: FAQSectionTheme = {
 // Blue theme (white background)
 export const blueTheme: FAQSectionTheme = {
   borderColor: 'rgba(23, 56, 133, 0.2)',
-  titleColor: '#173885',
+  titleColor: '#150c0c',
   hoverBackground: 'rgba(23, 56, 133, 0.05)',
   contentBackground: 'rgba(23, 56, 133, 0.05)',
-  iconColor: '#173885',
+  iconColor: '#150c0c',
 };
 
 interface ContainerProps {
@@ -61,7 +61,10 @@ const Title = styled.button<TitleProps>`
   svg {
     width: 16px;
     height: 16px;
+    flex-shrink: 0;
     color: ${({ $theme }) => $theme.iconColor || $theme.titleColor};
+    transition: transform 0.2s ease;
+    transform: ${({ $open }) => ($open ? 'rotate(180deg)' : 'rotate(0deg)')};
   }
 `;
 
@@ -114,7 +117,7 @@ export default function FAQSection({
     <Container id={id} $theme={theme}>
       <Title $open={open} $theme={theme} onClick={() => setOpen(!open)}>
         <TitleText $theme={theme}>{title}</TitleText>
-        {open ? <MinusIcon /> : <PlusIcon />}
+        <ChevronDownIcon />
       </Title>
       <AnimatePresence>
         {open && (

@@ -1,10 +1,10 @@
 'use client';
+import { useState } from 'react';
 import { Section, mobile } from '@/components';
-import CarnivalDilloBanner from '@/components/CarnivalDilloBanner';
 import FAQSection, { blueTheme as faqBlueTheme } from '@/components/FAQSection';
 import Step from '@/components/Step';
-import { wristbandDistribution } from '@/lib/wristband';
-import { ArrowRightIcon } from '@heroicons/react/24/outline';
+import { evanstonDistribution, chicagoDistribution } from '@/lib/wristband';
+import { ArrowRightIcon, ChevronDownIcon } from '@heroicons/react/24/outline';
 import styled from 'styled-components';
 import SVGComponent from '@/components/icons/sparkle';
 
@@ -22,11 +22,18 @@ const blueTheme: StepTheme = {
   titleColor: '#173885',
 };
 
+const speedwayTheme: StepTheme = {
+  bubbleBackground: '#8a1e1b',
+  bubbleColor: '#FFFFFF',
+  lineColor: '#8a1e1b',
+  titleColor: '#8a1e1b',
+};
+
 const Container = styled.div`
   position: relative;
   background-image:
     linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)),
-    url('/carnival-icons/textured-background.png');
+    url('img/carnival-icons/textured-background.png');
   background-color: #ffffff;
   box-shadow: 0 4px 20px #f0e9d3;
   border-radius: 16px;
@@ -62,7 +69,7 @@ const Title = styled.h2`
   letter-spacing: 1px;
   text-transform: uppercase;
   text-align: center;
-  color: #173885;
+  color: #8a1e1b;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -87,7 +94,7 @@ const Contents = styled.div`
 `;
 
 const Text = styled.p`
-  color: #173885;
+  color: #150c0c;
 `;
 
 const Bold = styled.span`
@@ -109,22 +116,24 @@ const Times = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: calc(100% + 48px);
+  margin-left: -48px;
   gap: 8px;
-  margin: 32px 0;
+  margin-top: 12px;
+  margin-bottom: 12px;
   font-size: 16px;
 `;
 
 const TimesTitle = styled.p`
-  font-size: 26px;
+  font-size: 20px;
   font-weight: 700;
-  color: #aabccd;
+  color: #150c0c;
 `;
 
 const TimesLocation = styled(Link)`
   text-align: center;
   display: block;
-  color: #173885;
+  color: #150c0c;
   font-weight: 700;
   padding: 8px 4px;
 `;
@@ -153,12 +162,46 @@ const Time = styled.div`
 const TimeDate = styled.p`
   text-align: left;
   font-weight: 600;
-  color: #173885;
+  color: #150c0c;
 `;
 
 const TimeTime = styled.p`
   text-align: right;
-  color: #173885;
+  color: #150c0c;
+`;
+
+const DropdownTrigger = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px 0;
+  font-size: 26px;
+  font-weight: 700;
+  color: #150c0c;
+  width: 100%;
+`;
+
+const ChevronIcon = styled(ChevronDownIcon)<{ $open: boolean }>`
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+  transform: ${({ $open }) => ($open ? 'rotate(180deg)' : 'rotate(0deg)')};
+`;
+
+const DropdownContent = styled.div<{ $open: boolean }>`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  overflow: hidden;
+  max-height: ${({ $open }) => ($open ? '2000px' : '0')};
+  transition: max-height 0.3s ease;
 `;
 
 const ButtonContainer = styled.div`
@@ -177,8 +220,8 @@ const ButtonContainer = styled.div`
 const Button = styled.a`
   display: flex;
   align-items: center;
-  background-color: #173885;
-  border: 2px solid #aabccd;
+  background-color: #8a1e1b;
+  border: 2px solid #150c0c;
   border-radius: 8px;
   color: #ffffff;
   padding: 4px 16px;
@@ -197,8 +240,8 @@ const Button = styled.a`
 
   &:hover {
     background-color: #ffffff;
-    color: #173885;
-    border-color: #173885;
+    color: #8a1e1b;
+    border-color: #8a1e1b;
 
     svg {
       transform: translateX(4px);
@@ -215,17 +258,23 @@ const FAQ = styled.div`
 
 const FAQContents = styled.div``;
 
-const FAQTitle = styled.h3`
+const FAQDropdownTrigger = styled(DropdownTrigger)`
+  justify-content: center;
   font-size: 20px;
-  font-weight: 800;
-  color: #aabccd;
+  font-weight: 600;
+  color: #150c0c;
+  width: 100%;
+`;
+
+const FAQDropdownContent = styled(DropdownContent)`
+  max-height: ${({ $open }) => ($open ? '4000px' : '0')};
 `;
 
 const FAQText = styled.p`
   margin: 8px 0;
   text-align: left;
   font-size: 12px;
-  color: #173885;
+  color: #150c0c;
 `;
 
 const FAQList = styled.ol`
@@ -243,45 +292,35 @@ const FAQEmail = styled.p`
   text-align: right;
   font-size: 14px;
   opacity: 0.75;
-  color: #173885;
+  color: #150c0c;
   padding: 8px 0;
 `;
 
 export default function Tickets() {
+  const [evanstonOpen, setEvanstonOpen] = useState(false);
+  const [chicagoOpen, setChicagoOpen] = useState(false);
+  const [faqOpen, setFaqOpen] = useState(false);
+
   return (
     <Section id="tickets">
       <Container>
         <StarsWrapper>
           <Star
-            src="/carnival-icons/star_outline.png"
+            src="img/carnival-icons/star_outline.png"
             alt="Star"
             style={{ top: '5%', left: '20%' }}
           />
           <Star
-            src="/carnival-icons/star_outline.png"
-            alt="Star"
-            style={{ top: '40%', left: '4%' }}
-          />
-          <Star
-            src="/carnival-icons/star_outline.png"
+            src="img/carnival-icons/star_outline.png"
             alt="Star"
             style={{ top: '50%', right: '15%' }}
           />
           <Star
-            src="/carnival-icons/star_outline.png"
+            src="img/carnival-icons/star_outline.png"
             alt="Star"
             style={{
               bottom: '10%',
               left: '20%',
-              transform: 'translateX(-50%)',
-            }}
-          />
-          <Star
-            src="/carnival-icons/star_outline.png"
-            alt="Star"
-            style={{
-              bottom: '13%',
-              right: '2%',
               transform: 'translateX(-50%)',
             }}
           />
@@ -290,7 +329,7 @@ export default function Tickets() {
           <IconWrapper>
             <SVGComponent />
           </IconWrapper>
-          Dillo Day 53 tickets now available!{' '}
+          Dillo Speedway tickets now available!{' '}
           <IconWrapper>
             <SVGComponent />
           </IconWrapper>
@@ -300,7 +339,7 @@ export default function Tickets() {
             step="1"
             title="Acknowledge the Dillo Day event terms and conditions."
             line
-            theme={blueTheme}
+            theme={speedwayTheme}
           >
             <Text>
               Read the{' '}
@@ -321,23 +360,23 @@ export default function Tickets() {
             step="2"
             title="Register for your wristbands."
             line
-            theme={blueTheme}
+            theme={speedwayTheme}
           >
             <Text>
               Visit the{' '}
               <Link
-                href="https://nbo.universitytickets.com/w/event.aspx?id=2482"
+                href="https://nbo.universitytickets.com/w/event.aspx?id=2686"
                 target="_blank"
                 rel="noreferrer"
               >
-                Dillo Day 2025 event on NBO
+                Dillo Day 2026 event on NBO
               </Link>{' '}
-              to register for your wristband by <Bold>May 13, 2025</Bold>.
-              Northwestern undergraduate students may register for free.
-              Northwestern undergraduate students can also choose to purchase 1
-              guest wristband. Northwestern graduate students, Evanston
-              community members, and Northwestern alumni can choose to purchase
-              a wristband.{' '}
+              to register for your wristband by{' '}
+              <Bold>Thursday, May 14, 2026</Bold>. Northwestern undergraduate
+              students may register for free. Northwestern undergraduate
+              students can also choose to purchase 1 guest wristband.
+              Northwestern graduate students, Evanston community members, and
+              Northwestern alumni can choose to purchase a wristband.{' '}
               <Bold>
                 Please save the 6-character confirmation code from the order for
                 distribution.
@@ -345,7 +384,7 @@ export default function Tickets() {
             </Text>
             <ButtonContainer>
               <Button
-                href="https://nbo.universitytickets.com/w/event.aspx?id=2482"
+                href="https://nbo.universitytickets.com/w/event.aspx?id=2686"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -358,12 +397,12 @@ export default function Tickets() {
             step="3"
             title="Pick up your wristbands before Dillo Day."
             line
-            theme={blueTheme}
+            theme={speedwayTheme}
           >
             <Text>
               Northwestern undergraduate students, graduate students, faculty,
               staff, and Evanston residents must pick up their wristbands in
-              person by <Bold>May 16, 2025</Bold>.{' '}
+              person by <Bold>Friday, May 15, 2026</Bold>.{' '}
               <Bold>
                 A valid Wildcard or government-issued ID matching the name on
                 the order must be presented along with your 6-character
@@ -380,29 +419,60 @@ export default function Tickets() {
               for more information.
             </Text>
             <Times>
-              <TimesTitle>Distribution Times</TimesTitle>
-              <TimesLocation
-                href={wristbandDistribution.location.directions}
-                target="_blank"
-                rel="noreferrer"
-              >
-                <TimesLocationName>
-                  {wristbandDistribution.location.name}
-                </TimesLocationName>
-                <TimesLocationAddress>
-                  {wristbandDistribution.location.address}
-                </TimesLocationAddress>
-              </TimesLocation>
-              {wristbandDistribution.times.map(({ date, time }, i) => (
-                <Time key={`wd-${i}`}>
-                  <TimeDate>{date}</TimeDate>
-                  <TimeTime>{time}</TimeTime>
-                </Time>
-              ))}
+              <DropdownTrigger onClick={() => setEvanstonOpen((o) => !o)}>
+                <TimesTitle>Evanston Distribution</TimesTitle>
+                <ChevronIcon $open={evanstonOpen} />
+              </DropdownTrigger>
+              <DropdownContent $open={evanstonOpen}>
+                <TimesLocation
+                  href={evanstonDistribution.location.directions}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <TimesLocationName>
+                    {evanstonDistribution.location.name}
+                  </TimesLocationName>
+                  <TimesLocationAddress>
+                    {evanstonDistribution.location.address}
+                  </TimesLocationAddress>
+                </TimesLocation>
+                {evanstonDistribution.times.map(({ date, time }, i) => (
+                  <Time key={`wd-${i}`}>
+                    <TimeDate>{date}</TimeDate>
+                    <TimeTime>{time}</TimeTime>
+                  </Time>
+                ))}
+              </DropdownContent>
+            </Times>
+            <Times>
+              <DropdownTrigger onClick={() => setChicagoOpen((o) => !o)}>
+                <TimesTitle>Chicago Distribution</TimesTitle>
+                <ChevronIcon $open={chicagoOpen} />
+              </DropdownTrigger>
+              <DropdownContent $open={chicagoOpen}>
+                <TimesLocation
+                  href={chicagoDistribution.location.directions}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <TimesLocationName>
+                    {chicagoDistribution.location.name}
+                  </TimesLocationName>
+                  <TimesLocationAddress>
+                    {chicagoDistribution.location.address}
+                  </TimesLocationAddress>
+                </TimesLocation>
+                {chicagoDistribution.times.map(({ date, time }, i) => (
+                  <Time key={`ch-${i}`}>
+                    <TimeDate>{date}</TimeDate>
+                    <TimeTime>{time}</TimeTime>
+                  </Time>
+                ))}
+              </DropdownContent>
             </Times>
             <ButtonContainer>
               <Button
-                href={wristbandDistribution.location.directions}
+                href={evanstonDistribution.location.directions}
                 target="_blank"
                 rel="noreferrer"
               >
@@ -411,9 +481,13 @@ export default function Tickets() {
               </Button>
             </ButtonContainer>
           </Step>
-          <Step step="4" title="See you at Carnival Dillo!" theme={blueTheme}>
+          <Step
+            step="4"
+            title="See you at Carnival Dillo!"
+            theme={speedwayTheme}
+          >
             <Text>
-              See you at the Northwestern Lakefill on <Bold>May 17, 2025</Bold>!
+              See you at the Northwestern Lakefill on <Bold>May 16, 2026</Bold>!
               Until then, grab some of our official merchandise for you and your
               friends at{' '}
               <Link href="https://store.dilloday.com">store.dilloday.com</Link>!
@@ -421,136 +495,139 @@ export default function Tickets() {
           </Step>
         </Contents>
         <FAQ id="tickets/faq">
-          <FAQTitle>Wristband FAQ</FAQTitle>
-          <FAQContents>
-            <FAQSection
-              title="What do students need to pick up their own wristband?"
-              theme={faqBlueTheme}
-            >
-              <FAQText>
-                A student needs to have made a reservation, which should be
-                pulled up, and their Wildcard.
-              </FAQText>
-            </FAQSection>
-            <FAQSection
-              title="What does a student need to pick up for their non-Northwestern guest?"
-              theme={faqBlueTheme}
-            >
-              <FAQText>
-                To pick up for their non-Northwestern guest, they need the
-                reservation, their own Wildcard, and their guest's ID (or a
-                picture of their ID).
-              </FAQText>
-            </FAQSection>
-            <FAQSection
-              title="What should I do if I'm struggling to log into NBO, the website is glitching, or I am having some other kind of software difficulty?"
-              theme={faqBlueTheme}
-            >
-              <FAQText>
-                We have heard of a situation in which individuals are having
-                trouble logging into the NBO site. We recommend trying the
-                following:
-              </FAQText>
-              <FAQText>1. Use another browser to sign in</FAQText>
-              <FAQText>2. Log in, refresh, log in again</FAQText>
-              <FAQText>3. Try signing in on a different device</FAQText>
-              <FAQText>4. Use incognito mode on your browser</FAQText>
-              <FAQText>
-                If none of these solutions work, we ask that you email{' '}
-                <Link href="mailto:norrisboxoffice@northwestern.edu">
-                  norrisboxoffice@northwestern.edu
-                </Link>{' '}
-                with your dilemma.
-              </FAQText>
-            </FAQSection>
-            <FAQSection
-              title="I didn't get a confirmation email. What should I do?"
-              theme={faqBlueTheme}
-            >
-              <FAQText>
-                First, check your spam folder. If it is not there, please go to
-                the help desk.
-              </FAQText>
-            </FAQSection>
-            <FAQSection
-              title="Can a student pick up for another student?"
-              theme={faqBlueTheme}
-            >
-              <FAQText>
-                Absolutely not, every student needs to come in person.
-              </FAQText>
-            </FAQSection>
-            <FAQSection
-              title="My guest cannot make it. Can they get a refund?"
-              theme={faqBlueTheme}
-            >
-              <FAQText>Please email NBO to request a refund.</FAQText>
-            </FAQSection>
-            <FAQSection
-              title="My original guest cannot make it. Can I transfer the wristband?"
-              theme={faqBlueTheme}
-            >
-              <FAQText>
-                No, guest wristbands can only be released for the registered
-                guest.
-              </FAQText>
-            </FAQSection>
-            <FAQSection
-              title="Can a student pick up a wristband on the day of Dillo instead?"
-              theme={faqBlueTheme}
-            >
-              <FAQText>
-                Only Alumni can pick up the day of. Otherwise, to receive a
-                wristband, you MUST come during the distribution hours{' '}
-                <FAQBold>BEFORE</FAQBold> the day of. In addition, replacement
-                wristbands will not be available after the 17th.
-              </FAQText>
-            </FAQSection>
-            <FAQSection
-              title="I just lost my wristband. Can I get another one?"
-              theme={faqBlueTheme}
-            >
-              <FAQText>
-                Yes, but you must order a replacement one on NBO first. The
-                option to purchase a replacement will close on May 15th.
-              </FAQText>
-            </FAQSection>
-            <FAQSection
-              title="I work full time. When can I pick up my wristband?"
-              theme={faqBlueTheme}
-            >
-              <FAQText>
-                In order to accommodate those working full time, we have added
-                distribution hours to both Saturday May 10th and Sunday May
-                12th. Additionally, on Tuesday May 13th and Thursday May 15th
-                distribution will be open after working hours.
-              </FAQText>
-            </FAQSection>
-            <FAQSection
-              title="Can I be granted an exception to the rules?"
-              theme={faqBlueTheme}
-            >
-              <FAQText>
-                <FAQBold>
-                  Requests for exception must be sent to{' '}
-                  <Link href="mailto:operations@dilloday.com">
-                    operations@dilloday.com
+          <FAQDropdownTrigger onClick={() => setFaqOpen((o) => !o)}>
+            Wristband FAQ
+            <ChevronIcon $open={faqOpen} />
+          </FAQDropdownTrigger>
+          <FAQDropdownContent $open={faqOpen}>
+            <FAQContents>
+              <FAQSection
+                title="What do students need to bring to pick up their own wristband?"
+                theme={faqBlueTheme}
+              >
+                <FAQText>
+                  A student needs to have registered for a wristband through NBO
+                  (see above) and have their{' '}
+                  <FAQBold>confirmation email</FAQBold> ready with their{' '}
+                  <FAQBold>Wildcard</FAQBold>.
+                </FAQText>
+              </FAQSection>
+              <FAQSection
+                title="What does a student need to pick up for their non-Northwestern guest?"
+                theme={faqBlueTheme}
+              >
+                <FAQText>
+                  To pick up for their non-Northwestern guest, they need the
+                  <FAQBold>confirmation email</FAQBold>, their own{' '}
+                  <FAQBold>Wildcard</FAQBold>, and their{' '}
+                  <FAQBold>guest's ID</FAQBold> (or a picture of their ID).
+                </FAQText>
+              </FAQSection>
+              <FAQSection
+                title="What should I do if I'm struggling to log into NBO, the website is glitching, or I am having some other kind of software difficulty?"
+                theme={faqBlueTheme}
+              >
+                <FAQText>
+                  We have heard of a situation in which individuals are having
+                  trouble logging into the NBO site. We recommend trying the
+                  following:
+                </FAQText>
+                <FAQText>1. Use another browser to sign in</FAQText>
+                <FAQText>2. Log in, refresh, log in again</FAQText>
+                <FAQText>3. Try signing in on a different device</FAQText>
+                <FAQText>4. Use incognito mode on your browser</FAQText>
+                <FAQText>
+                  If none of these solutions work, we ask that you email{' '}
+                  <Link href="mailto:norrisboxoffice@northwestern.edu">
+                    norrisboxoffice@northwestern.edu
                   </Link>{' '}
+                  with your dilemma.
+                </FAQText>
+              </FAQSection>
+              <FAQSection
+                title="I didn't get a confirmation email. What should I do?"
+                theme={faqBlueTheme}
+              >
+                <FAQText>
+                  First, check your spam folder. If it is not there, please go
+                  to the help desk.
+                </FAQText>
+              </FAQSection>
+              <FAQSection
+                title="Can a student pick up for another student?"
+                theme={faqBlueTheme}
+              >
+                <FAQText>
+                  <FAQBold>Absolutely not</FAQBold>, every student needs to come
+                  in person.
+                </FAQText>
+              </FAQSection>
+              <FAQSection
+                title="My guest cannot make it. Can they get a refund?"
+                theme={faqBlueTheme}
+              >
+                <FAQText>
+                  Dillo Day has a no refund policy. Email{' '}
+                  <Link href="mailto:dilloopsforce@gmail.com">
+                    dilloopsforce@gmail.com
+                  </Link>
+                  with concerns
+                </FAQText>
+              </FAQSection>
+              <FAQSection
+                title="My original guest cannot make it. Can I transfer the wristband?"
+                theme={faqBlueTheme}
+              >
+                <FAQText>
+                  No, guest wristbands can only be released for the registered
+                  guest.
+                </FAQText>
+              </FAQSection>
+              <FAQSection
+                title="Can a student pick up a wristband on the day of Dillo instead?"
+                theme={faqBlueTheme}
+              >
+                <FAQText>
+                  <FAQBold>No.</FAQBold> Only <FAQBold>Alumni</FAQBold> can pick
+                  up their wristbands on the morning of Dillo Day.
+                </FAQText>
+              </FAQSection>
+              <FAQSection
+                title="I just lost my wristband. Can I get another one?"
+                theme={faqBlueTheme}
+              >
+                <FAQText>
+                  Yes, a replacement wristband will cost $40.00 and will only be
+                  administered during <FAQBold>Friday, May, 15th</FAQBold>{' '}
+                  without exceptions.
+                </FAQText>
+              </FAQSection>
+              <FAQSection
+                title="Can I be granted an exception to the rules?"
+                theme={faqBlueTheme}
+              >
+                <FAQText>
+                  Requests for exception must be sent to{' '}
+                  <FAQBold>
+                    <Link href="mailto:dilloopsforce@gmail.com">
+                      dilloopsforce@gmail.com
+                    </Link>
+                  </FAQBold>
                   and will only be approved with significant evidence and
                   circumstances.
-                </FAQBold>
-              </FAQText>
-            </FAQSection>
-          </FAQContents>
-          <FAQEmail>
-            Have a question that isn't answered here? Reach out to{' '}
-            <Link href="mailto:operations@dilloday.com">
-              operations@dilloday.com
-            </Link>
-            .
-          </FAQEmail>
+                </FAQText>
+              </FAQSection>
+            </FAQContents>
+            <FAQEmail>
+              Have a question that isn't answered here? Reach out to{' '}
+              <Link href="mailto:operations@dilloday.com">
+                operations@dilloday.com
+              </Link>
+              .
+            </FAQEmail>
+          </FAQDropdownContent>
         </FAQ>
-        <CarnivalDilloBanner />
+        {/* <CarnivalDilloBanner />  */}
       </Container>
     </Section>
   );
