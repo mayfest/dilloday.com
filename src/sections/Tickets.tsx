@@ -483,7 +483,7 @@ export default function Tickets() {
           </Step>
           <Step
             step="4"
-            title="See you at Carnival Dillo!"
+            title="See you at Dillo Speedway!"
             theme={speedwayTheme}
           >
             <Text>
