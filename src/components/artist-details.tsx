@@ -81,13 +81,18 @@ const DialogHeader = styled.div`
 `;
 
 const DialogTitle = styled.h2`
-  font-size: 3rem;
+  font-size: 1.75rem;
   font-weight: 700;
-  line-height: 2rem;
+  line-height: 1.2;
   text-align: center;
-  margin-bottom: 3.5rem;
+  margin-bottom: 1.5rem;
   text-transform: uppercase;
   letter-spacing: 0.09rem;
+
+  @media (min-width: 640px) {
+    font-size: 3rem;
+    margin-bottom: 3.5rem;
+  }
 `;
 
 const Grid = styled.div`
@@ -187,12 +192,28 @@ const CloseButton = styled.button`
   }
 `;
 
+const ExpandButton = styled.button`
+  background: transparent;
+  border: none;
+  color: #9ca3af;
+  font-size: 0.875rem;
+  cursor: pointer;
+  padding: 0;
+  margin-top: 0.25rem;
+  text-decoration: underline;
+
+  &:hover {
+    color: white;
+  }
+`;
+
 export default function ArtistDetails({
   artist,
   isOpen,
   onClose,
 }: ArtistDetailsProps) {
   const [isLeaving, setIsLeaving] = useState(false);
+  const [isDescExpanded, setIsDescExpanded] = useState(false);
 
   const handleClose = useCallback(() => {
     setIsLeaving(true);
@@ -201,6 +222,10 @@ export default function ArtistDetails({
       onClose();
     }, 400);
   }, [onClose]);
+
+  useEffect(() => {
+    setIsDescExpanded(false);
+  }, [artist]);
 
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
@@ -257,7 +282,23 @@ export default function ArtistDetails({
             </div>
             <div>
               <SectionTitle>About</SectionTitle>
-              <Description>{artist.description}</Description>
+              {(() => {
+                const words = artist.description.split(' ');
+                const truncated = words.slice(0, 50).join(' ');
+                const needsTruncation = words.length > 50;
+                return (
+                  <>
+                    <Description>
+                      {needsTruncation && !isDescExpanded ? truncated + '…' : artist.description}
+                    </Description>
+                    {needsTruncation && (
+                      <ExpandButton onClick={() => setIsDescExpanded((v) => !v)}>
+                        {isDescExpanded ? 'Show less' : 'Read more'}
+                      </ExpandButton>
+                    )}
+                  </>
+                );
+              })()}
             </div>
             <SocialLinksContainer>
               {artist.socialLinks.spotify && (

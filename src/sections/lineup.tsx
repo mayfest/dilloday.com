@@ -18,7 +18,7 @@ const TabsContainer = styled.div`
 
 const TabList = styled.div<TabListProps>`
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   background-color: rgba(255, 255, 255, 0.1);
   padding: 4px;
   border-radius: 8px;
@@ -33,13 +33,17 @@ const TabList = styled.div<TabListProps>`
     z-index: 1;
     top: 4px;
     left: 4px;
-    width: calc(50% - 4px);
+    width: calc(33.333% - 2.667px);
     height: calc(100% - 8px);
     background: white;
     border-radius: 4px;
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     transform: translateX(
-      ${(props) => (props.$activeStage === 'Main Stage' ? '0' : '100%')}
+      ${(props) => {
+        if (props.$activeStage === 'Main Stage') return '0';
+        if (props.$activeStage === 'FMO Stage') return '100%';
+        return '200%';
+      }}
     );
   }
 `;
@@ -119,6 +123,25 @@ const HeroSection = styled.div`
   }
 `;
 
+const SectionTitle = styled(motion.h2)`
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+
+  @media (min-width: 768px) {
+    font-size: 3rem;
+    margin-bottom: 1.25rem;
+  }
+
+  @media (min-width: 1024px) {
+    font-size: 4rem;
+  }
+`;
+
 const TitleText = motion(styled.h1`
   font-size: 6rem;
   font-weight: 700;
@@ -144,9 +167,9 @@ const StageTitle = styled.h4`
   letter-spacing: 0.1em;
 `;
 
-const ArtistButton = styled.button`
+const ArtistButton = styled.button<{ $disabled?: boolean }>`
   width: 100%;
-  cursor: pointer;
+  cursor: ${({ $disabled }) => ($disabled ? 'default' : 'pointer')};
   transition: background-color 0.2s;
 `;
 
@@ -350,7 +373,7 @@ export default function FestivalSchedule() {
         >
           <HeroSection>
             <motion.div variants={titleVariants}>
-              <TitleText>ARTIST LINEUP</TitleText>
+              <SectionTitle>ARTIST LINEUP</SectionTitle>
             </motion.div>
           </HeroSection>
 
@@ -391,11 +414,12 @@ export default function FestivalSchedule() {
                         {stage.schedule.map((act, index) => (
                           <ArtistButton
                             key={index}
-                            onClick={() => setSelectedArtist(act)}
+                            $disabled={act.artist === '???'}
+                            onClick={() => act.artist !== '???' && setSelectedArtist(act)}
                           >
                             <ArtistRow
                               variants={artistRowVariants}
-                              whileHover="hover"
+                              whileHover={act.artist !== '???' ? 'hover' : undefined}
                               custom={index}
                             >
                               <ArtistInfo>
@@ -421,7 +445,7 @@ export default function FestivalSchedule() {
             whileInView="animate"
             viewport={{ once: true, margin: '-50px' }}
           >
-            <HeadlinerSection>
+            {/* <HeadlinerSection>
               <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -471,7 +495,7 @@ export default function FestivalSchedule() {
                   </HeadlinerOverlay>
                 </HeadlinerImageContainer>
               </motion.div>
-            </HeadlinerSection>
+            </HeadlinerSection> */}
           </motion.div>
         </motion.div>
 
