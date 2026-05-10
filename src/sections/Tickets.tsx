@@ -374,7 +374,7 @@ export default function Tickets() {
               to register for your wristband by{' '}
               <Bold>Thursday, May 14, 2026</Bold>. Northwestern undergraduate
               students may register for free. Northwestern undergraduate
-              students can also choose to purchase 1 guest wristband.
+              students can also choose to purchase 2 guest wristbands.
               Northwestern graduate students, Evanston community members, and
               Northwestern alumni can choose to purchase a wristband.{' '}
               <Bold>
