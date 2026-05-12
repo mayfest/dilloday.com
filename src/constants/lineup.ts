@@ -10,7 +10,7 @@ export const stages: Stage[] = [
         duration: '30 min',
         genre: 'Student Band',
         description:
-          'Voted on and chosen by students at Battle of the Artists, The Beckfast Club will be the first artist to hit the mainstage of Dillo on May 16th.',
+          'Voted on and chosen by students at Battle of the Artists, The Beckfast Club will be the first artist to hit the mainstage of Dillo on May 16th. Voted on and chosen by students at Battle of the Artists, The Beckfast Club will be the first artist to hit the mainstage of Dillo on May 16th.  The Beckfast Club is a student collective (Emir Uzel, Beckett Hartig, and Olivia Bernstein) named after a member who couldn’t think of a better name in time for the deadline. As the designated openers, their job is to ensure the speakers actually work and that the energy starts high enough. Expect a relentless stream of tunes.',
         image: 'https://i.imgur.com/bTeXsxC.png',
         socialLinks: { spotify: '', instagram: '', twitter: '' },
       },
@@ -54,7 +54,12 @@ export const stages: Stage[] = [
         description:
           'Breaking onto the scene as a teenager, Daya quickly became one of the defining voices of mid-2010s pop. Her debut single “Hide Away” introduced her signature blend of bright, radio-ready production and an introspective lyricism, while hits like “Sit Still, Look Pretty” cemented her as an anthem-maker for a generation coming into its own. She reached global acclaim through her feature on The Chainsmokers’ “Don’t Let Me Down,” earning a Grammy Award for Best Dance Recording and solidifying her place in pop’s mainstream. Last October, she released her second full length album, “Til Every Petal Drops” that highlights her artistic growth with songs such as “Bandit,” and “Drift Away.” In March, she partnered with Icona Pop to drop a club banger, “Ritual,” with heavy drums and an infectious chorus. Daya has continued to evolve her sound, exploring more mature and alternative-leaning production while maintaining the emotional honesty that first resonated with listeners. Daya’s booking comes at a perfect cultural moment. As 2026 channels a resurgence of 2016-era pop and aesthetics, her catalog feels both nostalgic and newly relevant for today’s college audience. Her music captures a specific era that many festival-goers grew up on, making her set a shared throwback experience while still reflecting her growth as an artist. Known for her powerful vocals and engaging stage presence, Daya brings a mix of sing-along hits and reflective moments that fit seamlessly into the daytime energy of Dillo Day. As one of the nation’s largest student-run music festivals, Dillo Day has long been defined by artists who capture the spirit of their time— and Daya’s performance continues that tradition, promising a set that feels both timeless and perfectly in sync with the current moment.',
         image: 'https://i.imgur.com/mduv24R.jpeg',
-        socialLinks: { spotify: '', instagram: '', twitter: '' },
+        socialLinks: {
+          spotify:
+            'https://open.spotify.com/artist/6Dd3NScHWwnW6obMFbl1BH?si=TFEQL4Q-R9Gpn4nmp78hiQ',
+          instagram: 'https://www.instagram.com/daya/',
+          twitter: '',
+        },
       },
       {
         time: '7:45 PM',
@@ -90,36 +95,59 @@ export const stages: Stage[] = [
         artist: 'Nali',
         duration: '30 min',
         genre: 'R&B',
-        description: '',
-        image: '',
-        socialLinks: { spotify: '', instagram: '', twitter: '' },
+        description:
+          'A third-generation musician hailing from Brooklyn, New York, Nali is quickly making a name for herself. Drawing from her Puerto Rican and Jamaican roots, she blends jazz textures with innovative R&B, carving out a distinct and emotion-filled sound. What began as an underground buzz quickly gained momentum, with several of her tracks surpassing one million streams on Spotify. Nali first broke through with the viral success of one of her tracks on TikTok, a moment that propelled her onto a larger stage and introduced her to a growing audience. Since then, she has continued to build her discography and expand her reach, including a recent collaboration with Coi Leray and the release of her August 2025 project, "I Love Nali." Fresh off opening for Jordan Ward on his "The Apartment Tour," Nali is stepping into an exciting chapter. With a new project, "I Hate Nali," on the horizon and an upcoming performance at the Sounds That Move Festival, her momentum shows no signs of slowing down. We\'re excited to welcome Nali to Dillo Day—expect smooth vocals and a sharp presence that sets the tone for the FMO Stage.',
+        image: 'https://i.imgur.com/hKnyvor.png',
+        socialLinks: {
+          spotify:
+            'https://open.spotify.com/artist/3CMbroLqMKEfk0BMcfz5h9?si=Zb0szuuDSyCuQIbRqxW3fA',
+          instagram: 'https://www.instagram.com/theoriginalnali/',
+          twitter: '',
+        },
       },
       {
         time: '1:15 PM',
         artist: 'DJ Fàájì',
         duration: '30 min',
         genre: 'Afrobeats',
-        description: '',
-        image: '',
-        socialLinks: { spotify: '', instagram: '', twitter: '' },
+        description:
+          "Originally from Minneapolis, known as the City of Lakes, DJ Fàájì channels a vibrant sound inspired and shaped by his Nigerian roots. Specializing in Afrobeats and Amapiano, he has built a reputation for playing high-energy sets across the Midwest that effortlessly blend rhythm and culture. Outside of music, DJ Fàájì balances his music career with his studies in mechanical engineering, bringing the same energy and creativity from his mixes into the classroom. His online momentum reflects that drive, amassing over 2.6 million likes on TikTok and hundreds of thousands of views on YouTube, thereby expanding his presence in the Afrobeats scene. During his set, expect to be on your feet dancing and in step with the friends around you the entire time. We're excited to welcome DJ Fàájì to Dillo Day and the FMO Stage. Come ready to dance and let his global beats and nostalgic rhythms take you away.",
+        image: 'https://i.imgur.com/yw6HCXS.png',
+        socialLinks: {
+          spotify: '',
+          instagram: 'https://www.instagram.com/djfaajii/',
+          twitter: '',
+        },
       },
       {
         time: '2:45 PM',
         artist: '310babii',
         duration: '30 min',
         genre: 'Rap',
-        description: '',
-        image: '',
-        socialLinks: { spotify: '', instagram: '', twitter: '' },
+        description:
+          'Born and raised in Inglewood, California, 310babii discovered his passion for music early. He began freestyling on his phone in seventh grade and, by 2020, was sharpening his sound on BandLab. Experimenting with flows and melodies, he developed a DIY approach that continues to define his creative process today. His breakout came in 2023 with the platinum-certified hit "Soak City (Do It)," a track he has said was freestyled and recorded in roughly 20 minutes while still in high school. Built on an infectious West Coast bounce, the song quickly took off, becoming the soundtrack to the viral "Squabble" dance trend on TikTok and appearing in NFL end zone celebrations. The record helped propel 310babii into the mainstream, with the music video now surpassing tens of millions of views and his streaming audience reaching into the millions during its peak. Since then, 310babii has continued to build on that success, expanding the sound that first brought him attention through projects like his latest album "310degrees," blending catchy hooks with a laid-back confidence rooted in Los Angeles rap culture. Despite his rapid rise, he remains grounded in the mindset that shaped him. "I\'m a product of not necessarily my environment, but my tribe," he has said, reflecting a perspective rooted in community and authenticity. Still early in his career, 310babii is carving out a distinct lane in modern West Coast rap, balancing viral success with a grounded presence and an evolving sound. His trajectory points toward an expanding role in the next wave of Los Angeles hip-hop. We\'re excited to welcome 310babii to Dillo Day—expect high energy and a performance that keeps the party going!',
+        image: 'https://i.imgur.com/ncZDrZ5.png',
+        socialLinks: {
+          spotify:
+            'https://open.spotify.com/artist/4VCriUU9CsPnUvoAsxVk1p?si=hCOlkLuoTsqg8oyJFJVvwQ',
+          instagram: 'https://www.instagram.com/310babii/',
+          twitter: '',
+        },
       },
       {
         time: '5:30 PM',
         artist: 'Trim',
         duration: '30 min',
         genre: 'Rap',
-        description: '',
-        image: '',
-        socialLinks: { spotify: '', instagram: '', twitter: '' },
+        description:
+          "Trim is an emerging rapper from Charleston, South Carolina. At just 19 years old, she has rapidly gained attention within the internet rap landscape by building a strong, personality-driven presence across social media and streaming platforms. Known for her animated delivery, sharp ad-libs, and unmistakable vocal style, Trim has developed a sound that feels playful yet confident. Her breakout moment came with \"BOAT,\" a viral single that gained traction on TikTok in 2025 and quickly became a defining introduction to her artistry. The track's popularity led to multiple remixes and collaborations, including a version featuring YK Niece and Bunna B, further amplifying its reach and cementing Trim as an artist to watch in the digital rap space. Following that breakout, Trim has continued to release music that builds on her signature sound of blending energetic flows, humor, and a charismatic performance style that translates seamlessly both online and in live settings. Her discography reflects a developing versatility where personality remains as central to her appeal as the music itself. Still early in her career, Trim is steadily expanding her footprint beyond viral success, positioning herself as one of the more recognizable new voices coming out of the South's evolving rap scene. We're excited to welcome Trim to Dillo Day—get ready to shake some things up!",
+        image: 'https://i.imgur.com/YUmCD7W.png',
+        socialLinks: {
+          spotify:
+            'https://open.spotify.com/artist/1xkEwol8vsfO4m2WP8Dyk9?si=__iRyJI3TOiWfMklF3jcAw',
+          instagram: 'https://www.instagram.com/itsmstrim/',
+          twitter: '',
+        },
       },
       {
         time: '7:00 PM',
@@ -141,7 +169,7 @@ export const stages: Stage[] = [
         duration: '30 min',
         genre: 'Alt-Pop',
         description:
-          'Sponsored by MENA (the Middle Eastern North African Student Association) Lana Lubany is a Palestinian artist based in LA who has emerged as one of the most compelling new voices in alternative pop. Her sound—often compared to Billie Eilish and Rosalía—is introspective and haunting, blending alt-pop with touches of R&B and soul. Known for her genre-bending sound and striking bilingual lyricism, Lubany seamlessly weaves English and Arabic to create music that feels both globally influenced and deeply personal. She first received widespread attention with her breakout single “THE SNAKE,” which features a blend of Arabic and English lyrics and has generated over 16 million streams while gaining major traction on TikTok. Building on that momentum, Lubany continued to carve out her space with releases like “NAZARETH” and “YAFA,” further showcasing her ability to merge cultural storytelling with modern pop production. Lubany has earned recognition as one of The Guardian’s Artists to Watch in 2023, and her work has received widespread critical praise from the Recording Academy (GRAMMYS), Pitchfork, NYLON, and more. Recently, she has solidified her presence on the international stage by opening for The Last Dinner Party’s European tour, selling out her own headline European tour, and performing alongside artists such as Saint Levant, TUL8TE, and Ty Dolla $ign. Lubany’s addition to Dillo Day brings a fresh and dynamic energy to the festival, expanding its tradition of highlighting artists who are both innovative and culturally impactful. Her presence adds an international dimension to the lineup, offering festival-goers a performance that is as emotionally immersive as it is sonically captivating. With her rising trajectory and distinctive artistry, Lana Lubany is poised to deliver a set that will leave a lasting impression on Dillo Day’s stage.',
+          'Sponsored by MENA (the Middle Eastern North African Student Association). Lana Lubany is a Palestinian artist based in LA who has emerged as one of the most compelling new voices in alternative pop. Her sound—often compared to Billie Eilish and Rosalía—is introspective and haunting, blending alt-pop with touches of R&B and soul. Known for her genre-bending sound and striking bilingual lyricism, Lubany seamlessly weaves English and Arabic to create music that feels both globally influenced and deeply personal. She first received widespread attention with her breakout single “THE SNAKE,” which features a blend of Arabic and English lyrics and has generated over 16 million streams while gaining major traction on TikTok. Building on that momentum, Lubany continued to carve out her space with releases like “NAZARETH” and “YAFA,” further showcasing her ability to merge cultural storytelling with modern pop production. Lubany has earned recognition as one of The Guardian’s Artists to Watch in 2023, and her work has received widespread critical praise from the Recording Academy (GRAMMYS), Pitchfork, NYLON, and more. Recently, she has solidified her presence on the international stage by opening for The Last Dinner Party’s European tour, selling out her own headline European tour, and performing alongside artists such as Saint Levant, TUL8TE, and Ty Dolla $ign. Lubany’s addition to Dillo Day brings a fresh and dynamic energy to the festival, expanding its tradition of highlighting artists who are both innovative and culturally impactful. Her presence adds an international dimension to the lineup, offering festival-goers a performance that is as emotionally immersive as it is sonically captivating. With her rising trajectory and distinctive artistry, Lana Lubany is poised to deliver a set that will leave a lasting impression on Dillo Day’s stage.',
         image: 'https://i.imgur.com/dy03FCU.jpeg',
         socialLinks: {
           spotify:
@@ -152,12 +180,18 @@ export const stages: Stage[] = [
       },
       {
         time: '3:15 PM',
-        artist: '???',
-        duration: '',
-        genre: '',
-        description: '',
-        image: '',
-        socialLinks: { spotify: '', instagram: '', twitter: '' },
+        artist: 'Friko',
+        duration: '30 min',
+        genre: 'Indie',
+        description:
+          "Sponsored by WNUR.  In the buzzing Chicago indie scene, Friko has carved out a reputation as one of the most compelling and hard-to-ignore acts. Formed in 2019 by three Evanston Township High School graduates, the band’s sound swings between cathartic, full-throttle thrashers and emotionally raw ballads. Friko first gained traction following the release of their second EP, Whenever Forever. In late 2023, the group announced their upcoming debut album, Where We've Been, Where We Go from Here, which quickly became one of the most anticipated albums of the upcoming year. Released in February 2024, the songs “Where We’ve Been”, “Crimson to Chrome”, and “Get Numb To It!” featured on various year-end lists. The album received universal acclaim, positioning Friko as a standout force and drawing comparisons to bands like Radiohead and Bright Eyes while keeping a distinct sound. In April of 2026, the band returned with Something Worth Waiting For, a record that leans even further into their intensity and ambition. Standout singles like “Seven Degrees” and “ChooChoo” showcase a tighter, more expansive sound. Another critical hit, Friko seems poised for a breakout year. We’re thrilled to have a hometown band like Friko bring that energy to the Lakefill as an inaugural Burrow act at Dillo 54.",
+        image: 'https://i.imgur.com/Qpx2FCe.jpeg',
+        socialLinks: {
+          spotify:
+            'https://open.spotify.com/artist/5HViQsHNdOovxKa420CPGR?si=1CQOAfA3T-ugwuZc512OVQ',
+          instagram: 'https://www.instagram.com/friko4u/',
+          twitter: '',
+        },
       },
       {
         time: '4:45 PM',
