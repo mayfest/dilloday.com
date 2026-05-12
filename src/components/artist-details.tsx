@@ -289,10 +289,14 @@ export default function ArtistDetails({
                 return (
                   <>
                     <Description>
-                      {needsTruncation && !isDescExpanded ? truncated + '…' : artist.description}
+                      {needsTruncation && !isDescExpanded
+                        ? truncated + '…'
+                        : artist.description}
                     </Description>
                     {needsTruncation && (
-                      <ExpandButton onClick={() => setIsDescExpanded((v) => !v)}>
+                      <ExpandButton
+                        onClick={() => setIsDescExpanded((v) => !v)}
+                      >
                         {isDescExpanded ? 'Show less' : 'Read more'}
                       </ExpandButton>
                     )}

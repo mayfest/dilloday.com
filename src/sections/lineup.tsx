@@ -415,11 +415,15 @@ export default function FestivalSchedule() {
                           <ArtistButton
                             key={index}
                             $disabled={act.artist === '???'}
-                            onClick={() => act.artist !== '???' && setSelectedArtist(act)}
+                            onClick={() =>
+                              act.artist !== '???' && setSelectedArtist(act)
+                            }
                           >
                             <ArtistRow
                               variants={artistRowVariants}
-                              whileHover={act.artist !== '???' ? 'hover' : undefined}
+                              whileHover={
+                                act.artist !== '???' ? 'hover' : undefined
+                              }
                               custom={index}
                             >
                               <ArtistInfo>
