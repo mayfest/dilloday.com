@@ -25,12 +25,12 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+      <MobileApp />
       <FestivalSchedule />
       <HorizontalStoreComponent />
       <Tickets />
       <About />
       {/* <EventInformation /> */}
-      {/* <MobileApp /> */}
       {/* <FestivalLayout /> */}
       {/* <SmartDilloBanner /> */}
       <FestivalCarousel />
