@@ -1,7 +1,6 @@
 'use client';
 
 import { Section, mobile } from '@/components';
-import { ChevronRightIcon } from '@heroicons/react/24/outline';
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
@@ -109,20 +108,36 @@ const DownloadButton = styled.a`
   &:hover {
     outline: 1px solid #ffffff;
   }
-
-  svg {
-    width: 12px;
-    height: 12px;
-  }
 `;
+
+const BUTTON_HEIGHT = '56px';
 
 const DownloadImageApple = styled.img`
-  padding: 10px;
-  height: 64px;
+  height: ${BUTTON_HEIGHT};
+  display: block;
 `;
 
-const DownloadImageGoogle = styled.img`
-  height: 64px;
+const AndroidBadge = styled.span`
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  height: ${BUTTON_HEIGHT};
+  box-sizing: border-box;
+  padding: 0 18px;
+  background-color: #000000;
+  border: 1px solid #ffffff;
+  border-radius: 12px;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+`;
+
+const AndroidIcon = styled.svg`
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
 `;
 
 const imageVariants = {
@@ -190,7 +205,7 @@ export default function MobileApp() {
           </Text>
           <DownloadContainer>
             <DownloadButton
-              href="https://apps.apple.com/us/app/dillo-day-2025/id6745717280"
+              href="https://apps.apple.com/us/app/dillo-day-2026/id6766753093"
               target="_blank"
               rel="noreferrer"
             >
@@ -200,14 +215,22 @@ export default function MobileApp() {
               />
             </DownloadButton>
             <DownloadButton
-              href="https://play.google.com/store/apps/details?id=com.dilloday.app2024"
+              href="https://github.com/mayfest/dilloday-app-2026/releases/tag/android-v1"
               target="_blank"
               rel="noreferrer"
+              aria-label="Download for Android"
             >
-              <DownloadImageGoogle
-                src="/img/google-play.png"
-                alt="Google Play"
-              />
+              <AndroidBadge>
+                <AndroidIcon
+                  viewBox="0 0 24 24"
+                  fill="#A4C639"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path d="M17.523 15.341a1.001 1.001 0 1 1 0-2.003 1.001 1.001 0 0 1 0 2.003zm-11.046 0a1.001 1.001 0 1 1 0-2.003 1.001 1.001 0 0 1 0 2.003zm11.404-6.084 1.997-3.46a.417.417 0 0 0-.722-.417l-2.022 3.503A12.49 12.49 0 0 0 12 7.94c-1.842 0-3.581.379-5.134 1.043L4.844 5.48a.417.417 0 0 0-.722.417l1.997 3.46C2.69 11.146.5 14.318.5 18h23c0-3.682-2.19-6.854-5.619-8.743z" />
+                </AndroidIcon>
+                Download Android
+              </AndroidBadge>
             </DownloadButton>
           </DownloadContainer>
         </TextContainer>
