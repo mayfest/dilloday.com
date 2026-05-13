@@ -184,7 +184,7 @@ export default function MobileApp() {
         <ImagePadding />
         <TextContainer>
           <AboveTitle>Download the official</AboveTitle>
-          <Title>Dillo Day 2025 App</Title>
+          <Title>Dillo Day 2026 App</Title>
           <Text>
             Get{' '}
             <Highlight color="#F6F2A3">
