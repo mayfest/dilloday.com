@@ -215,7 +215,7 @@ export default function MobileApp() {
               />
             </DownloadButton>
             <DownloadButton
-              href="https://github.com/mayfest/dilloday-app-2026/releases/tag/android-v1"
+              href="https://github.com/mayfest/dilloday-app-2026/releases/tag/android-v2"
               target="_blank"
               rel="noreferrer"
               aria-label="Download for Android"
