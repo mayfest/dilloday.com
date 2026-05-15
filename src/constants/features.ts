@@ -17,9 +17,9 @@ export const carouselItems: CarouselItem[] = [
   },
   {
     id: 3,
-    title: 'Main Stage/FMO Stage',
+    title: 'Performance Stages',
     description:
-      'Two incredible stages featuring world-class performances, state-of-the-art sound systems, and unforgettable moments throughout the festival.',
+      'Three incredible stages featuring world-class performances, state-of-the-art sound systems, and unforgettable moments throughout the festival.',
     image: '/img/features/main-stage.jpg',
   },
   {
