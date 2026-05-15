@@ -148,16 +148,14 @@ export const stages: Stage[] = [
       },
       {
         time: '5:30 PM',
-        artist: 'Trim',
+        artist: '???',
         duration: '30 min',
-        genre: 'Rap',
-        description:
-          "Trim is an emerging rapper from Charleston, South Carolina. At just 19 years old, she has rapidly gained attention within the internet rap landscape by building a strong, personality-driven presence across social media and streaming platforms. Known for her animated delivery, sharp ad-libs, and unmistakable vocal style, Trim has developed a sound that feels playful yet confident. Her breakout moment came with \"BOAT,\" a viral single that gained traction on TikTok in 2025 and quickly became a defining introduction to her artistry. The track's popularity led to multiple remixes and collaborations, including a version featuring YK Niece and Bunna B, further amplifying its reach and cementing Trim as an artist to watch in the digital rap space. Following that breakout, Trim has continued to release music that builds on her signature sound of blending energetic flows, humor, and a charismatic performance style that translates seamlessly both online and in live settings. Her discography reflects a developing versatility where personality remains as central to her appeal as the music itself. Still early in her career, Trim is steadily expanding her footprint beyond viral success, positioning herself as one of the more recognizable new voices coming out of the South's evolving rap scene. We're excited to welcome Trim to Dillo Day—get ready to shake some things up!",
-        image: 'https://i.imgur.com/YUmCD7W.png',
+        genre: '',
+        description: '',
+        image: '',
         socialLinks: {
-          spotify:
-            'https://open.spotify.com/artist/1xkEwol8vsfO4m2WP8Dyk9?si=__iRyJI3TOiWfMklF3jcAw',
-          instagram: 'https://www.instagram.com/itsmstrim/',
+          spotify: '',
+          instagram: '',
           twitter: '',
         },
       },
