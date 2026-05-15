@@ -34,7 +34,7 @@ export default function HomePage() {
       {/* <FestivalLayout /> */}
       {/* <SmartDilloBanner /> */}
       <FestivalCarousel />
-      <Sponsors />
+      {/* <Sponsors /> */}
       <PastDillos />
       <Team />
       <Support />
