@@ -29,22 +29,32 @@ export const stages: Stage[] = [
         },
       },
       {
-        time: '1:45 PM',
-        artist: '???',
+        time: '2:00 PM',
+        artist: 'Jae Stephens',
         duration: '1 hour',
-        genre: '',
-        description: '',
-        image: '',
-        socialLinks: { spotify: '', instagram: '', twitter: '' },
+        genre: 'R&B, Pop',
+        description:
+          'Blending R&B, pop, and early-2000s nostalgia with a fresh, futuristic edge, Jae Stephens has quickly established herself as one of the most exciting rising voices in music. Originally from Dallas and raised in Pasadena, Stephens first built a following online before developing into a singer, songwriter, and producer with a distinct sound and sharp creative vision. Her music feels both familiar and new, pulling from the smoothness of classic R&B while bringing the confidence and energy of modern pop. Stephens has continued to gain attention through projects like High My Name Is, SELLOUT, and SELLOUT II, along with standout tracks like “WET,” “Body Favors,” and “Girls Don’t Cheat.” Beyond her own releases, she has also written for major artists and collaborated across the R&B and pop world, showing the range of her talent both in front of and behind the scenes. Her work with Raedio and Def Jam has helped position her as an artist to watch, especially as she brings more space for Black women in pop and alternative R&B. Bringing Jae Stephens to Dillo Day is especially exciting because her music matches the energy of a festival crowd: fun, stylish, confident, and easy to move to. As mainstage opener, Stephens will help set the tone for the day, bringing a performance that feels fresh while still connecting to Dillo Day’s history of highlighting artists on the rise. Her set will offer students the chance to experience an artist entering a major new era, making her a strong and memorable addition to the 54th Dillo Day lineup.',
+        image: 'https://i.imgur.com/PgzgeLp.jpeg',
+        socialLinks: {
+          spotify: 'https://open.spotify.com/artist/4HiLipaDjOwRkhJlk5s1uT',
+          instagram: 'https://www.instagram.com/jaephens/',
+          twitter: '',
+        },
       },
       {
         time: '3:45 PM',
-        artist: '???',
+        artist: 'glaive',
         duration: '1 hour',
-        genre: '',
-        description: '',
-        image: '',
-        socialLinks: { spotify: '', instagram: '', twitter: '' },
+        genre: 'Hyperpop',
+        description:
+          'Glaive first arrived on the hyperpop scene at the beginning of the COVID-19 pandemic while attending online school. He made all of his music in his bedroom in Asheville, NC, and uploaded his projects to Soundcloud. Eventually, he began to gain traction for his glitchy production and portrayal of angst, as exemplified in his early projects ‘cypress grove’ and ‘all dogs go to heaven’. Eventually, his music began to catch the attention of millions, as the digital yet moody landscape and themes of isolation captured the feelings of many young adults during quarantine. His success led to record deals and internet fame at the young age of 15. Additionally, they led to collaborations with other digicore-based artists such as ericdoa and aldn. Glaive has only grown since his initial blowup, where his body of work has led him to become a representation of adolescence during a digital age. The success of his multiple studio albums, such as ‘i care so much that i don’t care at all’ and ‘May It Never Falter’, has cemented him as a pioneer of the hyperpop genre. Songs such as ‘prom’ and ‘astrid’ have become well-known hits and coming-of-age anthems. Glaive’s chaotic and charming display of internet culture is sure to create an exciting yet familiar energy for students at Dillo Day. He may have skipped prom, but he won’t skip Dillo!',
+        image: 'https://i.imgur.com/xAiznTl.jpeg',
+        socialLinks: {
+          spotify: 'https://open.spotify.com/artist/4cJKDGSv4Dz9QycXYmo565',
+          instagram: 'https://www.instagram.com/1glaive/',
+          twitter: '',
+        },
       },
       {
         time: '6:00 PM',
@@ -91,7 +101,7 @@ export const stages: Stage[] = [
     name: 'FMO Stage',
     schedule: [
       {
-        time: '12:00 PM',
+        time: '12:15 PM',
         artist: 'Nali',
         duration: '30 min',
         genre: 'R&B',
@@ -106,7 +116,7 @@ export const stages: Stage[] = [
         },
       },
       {
-        time: '1:15 PM',
+        time: '1:30 PM',
         artist: 'DJ Fàájì',
         duration: '30 min',
         genre: 'Afrobeats',
@@ -136,27 +146,30 @@ export const stages: Stage[] = [
       },
       {
         time: '5:30 PM',
-        artist: 'Trim',
+        artist: '???',
         duration: '30 min',
-        genre: 'Rap',
-        description:
-          "Trim is an emerging rapper from Charleston, South Carolina. At just 19 years old, she has rapidly gained attention within the internet rap landscape by building a strong, personality-driven presence across social media and streaming platforms. Known for her animated delivery, sharp ad-libs, and unmistakable vocal style, Trim has developed a sound that feels playful yet confident. Her breakout moment came with \"BOAT,\" a viral single that gained traction on TikTok in 2025 and quickly became a defining introduction to her artistry. The track's popularity led to multiple remixes and collaborations, including a version featuring YK Niece and Bunna B, further amplifying its reach and cementing Trim as an artist to watch in the digital rap space. Following that breakout, Trim has continued to release music that builds on her signature sound of blending energetic flows, humor, and a charismatic performance style that translates seamlessly both online and in live settings. Her discography reflects a developing versatility where personality remains as central to her appeal as the music itself. Still early in her career, Trim is steadily expanding her footprint beyond viral success, positioning herself as one of the more recognizable new voices coming out of the South's evolving rap scene. We're excited to welcome Trim to Dillo Day—get ready to shake some things up!",
-        image: 'https://i.imgur.com/YUmCD7W.png',
+        genre: '',
+        description: '',
+        image: '',
         socialLinks: {
-          spotify:
-            'https://open.spotify.com/artist/1xkEwol8vsfO4m2WP8Dyk9?si=__iRyJI3TOiWfMklF3jcAw',
-          instagram: 'https://www.instagram.com/itsmstrim/',
+          spotify: '',
+          instagram: '',
           twitter: '',
         },
       },
       {
         time: '7:00 PM',
-        artist: '???',
+        artist: 'BabyChiefDoIt',
         duration: '45 min',
-        genre: '',
-        description: '',
-        image: '',
-        socialLinks: { spotify: '', instagram: '', twitter: '' },
+        genre: 'Rap',
+        description:
+          'Born Jayden Jones and raised in the south suburbs of Chicago, BabyChiefDoIt has quickly emerged as one of the most recognizable young voices in the new wave of underground drill music. Drawing influence from both Chicago drill pioneers and Southern trap legends, his music combines booming production, energetic flows, and raw lyricism that reflects both the realities and ambitions tied to his upbringing. Since 2023, BabyChiefDoIt has steadily built his audience through platforms like SoundCloud, TikTok, YouTube, and Instagram, carving out a distinctive online presence fueled by consistency and virality. His breakout arrived in 2024 when his song “Rollin’” reached No. 1 on Billboard’s TikTok Chart, helping introduce his sound to a rapidly growing national audience. That momentum continued into 2025 with the release of “Went West,” which earned a spot on the Billboard Hot 100 and further established him as one of Chicago’s most promising emerging artists. The same year, Billboard named him Hip-Hop Rookie of the Month in September, while XXL selected him for its 2025 Freshman Class. Not only was BabyChiefDoIt the youngest member of the 2025 class, but he also became the youngest Chicago rapper to appear on the Freshman cover since Chief Keef in 2013. Beyond streaming success, BabyChiefDoIt has developed a reputation for explosive live performances. His set at Rolling Loud drew major attention after he previewed unreleased music, creating viral online buzz and helping elevate his artistry even further. He returned to the festival again this year as his career continues to gain traction. As his audience expands, BabyChiefDoIt has also begun collaborating with major artists across hip-hop, including an appearance on Chance the Rapper’s project “Star Line.” He continues to position himself at the forefront of a new generation of rappers while staying rooted in drill legacy. We’re excited to welcome BabyChiefDoIt to Dillo Day—come ready to close the stage with a bang!',
+        image: 'https://i.imgur.com/B5fGNrS.png',
+        socialLinks: {
+          spotify: 'https://open.spotify.com/artist/1J1pGfTqp5ReVIX8Z1Wzsg',
+          instagram: 'https://www.instagram.com/babychiefdoit/',
+          twitter: '',
+        },
       },
     ],
   },
