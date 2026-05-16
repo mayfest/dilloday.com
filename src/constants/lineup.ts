@@ -75,12 +75,18 @@ export const stages: Stage[] = [
       },
       {
         time: '7:45 PM',
-        artist: '???',
+        artist: 'BossMan Dlow',
         duration: '1 hour',
-        genre: '',
-        description: '',
-        image: '',
-        socialLinks: { spotify: '', instagram: '', twitter: '' },
+        genre: 'Rap',
+        description:
+          'Mayfest Productions is thrilled to announce BossMan Dlow as the penultimate act for the 54th Dillo Day music festival, taking place at Northwestern University on May 16, 2026.  The Florida born rapper first became known after dropping his mixtape \'Too Slippery\' in 2023. His songs quickly gained traction due to their hype, anthem-like nature and their replayability on social media. He quickly became known for his signature rapid-fire rap style, nonchalant flow, and impeccable delivery. His debut album, Dlow Curry, features collaborations with GloRilla, Ice Spice, Babyface Ray, French Montana, Lil Baby, and NoCap, debuting at #36 on the Billboard 200. In 2025 "Get In With Me" situated him in virality, and through his work, he\'s continued to resonate with the Gen-Z audiences. Hits like "Mr. Pot Scraper, along his signature "Talk My Sh*t", ultimately have solidified BossMan Dlow as a standout force in the modern rap scene. Overall, he\'s become a staple of digital culture and has helped define the sound of a new generation. Throughout his meteoric rise through the hip-hop ranks, BossMan Dlow has acquired several notable accolades, including high-profile collaborations with industry legends. Most recently, he teamed up with A$AP Rocky on the 2026 track "STOP SNITCHING" from the album Don\'t Be Dumb, further establishing his versatility alongside artists such as Lil Baby and GloRilla. BossMan Dlow brings the kind of high-energy set that rap fans at Northwestern are looking for; with hits like "Motion Party" currently fueling dance challenges across the country, he offers a sound built for electric crowds filled with energy who are ready for booming hip-hop songs paired with witty lyricism. Northwestern students will be sure to \'Get In\' with BossMan for a wild ride at Dillo!',
+        image: 'https://i.imgur.com/RNEKsWx.jpeg',
+        socialLinks: {
+          spotify:
+            'https://open.spotify.com/artist/23xFbA9rYgRX8mreqysWPc?si=I-eC8eByScGH6g_S3Ntv3w',
+          instagram: 'https://www.instagram.com/bossman_dlow/',
+          twitter: '',
+        },
       },
       {
         time: '9:15 PM',
