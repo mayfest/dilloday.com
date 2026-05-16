@@ -148,14 +148,16 @@ export const stages: Stage[] = [
       },
       {
         time: '5:30 PM',
-        artist: '???',
+        artist: 'Cochise',
         duration: '30 min',
-        genre: '',
-        description: '',
-        image: '',
+        genre: 'Rap',
+        description:
+          'Hailing from Palm Bay, Florida, Cochise first began making music in high school using a broken PlayStation microphone, uploading songs to SoundCloud after encouragement from classmates and family members who quickly recognized his talent. What started as experimentation fueled by curiosity soon evolved into a rapidly growing online following and the foundation of his artistic career. Known for his colorful production, infectious ad-libs, and animated delivery, Cochise built a devoted fanbase through music that blends the creativity of SoundCloud rap with melodic flows and carefree energy. His sound also reflects elements of his Jamaican heritage, often incorporating patois influences alongside playful cadences and vocal inflections, including the baby voice style that helped distinguish him early on. His breakout came with viral singles such as "Hatchback" and "Tell Em" with $NOT, the latter becoming a major commercial success and helping propel Cochise into the mainstream. Tracks like "Pocket Rocket" further showcased his ability to create high-energy records that resonated across streaming platforms and social media, contributing to hundreds of millions of streams and solidifying his place within a new generation of internet-native rap artists. In 2022, Cochise was selected for the XXL Freshman Class, marking a major milestone in his career. While his early music became known for its explosive energy and hyperactive flows, Cochise has continued evolving his sound in recent years. Newer releases like "Geeked," "Lay Up," and "Yoshimitsu" explore a more atmospheric and cloud rap-inspired direction, balancing his signature charisma with a more laid-back and immersive style. Part of what has made him stand out is his willingness to embrace individuality and experimentation. As Cochise enters a new era in his career, he continues expanding on the sound that first brought him recognition while pushing toward new creative territory. We\'re excited to welcome Cochise to Dillo Day—come tell \'em wassup at our stage!',
+        image: 'https://i.imgur.com/UxX80Dr.png',
         socialLinks: {
-          spotify: '',
-          instagram: '',
+          spotify:
+            'https://open.spotify.com/artist/46HzS7yz0c9udVwtbHk1sx?si=IxF5c0bFR8mPGBe0MrVFcw',
+          instagram: 'https://www.instagram.com/cochise/',
           twitter: '',
         },
       },
